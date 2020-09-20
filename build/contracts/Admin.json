@@ -1,0 +1,111 @@
+{
+  "contractName": "Admin",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Admin.sol\":\"Admin\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Admin.sol\":{\"keccak256\":\"0xd8ca1faf174f6238b1f3da4a72f3f07d4d54d556f4581808d4c5385d8982daf8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cb8ce978c104e607b8b0972c599ca5882fb1f00e9e3ca7730e6937cc11e05fe0\",\"dweb:/ipfs/Qmdc9wqP7ZJntBptocLKjfx3fjbtTE7GdAD73ssrLWgXxm\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220c3c7f7c809098a134eabc1fa3b2d7b9ea52f353307e5e07a5d71a7d589b056ff64736f6c634300060c0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220c3c7f7c809098a134eabc1fa3b2d7b9ea52f353307e5e07a5d71a7d589b056ff64736f6c634300060c0033",
+  "immutableReferences": {},
+  "sourceMap": "103:17:1:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "103:17:1:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\n\n// code to deploy DyDx solo protocol locally\npragma solidity 0.6.12;\n\ncontract Admin {}\n",
+  "sourcePath": "C:/Users/James/projects/tsuno-fe/contracts/protocol/Admin.sol",
+  "ast": {
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/Admin.sol",
+    "exportedSymbols": {
+      "Admin": [
+        59
+      ]
+    },
+    "id": 60,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "78:23:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 59,
+        "linearizedBaseContracts": [
+          59
+        ],
+        "name": "Admin",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 60,
+        "src": "103:17:1"
+      }
+    ],
+    "src": "78:43:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/Admin.sol",
+    "exportedSymbols": {
+      "Admin": [
+        59
+      ]
+    },
+    "id": 60,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "78:23:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 59,
+        "linearizedBaseContracts": [
+          59
+        ],
+        "name": "Admin",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 60,
+        "src": "103:17:1"
+      }
+    ],
+    "src": "78:43:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.5",
+  "updatedAt": "2020-09-19T16:20:56.272Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
