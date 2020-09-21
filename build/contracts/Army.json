@@ -5,58 +5,58 @@
   "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220d05ff8aeb6910379c403488a43bd56468ed89cbf44a0ae4bb6bd77883efaac5b64736f6c634300060c0033",
   "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220d05ff8aeb6910379c403488a43bd56468ed89cbf44a0ae4bb6bd77883efaac5b64736f6c634300060c0033",
   "immutableReferences": {},
-  "sourceMap": "347:1015:13:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "347:1015:13:-:0;;;;;;;;",
+  "sourceMap": "347:1015:11:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "347:1015:11:-:0;;;;;;;;",
   "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {Random} from './Random.sol';\nimport {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';\n\n/**\n * @title Exchange\n * @author Big Beluga\n *\n * Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct\n */\nlibrary Army {\n    using SafeMath for uint256;\n\n    enum Units {SiegeWeapon, DefenseStructure, Soldier, Archer, Cavalry}\n    struct Info {\n        uint256 siegeWeapons;\n        uint256 defenceStructures;\n        uint256 soldiers;\n        uint256 archers;\n        uint256 cavalry;\n        uint256 nextBattleCost;\n    }\n    // ============ Constants ============\n\n    bytes32 constant FILE = 'Army';\n\n    // ============ Library Functions ============\n\n    function getTotalUnits(Info memory army) internal returns (uint256) {\n        return\n            army\n                .siegeWeapons\n                .add(army.defenceStructures)\n                .add(army.soldiers)\n                .add(army.archers)\n                .add(army.cavalry);\n    }\n\n    function isDefeated(Info memory army) internal returns (bool) {\n        return\n            army.siegeWeapons == 0 &&\n            army.defenceStructures == 0 &&\n            army.archers == 0 &&\n            army.cavalry == 0 &&\n            army.soldiers == 0;\n    }\n}\n",
   "sourcePath": "C:\\Users\\James\\projects\\tsuno-fe\\contracts\\protocol\\lib\\Army.sol",
   "ast": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Army.sol",
     "exportedSymbols": {
       "Army": [
-        823
+        763
       ]
     },
-    "id": 824,
+    "id": 764,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 731,
+        "id": 671,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:13"
+        "src": "33:23:11"
       },
       {
-        "id": 732,
+        "id": 672,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "57:33:13"
+        "src": "57:33:11"
       },
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol",
         "file": "./Random.sol",
-        "id": 734,
+        "id": 674,
         "nodeType": "ImportDirective",
-        "scope": 824,
-        "sourceUnit": 2067,
-        "src": "92:36:13",
+        "scope": 764,
+        "sourceUnit": 2007,
+        "src": "92:36:11",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 733,
+              "id": 673,
               "name": "Random",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "100:6:13",
+              "src": "100:6:11",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -70,21 +70,21 @@
       {
         "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
         "file": "@openzeppelin/contracts/math/SafeMath.sol",
-        "id": 736,
+        "id": 676,
         "nodeType": "ImportDirective",
-        "scope": 824,
-        "sourceUnit": 4866,
-        "src": "129:67:13",
+        "scope": 764,
+        "sourceUnit": 4771,
+        "src": "129:67:11",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 735,
+              "id": 675,
               "name": "SafeMath",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "137:8:13",
+              "src": "137:8:11",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -101,40 +101,40 @@
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 737,
+          "id": 677,
           "nodeType": "StructuredDocumentation",
-          "src": "198:148:13",
+          "src": "198:148:11",
           "text": " @title Exchange\n @author Big Beluga\n Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct"
         },
         "fullyImplemented": true,
-        "id": 823,
+        "id": 763,
         "linearizedBaseContracts": [
-          823
+          763
         ],
         "name": "Army",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 740,
+            "id": 680,
             "libraryName": {
               "contractScope": null,
-              "id": 738,
+              "id": 678,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4865,
-              "src": "372:8:13",
+              "referencedDeclaration": 4770,
+              "src": "372:8:11",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$4865",
+                "typeIdentifier": "t_contract$_SafeMath_$4770",
                 "typeString": "library SafeMath"
               }
             },
             "nodeType": "UsingForDirective",
-            "src": "366:27:13",
+            "src": "366:27:11",
             "typeName": {
-              "id": 739,
+              "id": 679,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "385:7:13",
+              "src": "385:7:11",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -143,56 +143,56 @@
           },
           {
             "canonicalName": "Army.Units",
-            "id": 746,
+            "id": 686,
             "members": [
               {
-                "id": 741,
+                "id": 681,
                 "name": "SiegeWeapon",
                 "nodeType": "EnumValue",
-                "src": "411:11:13"
+                "src": "411:11:11"
               },
               {
-                "id": 742,
+                "id": 682,
                 "name": "DefenseStructure",
                 "nodeType": "EnumValue",
-                "src": "424:16:13"
+                "src": "424:16:11"
               },
               {
-                "id": 743,
+                "id": 683,
                 "name": "Soldier",
                 "nodeType": "EnumValue",
-                "src": "442:7:13"
+                "src": "442:7:11"
               },
               {
-                "id": 744,
+                "id": 684,
                 "name": "Archer",
                 "nodeType": "EnumValue",
-                "src": "451:6:13"
+                "src": "451:6:11"
               },
               {
-                "id": 745,
+                "id": 685,
                 "name": "Cavalry",
                 "nodeType": "EnumValue",
-                "src": "459:7:13"
+                "src": "459:7:11"
               }
             ],
             "name": "Units",
             "nodeType": "EnumDefinition",
-            "src": "399:68:13"
+            "src": "399:68:11"
           },
           {
             "canonicalName": "Army.Info",
-            "id": 759,
+            "id": 699,
             "members": [
               {
                 "constant": false,
-                "id": 748,
+                "id": 688,
                 "mutability": "mutable",
                 "name": "siegeWeapons",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 759,
-                "src": "494:20:13",
+                "scope": 699,
+                "src": "494:20:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -200,10 +200,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 747,
+                  "id": 687,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "494:7:13",
+                  "src": "494:7:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -214,13 +214,13 @@
               },
               {
                 "constant": false,
-                "id": 750,
+                "id": 690,
                 "mutability": "mutable",
                 "name": "defenceStructures",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 759,
-                "src": "524:25:13",
+                "scope": 699,
+                "src": "524:25:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -228,10 +228,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 749,
+                  "id": 689,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "524:7:13",
+                  "src": "524:7:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -242,13 +242,13 @@
               },
               {
                 "constant": false,
-                "id": 752,
+                "id": 692,
                 "mutability": "mutable",
                 "name": "soldiers",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 759,
-                "src": "559:16:13",
+                "scope": 699,
+                "src": "559:16:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -256,10 +256,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 751,
+                  "id": 691,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "559:7:13",
+                  "src": "559:7:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -270,13 +270,13 @@
               },
               {
                 "constant": false,
-                "id": 754,
+                "id": 694,
                 "mutability": "mutable",
                 "name": "archers",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 759,
-                "src": "585:15:13",
+                "scope": 699,
+                "src": "585:15:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -284,10 +284,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 753,
+                  "id": 693,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "585:7:13",
+                  "src": "585:7:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -298,13 +298,13 @@
               },
               {
                 "constant": false,
-                "id": 756,
+                "id": 696,
                 "mutability": "mutable",
                 "name": "cavalry",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 759,
-                "src": "610:15:13",
+                "scope": 699,
+                "src": "610:15:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -312,10 +312,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 755,
+                  "id": 695,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "610:7:13",
+                  "src": "610:7:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -326,13 +326,13 @@
               },
               {
                 "constant": false,
-                "id": 758,
+                "id": 698,
                 "mutability": "mutable",
                 "name": "nextBattleCost",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 759,
-                "src": "635:22:13",
+                "scope": 699,
+                "src": "635:22:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -340,10 +340,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 757,
+                  "id": 697,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "635:7:13",
+                  "src": "635:7:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -355,19 +355,19 @@
             ],
             "name": "Info",
             "nodeType": "StructDefinition",
-            "scope": 823,
-            "src": "472:192:13",
+            "scope": 763,
+            "src": "472:192:11",
             "visibility": "public"
           },
           {
             "constant": true,
-            "id": 762,
+            "id": 702,
             "mutability": "constant",
             "name": "FILE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 823,
-            "src": "713:30:13",
+            "scope": 763,
+            "src": "713:30:11",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -375,10 +375,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 760,
+              "id": 700,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "713:7:13",
+              "src": "713:7:11",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -387,14 +387,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "41726d79",
-              "id": 761,
+              "id": 701,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "737:6:13",
+              "src": "737:6:11",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_613fe43f92a0e74e1ca5e1892c80536a5f58041c4803133b617f3939fa1d8fd2",
@@ -406,9 +406,9 @@
           },
           {
             "body": {
-              "id": 788,
+              "id": 728,
               "nodeType": "Block",
-              "src": "870:221:13",
+              "src": "870:221:11",
               "statements": [
                 {
                   "expression": {
@@ -418,26 +418,26 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 784,
+                          "id": 724,
                           "name": "army",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 764,
-                          "src": "1071:4:13",
+                          "referencedDeclaration": 704,
+                          "src": "1071:4:11",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                            "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                             "typeString": "struct Army.Info memory"
                           }
                         },
-                        "id": 785,
+                        "id": 725,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "cavalry",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 756,
-                        "src": "1071:12:13",
+                        "referencedDeclaration": 696,
+                        "src": "1071:12:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -458,26 +458,26 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 780,
+                              "id": 720,
                               "name": "army",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 764,
-                              "src": "1036:4:13",
+                              "referencedDeclaration": 704,
+                              "src": "1036:4:11",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                 "typeString": "struct Army.Info memory"
                               }
                             },
-                            "id": 781,
+                            "id": 721,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "archers",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 754,
-                            "src": "1036:12:13",
+                            "referencedDeclaration": 694,
+                            "src": "1036:12:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -498,26 +498,26 @@
                                 "argumentTypes": null,
                                 "expression": {
                                   "argumentTypes": null,
-                                  "id": 776,
+                                  "id": 716,
                                   "name": "army",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 764,
-                                  "src": "1000:4:13",
+                                  "referencedDeclaration": 704,
+                                  "src": "1000:4:11",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                    "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                     "typeString": "struct Army.Info memory"
                                   }
                                 },
-                                "id": 777,
+                                "id": 717,
                                 "isConstant": false,
                                 "isLValue": true,
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "memberName": "soldiers",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 752,
-                                "src": "1000:13:13",
+                                "referencedDeclaration": 692,
+                                "src": "1000:13:11",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -538,26 +538,26 @@
                                     "argumentTypes": null,
                                     "expression": {
                                       "argumentTypes": null,
-                                      "id": 772,
+                                      "id": 712,
                                       "name": "army",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 764,
-                                      "src": "955:4:13",
+                                      "referencedDeclaration": 704,
+                                      "src": "955:4:11",
                                       "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                         "typeString": "struct Army.Info memory"
                                       }
                                     },
-                                    "id": 773,
+                                    "id": 713,
                                     "isConstant": false,
                                     "isLValue": true,
                                     "isPure": false,
                                     "lValueRequested": false,
                                     "memberName": "defenceStructures",
                                     "nodeType": "MemberAccess",
-                                    "referencedDeclaration": 750,
-                                    "src": "955:22:13",
+                                    "referencedDeclaration": 690,
+                                    "src": "955:22:11",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -575,46 +575,46 @@
                                     "argumentTypes": null,
                                     "expression": {
                                       "argumentTypes": null,
-                                      "id": 769,
+                                      "id": 709,
                                       "name": "army",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 764,
-                                      "src": "899:4:13",
+                                      "referencedDeclaration": 704,
+                                      "src": "899:4:11",
                                       "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                         "typeString": "struct Army.Info memory"
                                       }
                                     },
-                                    "id": 770,
+                                    "id": 710,
                                     "isConstant": false,
                                     "isLValue": true,
                                     "isPure": false,
                                     "lValueRequested": false,
                                     "memberName": "siegeWeapons",
                                     "nodeType": "MemberAccess",
-                                    "referencedDeclaration": 748,
-                                    "src": "899:34:13",
+                                    "referencedDeclaration": 688,
+                                    "src": "899:34:11",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 771,
+                                  "id": 711,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "memberName": "add",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 4698,
-                                  "src": "899:55:13",
+                                  "referencedDeclaration": 4603,
+                                  "src": "899:55:11",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 774,
+                                "id": 714,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -622,28 +622,28 @@
                                 "lValueRequested": false,
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "899:79:13",
+                                "src": "899:79:11",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 775,
+                              "id": 715,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "add",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 4698,
-                              "src": "899:100:13",
+                              "referencedDeclaration": 4603,
+                              "src": "899:100:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 778,
+                            "id": 718,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -651,28 +651,28 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "899:115:13",
+                            "src": "899:115:11",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "id": 779,
+                          "id": 719,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "add",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 4698,
-                          "src": "899:136:13",
+                          "referencedDeclaration": 4603,
+                          "src": "899:136:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
                             "typeString": "function (uint256,uint256) pure returns (uint256)"
                           }
                         },
-                        "id": 782,
+                        "id": 722,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -680,28 +680,28 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "899:150:13",
+                        "src": "899:150:11",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 783,
+                      "id": 723,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "add",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4698,
-                      "src": "899:171:13",
+                      "referencedDeclaration": 4603,
+                      "src": "899:171:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 786,
+                    "id": 726,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -709,22 +709,22 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "899:185:13",
+                    "src": "899:185:11",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 768,
-                  "id": 787,
+                  "functionReturnParameters": 708,
+                  "id": 727,
                   "nodeType": "Return",
-                  "src": "880:204:13"
+                  "src": "880:204:11"
                 }
               ]
             },
             "documentation": null,
-            "id": 789,
+            "id": 729,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -732,33 +732,33 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 765,
+              "id": 705,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 764,
+                  "id": 704,
                   "mutability": "mutable",
                   "name": "army",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 789,
-                  "src": "825:16:13",
+                  "scope": 729,
+                  "src": "825:16:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                    "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                     "typeString": "struct Army.Info"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 763,
+                    "id": 703,
                     "name": "Info",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 759,
-                    "src": "825:4:13",
+                    "referencedDeclaration": 699,
+                    "src": "825:4:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Info_$759_storage_ptr",
+                      "typeIdentifier": "t_struct$_Info_$699_storage_ptr",
                       "typeString": "struct Army.Info"
                     }
                   },
@@ -766,21 +766,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "824:18:13"
+              "src": "824:18:11"
             },
             "returnParameters": {
-              "id": 768,
+              "id": 708,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 767,
+                  "id": 707,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 789,
-                  "src": "861:7:13",
+                  "scope": 729,
+                  "src": "861:7:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -788,10 +788,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 766,
+                    "id": 706,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "861:7:13",
+                    "src": "861:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -801,19 +801,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "860:9:13"
+              "src": "860:9:11"
             },
-            "scope": 823,
-            "src": "802:289:13",
+            "scope": 763,
+            "src": "802:289:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 821,
+              "id": 761,
               "nodeType": "Block",
-              "src": "1159:201:13",
+              "src": "1159:201:11",
               "statements": [
                 {
                   "expression": {
@@ -822,7 +822,7 @@
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 819,
+                    "id": 759,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -833,7 +833,7 @@
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       },
-                      "id": 814,
+                      "id": 754,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -844,7 +844,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 809,
+                        "id": 749,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -855,7 +855,7 @@
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           },
-                          "id": 804,
+                          "id": 744,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -866,7 +866,7 @@
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             },
-                            "id": 799,
+                            "id": 739,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -875,26 +875,26 @@
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 796,
+                                "id": 736,
                                 "name": "army",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 791,
-                                "src": "1188:4:13",
+                                "referencedDeclaration": 731,
+                                "src": "1188:4:11",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                  "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                   "typeString": "struct Army.Info memory"
                                 }
                               },
-                              "id": 797,
+                              "id": 737,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "siegeWeapons",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 748,
-                              "src": "1188:17:13",
+                              "referencedDeclaration": 688,
+                              "src": "1188:17:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -905,14 +905,14 @@
                             "rightExpression": {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 798,
+                              "id": 738,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "1209:1:13",
+                              "src": "1209:1:11",
                               "subdenomination": null,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
@@ -920,7 +920,7 @@
                               },
                               "value": "0"
                             },
-                            "src": "1188:22:13",
+                            "src": "1188:22:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -934,7 +934,7 @@
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             },
-                            "id": 803,
+                            "id": 743,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -943,26 +943,26 @@
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 800,
+                                "id": 740,
                                 "name": "army",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 791,
-                                "src": "1226:4:13",
+                                "referencedDeclaration": 731,
+                                "src": "1226:4:11",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                  "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                   "typeString": "struct Army.Info memory"
                                 }
                               },
-                              "id": 801,
+                              "id": 741,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "defenceStructures",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 750,
-                              "src": "1226:22:13",
+                              "referencedDeclaration": 690,
+                              "src": "1226:22:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -973,14 +973,14 @@
                             "rightExpression": {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 802,
+                              "id": 742,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "1252:1:13",
+                              "src": "1252:1:11",
                               "subdenomination": null,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
@@ -988,13 +988,13 @@
                               },
                               "value": "0"
                             },
-                            "src": "1226:27:13",
+                            "src": "1226:27:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
                             }
                           },
-                          "src": "1188:65:13",
+                          "src": "1188:65:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -1008,7 +1008,7 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 808,
+                          "id": 748,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1017,26 +1017,26 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 805,
+                              "id": 745,
                               "name": "army",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 791,
-                              "src": "1269:4:13",
+                              "referencedDeclaration": 731,
+                              "src": "1269:4:11",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                 "typeString": "struct Army.Info memory"
                               }
                             },
-                            "id": 806,
+                            "id": 746,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "archers",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 754,
-                            "src": "1269:12:13",
+                            "referencedDeclaration": 694,
+                            "src": "1269:12:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1047,14 +1047,14 @@
                           "rightExpression": {
                             "argumentTypes": null,
                             "hexValue": "30",
-                            "id": 807,
+                            "id": 747,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "1285:1:13",
+                            "src": "1285:1:11",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_0_by_1",
@@ -1062,13 +1062,13 @@
                             },
                             "value": "0"
                           },
-                          "src": "1269:17:13",
+                          "src": "1269:17:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "src": "1188:98:13",
+                        "src": "1188:98:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1082,7 +1082,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 813,
+                        "id": 753,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1091,26 +1091,26 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 810,
+                            "id": 750,
                             "name": "army",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 791,
-                            "src": "1302:4:13",
+                            "referencedDeclaration": 731,
+                            "src": "1302:4:11",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                              "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                               "typeString": "struct Army.Info memory"
                             }
                           },
-                          "id": 811,
+                          "id": 751,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "cavalry",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 756,
-                          "src": "1302:12:13",
+                          "referencedDeclaration": 696,
+                          "src": "1302:12:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1121,14 +1121,14 @@
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "30",
-                          "id": 812,
+                          "id": 752,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1318:1:13",
+                          "src": "1318:1:11",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
@@ -1136,13 +1136,13 @@
                           },
                           "value": "0"
                         },
-                        "src": "1302:17:13",
+                        "src": "1302:17:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         }
                       },
-                      "src": "1188:131:13",
+                      "src": "1188:131:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -1156,7 +1156,7 @@
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 818,
+                      "id": 758,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1165,26 +1165,26 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 815,
+                          "id": 755,
                           "name": "army",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 791,
-                          "src": "1335:4:13",
+                          "referencedDeclaration": 731,
+                          "src": "1335:4:11",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                            "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                             "typeString": "struct Army.Info memory"
                           }
                         },
-                        "id": 816,
+                        "id": 756,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "soldiers",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 752,
-                        "src": "1335:13:13",
+                        "referencedDeclaration": 692,
+                        "src": "1335:13:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1195,14 +1195,14 @@
                       "rightExpression": {
                         "argumentTypes": null,
                         "hexValue": "30",
-                        "id": 817,
+                        "id": 757,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1352:1:13",
+                        "src": "1352:1:11",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
@@ -1210,27 +1210,27 @@
                         },
                         "value": "0"
                       },
-                      "src": "1335:18:13",
+                      "src": "1335:18:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "src": "1188:165:13",
+                    "src": "1188:165:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 795,
-                  "id": 820,
+                  "functionReturnParameters": 735,
+                  "id": 760,
                   "nodeType": "Return",
-                  "src": "1169:184:13"
+                  "src": "1169:184:11"
                 }
               ]
             },
             "documentation": null,
-            "id": 822,
+            "id": 762,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1238,33 +1238,33 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 792,
+              "id": 732,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 791,
+                  "id": 731,
                   "mutability": "mutable",
                   "name": "army",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 822,
-                  "src": "1117:16:13",
+                  "scope": 762,
+                  "src": "1117:16:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                    "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                     "typeString": "struct Army.Info"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 790,
+                    "id": 730,
                     "name": "Info",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 759,
-                    "src": "1117:4:13",
+                    "referencedDeclaration": 699,
+                    "src": "1117:4:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Info_$759_storage_ptr",
+                      "typeIdentifier": "t_struct$_Info_$699_storage_ptr",
                       "typeString": "struct Army.Info"
                     }
                   },
@@ -1272,21 +1272,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1116:18:13"
+              "src": "1116:18:11"
             },
             "returnParameters": {
-              "id": 795,
+              "id": 735,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 794,
+                  "id": 734,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 822,
-                  "src": "1153:4:13",
+                  "scope": 762,
+                  "src": "1153:4:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1294,10 +1294,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 793,
+                    "id": 733,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1153:4:13",
+                    "src": "1153:4:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1307,69 +1307,69 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1152:6:13"
+              "src": "1152:6:11"
             },
-            "scope": 823,
-            "src": "1097:263:13",
+            "scope": 763,
+            "src": "1097:263:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 824,
-        "src": "347:1015:13"
+        "scope": 764,
+        "src": "347:1015:11"
       }
     ],
-    "src": "33:1330:13"
+    "src": "33:1330:11"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Army.sol",
     "exportedSymbols": {
       "Army": [
-        823
+        763
       ]
     },
-    "id": 824,
+    "id": 764,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 731,
+        "id": 671,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:13"
+        "src": "33:23:11"
       },
       {
-        "id": 732,
+        "id": 672,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "57:33:13"
+        "src": "57:33:11"
       },
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol",
         "file": "./Random.sol",
-        "id": 734,
+        "id": 674,
         "nodeType": "ImportDirective",
-        "scope": 824,
-        "sourceUnit": 2067,
-        "src": "92:36:13",
+        "scope": 764,
+        "sourceUnit": 2007,
+        "src": "92:36:11",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 733,
+              "id": 673,
               "name": "Random",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "100:6:13",
+              "src": "100:6:11",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -1383,21 +1383,21 @@
       {
         "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
         "file": "@openzeppelin/contracts/math/SafeMath.sol",
-        "id": 736,
+        "id": 676,
         "nodeType": "ImportDirective",
-        "scope": 824,
-        "sourceUnit": 4866,
-        "src": "129:67:13",
+        "scope": 764,
+        "sourceUnit": 4771,
+        "src": "129:67:11",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 735,
+              "id": 675,
               "name": "SafeMath",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "137:8:13",
+              "src": "137:8:11",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -1414,40 +1414,40 @@
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 737,
+          "id": 677,
           "nodeType": "StructuredDocumentation",
-          "src": "198:148:13",
+          "src": "198:148:11",
           "text": " @title Exchange\n @author Big Beluga\n Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct"
         },
         "fullyImplemented": true,
-        "id": 823,
+        "id": 763,
         "linearizedBaseContracts": [
-          823
+          763
         ],
         "name": "Army",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 740,
+            "id": 680,
             "libraryName": {
               "contractScope": null,
-              "id": 738,
+              "id": 678,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4865,
-              "src": "372:8:13",
+              "referencedDeclaration": 4770,
+              "src": "372:8:11",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$4865",
+                "typeIdentifier": "t_contract$_SafeMath_$4770",
                 "typeString": "library SafeMath"
               }
             },
             "nodeType": "UsingForDirective",
-            "src": "366:27:13",
+            "src": "366:27:11",
             "typeName": {
-              "id": 739,
+              "id": 679,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "385:7:13",
+              "src": "385:7:11",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1456,56 +1456,56 @@
           },
           {
             "canonicalName": "Army.Units",
-            "id": 746,
+            "id": 686,
             "members": [
               {
-                "id": 741,
+                "id": 681,
                 "name": "SiegeWeapon",
                 "nodeType": "EnumValue",
-                "src": "411:11:13"
+                "src": "411:11:11"
               },
               {
-                "id": 742,
+                "id": 682,
                 "name": "DefenseStructure",
                 "nodeType": "EnumValue",
-                "src": "424:16:13"
+                "src": "424:16:11"
               },
               {
-                "id": 743,
+                "id": 683,
                 "name": "Soldier",
                 "nodeType": "EnumValue",
-                "src": "442:7:13"
+                "src": "442:7:11"
               },
               {
-                "id": 744,
+                "id": 684,
                 "name": "Archer",
                 "nodeType": "EnumValue",
-                "src": "451:6:13"
+                "src": "451:6:11"
               },
               {
-                "id": 745,
+                "id": 685,
                 "name": "Cavalry",
                 "nodeType": "EnumValue",
-                "src": "459:7:13"
+                "src": "459:7:11"
               }
             ],
             "name": "Units",
             "nodeType": "EnumDefinition",
-            "src": "399:68:13"
+            "src": "399:68:11"
           },
           {
             "canonicalName": "Army.Info",
-            "id": 759,
+            "id": 699,
             "members": [
               {
                 "constant": false,
-                "id": 748,
+                "id": 688,
                 "mutability": "mutable",
                 "name": "siegeWeapons",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 759,
-                "src": "494:20:13",
+                "scope": 699,
+                "src": "494:20:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1513,10 +1513,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 747,
+                  "id": 687,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "494:7:13",
+                  "src": "494:7:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1527,13 +1527,13 @@
               },
               {
                 "constant": false,
-                "id": 750,
+                "id": 690,
                 "mutability": "mutable",
                 "name": "defenceStructures",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 759,
-                "src": "524:25:13",
+                "scope": 699,
+                "src": "524:25:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1541,10 +1541,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 749,
+                  "id": 689,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "524:7:13",
+                  "src": "524:7:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1555,13 +1555,13 @@
               },
               {
                 "constant": false,
-                "id": 752,
+                "id": 692,
                 "mutability": "mutable",
                 "name": "soldiers",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 759,
-                "src": "559:16:13",
+                "scope": 699,
+                "src": "559:16:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1569,10 +1569,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 751,
+                  "id": 691,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "559:7:13",
+                  "src": "559:7:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1583,13 +1583,13 @@
               },
               {
                 "constant": false,
-                "id": 754,
+                "id": 694,
                 "mutability": "mutable",
                 "name": "archers",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 759,
-                "src": "585:15:13",
+                "scope": 699,
+                "src": "585:15:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1597,10 +1597,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 753,
+                  "id": 693,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "585:7:13",
+                  "src": "585:7:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1611,13 +1611,13 @@
               },
               {
                 "constant": false,
-                "id": 756,
+                "id": 696,
                 "mutability": "mutable",
                 "name": "cavalry",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 759,
-                "src": "610:15:13",
+                "scope": 699,
+                "src": "610:15:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1625,10 +1625,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 755,
+                  "id": 695,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "610:7:13",
+                  "src": "610:7:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1639,13 +1639,13 @@
               },
               {
                 "constant": false,
-                "id": 758,
+                "id": 698,
                 "mutability": "mutable",
                 "name": "nextBattleCost",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 759,
-                "src": "635:22:13",
+                "scope": 699,
+                "src": "635:22:11",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1653,10 +1653,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 757,
+                  "id": 697,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "635:7:13",
+                  "src": "635:7:11",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1668,19 +1668,19 @@
             ],
             "name": "Info",
             "nodeType": "StructDefinition",
-            "scope": 823,
-            "src": "472:192:13",
+            "scope": 763,
+            "src": "472:192:11",
             "visibility": "public"
           },
           {
             "constant": true,
-            "id": 762,
+            "id": 702,
             "mutability": "constant",
             "name": "FILE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 823,
-            "src": "713:30:13",
+            "scope": 763,
+            "src": "713:30:11",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1688,10 +1688,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 760,
+              "id": 700,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "713:7:13",
+              "src": "713:7:11",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -1700,14 +1700,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "41726d79",
-              "id": 761,
+              "id": 701,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "737:6:13",
+              "src": "737:6:11",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_613fe43f92a0e74e1ca5e1892c80536a5f58041c4803133b617f3939fa1d8fd2",
@@ -1719,9 +1719,9 @@
           },
           {
             "body": {
-              "id": 788,
+              "id": 728,
               "nodeType": "Block",
-              "src": "870:221:13",
+              "src": "870:221:11",
               "statements": [
                 {
                   "expression": {
@@ -1731,26 +1731,26 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 784,
+                          "id": 724,
                           "name": "army",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 764,
-                          "src": "1071:4:13",
+                          "referencedDeclaration": 704,
+                          "src": "1071:4:11",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                            "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                             "typeString": "struct Army.Info memory"
                           }
                         },
-                        "id": 785,
+                        "id": 725,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "cavalry",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 756,
-                        "src": "1071:12:13",
+                        "referencedDeclaration": 696,
+                        "src": "1071:12:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1771,26 +1771,26 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 780,
+                              "id": 720,
                               "name": "army",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 764,
-                              "src": "1036:4:13",
+                              "referencedDeclaration": 704,
+                              "src": "1036:4:11",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                 "typeString": "struct Army.Info memory"
                               }
                             },
-                            "id": 781,
+                            "id": 721,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "archers",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 754,
-                            "src": "1036:12:13",
+                            "referencedDeclaration": 694,
+                            "src": "1036:12:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1811,26 +1811,26 @@
                                 "argumentTypes": null,
                                 "expression": {
                                   "argumentTypes": null,
-                                  "id": 776,
+                                  "id": 716,
                                   "name": "army",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 764,
-                                  "src": "1000:4:13",
+                                  "referencedDeclaration": 704,
+                                  "src": "1000:4:11",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                    "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                     "typeString": "struct Army.Info memory"
                                   }
                                 },
-                                "id": 777,
+                                "id": 717,
                                 "isConstant": false,
                                 "isLValue": true,
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "memberName": "soldiers",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 752,
-                                "src": "1000:13:13",
+                                "referencedDeclaration": 692,
+                                "src": "1000:13:11",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -1851,26 +1851,26 @@
                                     "argumentTypes": null,
                                     "expression": {
                                       "argumentTypes": null,
-                                      "id": 772,
+                                      "id": 712,
                                       "name": "army",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 764,
-                                      "src": "955:4:13",
+                                      "referencedDeclaration": 704,
+                                      "src": "955:4:11",
                                       "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                         "typeString": "struct Army.Info memory"
                                       }
                                     },
-                                    "id": 773,
+                                    "id": 713,
                                     "isConstant": false,
                                     "isLValue": true,
                                     "isPure": false,
                                     "lValueRequested": false,
                                     "memberName": "defenceStructures",
                                     "nodeType": "MemberAccess",
-                                    "referencedDeclaration": 750,
-                                    "src": "955:22:13",
+                                    "referencedDeclaration": 690,
+                                    "src": "955:22:11",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -1888,46 +1888,46 @@
                                     "argumentTypes": null,
                                     "expression": {
                                       "argumentTypes": null,
-                                      "id": 769,
+                                      "id": 709,
                                       "name": "army",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 764,
-                                      "src": "899:4:13",
+                                      "referencedDeclaration": 704,
+                                      "src": "899:4:11",
                                       "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                         "typeString": "struct Army.Info memory"
                                       }
                                     },
-                                    "id": 770,
+                                    "id": 710,
                                     "isConstant": false,
                                     "isLValue": true,
                                     "isPure": false,
                                     "lValueRequested": false,
                                     "memberName": "siegeWeapons",
                                     "nodeType": "MemberAccess",
-                                    "referencedDeclaration": 748,
-                                    "src": "899:34:13",
+                                    "referencedDeclaration": 688,
+                                    "src": "899:34:11",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 771,
+                                  "id": 711,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "memberName": "add",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 4698,
-                                  "src": "899:55:13",
+                                  "referencedDeclaration": 4603,
+                                  "src": "899:55:11",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 774,
+                                "id": 714,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -1935,28 +1935,28 @@
                                 "lValueRequested": false,
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "899:79:13",
+                                "src": "899:79:11",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 775,
+                              "id": 715,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "add",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 4698,
-                              "src": "899:100:13",
+                              "referencedDeclaration": 4603,
+                              "src": "899:100:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 778,
+                            "id": 718,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1964,28 +1964,28 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "899:115:13",
+                            "src": "899:115:11",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "id": 779,
+                          "id": 719,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "add",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 4698,
-                          "src": "899:136:13",
+                          "referencedDeclaration": 4603,
+                          "src": "899:136:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
                             "typeString": "function (uint256,uint256) pure returns (uint256)"
                           }
                         },
-                        "id": 782,
+                        "id": 722,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1993,28 +1993,28 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "899:150:13",
+                        "src": "899:150:11",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 783,
+                      "id": 723,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "add",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4698,
-                      "src": "899:171:13",
+                      "referencedDeclaration": 4603,
+                      "src": "899:171:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 786,
+                    "id": 726,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2022,22 +2022,22 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "899:185:13",
+                    "src": "899:185:11",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 768,
-                  "id": 787,
+                  "functionReturnParameters": 708,
+                  "id": 727,
                   "nodeType": "Return",
-                  "src": "880:204:13"
+                  "src": "880:204:11"
                 }
               ]
             },
             "documentation": null,
-            "id": 789,
+            "id": 729,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -2045,33 +2045,33 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 765,
+              "id": 705,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 764,
+                  "id": 704,
                   "mutability": "mutable",
                   "name": "army",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 789,
-                  "src": "825:16:13",
+                  "scope": 729,
+                  "src": "825:16:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                    "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                     "typeString": "struct Army.Info"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 763,
+                    "id": 703,
                     "name": "Info",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 759,
-                    "src": "825:4:13",
+                    "referencedDeclaration": 699,
+                    "src": "825:4:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Info_$759_storage_ptr",
+                      "typeIdentifier": "t_struct$_Info_$699_storage_ptr",
                       "typeString": "struct Army.Info"
                     }
                   },
@@ -2079,21 +2079,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "824:18:13"
+              "src": "824:18:11"
             },
             "returnParameters": {
-              "id": 768,
+              "id": 708,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 767,
+                  "id": 707,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 789,
-                  "src": "861:7:13",
+                  "scope": 729,
+                  "src": "861:7:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2101,10 +2101,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 766,
+                    "id": 706,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "861:7:13",
+                    "src": "861:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2114,19 +2114,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "860:9:13"
+              "src": "860:9:11"
             },
-            "scope": 823,
-            "src": "802:289:13",
+            "scope": 763,
+            "src": "802:289:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 821,
+              "id": 761,
               "nodeType": "Block",
-              "src": "1159:201:13",
+              "src": "1159:201:11",
               "statements": [
                 {
                   "expression": {
@@ -2135,7 +2135,7 @@
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 819,
+                    "id": 759,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2146,7 +2146,7 @@
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       },
-                      "id": 814,
+                      "id": 754,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2157,7 +2157,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 809,
+                        "id": 749,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2168,7 +2168,7 @@
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           },
-                          "id": 804,
+                          "id": 744,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2179,7 +2179,7 @@
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             },
-                            "id": 799,
+                            "id": 739,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2188,26 +2188,26 @@
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 796,
+                                "id": 736,
                                 "name": "army",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 791,
-                                "src": "1188:4:13",
+                                "referencedDeclaration": 731,
+                                "src": "1188:4:11",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                  "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                   "typeString": "struct Army.Info memory"
                                 }
                               },
-                              "id": 797,
+                              "id": 737,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "siegeWeapons",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 748,
-                              "src": "1188:17:13",
+                              "referencedDeclaration": 688,
+                              "src": "1188:17:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -2218,14 +2218,14 @@
                             "rightExpression": {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 798,
+                              "id": 738,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "1209:1:13",
+                              "src": "1209:1:11",
                               "subdenomination": null,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
@@ -2233,7 +2233,7 @@
                               },
                               "value": "0"
                             },
-                            "src": "1188:22:13",
+                            "src": "1188:22:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -2247,7 +2247,7 @@
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             },
-                            "id": 803,
+                            "id": 743,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2256,26 +2256,26 @@
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 800,
+                                "id": 740,
                                 "name": "army",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 791,
-                                "src": "1226:4:13",
+                                "referencedDeclaration": 731,
+                                "src": "1226:4:11",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                  "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                   "typeString": "struct Army.Info memory"
                                 }
                               },
-                              "id": 801,
+                              "id": 741,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "defenceStructures",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 750,
-                              "src": "1226:22:13",
+                              "referencedDeclaration": 690,
+                              "src": "1226:22:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -2286,14 +2286,14 @@
                             "rightExpression": {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 802,
+                              "id": 742,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "1252:1:13",
+                              "src": "1252:1:11",
                               "subdenomination": null,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
@@ -2301,13 +2301,13 @@
                               },
                               "value": "0"
                             },
-                            "src": "1226:27:13",
+                            "src": "1226:27:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
                             }
                           },
-                          "src": "1188:65:13",
+                          "src": "1188:65:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -2321,7 +2321,7 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 808,
+                          "id": 748,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2330,26 +2330,26 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 805,
+                              "id": 745,
                               "name": "army",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 791,
-                              "src": "1269:4:13",
+                              "referencedDeclaration": 731,
+                              "src": "1269:4:11",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                                "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                                 "typeString": "struct Army.Info memory"
                               }
                             },
-                            "id": 806,
+                            "id": 746,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "archers",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 754,
-                            "src": "1269:12:13",
+                            "referencedDeclaration": 694,
+                            "src": "1269:12:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2360,14 +2360,14 @@
                           "rightExpression": {
                             "argumentTypes": null,
                             "hexValue": "30",
-                            "id": 807,
+                            "id": 747,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "1285:1:13",
+                            "src": "1285:1:11",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_0_by_1",
@@ -2375,13 +2375,13 @@
                             },
                             "value": "0"
                           },
-                          "src": "1269:17:13",
+                          "src": "1269:17:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "src": "1188:98:13",
+                        "src": "1188:98:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2395,7 +2395,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 813,
+                        "id": 753,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2404,26 +2404,26 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 810,
+                            "id": 750,
                             "name": "army",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 791,
-                            "src": "1302:4:13",
+                            "referencedDeclaration": 731,
+                            "src": "1302:4:11",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                              "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                               "typeString": "struct Army.Info memory"
                             }
                           },
-                          "id": 811,
+                          "id": 751,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "cavalry",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 756,
-                          "src": "1302:12:13",
+                          "referencedDeclaration": 696,
+                          "src": "1302:12:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2434,14 +2434,14 @@
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "30",
-                          "id": 812,
+                          "id": 752,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1318:1:13",
+                          "src": "1318:1:11",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
@@ -2449,13 +2449,13 @@
                           },
                           "value": "0"
                         },
-                        "src": "1302:17:13",
+                        "src": "1302:17:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         }
                       },
-                      "src": "1188:131:13",
+                      "src": "1188:131:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -2469,7 +2469,7 @@
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 818,
+                      "id": 758,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2478,26 +2478,26 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 815,
+                          "id": 755,
                           "name": "army",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 791,
-                          "src": "1335:4:13",
+                          "referencedDeclaration": 731,
+                          "src": "1335:4:11",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                            "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                             "typeString": "struct Army.Info memory"
                           }
                         },
-                        "id": 816,
+                        "id": 756,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "soldiers",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 752,
-                        "src": "1335:13:13",
+                        "referencedDeclaration": 692,
+                        "src": "1335:13:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2508,14 +2508,14 @@
                       "rightExpression": {
                         "argumentTypes": null,
                         "hexValue": "30",
-                        "id": 817,
+                        "id": 757,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1352:1:13",
+                        "src": "1352:1:11",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
@@ -2523,27 +2523,27 @@
                         },
                         "value": "0"
                       },
-                      "src": "1335:18:13",
+                      "src": "1335:18:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "src": "1188:165:13",
+                    "src": "1188:165:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 795,
-                  "id": 820,
+                  "functionReturnParameters": 735,
+                  "id": 760,
                   "nodeType": "Return",
-                  "src": "1169:184:13"
+                  "src": "1169:184:11"
                 }
               ]
             },
             "documentation": null,
-            "id": 822,
+            "id": 762,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -2551,33 +2551,33 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 792,
+              "id": 732,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 791,
+                  "id": 731,
                   "mutability": "mutable",
                   "name": "army",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 822,
-                  "src": "1117:16:13",
+                  "scope": 762,
+                  "src": "1117:16:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Info_$759_memory_ptr",
+                    "typeIdentifier": "t_struct$_Info_$699_memory_ptr",
                     "typeString": "struct Army.Info"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 790,
+                    "id": 730,
                     "name": "Info",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 759,
-                    "src": "1117:4:13",
+                    "referencedDeclaration": 699,
+                    "src": "1117:4:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Info_$759_storage_ptr",
+                      "typeIdentifier": "t_struct$_Info_$699_storage_ptr",
                       "typeString": "struct Army.Info"
                     }
                   },
@@ -2585,21 +2585,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1116:18:13"
+              "src": "1116:18:11"
             },
             "returnParameters": {
-              "id": 795,
+              "id": 735,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 794,
+                  "id": 734,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 822,
-                  "src": "1153:4:13",
+                  "scope": 762,
+                  "src": "1153:4:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2607,10 +2607,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 793,
+                    "id": 733,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1153:4:13",
+                    "src": "1153:4:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2620,20 +2620,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1152:6:13"
+              "src": "1152:6:11"
             },
-            "scope": 823,
-            "src": "1097:263:13",
+            "scope": 763,
+            "src": "1097:263:11",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 824,
-        "src": "347:1015:13"
+        "scope": 764,
+        "src": "347:1015:11"
       }
     ],
-    "src": "33:1330:13"
+    "src": "33:1330:11"
   },
   "compiler": {
     "name": "solc",
@@ -2641,7 +2641,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-09-20T19:32:51.668Z",
+  "updatedAt": "2020-09-21T10:49:25.069Z",
   "devdoc": {
     "author": "Big Beluga Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct",
     "kind": "dev",

@@ -36,20 +36,15 @@ library FundOperations {
             length > 0,
             'FundOperations#Deposit: Time must be greater than 0'
         );
-        address tsuno = Storage.getTsuno(state);
-        uint256 balance = ITsuno(tsuno).balanceOf(msg.sender);
-        require(
-            balance >= amount,
-            'FundOperations#Deposit: Balance must be greater than amount'
-        );
-        uint256 lastRewardBlock = Storage.getLastRewardBlock(state);
+
         uint256 reward = Rewards.calculateReward(amount, length);
 
+        address tsuno = Storage.getTsuno(state);
         ITsuno(tsuno).transferFrom(msg.sender, address(this), amount);
 
         Storage.lockinTsuno(state, msg.sender, amount, length, reward);
 
-        Events.logDeposit(state, msg.sender, amount, reward);
+        Events.logDeposit(state, tsuno, amount, reward);
     }
 
     function withdraw(Storage.State storage state) public {

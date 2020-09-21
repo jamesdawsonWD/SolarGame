@@ -16,10 +16,6 @@ contract TestMaster is Master {
         g_state.masters[msg.sender].army.defenceStructures = 1000;
     }
 
-    function get1() public pure returns (uint256) {
-        return 1;
-    }
-
     function giveArmyB() public {
         g_state.masters[msg.sender].army.soldiers = 1000;
         g_state.masters[msg.sender].army.cavalry = 1000;

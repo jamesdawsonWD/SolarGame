@@ -7,6 +7,10 @@ export const state: UserInterfaceManager = {
         show: false,
         content: '',
         data: {}
+    },
+    error: {
+        name: '',
+        message: ''
     }
 };
 

@@ -44,6 +44,7 @@ contract('FundOperations', accounts => {
             const bal = await Master.getBalance({
                 from: UserA
             });
+            console.log(bal);
             assert.equal(bal, 10000);
         });
     });

@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity 0.6.12;
-import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+import {ERC20} from '@openzeppelin/contracts/token/ERC20/ERC20.sol';
+import {Ownable} from '@openzeppelin/contracts/access/Ownable.sol';
 
-contract TsunoToken is ERC20("TsunoToken", "TSUNO"), Ownable {
+contract TsunoToken is ERC20('TsunoToken', 'TSUNO'), Ownable {
     address private operator;
     modifier onlyOperator() {
         require(msg.sender == operator);

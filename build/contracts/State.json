@@ -1,9 +1,9 @@
 {
   "contractName": "State",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Big Beluga Base-level contract that holds the state\",\"kind\":\"dev\",\"methods\":{},\"title\":\"State\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":\"State\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":{\"keccak256\":\"0x8d35f5414e4181e424678039b1bdefdc88402ff6ee54009347adec0c58fcdcd6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bcfa17b4ce14cb7b93b0ddeea2adb872aedfdaa639d2d976992ee9f4fe1ee316\",\"dweb:/ipfs/QmNYrcxnk98CsWLKtjThUBrZP73SsnPjeeKmSL3rsSGd3u\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Army.sol\":{\"keccak256\":\"0x37a693eac5f7338889e1632af6410fa5fbae095382765db963883e839a073bfd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6b3d0bc806a127f0574890bf5428d5fb31f05589c4d982324bef7e4d20a954e5\",\"dweb:/ipfs/QmUKGsGVJaXb84c2FfFGK5Spvvcu8hmoCmxqaPZ5oGcghf\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xc3b38e455d59707583600b3a42e8a3389c7406a6d88db5f0384efacaea535b7e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ba39939e485ad6ed1a6536b3da84bcf61bd9922aab49d641648054703c3c7891\",\"dweb:/ipfs/QmRCGqw4GjCL5a33cNRKVscvJ83nY5fCh2iwvTS58aWLeE\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Samurai.sol\":{\"keccak256\":\"0x6bd2db87a7499bf5112d855bd100b0ff2259434e9b21507503d5e02eb8da67bc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://32098d772673029a5ca6d038cb72c5915aa4215c7992f1e625361b04b8ce7ab6\",\"dweb:/ipfs/QmZXYFdG1Tx1EnMNteWNLEpEJNY4QEKQH8injxF4SSoQnJ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol\":{\"keccak256\":\"0x6d9bf1d249559b016525860c0519214964a8ecfcdf005d8b5b38e1afd05c28b8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb35d873f93c4ec5cce4806c23db77319f97d8ae1573b0b78421c6791eb071d7\",\"dweb:/ipfs/QmPdZ142RFCbgUaGRvGQbeSdhNofD6hTNLL1vqMtaqvFuq\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122059cc961e8cfc18675b3a1af650ef54c768612404e9d8ae5a02bbe9ac0379c9ce64736f6c634300060c0033",
-  "deployedBytecode": "0x6080604052600080fdfea264697066735822122059cc961e8cfc18675b3a1af650ef54c768612404e9d8ae5a02bbe9ac0379c9ce64736f6c634300060c0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Big Beluga Base-level contract that holds the state\",\"kind\":\"dev\",\"methods\":{},\"title\":\"State\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":\"State\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":{\"keccak256\":\"0x8d35f5414e4181e424678039b1bdefdc88402ff6ee54009347adec0c58fcdcd6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bcfa17b4ce14cb7b93b0ddeea2adb872aedfdaa639d2d976992ee9f4fe1ee316\",\"dweb:/ipfs/QmNYrcxnk98CsWLKtjThUBrZP73SsnPjeeKmSL3rsSGd3u\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Army.sol\":{\"keccak256\":\"0x37a693eac5f7338889e1632af6410fa5fbae095382765db963883e839a073bfd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6b3d0bc806a127f0574890bf5428d5fb31f05589c4d982324bef7e4d20a954e5\",\"dweb:/ipfs/QmUKGsGVJaXb84c2FfFGK5Spvvcu8hmoCmxqaPZ5oGcghf\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xc3b38e455d59707583600b3a42e8a3389c7406a6d88db5f0384efacaea535b7e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ba39939e485ad6ed1a6536b3da84bcf61bd9922aab49d641648054703c3c7891\",\"dweb:/ipfs/QmRCGqw4GjCL5a33cNRKVscvJ83nY5fCh2iwvTS58aWLeE\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Samurai.sol\":{\"keccak256\":\"0x6bd2db87a7499bf5112d855bd100b0ff2259434e9b21507503d5e02eb8da67bc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://32098d772673029a5ca6d038cb72c5915aa4215c7992f1e625361b04b8ce7ab6\",\"dweb:/ipfs/QmZXYFdG1Tx1EnMNteWNLEpEJNY4QEKQH8injxF4SSoQnJ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol\":{\"keccak256\":\"0xf8c446dd6279df259996662fec8f3c58e160ab361dde6b39a7498c073816e5ce\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ab2c22da7b5a9eddeaf694d4389418a05a7a88dfc262871c7d09a91d1e037826\",\"dweb:/ipfs/QmZ8ZKXyot4UtcVTB8XHpbWBLmCV78WF4WqwZTsEc45YnH\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220431b9b0c23b04e53e8231183524ed7602930780eef51967a13d3dc269d4f9bab64736f6c634300060c0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220431b9b0c23b04e53e8231183524ed7602930780eef51967a13d3dc269d4f9bab64736f6c634300060c0033",
   "immutableReferences": {},
   "sourceMap": "229:45:5:-:0;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "229:45:5:-:0;;;;;",
@@ -45,7 +45,7 @@
         "id": 204,
         "nodeType": "ImportDirective",
         "scope": 209,
-        "sourceUnit": 3674,
+        "sourceUnit": 3614,
         "src": "92:42:5",
         "symbolAliases": [
           {
@@ -98,7 +98,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_State_$3090_storage",
+              "typeIdentifier": "t_struct$_State_$3030_storage",
               "typeString": "struct Storage.State"
             },
             "typeName": {
@@ -106,10 +106,10 @@
               "id": 206,
               "name": "Storage.State",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3090,
+              "referencedDeclaration": 3030,
               "src": "250:13:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_State_$3090_storage_ptr",
+                "typeIdentifier": "t_struct$_State_$3030_storage_ptr",
                 "typeString": "struct Storage.State"
               }
             },
@@ -159,7 +159,7 @@
         "id": 204,
         "nodeType": "ImportDirective",
         "scope": 209,
-        "sourceUnit": 3674,
+        "sourceUnit": 3614,
         "src": "92:42:5",
         "symbolAliases": [
           {
@@ -212,7 +212,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_State_$3090_storage",
+              "typeIdentifier": "t_struct$_State_$3030_storage",
               "typeString": "struct Storage.State"
             },
             "typeName": {
@@ -220,10 +220,10 @@
               "id": 206,
               "name": "Storage.State",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3090,
+              "referencedDeclaration": 3030,
               "src": "250:13:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_State_$3090_storage_ptr",
+                "typeIdentifier": "t_struct$_State_$3030_storage_ptr",
                 "typeString": "struct Storage.State"
               }
             },
@@ -243,7 +243,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-09-20T19:32:51.652Z",
+  "updatedAt": "2020-09-21T10:49:25.060Z",
   "devdoc": {
     "author": "Big Beluga Base-level contract that holds the state",
     "kind": "dev",

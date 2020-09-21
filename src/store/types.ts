@@ -47,6 +47,7 @@ export interface Deposit {
 export interface UserInterfaceManager {
     isLoading: boolean;
     modal: Modal;
+    error: Error;
 }
 
 export interface Modal {

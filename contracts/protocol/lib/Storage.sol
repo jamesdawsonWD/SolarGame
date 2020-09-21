@@ -1,12 +1,11 @@
-// SPDX-License-Identifier: MIT
 pragma solidity 0.6.12;
 pragma experimental ABIEncoderV2;
 
-import {SafeMath} from "@openzeppelin/contracts/math/SafeMath.sol";
-import {Math} from "./Math.sol";
-import {Require} from "./Require.sol";
-import {Samurai} from "./Samurai.sol";
-import {Army} from "./Army.sol";
+import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
+import {Math} from './Math.sol';
+import {Require} from './Require.sol';
+import {Samurai} from './Samurai.sol';
+import {Army} from './Army.sol';
 
 /**
  * @title Storage
@@ -21,7 +20,7 @@ library Storage {
 
     // ============ Constants ============
 
-    bytes32 constant FILE = "Storage";
+    bytes32 constant FILE = 'Storage';
 
     // // ============ Structs ============
 

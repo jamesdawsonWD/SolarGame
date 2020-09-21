@@ -20,6 +20,11 @@ import Button from '@/components/generics/Button.vue';
     components: {
         Button
     },
+    data() {
+        return {
+            formSubmitted: false
+        };
+    },
     methods: {
         ...mapActions([
             'setAllowance',
@@ -28,11 +33,17 @@ import Button from '@/components/generics/Button.vue';
             'closeModal'
         ]),
         submit: async function() {
-            this.setAllowance(this.amount)
-                .then(() => {
-                    this.closeModal();
-                })
-                .catch(err => this.setError(err));
+            if (!this.formSubmitted) {
+                this.formSubmitted = true;
+                try {
+                    await this.setAllowance(this.amount);
+                    await this.closeModal();
+                    this.formSubmitted = false;
+                } catch {
+                    err => this.setError(err);
+                    this.formSubmitted = false;
+                }
+            }
         }
     }
 })

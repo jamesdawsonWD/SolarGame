@@ -2,9 +2,9 @@
 
 // code to deploy DyDx solo protocol locally
 pragma solidity 0.6.12;
-import {State} from "./State.sol";
-import {Storage} from "./lib/Storage.sol";
-import {Rewards} from "./lib/Rewards.sol";
+import {State} from './State.sol';
+import {Storage} from './lib/Storage.sol';
+import {Rewards} from './lib/Rewards.sol';
 
 contract Getters is State {
     function getBalance() public view returns (uint256) {

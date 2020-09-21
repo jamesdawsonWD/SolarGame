@@ -6,11 +6,16 @@
             <router-link to="/about">About</router-link>
         </div>
         <router-view />
-        <div class="userid">{{ Address }}</div>
-        <h2>Deposited</h2>
-        <div>{{ Balance | decimalsPrecision(18) | toFixed(4) }}</div>
-        <h2>Available Tsuno</h2>
-        <div>{{ TsunoBalance | decimalsPrecision(18) | toFixed(4) }}</div>
+        <div>
+            <h2>Deposited</h2>
+            <div>{{ Balance | decimalsPrecision(18) | toFixed(4) }}</div>
+            <h2>Available Tsuno</h2>
+            <div>{{ TsunoBalance | decimalsPrecision(18) | toFixed(4) }}</div>
+            <h2>Date Withdrawable</h2>
+            <div>{{ DateUnlocked }}</div>
+            <h2>Recent Error</h2>
+            <div>{{ RecentError | json }}</div>
+        </div>
         <h2>Tools</h2>
         <Button title="Get Balance" @clicked="getBalance"></Button>
         <Button
@@ -32,7 +37,14 @@ import { Deposit } from '@/store/types';
 export default {
     name: 'App',
     computed: {
-        ...mapGetters(['Address', 'Balance', 'TsunoBalance', 'ShowModal'])
+        ...mapGetters([
+            'Address',
+            'Balance',
+            'TsunoBalance',
+            'ShowModal',
+            'DateUnlocked',
+            'RecentError'
+        ])
     },
     components: {
         DepositForm,
@@ -46,7 +58,8 @@ export default {
             'mintTsuno',
             'getTsunoBalance',
             'deposit',
-            'closeModal'
+            'closeModal',
+            'getDateUnlocked'
         ]),
         depositAmount: function(deposit: Deposit) {
             this.deposit(deposit);
@@ -57,6 +70,7 @@ export default {
         await this.bootstrapContracts();
         await this.getBalance();
         await this.getTsunoBalance();
+        await this.getDateUnlocked();
     }
 };
 </script>

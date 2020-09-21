@@ -101,62 +101,62 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_tsuno\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"defender\",\"type\":\"address\"}],\"name\":\"attack\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"stakeTsuno\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"stakedDays\",\"type\":\"uint256\"}],\"name\":\"getPotentialReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Master.sol\":\"Master\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Getters.sol\":{\"keccak256\":\"0x17b1622d6757003f257b4cfe7969757fbad74848abfb3e493a079128f975109c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6e874a9f358741b2b9f1c5f35aa7d55665a3fdabd33bdb61884d6afb301075b7\",\"dweb:/ipfs/QmdjoqRqY8wnfhqzwQPX76udGg9g18mAE3pDa6B2k28qtT\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Master.sol\":{\"keccak256\":\"0xdbc372473232da264398f853395b2ae460cca11822f34ae565c458f45ccccaae\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://553e4553bb6bfea6bf423caa151b6466237b5c2f9fea15e28026d6444e7ae585\",\"dweb:/ipfs/Qmc1nY4VsF1fd49Vj6Bu7grUUj2cuf8odBGyj5xsVW27pD\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol\":{\"keccak256\":\"0x7ea7711c37e26722bb442bca0bfa865ca23d54882310a248bc2cef76775f2475\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://031a5eb410b51c7c2e63c4de20cac6894be3ae012cb15805943eb8a6101b61c5\",\"dweb:/ipfs/QmRqWKR1QYvNgo1Bb1PX4QG9xsxjKZyeWxuFkt971Cqpxv\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":{\"keccak256\":\"0x8d35f5414e4181e424678039b1bdefdc88402ff6ee54009347adec0c58fcdcd6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bcfa17b4ce14cb7b93b0ddeea2adb872aedfdaa639d2d976992ee9f4fe1ee316\",\"dweb:/ipfs/QmNYrcxnk98CsWLKtjThUBrZP73SsnPjeeKmSL3rsSGd3u\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/TsunoToken.sol\":{\"keccak256\":\"0x2e1d81f41848815c34e12412db9a9afc1f787b4657cf2d879aa0006763b613ac\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://71130dbed3d6a9854b28ffd977e984c6b203f2e3fd575d05b9e4f51662e52d7f\",\"dweb:/ipfs/QmbVN8QRTPwXffPxT7aMEXH6G781FhRJjXozgder5DYafB\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/FundOperations.sol\":{\"keccak256\":\"0xb27cdaf31323c9b8a93d5335513d399be711faa9c78d69439b1f9e9e53ecb8d6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7f7283c02a76665e62fd46d163a849c813afec4f7f1f2760c015bdd3d939e8e3\",\"dweb:/ipfs/QmYtiCX1eHy5Jwp654iDF829537vnhp9tXEeSpXKBtasdd\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/GameOperations.sol\":{\"keccak256\":\"0x1014c7b79041afa3000483f9bb1df020abc2c4ba8760bda2e017275a16a98816\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6be79ef94fad72c97cb4b37aa04f450ac6716d9275d0c2b7e4a14ef012359e95\",\"dweb:/ipfs/QmVsvpyKBTdvuDHiyvhwmnQ3LR5NneXFVHUwUUHr76G4f5\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/interfaces/ITsuno.sol\":{\"keccak256\":\"0xd00ffd2b9b1712b9323d7f56bbc83b6c47387d3ec2b1cfd8c0b8840bbd47f59b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://df8b894d510e8947256dd4c5fe4bbdc6ad175c11404447163860edc374352e51\",\"dweb:/ipfs/QmRrk1tBfL9FMMn7hazyRZyBXyfLKGm5ArDji2LeL1qSdy\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Army.sol\":{\"keccak256\":\"0x37a693eac5f7338889e1632af6410fa5fbae095382765db963883e839a073bfd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6b3d0bc806a127f0574890bf5428d5fb31f05589c4d982324bef7e4d20a954e5\",\"dweb:/ipfs/QmUKGsGVJaXb84c2FfFGK5Spvvcu8hmoCmxqaPZ5oGcghf\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Battle.sol\":{\"keccak256\":\"0xaef681b45745bfc872b56b02e7ca5995b12a6860aef1150c8ba0085eb8ef305f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dad83e7b63e0ab18345880b4c48cdb10c4685b6a124117bf47ed8e1785d0771e\",\"dweb:/ipfs/Qmf2fQhVsh5Keiix6yHDDfXefcTPii15vmrszDaKEYbeSp\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Events.sol\":{\"keccak256\":\"0x95f13003c8c08f93d92b3d4c552f733f06e19f50e42de7091d8ce083046544b6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f9c0a4b28e7f96a192e7a23dfe3e7d65f4a3d5eb99a1dabdcba1bd1ef657f28\",\"dweb:/ipfs/QmbsEiJ5TzRfTmiZbFatzcewpTCQssBWHr1crfdvbW79uk\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xc3b38e455d59707583600b3a42e8a3389c7406a6d88db5f0384efacaea535b7e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ba39939e485ad6ed1a6536b3da84bcf61bd9922aab49d641648054703c3c7891\",\"dweb:/ipfs/QmRCGqw4GjCL5a33cNRKVscvJ83nY5fCh2iwvTS58aWLeE\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Rewards.sol\":{\"keccak256\":\"0xf02dd22ca23a294a77114d117e7ca3a412728c72012e93d7e73da9ddb69ff78a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cfe00fd8cb41cd503e57915198ebbc85b728f4c83f5a8f5509ceff5291512672\",\"dweb:/ipfs/QmfE2CcRfZ5yoDjoNKu1RyQRhLyh9WVuB82ubMkmgfe9ru\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Samurai.sol\":{\"keccak256\":\"0x6bd2db87a7499bf5112d855bd100b0ff2259434e9b21507503d5e02eb8da67bc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://32098d772673029a5ca6d038cb72c5915aa4215c7992f1e625361b04b8ce7ab6\",\"dweb:/ipfs/QmZXYFdG1Tx1EnMNteWNLEpEJNY4QEKQH8injxF4SSoQnJ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol\":{\"keccak256\":\"0x6d9bf1d249559b016525860c0519214964a8ecfcdf005d8b5b38e1afd05c28b8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb35d873f93c4ec5cce4806c23db77319f97d8ae1573b0b78421c6791eb071d7\",\"dweb:/ipfs/QmPdZ142RFCbgUaGRvGQbeSdhNofD6hTNLL1vqMtaqvFuq\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Strings.sol\":{\"keccak256\":\"0xb87a99d916fde8005d528022d716f17c39c161a9fb380952f25c3cb061749a4a\",\"urls\":[\"bzz-raw://55e336c2f7d7a2fc2ea0e5640721e82aaf51bac889b0dd102eeacb53c88ed744\",\"dweb:/ipfs/QmPG1rjCcAxiGPauFuYqpgpcdSDZJ3h1XZPFDbAXEpWTNZ\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0xdb26cbf4d028490f49831a7865c2fe1b28db44b535ca8d343785a3b768aae183\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://840b14ce0315c47d49ba328f1f9fa7654ded1c9e1559e6c5e777a7b2dc28bf0a\",\"dweb:/ipfs/QmTLLabn4wcfGro9LEmUXUN2nwKqZSotXMvjDCLXEnLtZP\"]},\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x4bd6402ca6b3419008c2b482aff54e66836e8cb4eba2680e42ac5884ae6424fc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8f9f711fb8d0d92aeea1c327e3845d13ca1fa8f142e47f8723cd5b3106fb29a3\",\"dweb:/ipfs/QmVQUReDW9f4zGqhizwHnyU8EntMs95tbASdqkGncnikba\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x91e0bd6a6762d2a1700dab0849de8422611355100576c4beef1e80d82a4104a0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://73bbd77af0a8b07255d2ffa20728bcf13b116007c9ddac5d37046cfabb0e1e02\",\"dweb:/ipfs/QmRgZgWCWCSMTTaok6o4QvWA6MgB4goS8qpb3sN7bAvaZ9\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x5c26b39d26f7ed489e555d955dcd3e01872972e71fdd1528e93ec164e4f23385\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://efdc632af6960cf865dbc113665ea1f5b90eab75cc40ec062b2f6ae6da582017\",\"dweb:/ipfs/QmfAZFDuG62vxmAN9DnXApv7e7PMzPqi4RkqqZHLMSQiY5\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf5fa8cbdffa5ef8be49b246b5628facc30b71707e78a45d80d93b64eff3fe390\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://774e78a9ff32792cc95db4d2ceaf3a7965bb7f0bea5e6cb7cff182b450d44b37\",\"dweb:/ipfs/QmRRMC4uj7eAcLW7chynA3sNEYULMFazdLwQHKHQPyzAbA\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060405161043638038061043683398101604081905261002f91610054565b600c80546001600160a01b0319166001600160a01b0392909216919091179055610082565b600060208284031215610065578081fd5b81516001600160a01b038116811461007b578182fd5b9392505050565b6103a5806100916000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c806312065fe0146100675780633ccfd60b146100855780633d18b9121461008f57806382c7d55714610097578063d018db3e146100aa578063e2bbb158146100bd575b600080fd5b61006f6100d0565b60405161007c9190610331565b60405180910390f35b61008d6100e2565b005b61006f61014b565b61006f6100a5366004610310565b610158565b61008d6100b83660046102e9565b61016b565b61008d6100cb366004610310565b6101da565b60006100dd60003361024a565b905090565b604051626fcb7160e41b815273__FundOperations________________________906306fcb7109061011990600090600401610331565b60006040518083038186803b15801561013157600080fd5b505af4158015610145573d6000803e3d6000fd5b50505050565b60006100dd600033610266565b60006101648383610285565b9392505050565b604051638bde9a9f60e01b815273__GameOperations________________________90638bde9a9f906101a7906000903390869060040161033a565b60006040518083038186803b1580156101bf57600080fd5b505af41580156101d3573d6000803e3d6000fd5b5050505050565b6040516339d7f36b60e21b815273__FundOperations________________________9063e75fcdac906102169060009086908690600401610359565b60006040518083038186803b15801561022e57600080fd5b505af4158015610242573d6000803e3d6000fd5b505050505050565b6001600160a01b03166000908152602091909152604090205490565b6001600160a01b03166000908152602091909152604090206003015490565b60008060018311156102ab5761071c8311156102a35761071c6102a8565b600183035b90505b60006308f0d1808411156102c3576308f0d1806102c5565b845b90506359682f00820261038e82020165013dd0571200868202049695505050505050565b6000602082840312156102fa578081fd5b81356001600160a01b0381168114610164578182fd5b60008060408385031215610322578081fd5b50508035926020909101359150565b90815260200190565b9283526001600160a01b03918216602084015216604082015260600190565b928352602083019190915260408201526060019056fea26469706673582212201c05bcd80073ddc9a8b8615f1b72c31addb1c3251ec5a408f345c6f893155d5764736f6c634300060c0033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c806312065fe0146100675780633ccfd60b146100855780633d18b9121461008f57806382c7d55714610097578063d018db3e146100aa578063e2bbb158146100bd575b600080fd5b61006f6100d0565b60405161007c9190610331565b60405180910390f35b61008d6100e2565b005b61006f61014b565b61006f6100a5366004610310565b610158565b61008d6100b83660046102e9565b61016b565b61008d6100cb366004610310565b6101da565b60006100dd60003361024a565b905090565b604051626fcb7160e41b815273__FundOperations________________________906306fcb7109061011990600090600401610331565b60006040518083038186803b15801561013157600080fd5b505af4158015610145573d6000803e3d6000fd5b50505050565b60006100dd600033610266565b60006101648383610285565b9392505050565b604051638bde9a9f60e01b815273__GameOperations________________________90638bde9a9f906101a7906000903390869060040161033a565b60006040518083038186803b1580156101bf57600080fd5b505af41580156101d3573d6000803e3d6000fd5b5050505050565b6040516339d7f36b60e21b815273__FundOperations________________________9063e75fcdac906102169060009086908690600401610359565b60006040518083038186803b15801561022e57600080fd5b505af4158015610242573d6000803e3d6000fd5b505050505050565b6001600160a01b03166000908152602091909152604090205490565b6001600160a01b03166000908152602091909152604090206003015490565b60008060018311156102ab5761071c8311156102a35761071c6102a8565b600183035b90505b60006308f0d1808411156102c3576308f0d1806102c5565b845b90506359682f00820261038e82020165013dd0571200868202049695505050505050565b6000602082840312156102fa578081fd5b81356001600160a01b0381168114610164578182fd5b60008060408385031215610322578081fd5b50508035926020909101359150565b90815260200190565b9283526001600160a01b03918216602084015216604082015260600190565b928352602083019190915260408201526060019056fea26469706673582212201c05bcd80073ddc9a8b8615f1b72c31addb1c3251ec5a408f345c6f893155d5764736f6c634300060c0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_tsuno\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"defender\",\"type\":\"address\"}],\"name\":\"attack\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"stakeTsuno\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"stakedDays\",\"type\":\"uint256\"}],\"name\":\"getPotentialReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/master.sol\":\"Master\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Getters.sol\":{\"keccak256\":\"0x247aa82dfaf44714fa2997349365986ee787b321028fb61fe148e718e7e44c87\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d0e78a0c5d336ddf72d08aac9f08f3d04316d16387b04971e44b4007adf229ba\",\"dweb:/ipfs/QmZ7JMWiJXrxvYL4Ks4VgwqJD5LDYhgZZFcnbggLcNUmwD\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol\":{\"keccak256\":\"0x7ea7711c37e26722bb442bca0bfa865ca23d54882310a248bc2cef76775f2475\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://031a5eb410b51c7c2e63c4de20cac6894be3ae012cb15805943eb8a6101b61c5\",\"dweb:/ipfs/QmRqWKR1QYvNgo1Bb1PX4QG9xsxjKZyeWxuFkt971Cqpxv\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":{\"keccak256\":\"0x8d35f5414e4181e424678039b1bdefdc88402ff6ee54009347adec0c58fcdcd6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bcfa17b4ce14cb7b93b0ddeea2adb872aedfdaa639d2d976992ee9f4fe1ee316\",\"dweb:/ipfs/QmNYrcxnk98CsWLKtjThUBrZP73SsnPjeeKmSL3rsSGd3u\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/TsunoToken.sol\":{\"keccak256\":\"0x89a64b290b5155763d61fa01134617e00f3e4c35d4c3f484a9e05ed2511de86f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7d9d4c17b247dfecc71cbe46f8a7c647ba0dd30b5244030f1435a7cbefe61514\",\"dweb:/ipfs/QmYrUVoWrEe7ApdaeuefEqNzJMxm59RUzMtvDFeZubNDuh\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/FundOperations.sol\":{\"keccak256\":\"0x8385707c3502fdb07908dabf837116e4d83f97c66b66acfb557346fd577da3d5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://69def92597dfb79c5ca4a87897c91a3d8e45796ebd6698b109fd6811e9749639\",\"dweb:/ipfs/Qmb8hYEVLgg1URse9yQSajbwBs3AbXjqte6fLnWVhW1Spu\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/GameOperations.sol\":{\"keccak256\":\"0x1014c7b79041afa3000483f9bb1df020abc2c4ba8760bda2e017275a16a98816\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6be79ef94fad72c97cb4b37aa04f450ac6716d9275d0c2b7e4a14ef012359e95\",\"dweb:/ipfs/QmVsvpyKBTdvuDHiyvhwmnQ3LR5NneXFVHUwUUHr76G4f5\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/interfaces/ITsuno.sol\":{\"keccak256\":\"0xd00ffd2b9b1712b9323d7f56bbc83b6c47387d3ec2b1cfd8c0b8840bbd47f59b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://df8b894d510e8947256dd4c5fe4bbdc6ad175c11404447163860edc374352e51\",\"dweb:/ipfs/QmRrk1tBfL9FMMn7hazyRZyBXyfLKGm5ArDji2LeL1qSdy\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Army.sol\":{\"keccak256\":\"0x37a693eac5f7338889e1632af6410fa5fbae095382765db963883e839a073bfd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6b3d0bc806a127f0574890bf5428d5fb31f05589c4d982324bef7e4d20a954e5\",\"dweb:/ipfs/QmUKGsGVJaXb84c2FfFGK5Spvvcu8hmoCmxqaPZ5oGcghf\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Battle.sol\":{\"keccak256\":\"0xaef681b45745bfc872b56b02e7ca5995b12a6860aef1150c8ba0085eb8ef305f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dad83e7b63e0ab18345880b4c48cdb10c4685b6a124117bf47ed8e1785d0771e\",\"dweb:/ipfs/Qmf2fQhVsh5Keiix6yHDDfXefcTPii15vmrszDaKEYbeSp\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Events.sol\":{\"keccak256\":\"0x95f13003c8c08f93d92b3d4c552f733f06e19f50e42de7091d8ce083046544b6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f9c0a4b28e7f96a192e7a23dfe3e7d65f4a3d5eb99a1dabdcba1bd1ef657f28\",\"dweb:/ipfs/QmbsEiJ5TzRfTmiZbFatzcewpTCQssBWHr1crfdvbW79uk\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xc3b38e455d59707583600b3a42e8a3389c7406a6d88db5f0384efacaea535b7e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ba39939e485ad6ed1a6536b3da84bcf61bd9922aab49d641648054703c3c7891\",\"dweb:/ipfs/QmRCGqw4GjCL5a33cNRKVscvJ83nY5fCh2iwvTS58aWLeE\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Rewards.sol\":{\"keccak256\":\"0xf02dd22ca23a294a77114d117e7ca3a412728c72012e93d7e73da9ddb69ff78a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cfe00fd8cb41cd503e57915198ebbc85b728f4c83f5a8f5509ceff5291512672\",\"dweb:/ipfs/QmfE2CcRfZ5yoDjoNKu1RyQRhLyh9WVuB82ubMkmgfe9ru\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Samurai.sol\":{\"keccak256\":\"0x6bd2db87a7499bf5112d855bd100b0ff2259434e9b21507503d5e02eb8da67bc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://32098d772673029a5ca6d038cb72c5915aa4215c7992f1e625361b04b8ce7ab6\",\"dweb:/ipfs/QmZXYFdG1Tx1EnMNteWNLEpEJNY4QEKQH8injxF4SSoQnJ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol\":{\"keccak256\":\"0xf8c446dd6279df259996662fec8f3c58e160ab361dde6b39a7498c073816e5ce\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ab2c22da7b5a9eddeaf694d4389418a05a7a88dfc262871c7d09a91d1e037826\",\"dweb:/ipfs/QmZ8ZKXyot4UtcVTB8XHpbWBLmCV78WF4WqwZTsEc45YnH\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Strings.sol\":{\"keccak256\":\"0xb87a99d916fde8005d528022d716f17c39c161a9fb380952f25c3cb061749a4a\",\"urls\":[\"bzz-raw://55e336c2f7d7a2fc2ea0e5640721e82aaf51bac889b0dd102eeacb53c88ed744\",\"dweb:/ipfs/QmPG1rjCcAxiGPauFuYqpgpcdSDZJ3h1XZPFDbAXEpWTNZ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/master.sol\":{\"keccak256\":\"0xf570b1258f4dedb7fab5666b6bea414e5cfc7c435a13faacd48e32fbb7a95c0f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8a87b1ec3cb9de7bdc4f4d01f0df2486d8a4247551805ee9af2d3f83fe53a9a1\",\"dweb:/ipfs/QmdywnnxEqnjKr2pE5bNttfE5uSym1f8kchkpD1sQMDce1\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0xdb26cbf4d028490f49831a7865c2fe1b28db44b535ca8d343785a3b768aae183\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://840b14ce0315c47d49ba328f1f9fa7654ded1c9e1559e6c5e777a7b2dc28bf0a\",\"dweb:/ipfs/QmTLLabn4wcfGro9LEmUXUN2nwKqZSotXMvjDCLXEnLtZP\"]},\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x4bd6402ca6b3419008c2b482aff54e66836e8cb4eba2680e42ac5884ae6424fc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8f9f711fb8d0d92aeea1c327e3845d13ca1fa8f142e47f8723cd5b3106fb29a3\",\"dweb:/ipfs/QmVQUReDW9f4zGqhizwHnyU8EntMs95tbASdqkGncnikba\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x91e0bd6a6762d2a1700dab0849de8422611355100576c4beef1e80d82a4104a0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://73bbd77af0a8b07255d2ffa20728bcf13b116007c9ddac5d37046cfabb0e1e02\",\"dweb:/ipfs/QmRgZgWCWCSMTTaok6o4QvWA6MgB4goS8qpb3sN7bAvaZ9\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x5c26b39d26f7ed489e555d955dcd3e01872972e71fdd1528e93ec164e4f23385\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://efdc632af6960cf865dbc113665ea1f5b90eab75cc40ec062b2f6ae6da582017\",\"dweb:/ipfs/QmfAZFDuG62vxmAN9DnXApv7e7PMzPqi4RkqqZHLMSQiY5\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf5fa8cbdffa5ef8be49b246b5628facc30b71707e78a45d80d93b64eff3fe390\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://774e78a9ff32792cc95db4d2ceaf3a7965bb7f0bea5e6cb7cff182b450d44b37\",\"dweb:/ipfs/QmRRMC4uj7eAcLW7chynA3sNEYULMFazdLwQHKHQPyzAbA\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161043638038061043683398101604081905261002f91610054565b600c80546001600160a01b0319166001600160a01b0392909216919091179055610082565b600060208284031215610065578081fd5b81516001600160a01b038116811461007b578182fd5b9392505050565b6103a5806100916000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c806312065fe0146100675780633ccfd60b146100855780633d18b9121461008f57806382c7d55714610097578063d018db3e146100aa578063e2bbb158146100bd575b600080fd5b61006f6100d0565b60405161007c9190610331565b60405180910390f35b61008d6100e2565b005b61006f61014b565b61006f6100a5366004610310565b610158565b61008d6100b83660046102e9565b61016b565b61008d6100cb366004610310565b6101da565b60006100dd60003361024a565b905090565b604051626fcb7160e41b815273__FundOperations________________________906306fcb7109061011990600090600401610331565b60006040518083038186803b15801561013157600080fd5b505af4158015610145573d6000803e3d6000fd5b50505050565b60006100dd600033610266565b60006101648383610285565b9392505050565b604051638bde9a9f60e01b815273__GameOperations________________________90638bde9a9f906101a7906000903390869060040161033a565b60006040518083038186803b1580156101bf57600080fd5b505af41580156101d3573d6000803e3d6000fd5b5050505050565b6040516339d7f36b60e21b815273__FundOperations________________________9063e75fcdac906102169060009086908690600401610359565b60006040518083038186803b15801561022e57600080fd5b505af4158015610242573d6000803e3d6000fd5b505050505050565b6001600160a01b03166000908152602091909152604090205490565b6001600160a01b03166000908152602091909152604090206003015490565b60008060018311156102ab5761071c8311156102a35761071c6102a8565b600183035b90505b60006308f0d1808411156102c3576308f0d1806102c5565b845b90506359682f00820261038e82020165013dd0571200868202049695505050505050565b6000602082840312156102fa578081fd5b81356001600160a01b0381168114610164578182fd5b60008060408385031215610322578081fd5b50508035926020909101359150565b90815260200190565b9283526001600160a01b03918216602084015216604082015260600190565b928352602083019190915260408201526060019056fea2646970667358221220e15319cda763643d79215aa85b094e9dc35e9e77975494d634a29db65fd6e97264736f6c634300060c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c806312065fe0146100675780633ccfd60b146100855780633d18b9121461008f57806382c7d55714610097578063d018db3e146100aa578063e2bbb158146100bd575b600080fd5b61006f6100d0565b60405161007c9190610331565b60405180910390f35b61008d6100e2565b005b61006f61014b565b61006f6100a5366004610310565b610158565b61008d6100b83660046102e9565b61016b565b61008d6100cb366004610310565b6101da565b60006100dd60003361024a565b905090565b604051626fcb7160e41b815273__FundOperations________________________906306fcb7109061011990600090600401610331565b60006040518083038186803b15801561013157600080fd5b505af4158015610145573d6000803e3d6000fd5b50505050565b60006100dd600033610266565b60006101648383610285565b9392505050565b604051638bde9a9f60e01b815273__GameOperations________________________90638bde9a9f906101a7906000903390869060040161033a565b60006040518083038186803b1580156101bf57600080fd5b505af41580156101d3573d6000803e3d6000fd5b5050505050565b6040516339d7f36b60e21b815273__FundOperations________________________9063e75fcdac906102169060009086908690600401610359565b60006040518083038186803b15801561022e57600080fd5b505af4158015610242573d6000803e3d6000fd5b505050505050565b6001600160a01b03166000908152602091909152604090205490565b6001600160a01b03166000908152602091909152604090206003015490565b60008060018311156102ab5761071c8311156102a35761071c6102a8565b600183035b90505b60006308f0d1808411156102c3576308f0d1806102c5565b845b90506359682f00820261038e82020165013dd0571200868202049695505050505050565b6000602082840312156102fa578081fd5b81356001600160a01b0381168114610164578182fd5b60008060408385031215610322578081fd5b50508035926020909101359150565b90815260200190565b9283526001600160a01b03918216602084015216604082015260600190565b928352602083019190915260408201526060019056fea2646970667358221220e15319cda763643d79215aa85b094e9dc35e9e77975494d634a29db65fd6e97264736f6c634300060c0033",
   "immutableReferences": {},
-  "sourceMap": "257:128:3:-:0;;;309:74;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;354:13;:22;;-1:-1:-1;;;;;;354:22:3;-1:-1:-1;;;;;354:22:3;;;;;;;;;;257:128;;146:263:-1;;261:2;249:9;240:7;236:23;232:32;229:2;;;-1:-1;;267:12;229:2;83:13;;-1:-1;;;;;576:54;;701:35;;691:2;;-1:-1;;740:12;691:2;319:74;223:186;-1:-1;;;223:186::o;:::-;257:128:3;;;;;;",
-  "deployedSourceMap": "257:128:3:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;256:115:2;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;602:76:4;;;:::i;:::-;;377:113:2;;;:::i;496:184::-;;;;;;:::i;:::-;;:::i;684:110:4:-;;;;;;:::i;:::-;;:::i;476:120::-;;;;;;:::i;:::-;;:::i;256:115:2:-;299:7;325:39;344:7;353:10;325:18;:39::i;:::-;318:46;;256:115;:::o;602:76:4:-;639:32;;-1:-1:-1;;;639:32:4;;:14;;:23;;:32;;663:7;;639:32;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;602:76::o;377:113:2:-;419:7;445:38;463:7;472:10;445:17;:38::i;496:184::-;596:7;626:47;650:10;662;626:23;:47::i;:::-;619:54;496:184;-1:-1:-1;;;496:184:2:o;684:110:4:-;735:52;;-1:-1:-1;;;735:52:4;;:14;;:21;;:52;;757:7;;766:10;;778:8;;735:52;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;684:110;:::o;476:120::-;542:47;;-1:-1:-1;;;542:47:4;;:14;;:22;;:47;;565:7;;574:6;;582;;542:47;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;476:120;;:::o;1341:178:21:-;-1:-1:-1;;;;;1483:21:21;1453:7;1483:21;;;;;;;;;;;:29;;1341:178::o;2244:176::-;-1:-1:-1;;;;;2385:21:21;2355:7;2385:21;;;;;;;;;;;:28;;;;2244:176::o;832:761:19:-;932:7;;1071:1;1058:14;;1054:145;;;567:38;1106:22;;;:82;;567:38;1106:82;;;1160:1;1147:10;:14;1106:82;1088:100;;1054:145;1209:25;688:9;1237:10;:23;;:73;;688:9;1237:73;;;1275:11;1237:73;1209:101;-1:-1:-1;734:39:19;1346:41;;506:27;1402:42;;1346:98;1529:24;1484:28;;;1483:71;;832:761;-1:-1:-1;;;;;;832:761:19:o;279:241:-1:-;;383:2;371:9;362:7;358:23;354:32;351:2;;;-1:-1;;389:12;351:2;72:20;;-1:-1;;;;;3298:54;;3881:35;;3871:2;;-1:-1;;3920:12;527:366;;;648:2;636:9;627:7;623:23;619:32;616:2;;;-1:-1;;654:12;616:2;-1:-1;;209:20;;;806:2;845:22;;;209:20;;-1:-1;610:283::o;1562:278::-;1284:18;;;1717:2;1702:18;;1688:152::o;1847:532::-;1284:18;;;-1:-1;;;;;3298:54;;;2274:2;2259:18;;987:58;3298:54;2365:2;2350:18;;1136:37;2066:2;2051:18;;2037:342::o;2386:516::-;1284:18;;;2797:2;2782:18;;1284;;;;2888:2;2873:18;;1284;2597:2;2582:18;;2568:334::o",
-  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {Getters} from \"./Getters.sol\";\nimport {TsunoToken} from \"./TsunoToken.sol\";\nimport {State} from \"./State.sol\";\nimport {Operations} from \"./Operations.sol\";\n\ncontract Master is State, Operations, Getters {\n    constructor(address _tsuno) public {\n        g_state.tsuno = _tsuno;\n    }\n}\n",
-  "sourcePath": "C:/Users/James/projects/tsuno-fe/contracts/protocol/Master.sol",
+  "sourceMap": "257:128:23:-:0;;;309:74;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;354:13;:22;;-1:-1:-1;;;;;;354:22:23;-1:-1:-1;;;;;354:22:23;;;;;;;;;;257:128;;146:263:-1;;261:2;249:9;240:7;236:23;232:32;229:2;;;-1:-1;;267:12;229:2;83:13;;-1:-1;;;;;576:54;;701:35;;691:2;;-1:-1;;740:12;691:2;319:74;223:186;-1:-1;;;223:186::o;:::-;257:128:23;;;;;;",
+  "deployedSourceMap": "257:128:23:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;256:115:2;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;602:76:4;;;:::i;:::-;;377:113:2;;;:::i;496:184::-;;;;;;:::i;:::-;;:::i;684:110:4:-;;;;;;:::i;:::-;;:::i;476:120::-;;;;;;:::i;:::-;;:::i;256:115:2:-;299:7;325:39;344:7;353:10;325:18;:39::i;:::-;318:46;;256:115;:::o;602:76:4:-;639:32;;-1:-1:-1;;;639:32:4;;:14;;:23;;:32;;663:7;;639:32;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;602:76::o;377:113:2:-;419:7;445:38;463:7;472:10;445:17;:38::i;496:184::-;596:7;626:47;650:10;662;626:23;:47::i;:::-;619:54;496:184;-1:-1:-1;;;496:184:2:o;684:110:4:-;735:52;;-1:-1:-1;;;735:52:4;;:14;;:21;;:52;;757:7;;766:10;;778:8;;735:52;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;684:110;:::o;476:120::-;542:47;;-1:-1:-1;;;542:47:4;;:14;;:22;;:47;;565:7;;574:6;;582;;542:47;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;476:120;;:::o;1341:178:19:-;-1:-1:-1;;;;;1483:21:19;1453:7;1483:21;;;;;;;;;;;:29;;1341:178::o;2244:176::-;-1:-1:-1;;;;;2385:21:19;2355:7;2385:21;;;;;;;;;;;:28;;;;2244:176::o;832:761:17:-;932:7;;1071:1;1058:14;;1054:145;;;567:38;1106:22;;;:82;;567:38;1106:82;;;1160:1;1147:10;:14;1106:82;1088:100;;1054:145;1209:25;688:9;1237:10;:23;;:73;;688:9;1237:73;;;1275:11;1237:73;1209:101;-1:-1:-1;734:39:17;1346:41;;506:27;1402:42;;1346:98;1529:24;1484:28;;;1483:71;;832:761;-1:-1:-1;;;;;;832:761:17:o;279:241:-1:-;;383:2;371:9;362:7;358:23;354:32;351:2;;;-1:-1;;389:12;351:2;72:20;;-1:-1;;;;;3298:54;;3881:35;;3871:2;;-1:-1;;3920:12;527:366;;;648:2;636:9;627:7;623:23;619:32;616:2;;;-1:-1;;654:12;616:2;-1:-1;;209:20;;;806:2;845:22;;;209:20;;-1:-1;610:283::o;1562:278::-;1284:18;;;1717:2;1702:18;;1688:152::o;1847:532::-;1284:18;;;-1:-1;;;;;3298:54;;;2274:2;2259:18;;987:58;3298:54;2365:2;2350:18;;1136:37;2066:2;2051:18;;2037:342::o;2386:516::-;1284:18;;;2797:2;2782:18;;1284;;;;2888:2;2873:18;;1284;2597:2;2582:18;;2568:334::o",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {Getters} from './Getters.sol';\nimport {TsunoToken} from './TsunoToken.sol';\nimport {State} from './State.sol';\nimport {Operations} from './Operations.sol';\n\ncontract Master is State, Operations, Getters {\n    constructor(address _tsuno) public {\n        g_state.tsuno = _tsuno;\n    }\n}\n",
+  "sourcePath": "C:\\Users\\James\\projects\\tsuno-fe\\contracts\\protocol\\master.sol",
   "ast": {
-    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/Master.sol",
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/master.sol",
     "exportedSymbols": {
       "Master": [
-        142
+        4284
       ]
     },
-    "id": 143,
+    "id": 4285,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 114,
+        "id": 4256,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:3"
+        "src": "33:23:23"
       },
       {
-        "id": 115,
+        "id": 4257,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "57:33:3"
+        "src": "57:33:23"
       },
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/Getters.sol",
         "file": "./Getters.sol",
-        "id": 117,
+        "id": 4259,
         "nodeType": "ImportDirective",
-        "scope": 143,
+        "scope": 4285,
         "sourceUnit": 113,
-        "src": "92:38:3",
+        "src": "92:38:23",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 116,
+              "id": 4258,
               "name": "Getters",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "100:7:3",
+              "src": "100:7:23",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -170,21 +170,21 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/TsunoToken.sol",
         "file": "./TsunoToken.sol",
-        "id": 119,
+        "id": 4261,
         "nodeType": "ImportDirective",
-        "scope": 143,
+        "scope": 4285,
         "sourceUnit": 262,
-        "src": "131:44:3",
+        "src": "131:44:23",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 118,
+              "id": 4260,
               "name": "TsunoToken",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "139:10:3",
+              "src": "139:10:23",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -198,21 +198,21 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol",
         "file": "./State.sol",
-        "id": 121,
+        "id": 4263,
         "nodeType": "ImportDirective",
-        "scope": 143,
+        "scope": 4285,
         "sourceUnit": 209,
-        "src": "176:34:3",
+        "src": "176:34:23",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 120,
+              "id": 4262,
               "name": "State",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "184:5:3",
+              "src": "184:5:23",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -226,21 +226,21 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol",
         "file": "./Operations.sol",
-        "id": 123,
+        "id": 4265,
         "nodeType": "ImportDirective",
-        "scope": 143,
+        "scope": 4285,
         "sourceUnit": 200,
-        "src": "211:44:3",
+        "src": "211:44:23",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 122,
+              "id": 4264,
               "name": "Operations",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "219:10:3",
+              "src": "219:10:23",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -258,55 +258,55 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 124,
+              "id": 4266,
               "name": "State",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 208,
-              "src": "276:5:3",
+              "src": "276:5:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_State_$208",
                 "typeString": "contract State"
               }
             },
-            "id": 125,
+            "id": 4267,
             "nodeType": "InheritanceSpecifier",
-            "src": "276:5:3"
+            "src": "276:5:23"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 126,
+              "id": 4268,
               "name": "Operations",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 199,
-              "src": "283:10:3",
+              "src": "283:10:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_Operations_$199",
                 "typeString": "contract Operations"
               }
             },
-            "id": 127,
+            "id": 4269,
             "nodeType": "InheritanceSpecifier",
-            "src": "283:10:3"
+            "src": "283:10:23"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 128,
+              "id": 4270,
               "name": "Getters",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 112,
-              "src": "295:7:3",
+              "src": "295:7:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_Getters_$112",
                 "typeString": "contract Getters"
               }
             },
-            "id": 129,
+            "id": 4271,
             "nodeType": "InheritanceSpecifier",
-            "src": "295:7:3"
+            "src": "295:7:23"
           }
         ],
         "contractDependencies": [
@@ -317,9 +317,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 142,
+        "id": 4284,
         "linearizedBaseContracts": [
-          142,
+          4284,
           112,
           199,
           208
@@ -329,14 +329,14 @@
         "nodes": [
           {
             "body": {
-              "id": 140,
+              "id": 4282,
               "nodeType": "Block",
-              "src": "344:39:3",
+              "src": "344:39:23",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 138,
+                    "id": 4280,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -345,26 +345,26 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 134,
+                        "id": 4276,
                         "name": "g_state",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 207,
-                        "src": "354:7:3",
+                        "src": "354:7:23",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3073_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       },
-                      "id": 136,
+                      "id": 4278,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "tsuno",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3072,
-                      "src": "354:13:3",
+                      "referencedDeclaration": 3029,
+                      "src": "354:13:23",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -374,31 +374,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 137,
+                      "id": 4279,
                       "name": "_tsuno",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 131,
-                      "src": "370:6:3",
+                      "referencedDeclaration": 4273,
+                      "src": "370:6:23",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "354:22:3",
+                    "src": "354:22:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 139,
+                  "id": 4281,
                   "nodeType": "ExpressionStatement",
-                  "src": "354:22:3"
+                  "src": "354:22:23"
                 }
               ]
             },
             "documentation": null,
-            "id": 141,
+            "id": 4283,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -406,18 +406,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 132,
+              "id": 4274,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 131,
+                  "id": 4273,
                   "mutability": "mutable",
                   "name": "_tsuno",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 141,
-                  "src": "321:14:3",
+                  "scope": 4283,
+                  "src": "321:14:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -425,10 +425,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 130,
+                    "id": 4272,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "321:7:3",
+                    "src": "321:7:23",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -439,75 +439,75 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "320:16:3"
+              "src": "320:16:23"
             },
             "returnParameters": {
-              "id": 133,
+              "id": 4275,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "344:0:3"
+              "src": "344:0:23"
             },
-            "scope": 142,
-            "src": "309:74:3",
+            "scope": 4284,
+            "src": "309:74:23",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 143,
-        "src": "257:128:3"
+        "scope": 4285,
+        "src": "257:128:23"
       }
     ],
-    "src": "33:353:3"
+    "src": "33:353:23"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/Master.sol",
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/master.sol",
     "exportedSymbols": {
       "Master": [
-        142
+        4284
       ]
     },
-    "id": 143,
+    "id": 4285,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 114,
+        "id": 4256,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:3"
+        "src": "33:23:23"
       },
       {
-        "id": 115,
+        "id": 4257,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "57:33:3"
+        "src": "57:33:23"
       },
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/Getters.sol",
         "file": "./Getters.sol",
-        "id": 117,
+        "id": 4259,
         "nodeType": "ImportDirective",
-        "scope": 143,
+        "scope": 4285,
         "sourceUnit": 113,
-        "src": "92:38:3",
+        "src": "92:38:23",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 116,
+              "id": 4258,
               "name": "Getters",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "100:7:3",
+              "src": "100:7:23",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -521,21 +521,21 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/TsunoToken.sol",
         "file": "./TsunoToken.sol",
-        "id": 119,
+        "id": 4261,
         "nodeType": "ImportDirective",
-        "scope": 143,
+        "scope": 4285,
         "sourceUnit": 262,
-        "src": "131:44:3",
+        "src": "131:44:23",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 118,
+              "id": 4260,
               "name": "TsunoToken",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "139:10:3",
+              "src": "139:10:23",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -549,21 +549,21 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol",
         "file": "./State.sol",
-        "id": 121,
+        "id": 4263,
         "nodeType": "ImportDirective",
-        "scope": 143,
+        "scope": 4285,
         "sourceUnit": 209,
-        "src": "176:34:3",
+        "src": "176:34:23",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 120,
+              "id": 4262,
               "name": "State",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "184:5:3",
+              "src": "184:5:23",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -577,21 +577,21 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol",
         "file": "./Operations.sol",
-        "id": 123,
+        "id": 4265,
         "nodeType": "ImportDirective",
-        "scope": 143,
+        "scope": 4285,
         "sourceUnit": 200,
-        "src": "211:44:3",
+        "src": "211:44:23",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 122,
+              "id": 4264,
               "name": "Operations",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "219:10:3",
+              "src": "219:10:23",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -609,55 +609,55 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 124,
+              "id": 4266,
               "name": "State",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 208,
-              "src": "276:5:3",
+              "src": "276:5:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_State_$208",
                 "typeString": "contract State"
               }
             },
-            "id": 125,
+            "id": 4267,
             "nodeType": "InheritanceSpecifier",
-            "src": "276:5:3"
+            "src": "276:5:23"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 126,
+              "id": 4268,
               "name": "Operations",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 199,
-              "src": "283:10:3",
+              "src": "283:10:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_Operations_$199",
                 "typeString": "contract Operations"
               }
             },
-            "id": 127,
+            "id": 4269,
             "nodeType": "InheritanceSpecifier",
-            "src": "283:10:3"
+            "src": "283:10:23"
           },
           {
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 128,
+              "id": 4270,
               "name": "Getters",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 112,
-              "src": "295:7:3",
+              "src": "295:7:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_Getters_$112",
                 "typeString": "contract Getters"
               }
             },
-            "id": 129,
+            "id": 4271,
             "nodeType": "InheritanceSpecifier",
-            "src": "295:7:3"
+            "src": "295:7:23"
           }
         ],
         "contractDependencies": [
@@ -668,9 +668,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 142,
+        "id": 4284,
         "linearizedBaseContracts": [
-          142,
+          4284,
           112,
           199,
           208
@@ -680,14 +680,14 @@
         "nodes": [
           {
             "body": {
-              "id": 140,
+              "id": 4282,
               "nodeType": "Block",
-              "src": "344:39:3",
+              "src": "344:39:23",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 138,
+                    "id": 4280,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -696,26 +696,26 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 134,
+                        "id": 4276,
                         "name": "g_state",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 207,
-                        "src": "354:7:3",
+                        "src": "354:7:23",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3073_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       },
-                      "id": 136,
+                      "id": 4278,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "tsuno",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3072,
-                      "src": "354:13:3",
+                      "referencedDeclaration": 3029,
+                      "src": "354:13:23",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -725,31 +725,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 137,
+                      "id": 4279,
                       "name": "_tsuno",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 131,
-                      "src": "370:6:3",
+                      "referencedDeclaration": 4273,
+                      "src": "370:6:23",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "354:22:3",
+                    "src": "354:22:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 139,
+                  "id": 4281,
                   "nodeType": "ExpressionStatement",
-                  "src": "354:22:3"
+                  "src": "354:22:23"
                 }
               ]
             },
             "documentation": null,
-            "id": 141,
+            "id": 4283,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -757,18 +757,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 132,
+              "id": 4274,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 131,
+                  "id": 4273,
                   "mutability": "mutable",
                   "name": "_tsuno",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 141,
-                  "src": "321:14:3",
+                  "scope": 4283,
+                  "src": "321:14:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -776,10 +776,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 130,
+                    "id": 4272,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "321:7:3",
+                    "src": "321:7:23",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -790,26 +790,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "320:16:3"
+              "src": "320:16:23"
             },
             "returnParameters": {
-              "id": 133,
+              "id": 4275,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "344:0:3"
+              "src": "344:0:23"
             },
-            "scope": 142,
-            "src": "309:74:3",
+            "scope": 4284,
+            "src": "309:74:23",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 143,
-        "src": "257:128:3"
+        "scope": 4285,
+        "src": "257:128:23"
       }
     ],
-    "src": "33:353:3"
+    "src": "33:353:23"
   },
   "compiler": {
     "name": "solc",
@@ -817,7 +817,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-09-20T19:32:55.019Z",
+  "updatedAt": "2020-09-21T10:49:28.219Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

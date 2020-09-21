@@ -40,9 +40,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"defender\",\"type\":\"address\"}],\"name\":\"attack\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Big Beluga Primary public function for entering into the protocol\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Operation\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol\":\"Operations\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol\":{\"keccak256\":\"0x7ea7711c37e26722bb442bca0bfa865ca23d54882310a248bc2cef76775f2475\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://031a5eb410b51c7c2e63c4de20cac6894be3ae012cb15805943eb8a6101b61c5\",\"dweb:/ipfs/QmRqWKR1QYvNgo1Bb1PX4QG9xsxjKZyeWxuFkt971Cqpxv\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":{\"keccak256\":\"0x8d35f5414e4181e424678039b1bdefdc88402ff6ee54009347adec0c58fcdcd6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bcfa17b4ce14cb7b93b0ddeea2adb872aedfdaa639d2d976992ee9f4fe1ee316\",\"dweb:/ipfs/QmNYrcxnk98CsWLKtjThUBrZP73SsnPjeeKmSL3rsSGd3u\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/FundOperations.sol\":{\"keccak256\":\"0x0e5ed9c6ef345a4978a8c1d6ea4b3d88ced9ddcc10b7499e74a440f7c112a205\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2934e3f45f92ac5734cc03e8e4e6e82b57abcf8b958c5eff9b02dbeebe548835\",\"dweb:/ipfs/QmTPWp9B3NwNuTjT7P42TraGR1GFVX3AEFeyXNEdu16CKt\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/GameOperations.sol\":{\"keccak256\":\"0x1014c7b79041afa3000483f9bb1df020abc2c4ba8760bda2e017275a16a98816\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6be79ef94fad72c97cb4b37aa04f450ac6716d9275d0c2b7e4a14ef012359e95\",\"dweb:/ipfs/QmVsvpyKBTdvuDHiyvhwmnQ3LR5NneXFVHUwUUHr76G4f5\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/interfaces/ITsuno.sol\":{\"keccak256\":\"0xd00ffd2b9b1712b9323d7f56bbc83b6c47387d3ec2b1cfd8c0b8840bbd47f59b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://df8b894d510e8947256dd4c5fe4bbdc6ad175c11404447163860edc374352e51\",\"dweb:/ipfs/QmRrk1tBfL9FMMn7hazyRZyBXyfLKGm5ArDji2LeL1qSdy\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Army.sol\":{\"keccak256\":\"0x37a693eac5f7338889e1632af6410fa5fbae095382765db963883e839a073bfd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6b3d0bc806a127f0574890bf5428d5fb31f05589c4d982324bef7e4d20a954e5\",\"dweb:/ipfs/QmUKGsGVJaXb84c2FfFGK5Spvvcu8hmoCmxqaPZ5oGcghf\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Battle.sol\":{\"keccak256\":\"0xaef681b45745bfc872b56b02e7ca5995b12a6860aef1150c8ba0085eb8ef305f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dad83e7b63e0ab18345880b4c48cdb10c4685b6a124117bf47ed8e1785d0771e\",\"dweb:/ipfs/Qmf2fQhVsh5Keiix6yHDDfXefcTPii15vmrszDaKEYbeSp\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Events.sol\":{\"keccak256\":\"0x95f13003c8c08f93d92b3d4c552f733f06e19f50e42de7091d8ce083046544b6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f9c0a4b28e7f96a192e7a23dfe3e7d65f4a3d5eb99a1dabdcba1bd1ef657f28\",\"dweb:/ipfs/QmbsEiJ5TzRfTmiZbFatzcewpTCQssBWHr1crfdvbW79uk\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xc3b38e455d59707583600b3a42e8a3389c7406a6d88db5f0384efacaea535b7e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ba39939e485ad6ed1a6536b3da84bcf61bd9922aab49d641648054703c3c7891\",\"dweb:/ipfs/QmRCGqw4GjCL5a33cNRKVscvJ83nY5fCh2iwvTS58aWLeE\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Rewards.sol\":{\"keccak256\":\"0xf02dd22ca23a294a77114d117e7ca3a412728c72012e93d7e73da9ddb69ff78a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cfe00fd8cb41cd503e57915198ebbc85b728f4c83f5a8f5509ceff5291512672\",\"dweb:/ipfs/QmfE2CcRfZ5yoDjoNKu1RyQRhLyh9WVuB82ubMkmgfe9ru\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Samurai.sol\":{\"keccak256\":\"0x6bd2db87a7499bf5112d855bd100b0ff2259434e9b21507503d5e02eb8da67bc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://32098d772673029a5ca6d038cb72c5915aa4215c7992f1e625361b04b8ce7ab6\",\"dweb:/ipfs/QmZXYFdG1Tx1EnMNteWNLEpEJNY4QEKQH8injxF4SSoQnJ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol\":{\"keccak256\":\"0x6d9bf1d249559b016525860c0519214964a8ecfcdf005d8b5b38e1afd05c28b8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb35d873f93c4ec5cce4806c23db77319f97d8ae1573b0b78421c6791eb071d7\",\"dweb:/ipfs/QmPdZ142RFCbgUaGRvGQbeSdhNofD6hTNLL1vqMtaqvFuq\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Strings.sol\":{\"keccak256\":\"0xb87a99d916fde8005d528022d716f17c39c161a9fb380952f25c3cb061749a4a\",\"urls\":[\"bzz-raw://55e336c2f7d7a2fc2ea0e5640721e82aaf51bac889b0dd102eeacb53c88ed744\",\"dweb:/ipfs/QmPG1rjCcAxiGPauFuYqpgpcdSDZJ3h1XZPFDbAXEpWTNZ\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610281806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80633ccfd60b14610046578063d018db3e14610050578063e2bbb15814610063575b600080fd5b61004e610076565b005b61004e61005e3660046101be565b6100df565b61004e6100713660046101ec565b61014e565b604051626fcb7160e41b815273__FundOperations________________________906306fcb710906100ad9060009060040161020d565b60006040518083038186803b1580156100c557600080fd5b505af41580156100d9573d6000803e3d6000fd5b50505050565b604051638bde9a9f60e01b815273__GameOperations________________________90638bde9a9f9061011b9060009033908690600401610216565b60006040518083038186803b15801561013357600080fd5b505af4158015610147573d6000803e3d6000fd5b5050505050565b6040516339d7f36b60e21b815273__FundOperations________________________9063e75fcdac9061018a9060009086908690600401610235565b60006040518083038186803b1580156101a257600080fd5b505af41580156101b6573d6000803e3d6000fd5b505050505050565b6000602082840312156101cf578081fd5b81356001600160a01b03811681146101e5578182fd5b9392505050565b600080604083850312156101fe578081fd5b50508035926020909101359150565b90815260200190565b9283526001600160a01b03918216602084015216604082015260600190565b928352602083019190915260408201526060019056fea264697066735822122098cac86dd35600f5f77be9e681132fa1f85f964e70997b45dd41f5be98b5497c64736f6c634300060c0033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80633ccfd60b14610046578063d018db3e14610050578063e2bbb15814610063575b600080fd5b61004e610076565b005b61004e61005e3660046101be565b6100df565b61004e6100713660046101ec565b61014e565b604051626fcb7160e41b815273__FundOperations________________________906306fcb710906100ad9060009060040161020d565b60006040518083038186803b1580156100c557600080fd5b505af41580156100d9573d6000803e3d6000fd5b50505050565b604051638bde9a9f60e01b815273__GameOperations________________________90638bde9a9f9061011b9060009033908690600401610216565b60006040518083038186803b15801561013357600080fd5b505af4158015610147573d6000803e3d6000fd5b5050505050565b6040516339d7f36b60e21b815273__FundOperations________________________9063e75fcdac9061018a9060009086908690600401610235565b60006040518083038186803b1580156101a257600080fd5b505af41580156101b6573d6000803e3d6000fd5b505050505050565b6000602082840312156101cf578081fd5b81356001600160a01b03811681146101e5578182fd5b9392505050565b600080604083850312156101fe578081fd5b50508035926020909101359150565b90815260200190565b9283526001600160a01b03918216602084015216604082015260600190565b928352602083019190915260408201526060019056fea264697066735822122098cac86dd35600f5f77be9e681132fa1f85f964e70997b45dd41f5be98b5497c64736f6c634300060c0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"defender\",\"type\":\"address\"}],\"name\":\"attack\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Big Beluga Primary public function for entering into the protocol\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Operation\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol\":\"Operations\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol\":{\"keccak256\":\"0x7ea7711c37e26722bb442bca0bfa865ca23d54882310a248bc2cef76775f2475\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://031a5eb410b51c7c2e63c4de20cac6894be3ae012cb15805943eb8a6101b61c5\",\"dweb:/ipfs/QmRqWKR1QYvNgo1Bb1PX4QG9xsxjKZyeWxuFkt971Cqpxv\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":{\"keccak256\":\"0x8d35f5414e4181e424678039b1bdefdc88402ff6ee54009347adec0c58fcdcd6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bcfa17b4ce14cb7b93b0ddeea2adb872aedfdaa639d2d976992ee9f4fe1ee316\",\"dweb:/ipfs/QmNYrcxnk98CsWLKtjThUBrZP73SsnPjeeKmSL3rsSGd3u\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/FundOperations.sol\":{\"keccak256\":\"0x8385707c3502fdb07908dabf837116e4d83f97c66b66acfb557346fd577da3d5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://69def92597dfb79c5ca4a87897c91a3d8e45796ebd6698b109fd6811e9749639\",\"dweb:/ipfs/Qmb8hYEVLgg1URse9yQSajbwBs3AbXjqte6fLnWVhW1Spu\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/GameOperations.sol\":{\"keccak256\":\"0x1014c7b79041afa3000483f9bb1df020abc2c4ba8760bda2e017275a16a98816\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6be79ef94fad72c97cb4b37aa04f450ac6716d9275d0c2b7e4a14ef012359e95\",\"dweb:/ipfs/QmVsvpyKBTdvuDHiyvhwmnQ3LR5NneXFVHUwUUHr76G4f5\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/interfaces/ITsuno.sol\":{\"keccak256\":\"0xd00ffd2b9b1712b9323d7f56bbc83b6c47387d3ec2b1cfd8c0b8840bbd47f59b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://df8b894d510e8947256dd4c5fe4bbdc6ad175c11404447163860edc374352e51\",\"dweb:/ipfs/QmRrk1tBfL9FMMn7hazyRZyBXyfLKGm5ArDji2LeL1qSdy\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Army.sol\":{\"keccak256\":\"0x37a693eac5f7338889e1632af6410fa5fbae095382765db963883e839a073bfd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6b3d0bc806a127f0574890bf5428d5fb31f05589c4d982324bef7e4d20a954e5\",\"dweb:/ipfs/QmUKGsGVJaXb84c2FfFGK5Spvvcu8hmoCmxqaPZ5oGcghf\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Battle.sol\":{\"keccak256\":\"0xaef681b45745bfc872b56b02e7ca5995b12a6860aef1150c8ba0085eb8ef305f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dad83e7b63e0ab18345880b4c48cdb10c4685b6a124117bf47ed8e1785d0771e\",\"dweb:/ipfs/Qmf2fQhVsh5Keiix6yHDDfXefcTPii15vmrszDaKEYbeSp\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Events.sol\":{\"keccak256\":\"0x95f13003c8c08f93d92b3d4c552f733f06e19f50e42de7091d8ce083046544b6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f9c0a4b28e7f96a192e7a23dfe3e7d65f4a3d5eb99a1dabdcba1bd1ef657f28\",\"dweb:/ipfs/QmbsEiJ5TzRfTmiZbFatzcewpTCQssBWHr1crfdvbW79uk\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xc3b38e455d59707583600b3a42e8a3389c7406a6d88db5f0384efacaea535b7e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ba39939e485ad6ed1a6536b3da84bcf61bd9922aab49d641648054703c3c7891\",\"dweb:/ipfs/QmRCGqw4GjCL5a33cNRKVscvJ83nY5fCh2iwvTS58aWLeE\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Rewards.sol\":{\"keccak256\":\"0xf02dd22ca23a294a77114d117e7ca3a412728c72012e93d7e73da9ddb69ff78a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cfe00fd8cb41cd503e57915198ebbc85b728f4c83f5a8f5509ceff5291512672\",\"dweb:/ipfs/QmfE2CcRfZ5yoDjoNKu1RyQRhLyh9WVuB82ubMkmgfe9ru\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Samurai.sol\":{\"keccak256\":\"0x6bd2db87a7499bf5112d855bd100b0ff2259434e9b21507503d5e02eb8da67bc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://32098d772673029a5ca6d038cb72c5915aa4215c7992f1e625361b04b8ce7ab6\",\"dweb:/ipfs/QmZXYFdG1Tx1EnMNteWNLEpEJNY4QEKQH8injxF4SSoQnJ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol\":{\"keccak256\":\"0xf8c446dd6279df259996662fec8f3c58e160ab361dde6b39a7498c073816e5ce\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ab2c22da7b5a9eddeaf694d4389418a05a7a88dfc262871c7d09a91d1e037826\",\"dweb:/ipfs/QmZ8ZKXyot4UtcVTB8XHpbWBLmCV78WF4WqwZTsEc45YnH\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Strings.sol\":{\"keccak256\":\"0xb87a99d916fde8005d528022d716f17c39c161a9fb380952f25c3cb061749a4a\",\"urls\":[\"bzz-raw://55e336c2f7d7a2fc2ea0e5640721e82aaf51bac889b0dd102eeacb53c88ed744\",\"dweb:/ipfs/QmPG1rjCcAxiGPauFuYqpgpcdSDZJ3h1XZPFDbAXEpWTNZ\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610281806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80633ccfd60b14610046578063d018db3e14610050578063e2bbb15814610063575b600080fd5b61004e610076565b005b61004e61005e3660046101be565b6100df565b61004e6100713660046101ec565b61014e565b604051626fcb7160e41b815273__FundOperations________________________906306fcb710906100ad9060009060040161020d565b60006040518083038186803b1580156100c557600080fd5b505af41580156100d9573d6000803e3d6000fd5b50505050565b604051638bde9a9f60e01b815273__GameOperations________________________90638bde9a9f9061011b9060009033908690600401610216565b60006040518083038186803b15801561013357600080fd5b505af4158015610147573d6000803e3d6000fd5b5050505050565b6040516339d7f36b60e21b815273__FundOperations________________________9063e75fcdac9061018a9060009086908690600401610235565b60006040518083038186803b1580156101a257600080fd5b505af41580156101b6573d6000803e3d6000fd5b505050505050565b6000602082840312156101cf578081fd5b81356001600160a01b03811681146101e5578182fd5b9392505050565b600080604083850312156101fe578081fd5b50508035926020909101359150565b90815260200190565b9283526001600160a01b03918216602084015216604082015260600190565b928352602083019190915260408201526060019056fea2646970667358221220517365e896b2645543241161025b6c6aeee337d05b26871cbbd3ffdaf02c3b9864736f6c634300060c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80633ccfd60b14610046578063d018db3e14610050578063e2bbb15814610063575b600080fd5b61004e610076565b005b61004e61005e3660046101be565b6100df565b61004e6100713660046101ec565b61014e565b604051626fcb7160e41b815273__FundOperations________________________906306fcb710906100ad9060009060040161020d565b60006040518083038186803b1580156100c557600080fd5b505af41580156100d9573d6000803e3d6000fd5b50505050565b604051638bde9a9f60e01b815273__GameOperations________________________90638bde9a9f9061011b9060009033908690600401610216565b60006040518083038186803b15801561013357600080fd5b505af4158015610147573d6000803e3d6000fd5b5050505050565b6040516339d7f36b60e21b815273__FundOperations________________________9063e75fcdac9061018a9060009086908690600401610235565b60006040518083038186803b1580156101a257600080fd5b505af41580156101b6573d6000803e3d6000fd5b505050505050565b6000602082840312156101cf578081fd5b81356001600160a01b03811681146101e5578182fd5b9392505050565b600080604083850312156101fe578081fd5b50508035926020909101359150565b90815260200190565b9283526001600160a01b03918216602084015216604082015260600190565b928352602083019190915260408201526060019056fea2646970667358221220517365e896b2645543241161025b6c6aeee337d05b26871cbbd3ffdaf02c3b9864736f6c634300060c0033",
   "immutableReferences": {},
   "sourceMap": "355:441:4:-:0;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "355:441:4:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;602:76;;;:::i;:::-;;684:110;;;;;;:::i;:::-;;:::i;476:120::-;;;;;;:::i;:::-;;:::i;602:76::-;639:32;;-1:-1:-1;;;639:32:4;;:14;;:23;;:32;;663:7;;639:32;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;602:76::o;684:110::-;735:52;;-1:-1:-1;;;735:52:4;;:14;;:21;;:52;;757:7;;766:10;;778:8;;735:52;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;684:110;:::o;476:120::-;542:47;;-1:-1:-1;;;542:47:4;;:14;;:22;;:47;;565:7;;574:6;;582;;542:47;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;476:120;;:::o;279:241:-1:-;;383:2;371:9;362:7;358:23;354:32;351:2;;;-1:-1;;389:12;351:2;72:20;;-1:-1;;;;;2949:54;;3532:35;;3522:2;;-1:-1;;3571:12;3522:2;441:63;345:175;-1:-1;;;345:175::o;527:366::-;;;648:2;636:9;627:7;623:23;619:32;616:2;;;-1:-1;;654:12;616:2;-1:-1;;209:20;;;806:2;845:22;;;209:20;;-1:-1;610:283::o;1442:278::-;1284:18;;;1597:2;1582:18;;1568:152::o;1727:532::-;1284:18;;;-1:-1;;;;;2949:54;;;2154:2;2139:18;;987:58;2949:54;2245:2;2230:18;;1136:37;1946:2;1931:18;;1917:342::o;2266:516::-;1284:18;;;2677:2;2662:18;;1284;;;;2768:2;2753:18;;1284;2477:2;2462:18;;2448:334::o",
@@ -84,7 +84,7 @@
         "id": 147,
         "nodeType": "ImportDirective",
         "scope": 200,
-        "sourceUnit": 468,
+        "sourceUnit": 430,
         "src": "92:57:4",
         "symbolAliases": [
           {
@@ -112,7 +112,7 @@
         "id": 149,
         "nodeType": "ImportDirective",
         "scope": 200,
-        "sourceUnit": 609,
+        "sourceUnit": 571,
         "src": "150:57:4",
         "symbolAliases": [
           {
@@ -267,7 +267,7 @@
                         "referencedDeclaration": 207,
                         "src": "565:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3090_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       },
@@ -301,7 +301,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3090_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         },
                         {
@@ -319,10 +319,10 @@
                         "name": "FundOperations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 467,
+                        "referencedDeclaration": 429,
                         "src": "542:14:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$467_$",
+                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$429_$",
                           "typeString": "type(library FundOperations)"
                         }
                       },
@@ -333,10 +333,10 @@
                       "lValueRequested": false,
                       "memberName": "deposit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 380,
+                      "referencedDeclaration": 342,
                       "src": "542:22:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3090_storage_ptr_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3030_storage_ptr_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (struct Storage.State storage pointer,uint256,uint256)"
                       }
                     },
@@ -464,7 +464,7 @@
                         "referencedDeclaration": 207,
                         "src": "663:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3090_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       }
@@ -472,7 +472,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3090_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       ],
@@ -482,10 +482,10 @@
                         "name": "FundOperations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 467,
+                        "referencedDeclaration": 429,
                         "src": "639:14:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$467_$",
+                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$429_$",
                           "typeString": "type(library FundOperations)"
                         }
                       },
@@ -496,10 +496,10 @@
                       "lValueRequested": false,
                       "memberName": "withdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 460,
+                      "referencedDeclaration": 422,
                       "src": "639:23:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3090_storage_ptr_$returns$__$",
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3030_storage_ptr_$returns$__$",
                         "typeString": "function (struct Storage.State storage pointer)"
                       }
                     },
@@ -570,7 +570,7 @@
                         "referencedDeclaration": 207,
                         "src": "757:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3090_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       },
@@ -620,7 +620,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3090_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         },
                         {
@@ -638,10 +638,10 @@
                         "name": "GameOperations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 608,
+                        "referencedDeclaration": 570,
                         "src": "735:14:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_GameOperations_$608_$",
+                          "typeIdentifier": "t_type$_t_contract$_GameOperations_$570_$",
                           "typeString": "type(library GameOperations)"
                         }
                       },
@@ -652,10 +652,10 @@
                       "lValueRequested": false,
                       "memberName": "attack",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 607,
+                      "referencedDeclaration": 569,
                       "src": "735:21:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3090_storage_ptr_$_t_address_$_t_address_$returns$__$",
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3030_storage_ptr_$_t_address_$_t_address_$returns$__$",
                         "typeString": "function (struct Storage.State storage pointer,address,address)"
                       }
                     },
@@ -780,7 +780,7 @@
         "id": 147,
         "nodeType": "ImportDirective",
         "scope": 200,
-        "sourceUnit": 468,
+        "sourceUnit": 430,
         "src": "92:57:4",
         "symbolAliases": [
           {
@@ -808,7 +808,7 @@
         "id": 149,
         "nodeType": "ImportDirective",
         "scope": 200,
-        "sourceUnit": 609,
+        "sourceUnit": 571,
         "src": "150:57:4",
         "symbolAliases": [
           {
@@ -963,7 +963,7 @@
                         "referencedDeclaration": 207,
                         "src": "565:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3090_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       },
@@ -997,7 +997,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3090_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         },
                         {
@@ -1015,10 +1015,10 @@
                         "name": "FundOperations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 467,
+                        "referencedDeclaration": 429,
                         "src": "542:14:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$467_$",
+                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$429_$",
                           "typeString": "type(library FundOperations)"
                         }
                       },
@@ -1029,10 +1029,10 @@
                       "lValueRequested": false,
                       "memberName": "deposit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 380,
+                      "referencedDeclaration": 342,
                       "src": "542:22:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3090_storage_ptr_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3030_storage_ptr_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (struct Storage.State storage pointer,uint256,uint256)"
                       }
                     },
@@ -1160,7 +1160,7 @@
                         "referencedDeclaration": 207,
                         "src": "663:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3090_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       }
@@ -1168,7 +1168,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3090_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       ],
@@ -1178,10 +1178,10 @@
                         "name": "FundOperations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 467,
+                        "referencedDeclaration": 429,
                         "src": "639:14:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$467_$",
+                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$429_$",
                           "typeString": "type(library FundOperations)"
                         }
                       },
@@ -1192,10 +1192,10 @@
                       "lValueRequested": false,
                       "memberName": "withdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 460,
+                      "referencedDeclaration": 422,
                       "src": "639:23:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3090_storage_ptr_$returns$__$",
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3030_storage_ptr_$returns$__$",
                         "typeString": "function (struct Storage.State storage pointer)"
                       }
                     },
@@ -1266,7 +1266,7 @@
                         "referencedDeclaration": 207,
                         "src": "757:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3090_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       },
@@ -1316,7 +1316,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3090_storage",
+                          "typeIdentifier": "t_struct$_State_$3030_storage",
                           "typeString": "struct Storage.State storage ref"
                         },
                         {
@@ -1334,10 +1334,10 @@
                         "name": "GameOperations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 608,
+                        "referencedDeclaration": 570,
                         "src": "735:14:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_GameOperations_$608_$",
+                          "typeIdentifier": "t_type$_t_contract$_GameOperations_$570_$",
                           "typeString": "type(library GameOperations)"
                         }
                       },
@@ -1348,10 +1348,10 @@
                       "lValueRequested": false,
                       "memberName": "attack",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 607,
+                      "referencedDeclaration": 569,
                       "src": "735:21:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3090_storage_ptr_$_t_address_$_t_address_$returns$__$",
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3030_storage_ptr_$_t_address_$_t_address_$returns$__$",
                         "typeString": "function (struct Storage.State storage pointer,address,address)"
                       }
                     },
@@ -1446,7 +1446,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-09-20T19:32:51.650Z",
+  "updatedAt": "2020-09-21T10:49:25.059Z",
   "devdoc": {
     "author": "Big Beluga Primary public function for entering into the protocol",
     "kind": "dev",
