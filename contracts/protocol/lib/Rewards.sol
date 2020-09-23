@@ -18,10 +18,12 @@ library Rewards {
     uint256 constant BONUS_CAP_PERCENT = 200;
     uint256 constant DAY_REWARD = (364 * 100) / BONUS_PERCENT;
     uint256 constant CAP_DAYS = (DAY_REWARD * BONUS_CAP_PERCENT) / 100;
-
+    uint256 constant SUN_PER_TSUNO = 10**uint256(18);
     uint256 constant TSUNO_BONUS_PERCENT = 10;
     uint256 constant TSUNO_CAP = 150 * 1e6;
-    uint256 constant HOLD_REWARD = (TSUNO_CAP * 100) / TSUNO_BONUS_PERCENT;
+    uint256 constant HOLD_CAP_IN_SUN = TSUNO_CAP * SUN_PER_TSUNO;
+    uint256 constant HOLD_REWARD = (HOLD_CAP_IN_SUN * 100) /
+        TSUNO_BONUS_PERCENT;
 
     // ============ Library Functions ============
 

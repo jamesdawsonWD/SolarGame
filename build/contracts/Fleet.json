@@ -1,0 +1,643 @@
+{
+  "contractName": "Fleet",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Big Beluga Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Exchange\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Fleet.sol\":\"Fleet\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Fleet.sol\":{\"keccak256\":\"0x65df152c99fa8b0b2e14ec2856921fd3f68c7a7220959672ef2683e7f9995b20\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://aa0c9628ac18e8fc8a933a1cc003ca9532dc0842ff6c2abfe8a6fbcd03549f66\",\"dweb:/ipfs/Qmcx9icnyNC5u7czXjNLHZrD16PPTPJBgy748NRaKawwxm\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xf91926371c321c80847612a012816e175abacf3aeade530df22ac58e3ab756c9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://20add85ebd3fae76709c5a93cdefd6eaa88f419d33fb9532fcfe4021f3fb8acc\",\"dweb:/ipfs/QmV1uTEJkPuXK8KPi9xPqf8YKXFqmogMPDW3fSWjHJbooH\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol\":{\"keccak256\":\"0x440bea48ef2b7dcf61587eb202249aac4c4f41ec8f97a0f82e1fd6a623b277a1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0b508a10cb8f066e9f2ac262ed6370ef301fbfdc9aebd619a129201e293ea43f\",\"dweb:/ipfs/QmYLdjQ9wkFKFMuHVXeuhPBMmq2oYs94tjxWfXjXa2YtnR\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
+  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122010641de338b64f66d4bcb74816901a15dd5fcd86a2fa2c331bed5cf013d6ac6164736f6c634300060c0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122010641de338b64f66d4bcb74816901a15dd5fcd86a2fa2c331bed5cf013d6ac6164736f6c634300060c0033",
+  "immutableReferences": {},
+  "sourceMap": "382:223:16:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "382:223:16:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {Random} from './Random.sol';\nimport {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';\nimport {Types} from './Types.sol';\n\n/**\n * @title Exchange\n * @author Big Beluga\n *\n * Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct\n */\nlibrary Fleet {\n    using SafeMath for uint256;\n\n    enum Orders {Attack, Defend}\n    struct Info {\n        Types.StarPosition position;\n        mapping(uint256 => uint256) shipsAndTechnology;\n        Orders orders;\n    }\n}\n",
+  "sourcePath": "C:\\Users\\James\\projects\\tsuno-fe\\contracts\\protocol\\lib\\Fleet.sol",
+  "ast": {
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Fleet.sol",
+    "exportedSymbols": {
+      "Fleet": [
+        1241
+      ]
+    },
+    "id": 1242,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1217,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:16"
+      },
+      {
+        "id": 1218,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:33:16"
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol",
+        "file": "./Random.sol",
+        "id": 1220,
+        "nodeType": "ImportDirective",
+        "scope": 1242,
+        "sourceUnit": 1634,
+        "src": "92:36:16",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1219,
+              "name": "Random",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "100:6:16",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
+        "file": "@openzeppelin/contracts/math/SafeMath.sol",
+        "id": 1222,
+        "nodeType": "ImportDirective",
+        "scope": 1242,
+        "sourceUnit": 4584,
+        "src": "129:67:16",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1221,
+              "name": "SafeMath",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "137:8:16",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol",
+        "file": "./Types.sol",
+        "id": 1224,
+        "nodeType": "ImportDirective",
+        "scope": 1242,
+        "sourceUnit": 4066,
+        "src": "197:34:16",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1223,
+              "name": "Types",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "205:5:16",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": {
+          "id": 1225,
+          "nodeType": "StructuredDocumentation",
+          "src": "233:148:16",
+          "text": " @title Exchange\n @author Big Beluga\n Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct"
+        },
+        "fullyImplemented": true,
+        "id": 1241,
+        "linearizedBaseContracts": [
+          1241
+        ],
+        "name": "Fleet",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 1228,
+            "libraryName": {
+              "contractScope": null,
+              "id": 1226,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4583,
+              "src": "408:8:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$4583",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "402:27:16",
+            "typeName": {
+              "id": 1227,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "421:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "canonicalName": "Fleet.Orders",
+            "id": 1231,
+            "members": [
+              {
+                "id": 1229,
+                "name": "Attack",
+                "nodeType": "EnumValue",
+                "src": "448:6:16"
+              },
+              {
+                "id": 1230,
+                "name": "Defend",
+                "nodeType": "EnumValue",
+                "src": "456:6:16"
+              }
+            ],
+            "name": "Orders",
+            "nodeType": "EnumDefinition",
+            "src": "435:28:16"
+          },
+          {
+            "canonicalName": "Fleet.Info",
+            "id": 1240,
+            "members": [
+              {
+                "constant": false,
+                "id": 1233,
+                "mutability": "mutable",
+                "name": "position",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 1240,
+                "src": "490:27:16",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_StarPosition_$3953_storage_ptr",
+                  "typeString": "struct Types.StarPosition"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 1232,
+                  "name": "Types.StarPosition",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 3953,
+                  "src": "490:18:16",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_StarPosition_$3953_storage_ptr",
+                    "typeString": "struct Types.StarPosition"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1237,
+                "mutability": "mutable",
+                "name": "shipsAndTechnology",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 1240,
+                "src": "527:46:16",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                  "typeString": "mapping(uint256 => uint256)"
+                },
+                "typeName": {
+                  "id": 1236,
+                  "keyType": {
+                    "id": 1234,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "535:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "527:27:16",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                    "typeString": "mapping(uint256 => uint256)"
+                  },
+                  "valueType": {
+                    "id": 1235,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "546:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1239,
+                "mutability": "mutable",
+                "name": "orders",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 1240,
+                "src": "583:13:16",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Orders_$1231",
+                  "typeString": "enum Fleet.Orders"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 1238,
+                  "name": "Orders",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 1231,
+                  "src": "583:6:16",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Orders_$1231",
+                    "typeString": "enum Fleet.Orders"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Info",
+            "nodeType": "StructDefinition",
+            "scope": 1241,
+            "src": "468:135:16",
+            "visibility": "public"
+          }
+        ],
+        "scope": 1242,
+        "src": "382:223:16"
+      }
+    ],
+    "src": "33:573:16"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Fleet.sol",
+    "exportedSymbols": {
+      "Fleet": [
+        1241
+      ]
+    },
+    "id": 1242,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1217,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:16"
+      },
+      {
+        "id": 1218,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:33:16"
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol",
+        "file": "./Random.sol",
+        "id": 1220,
+        "nodeType": "ImportDirective",
+        "scope": 1242,
+        "sourceUnit": 1634,
+        "src": "92:36:16",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1219,
+              "name": "Random",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "100:6:16",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
+        "file": "@openzeppelin/contracts/math/SafeMath.sol",
+        "id": 1222,
+        "nodeType": "ImportDirective",
+        "scope": 1242,
+        "sourceUnit": 4584,
+        "src": "129:67:16",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1221,
+              "name": "SafeMath",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "137:8:16",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol",
+        "file": "./Types.sol",
+        "id": 1224,
+        "nodeType": "ImportDirective",
+        "scope": 1242,
+        "sourceUnit": 4066,
+        "src": "197:34:16",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1223,
+              "name": "Types",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "205:5:16",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": {
+          "id": 1225,
+          "nodeType": "StructuredDocumentation",
+          "src": "233:148:16",
+          "text": " @title Exchange\n @author Big Beluga\n Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct"
+        },
+        "fullyImplemented": true,
+        "id": 1241,
+        "linearizedBaseContracts": [
+          1241
+        ],
+        "name": "Fleet",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 1228,
+            "libraryName": {
+              "contractScope": null,
+              "id": 1226,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4583,
+              "src": "408:8:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$4583",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "402:27:16",
+            "typeName": {
+              "id": 1227,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "421:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "canonicalName": "Fleet.Orders",
+            "id": 1231,
+            "members": [
+              {
+                "id": 1229,
+                "name": "Attack",
+                "nodeType": "EnumValue",
+                "src": "448:6:16"
+              },
+              {
+                "id": 1230,
+                "name": "Defend",
+                "nodeType": "EnumValue",
+                "src": "456:6:16"
+              }
+            ],
+            "name": "Orders",
+            "nodeType": "EnumDefinition",
+            "src": "435:28:16"
+          },
+          {
+            "canonicalName": "Fleet.Info",
+            "id": 1240,
+            "members": [
+              {
+                "constant": false,
+                "id": 1233,
+                "mutability": "mutable",
+                "name": "position",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 1240,
+                "src": "490:27:16",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_StarPosition_$3953_storage_ptr",
+                  "typeString": "struct Types.StarPosition"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 1232,
+                  "name": "Types.StarPosition",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 3953,
+                  "src": "490:18:16",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_StarPosition_$3953_storage_ptr",
+                    "typeString": "struct Types.StarPosition"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1237,
+                "mutability": "mutable",
+                "name": "shipsAndTechnology",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 1240,
+                "src": "527:46:16",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                  "typeString": "mapping(uint256 => uint256)"
+                },
+                "typeName": {
+                  "id": 1236,
+                  "keyType": {
+                    "id": 1234,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "535:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "527:27:16",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                    "typeString": "mapping(uint256 => uint256)"
+                  },
+                  "valueType": {
+                    "id": 1235,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "546:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1239,
+                "mutability": "mutable",
+                "name": "orders",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 1240,
+                "src": "583:13:16",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Orders_$1231",
+                  "typeString": "enum Fleet.Orders"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 1238,
+                  "name": "Orders",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 1231,
+                  "src": "583:6:16",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Orders_$1231",
+                    "typeString": "enum Fleet.Orders"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Info",
+            "nodeType": "StructDefinition",
+            "scope": 1241,
+            "src": "468:135:16",
+            "visibility": "public"
+          }
+        ],
+        "scope": 1242,
+        "src": "382:223:16"
+      }
+    ],
+    "src": "33:573:16"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.5",
+  "updatedAt": "2020-09-23T19:25:48.110Z",
+  "devdoc": {
+    "author": "Big Beluga Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct",
+    "kind": "dev",
+    "methods": {},
+    "title": "Exchange",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

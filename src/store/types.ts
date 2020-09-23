@@ -24,7 +24,7 @@ export interface NetworkData {
 export interface FundOperations {
     balance: number;
     stakedTime: number;
-    dateUnlocked: Date;
+    dateUnlocked: number;
 }
 
 export interface GameOperations {

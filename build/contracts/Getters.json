@@ -50,24 +50,37 @@
       ],
       "stateMutability": "nonpayable",
       "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getDateUnlocked",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"stakeTsuno\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"stakedDays\",\"type\":\"uint256\"}],\"name\":\"getPotentialReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Getters.sol\":\"Getters\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Getters.sol\":{\"keccak256\":\"0x247aa82dfaf44714fa2997349365986ee787b321028fb61fe148e718e7e44c87\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d0e78a0c5d336ddf72d08aac9f08f3d04316d16387b04971e44b4007adf229ba\",\"dweb:/ipfs/QmZ7JMWiJXrxvYL4Ks4VgwqJD5LDYhgZZFcnbggLcNUmwD\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":{\"keccak256\":\"0x8d35f5414e4181e424678039b1bdefdc88402ff6ee54009347adec0c58fcdcd6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bcfa17b4ce14cb7b93b0ddeea2adb872aedfdaa639d2d976992ee9f4fe1ee316\",\"dweb:/ipfs/QmNYrcxnk98CsWLKtjThUBrZP73SsnPjeeKmSL3rsSGd3u\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Army.sol\":{\"keccak256\":\"0x37a693eac5f7338889e1632af6410fa5fbae095382765db963883e839a073bfd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6b3d0bc806a127f0574890bf5428d5fb31f05589c4d982324bef7e4d20a954e5\",\"dweb:/ipfs/QmUKGsGVJaXb84c2FfFGK5Spvvcu8hmoCmxqaPZ5oGcghf\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xc3b38e455d59707583600b3a42e8a3389c7406a6d88db5f0384efacaea535b7e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ba39939e485ad6ed1a6536b3da84bcf61bd9922aab49d641648054703c3c7891\",\"dweb:/ipfs/QmRCGqw4GjCL5a33cNRKVscvJ83nY5fCh2iwvTS58aWLeE\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Rewards.sol\":{\"keccak256\":\"0xf02dd22ca23a294a77114d117e7ca3a412728c72012e93d7e73da9ddb69ff78a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cfe00fd8cb41cd503e57915198ebbc85b728f4c83f5a8f5509ceff5291512672\",\"dweb:/ipfs/QmfE2CcRfZ5yoDjoNKu1RyQRhLyh9WVuB82ubMkmgfe9ru\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Samurai.sol\":{\"keccak256\":\"0x6bd2db87a7499bf5112d855bd100b0ff2259434e9b21507503d5e02eb8da67bc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://32098d772673029a5ca6d038cb72c5915aa4215c7992f1e625361b04b8ce7ab6\",\"dweb:/ipfs/QmZXYFdG1Tx1EnMNteWNLEpEJNY4QEKQH8injxF4SSoQnJ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol\":{\"keccak256\":\"0xf8c446dd6279df259996662fec8f3c58e160ab361dde6b39a7498c073816e5ce\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ab2c22da7b5a9eddeaf694d4389418a05a7a88dfc262871c7d09a91d1e037826\",\"dweb:/ipfs/QmZ8ZKXyot4UtcVTB8XHpbWBLmCV78WF4WqwZTsEc45YnH\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610192806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806312065fe0146100465780633d18b9121461006057806382c7d55714610068575b600080fd5b61004e61008b565b60408051918252519081900360200190f35b61004e61009d565b61004e6004803603604081101561007e57600080fd5b50803590602001356100aa565b60006100986000336100bd565b905090565b60006100986000336100d9565b60006100b683836100f8565b9392505050565b6001600160a01b03166000908152602091909152604090205490565b6001600160a01b03166000908152602091909152604090206003015490565b600080600183111561011e5761071c8311156101165761071c61011b565b600183035b90505b60006308f0d180841115610136576308f0d180610138565b845b90506359682f00820261038e82020165013dd057120086820204969550505050505056fea2646970667358221220c95f0132ef6a06421061dd936970cd43ad5f32153b27c7bb1742deeb34b094c964736f6c634300060c0033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806312065fe0146100465780633d18b9121461006057806382c7d55714610068575b600080fd5b61004e61008b565b60408051918252519081900360200190f35b61004e61009d565b61004e6004803603604081101561007e57600080fd5b50803590602001356100aa565b60006100986000336100bd565b905090565b60006100986000336100d9565b60006100b683836100f8565b9392505050565b6001600160a01b03166000908152602091909152604090205490565b6001600160a01b03166000908152602091909152604090206003015490565b600080600183111561011e5761071c8311156101165761071c61011b565b600183035b90505b60006308f0d180841115610136576308f0d180610138565b845b90506359682f00820261038e82020165013dd057120086820204969550505050505056fea2646970667358221220c95f0132ef6a06421061dd936970cd43ad5f32153b27c7bb1742deeb34b094c964736f6c634300060c0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getDateUnlocked\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"stakeTsuno\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"stakedDays\",\"type\":\"uint256\"}],\"name\":\"getPotentialReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Getters.sol\":\"Getters\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Getters.sol\":{\"keccak256\":\"0x7bbbb244042d9dc1e03e7ecb86d69a22b84e6b44338b75058662db6f2677cc20\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://562577176914bee2cc9f2f9a4734a6725622cd2fbdedc2d50867b6ea6f360e62\",\"dweb:/ipfs/QmcMu58tuTgoyfXmPjV4B8qmurMbaq4GehX8hvYDCzoGB7\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":{\"keccak256\":\"0x8d35f5414e4181e424678039b1bdefdc88402ff6ee54009347adec0c58fcdcd6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bcfa17b4ce14cb7b93b0ddeea2adb872aedfdaa639d2d976992ee9f4fe1ee316\",\"dweb:/ipfs/QmNYrcxnk98CsWLKtjThUBrZP73SsnPjeeKmSL3rsSGd3u\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Fleet.sol\":{\"keccak256\":\"0x65df152c99fa8b0b2e14ec2856921fd3f68c7a7220959672ef2683e7f9995b20\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://aa0c9628ac18e8fc8a933a1cc003ca9532dc0842ff6c2abfe8a6fbcd03549f66\",\"dweb:/ipfs/Qmcx9icnyNC5u7czXjNLHZrD16PPTPJBgy748NRaKawwxm\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xf91926371c321c80847612a012816e175abacf3aeade530df22ac58e3ab756c9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://20add85ebd3fae76709c5a93cdefd6eaa88f419d33fb9532fcfe4021f3fb8acc\",\"dweb:/ipfs/QmV1uTEJkPuXK8KPi9xPqf8YKXFqmogMPDW3fSWjHJbooH\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Rewards.sol\":{\"keccak256\":\"0xf01ac6db34c8ff7e0f255bd5fdef84a76cbc23131bb54976fbace26747929785\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://46fc7c2aee91db159a4af4eecef2f1922cfb635dcba65ccdc52353688e98dda3\",\"dweb:/ipfs/QmPr7hg4EWk3avKzbpyiWGmLTnBdbh3Ej2wtH2JBVhgGWq\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/StarSystem.sol\":{\"keccak256\":\"0x3e21a7e9dd71656591dcb03f16e1f187a6abe5d744e36b9c227b7fbf8d346314\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f6bd97519ddd6deea9a39911541d4d44004d1b587080c23c29cc779d952fef41\",\"dweb:/ipfs/Qmeovxuew3am7ooh1ccJLJu4XvoYTykcCy12Gn9VNfeZzK\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol\":{\"keccak256\":\"0x996a044b1a4b9a93feaca90376a13394ce86a188ac29b6923d4614f7f02caff8\",\"urls\":[\"bzz-raw://1613db846cb2384aedbeee955805793496ed90dc64c9dd22ddd04461d3a73477\",\"dweb:/ipfs/QmbvfN1ZcAAviwd7Tg1gLBxkhw1rNdzgNzWyejYa2kJcFk\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol\":{\"keccak256\":\"0x440bea48ef2b7dcf61587eb202249aac4c4f41ec8f97a0f82e1fd6a623b277a1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0b508a10cb8f066e9f2ac262ed6370ef301fbfdc9aebd619a129201e293ea43f\",\"dweb:/ipfs/QmYLdjQ9wkFKFMuHVXeuhPBMmq2oYs94tjxWfXjXa2YtnR\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506101e0806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806312065fe0146100515780633d18b9121461006b57806382c7d5571461007357806399d7d17f14610096575b600080fd5b61005961009e565b60408051918252519081900360200190f35b6100596100b0565b6100596004803603604081101561008957600080fd5b50803590602001356100bd565b6100596100d0565b60006100ab6000336100dd565b905090565b60006100ab6000336100f9565b60006100c98383610118565b9392505050565b60006100ab60003361018b565b6001600160a01b03166000908152602091909152604090205490565b6001600160a01b03166000908152602091909152604090206003015490565b600080600183111561013e5761071c8311156101365761071c61013b565b600183035b90505b60006308f0d180841115610156576308f0d180610158565b845b90506b04d8c55aefb8c05b5c000000820261038e8202016c113a8d894022bbc4c108000000868202049695505050505050565b6001600160a01b0316600090815260209190915260409020600201549056fea264697066735822122068c716810c8eddd3341cc45bdcf3c9bfcac8e0f4ad08f3b06aeebc881d72205164736f6c634300060c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806312065fe0146100515780633d18b9121461006b57806382c7d5571461007357806399d7d17f14610096575b600080fd5b61005961009e565b60408051918252519081900360200190f35b6100596100b0565b6100596004803603604081101561008957600080fd5b50803590602001356100bd565b6100596100d0565b60006100ab6000336100dd565b905090565b60006100ab6000336100f9565b60006100c98383610118565b9392505050565b60006100ab60003361018b565b6001600160a01b03166000908152602091909152604090205490565b6001600160a01b03166000908152602091909152604090206003015490565b600080600183111561013e5761071c8311156101365761071c61013b565b600183035b90505b60006308f0d180841115610156576308f0d180610158565b845b90506b04d8c55aefb8c05b5c000000820261038e8202016c113a8d894022bbc4c108000000868202049695505050505050565b6001600160a01b0316600090815260209190915260409020600201549056fea264697066735822122068c716810c8eddd3341cc45bdcf3c9bfcac8e0f4ad08f3b06aeebc881d72205164736f6c634300060c0033",
   "immutableReferences": {},
-  "sourceMap": "224:458:2:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "224:458:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;256:115;;;:::i;:::-;;;;;;;;;;;;;;;;377:113;;;:::i;496:184::-;;;;;;;;;;;;;;;;-1:-1:-1;496:184:2;;;;;;;:::i;256:115::-;299:7;325:39;344:7;353:10;325:18;:39::i;:::-;318:46;;256:115;:::o;377:113::-;419:7;445:38;463:7;472:10;445:17;:38::i;496:184::-;596:7;626:47;650:10;662;626:23;:47::i;:::-;619:54;496:184;-1:-1:-1;;;496:184:2:o;1341:178:19:-;-1:-1:-1;;;;;1483:21:19;1453:7;1483:21;;;;;;;;;;;:29;;1341:178::o;2244:176::-;-1:-1:-1;;;;;2385:21:19;2355:7;2385:21;;;;;;;;;;;:28;;;;2244:176::o;832:761:17:-;932:7;;1071:1;1058:14;;1054:145;;;567:38;1106:22;;;:82;;567:38;1106:82;;;1160:1;1147:10;:14;1106:82;1088:100;;1054:145;1209:25;688:9;1237:10;:23;;:73;;688:9;1237:73;;;1275:11;1237:73;1209:101;-1:-1:-1;734:39:17;1346:41;;506:27;1402:42;;1346:98;1529:24;1484:28;;;1483:71;;832:761;-1:-1:-1;;;;;;832:761:17:o",
-  "source": "// SPDX-License-Identifier: MIT\n\n// code to deploy DyDx solo protocol locally\npragma solidity 0.6.12;\nimport {State} from './State.sol';\nimport {Storage} from './lib/Storage.sol';\nimport {Rewards} from './lib/Rewards.sol';\n\ncontract Getters is State {\n    function getBalance() public view returns (uint256) {\n        return Storage.getBalance(g_state, msg.sender);\n    }\n\n    function getReward() public view returns (uint256) {\n        return Storage.getReward(g_state, msg.sender);\n    }\n\n    function getPotentialReward(uint256 stakeTsuno, uint256 stakedDays)\n        public\n        returns (uint256)\n    {\n        return Rewards.calculateReward(stakeTsuno, stakedDays);\n    }\n}\n",
+  "sourceMap": "224:589:2:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "224:589:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;256:115;;;:::i;:::-;;;;;;;;;;;;;;;;377:113;;;:::i;496:184::-;;;;;;;;;;;;;;;;-1:-1:-1;496:184:2;;;;;;;:::i;686:125::-;;;:::i;256:115::-;299:7;325:39;344:7;353:10;325:18;:39::i;:::-;318:46;;256:115;:::o;377:113::-;419:7;445:38;463:7;472:10;445:17;:38::i;496:184::-;596:7;626:47;650:10;662;626:23;:47::i;:::-;619:54;496:184;-1:-1:-1;;;496:184:2:o;686:125::-;734:7;760:44;784:7;793:10;760:23;:44::i;1517:178:22:-;-1:-1:-1;;;;;1659:21:22;1629:7;1659:21;;;;;;;;;;;:29;;1517:178::o;2381:176::-;-1:-1:-1;;;;;2522:21:22;2492:7;2522:21;;;;;;;;;;;:28;;;;2381:176::o;965:761:20:-;1065:7;;1204:1;1191:14;;1187:145;;;567:38;1239:22;;;:82;;567:38;1239:82;;;1293:1;1280:10;:14;1239:82;1221:100;;1187:145;1342:25;741:9;1370:10;:23;;:73;;741:9;1370:73;;;1408:11;1370:73;1342:101;-1:-1:-1;853:53:20;1479:41;;506:27;1535:42;;1479:98;1662:24;1617:28;;;1616:71;;965:761;-1:-1:-1;;;;;;965:761:20:o;2187:188:22:-;-1:-1:-1;;;;;2334:21:22;2304:7;2334:21;;;;;;;;;;;:34;;;;2187:188::o",
+  "source": "// SPDX-License-Identifier: MIT\n\n// code to deploy DyDx solo protocol locally\npragma solidity 0.6.12;\nimport {State} from './State.sol';\nimport {Storage} from './lib/Storage.sol';\nimport {Rewards} from './lib/Rewards.sol';\n\ncontract Getters is State {\n    function getBalance() public view returns (uint256) {\n        return Storage.getBalance(g_state, msg.sender);\n    }\n\n    function getReward() public view returns (uint256) {\n        return Storage.getReward(g_state, msg.sender);\n    }\n\n    function getPotentialReward(uint256 stakeTsuno, uint256 stakedDays)\n        public\n        returns (uint256)\n    {\n        return Rewards.calculateReward(stakeTsuno, stakedDays);\n    }\n\n    function getDateUnlocked() public view returns (uint256) {\n        return Storage.getDateUnlocked(g_state, msg.sender);\n    }\n}\n",
   "sourcePath": "C:\\Users\\James\\projects\\tsuno-fe\\contracts\\protocol\\Getters.sol",
   "ast": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/Getters.sol",
     "exportedSymbols": {
       "Getters": [
-        112
+        125
       ]
     },
-    "id": 113,
+    "id": 126,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
@@ -86,8 +99,8 @@
         "file": "./State.sol",
         "id": 63,
         "nodeType": "ImportDirective",
-        "scope": 113,
-        "sourceUnit": 209,
+        "scope": 126,
+        "sourceUnit": 399,
         "src": "102:34:2",
         "symbolAliases": [
           {
@@ -114,8 +127,8 @@
         "file": "./lib/Storage.sol",
         "id": 65,
         "nodeType": "ImportDirective",
-        "scope": 113,
-        "sourceUnit": 3614,
+        "scope": 126,
+        "sourceUnit": 3504,
         "src": "137:42:2",
         "symbolAliases": [
           {
@@ -142,8 +155,8 @@
         "file": "./lib/Rewards.sol",
         "id": 67,
         "nodeType": "ImportDirective",
-        "scope": 113,
-        "sourceUnit": 2838,
+        "scope": 126,
+        "sourceUnit": 2478,
         "src": "180:42:2",
         "symbolAliases": [
           {
@@ -175,10 +188,10 @@
               "id": 68,
               "name": "State",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 208,
+              "referencedDeclaration": 398,
               "src": "244:5:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_State_$208",
+                "typeIdentifier": "t_contract$_State_$398",
                 "typeString": "contract State"
               }
             },
@@ -188,15 +201,15 @@
           }
         ],
         "contractDependencies": [
-          208
+          398
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 112,
+        "id": 125,
         "linearizedBaseContracts": [
-          112,
-          208
+          125,
+          398
         ],
         "name": "Getters",
         "nodeType": "ContractDefinition",
@@ -217,10 +230,10 @@
                         "name": "g_state",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 207,
+                        "referencedDeclaration": 397,
                         "src": "344:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       },
@@ -257,7 +270,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         },
                         {
@@ -271,10 +284,10 @@
                         "name": "Storage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3613,
+                        "referencedDeclaration": 3503,
                         "src": "325:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Storage_$3613_$",
+                          "typeIdentifier": "t_type$_t_contract$_Storage_$3503_$",
                           "typeString": "type(library Storage)"
                         }
                       },
@@ -285,10 +298,10 @@
                       "lValueRequested": false,
                       "memberName": "getBalance",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3046,
+                      "referencedDeclaration": 2791,
                       "src": "325:18:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_State_$3030_storage_ptr_$_t_address_$returns$_t_uint256_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_State_$2775_storage_ptr_$_t_address_$returns$_t_uint256_$",
                         "typeString": "function (struct Storage.State storage pointer,address) view returns (uint256)"
                       }
                     },
@@ -364,7 +377,7 @@
               ],
               "src": "298:9:2"
             },
-            "scope": 112,
+            "scope": 125,
             "src": "256:115:2",
             "stateMutability": "view",
             "virtual": false,
@@ -386,10 +399,10 @@
                         "name": "g_state",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 207,
+                        "referencedDeclaration": 397,
                         "src": "463:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       },
@@ -426,7 +439,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         },
                         {
@@ -440,10 +453,10 @@
                         "name": "Storage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3613,
+                        "referencedDeclaration": 3503,
                         "src": "445:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Storage_$3613_$",
+                          "typeIdentifier": "t_type$_t_contract$_Storage_$3503_$",
                           "typeString": "type(library Storage)"
                         }
                       },
@@ -454,10 +467,10 @@
                       "lValueRequested": false,
                       "memberName": "getReward",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3121,
+                      "referencedDeclaration": 2861,
                       "src": "445:17:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_State_$3030_storage_ptr_$_t_address_$returns$_t_uint256_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_State_$2775_storage_ptr_$_t_address_$returns$_t_uint256_$",
                         "typeString": "function (struct Storage.State storage pointer,address) view returns (uint256)"
                       }
                     },
@@ -533,7 +546,7 @@
               ],
               "src": "418:9:2"
             },
-            "scope": 112,
+            "scope": 125,
             "src": "377:113:2",
             "stateMutability": "view",
             "virtual": false,
@@ -593,10 +606,10 @@
                         "name": "Rewards",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2837,
+                        "referencedDeclaration": 2477,
                         "src": "626:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Rewards_$2837_$",
+                          "typeIdentifier": "t_type$_t_contract$_Rewards_$2477_$",
                           "typeString": "type(library Rewards)"
                         }
                       },
@@ -607,7 +620,7 @@
                       "lValueRequested": false,
                       "memberName": "calculateReward",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2836,
+                      "referencedDeclaration": 2476,
                       "src": "626:23:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -743,27 +756,196 @@
               ],
               "src": "595:9:2"
             },
-            "scope": 112,
+            "scope": 125,
             "src": "496:184:2",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 123,
+              "nodeType": "Block",
+              "src": "743:68:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 118,
+                        "name": "g_state",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 397,
+                        "src": "784:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
+                          "typeString": "struct Storage.State storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 119,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "793:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 120,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "793:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
+                          "typeString": "struct Storage.State storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 116,
+                        "name": "Storage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3503,
+                        "src": "760:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Storage_$3503_$",
+                          "typeString": "type(library Storage)"
+                        }
+                      },
+                      "id": 117,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getDateUnlocked",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2845,
+                      "src": "760:23:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_State_$2775_storage_ptr_$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (struct Storage.State storage pointer,address) view returns (uint256)"
+                      }
+                    },
+                    "id": 121,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "760:44:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 115,
+                  "id": 122,
+                  "nodeType": "Return",
+                  "src": "753:51:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "99d7d17f",
+            "id": 124,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDateUnlocked",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 112,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "710:2:2"
+            },
+            "returnParameters": {
+              "id": 115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 114,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 124,
+                  "src": "734:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 113,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "734:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "733:9:2"
+            },
+            "scope": 125,
+            "src": "686:125:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
           }
         ],
-        "scope": 113,
-        "src": "224:458:2"
+        "scope": 126,
+        "src": "224:589:2"
       }
     ],
-    "src": "78:605:2"
+    "src": "78:736:2"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/Getters.sol",
     "exportedSymbols": {
       "Getters": [
-        112
+        125
       ]
     },
-    "id": 113,
+    "id": 126,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
@@ -782,8 +964,8 @@
         "file": "./State.sol",
         "id": 63,
         "nodeType": "ImportDirective",
-        "scope": 113,
-        "sourceUnit": 209,
+        "scope": 126,
+        "sourceUnit": 399,
         "src": "102:34:2",
         "symbolAliases": [
           {
@@ -810,8 +992,8 @@
         "file": "./lib/Storage.sol",
         "id": 65,
         "nodeType": "ImportDirective",
-        "scope": 113,
-        "sourceUnit": 3614,
+        "scope": 126,
+        "sourceUnit": 3504,
         "src": "137:42:2",
         "symbolAliases": [
           {
@@ -838,8 +1020,8 @@
         "file": "./lib/Rewards.sol",
         "id": 67,
         "nodeType": "ImportDirective",
-        "scope": 113,
-        "sourceUnit": 2838,
+        "scope": 126,
+        "sourceUnit": 2478,
         "src": "180:42:2",
         "symbolAliases": [
           {
@@ -871,10 +1053,10 @@
               "id": 68,
               "name": "State",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 208,
+              "referencedDeclaration": 398,
               "src": "244:5:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_State_$208",
+                "typeIdentifier": "t_contract$_State_$398",
                 "typeString": "contract State"
               }
             },
@@ -884,15 +1066,15 @@
           }
         ],
         "contractDependencies": [
-          208
+          398
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 112,
+        "id": 125,
         "linearizedBaseContracts": [
-          112,
-          208
+          125,
+          398
         ],
         "name": "Getters",
         "nodeType": "ContractDefinition",
@@ -913,10 +1095,10 @@
                         "name": "g_state",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 207,
+                        "referencedDeclaration": 397,
                         "src": "344:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       },
@@ -953,7 +1135,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         },
                         {
@@ -967,10 +1149,10 @@
                         "name": "Storage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3613,
+                        "referencedDeclaration": 3503,
                         "src": "325:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Storage_$3613_$",
+                          "typeIdentifier": "t_type$_t_contract$_Storage_$3503_$",
                           "typeString": "type(library Storage)"
                         }
                       },
@@ -981,10 +1163,10 @@
                       "lValueRequested": false,
                       "memberName": "getBalance",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3046,
+                      "referencedDeclaration": 2791,
                       "src": "325:18:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_State_$3030_storage_ptr_$_t_address_$returns$_t_uint256_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_State_$2775_storage_ptr_$_t_address_$returns$_t_uint256_$",
                         "typeString": "function (struct Storage.State storage pointer,address) view returns (uint256)"
                       }
                     },
@@ -1060,7 +1242,7 @@
               ],
               "src": "298:9:2"
             },
-            "scope": 112,
+            "scope": 125,
             "src": "256:115:2",
             "stateMutability": "view",
             "virtual": false,
@@ -1082,10 +1264,10 @@
                         "name": "g_state",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 207,
+                        "referencedDeclaration": 397,
                         "src": "463:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       },
@@ -1122,7 +1304,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         },
                         {
@@ -1136,10 +1318,10 @@
                         "name": "Storage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3613,
+                        "referencedDeclaration": 3503,
                         "src": "445:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Storage_$3613_$",
+                          "typeIdentifier": "t_type$_t_contract$_Storage_$3503_$",
                           "typeString": "type(library Storage)"
                         }
                       },
@@ -1150,10 +1332,10 @@
                       "lValueRequested": false,
                       "memberName": "getReward",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3121,
+                      "referencedDeclaration": 2861,
                       "src": "445:17:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_State_$3030_storage_ptr_$_t_address_$returns$_t_uint256_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_State_$2775_storage_ptr_$_t_address_$returns$_t_uint256_$",
                         "typeString": "function (struct Storage.State storage pointer,address) view returns (uint256)"
                       }
                     },
@@ -1229,7 +1411,7 @@
               ],
               "src": "418:9:2"
             },
-            "scope": 112,
+            "scope": 125,
             "src": "377:113:2",
             "stateMutability": "view",
             "virtual": false,
@@ -1289,10 +1471,10 @@
                         "name": "Rewards",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2837,
+                        "referencedDeclaration": 2477,
                         "src": "626:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Rewards_$2837_$",
+                          "typeIdentifier": "t_type$_t_contract$_Rewards_$2477_$",
                           "typeString": "type(library Rewards)"
                         }
                       },
@@ -1303,7 +1485,7 @@
                       "lValueRequested": false,
                       "memberName": "calculateReward",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2836,
+                      "referencedDeclaration": 2476,
                       "src": "626:23:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -1439,18 +1621,187 @@
               ],
               "src": "595:9:2"
             },
-            "scope": 112,
+            "scope": 125,
             "src": "496:184:2",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 123,
+              "nodeType": "Block",
+              "src": "743:68:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 118,
+                        "name": "g_state",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 397,
+                        "src": "784:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
+                          "typeString": "struct Storage.State storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 119,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "793:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 120,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "793:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
+                          "typeString": "struct Storage.State storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 116,
+                        "name": "Storage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3503,
+                        "src": "760:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Storage_$3503_$",
+                          "typeString": "type(library Storage)"
+                        }
+                      },
+                      "id": 117,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getDateUnlocked",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2845,
+                      "src": "760:23:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_State_$2775_storage_ptr_$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (struct Storage.State storage pointer,address) view returns (uint256)"
+                      }
+                    },
+                    "id": 121,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "760:44:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 115,
+                  "id": 122,
+                  "nodeType": "Return",
+                  "src": "753:51:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "99d7d17f",
+            "id": 124,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDateUnlocked",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 112,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "710:2:2"
+            },
+            "returnParameters": {
+              "id": 115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 114,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 124,
+                  "src": "734:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 113,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "734:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "733:9:2"
+            },
+            "scope": 125,
+            "src": "686:125:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
           }
         ],
-        "scope": 113,
-        "src": "224:458:2"
+        "scope": 126,
+        "src": "224:589:2"
       }
     ],
-    "src": "78:605:2"
+    "src": "78:736:2"
   },
   "compiler": {
     "name": "solc",
@@ -1458,7 +1809,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-09-21T10:49:25.057Z",
+  "updatedAt": "2020-09-23T19:25:48.050Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

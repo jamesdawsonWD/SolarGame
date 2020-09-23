@@ -4,8 +4,9 @@ pragma experimental ABIEncoderV2;
 import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
 import {Math} from './Math.sol';
 import {Require} from './Require.sol';
-import {Samurai} from './Samurai.sol';
-import {Army} from './Army.sol';
+import {StarSystem} from './StarSystem.sol';
+import {Types} from './Types.sol';
+import {Fleet} from './Fleet.sol';
 
 /**
  * @title Storage
@@ -24,30 +25,29 @@ library Storage {
 
     // // ============ Structs ============
 
-    // The entire storage state
-
     struct Master {
         uint256 balance;
         uint256 dateLocked;
         uint256 dateUnlocked;
         uint256 reward;
-        Army.Info army;
+        Types.StarPosition position;
+        Fleet.Info fleet;
     }
 
     struct State {
         mapping(address => Master) masters;
-        mapping(uint256 => address) samuraiIndexToOwner;
-        uint256 totalClans;
-        uint256 totalSamurai;
-        uint256 tsunoLocked;
-        Samurai.Info[] samurai;
-        address admin;
+        // total number of discoverable locations in the galaxy
+        mapping(uint8 => mapping(uint8 => mapping(uint8 => mapping(uint32 => StarSystem.Info)))) stars;
+        // total number of SolarTokens
+        uint256 totalSolarTokens;
+        // a random seed that can be set by an admin
         uint256 seed;
-        uint256 bonusEndBlock;
-        uint256 tsunoPerBlock;
-        address tsunoAddress;
-        uint256 lastRewardBlock;
+        // address to the tsunoToken contract
         address tsuno;
+        // address to the solarToken contract
+        address solar;
+        // address of ships and technology contract;
+        address sat;
     }
 
     // ============ Functions ============
@@ -68,12 +68,12 @@ library Storage {
         return state.tsuno;
     }
 
-    function getArmy(Storage.State storage state, address master)
+    function getSolar(Storage.State storage state)
         internal
         view
-        returns (Army.Info memory)
+        returns (address)
     {
-        return state.masters[master].army;
+        return state.solar;
     }
 
     function getDateLocked(Storage.State storage state, address master)
@@ -100,12 +100,79 @@ library Storage {
         return state.masters[master].reward;
     }
 
-    function getLastRewardBlock(Storage.State storage state)
+    function getTotalSolarTokens(Storage.State storage state)
         internal
         view
         returns (uint256)
     {
-        return state.lastRewardBlock;
+        return state.totalSolarTokens;
+    }
+
+    function getStarSystemType(
+        Storage.State storage state,
+        Types.StarPosition memory position
+    ) internal returns (StarSystem.SystemType) {
+        return
+            state.stars[position.quadrant][position.distract][position
+                .sector][position.star]
+                .systemType;
+    }
+
+    function getStarSystemFleet(
+        Storage.State storage state,
+        Types.StarPosition memory position
+    ) internal returns (Fleet.Info memory) {
+        return
+            state.stars[position.quadrant][position.distract][position
+                .sector][position.star]
+                .fleet;
+    }
+
+    function getStarSystemHasFleet(
+        Storage.State storage state,
+        Types.StarPosition memory position
+    ) internal returns (bool) {
+        return
+            state.stars[position.quadrant][position.distract][position
+                .sector][position.star]
+                .hasFleet;
+    }
+
+    function getStarSystemYield(
+        Storage.State storage state,
+        Types.StarPosition memory position
+    ) internal returns (uint32) {
+        return
+            state.stars[position.quadrant][position.distract][position
+                .sector][position.star]
+                .yield;
+    }
+
+    function getStarSystemInvestment(
+        Storage.State storage state,
+        Types.StarPosition memory position
+    ) internal returns (uint256) {
+        return
+            state.stars[position.quadrant][position.distract][position
+                .sector][position.star]
+                .investment;
+    }
+
+    function getStarSystemId(
+        Storage.State storage state,
+        Types.StarPosition memory position
+    ) internal returns (uint256) {
+        return
+            state.stars[position.quadrant][position.distract][position
+                .sector][position.star]
+                .tokenId;
+    }
+
+    function getMasterFleet(Storage.State storage state, address master)
+        internal
+        returns (Fleet.Info memory)
+    {
+        return state.masters[master].fleet;
     }
 
     function isWithdrawable(Storage.State storage state, address master)
@@ -115,16 +182,41 @@ library Storage {
         return now >= state.masters[master].dateUnlocked;
     }
 
+    function getMasterFleetPosition(Storage.State storage state, address master)
+        internal
+        returns (Types.StarPosition memory)
+    {
+        return state.masters[master].position;
+    }
+
     // =============== Setter Functions ===============
 
     function setSeed(Storage.State storage state, uint256 seed) internal {
         state.seed = seed;
     }
 
-    function setTsunoLocked(Storage.State storage state, uint256 amount)
-        internal
-    {
-        state.tsunoLocked = amount;
+    function setStarSystemType(
+        Storage.State storage state,
+        Types.StarPosition memory position,
+        StarSystem.SystemType systemType
+    ) internal {
+        state.stars[position.quadrant][position.distract][position
+            .sector][position.star]
+            .systemType = systemType;
+    }
+
+    function setStarSystemYield(
+        Storage.State storage state,
+        Types.StarPosition memory position,
+        uint32 yield
+    ) internal {
+        state.stars[position.quadrant][position.distract][position
+            .sector][position.star]
+            .yield = yield;
+    }
+
+    function incrementTotalSolarTokens(Storage.State storage state) internal {
+        state.totalSolarTokens += 1;
     }
 
     // =============== Mutation Functions ==============
@@ -167,84 +259,62 @@ library Storage {
         state.masters[master].reward = 0;
     }
 
-    // =============== Army Functions ==============
+    // =============== Fleet Functions ==============
 
-    function addSolider(
+    function moveMasterFleet(
         Storage.State storage state,
         address master,
-        uint256 amount
+        Types.StarPosition memory position
     ) internal {
-        state.masters[master].army.soldiers = state.masters[master]
-            .army
-            .soldiers
-            .add(amount);
+        //TODO: check each variable of starPosition to save gas on writing
+        state.masters[master].fleet.position = position;
     }
 
-    function addUnit(
+    function addToMasterFleet(
         Storage.State storage state,
-        Army.Units unit,
         address master,
-        uint256 amount
+        Types.SatInfo[] memory sats
     ) internal {
-        if (unit == Army.Units.SiegeWeapon) {
-            state.masters[master].army.siegeWeapons = state.masters[master]
-                .army
-                .siegeWeapons
-                .add(amount);
-        } else if (unit == Army.Units.DefenseStructure) {
-            state.masters[master].army.defenceStructures = state.masters[master]
-                .army
-                .defenceStructures
-                .add(amount);
-        } else if (unit == Army.Units.Soldier) {
-            state.masters[master].army.soldiers = state.masters[master]
-                .army
-                .soldiers
-                .add(amount);
-        } else if (unit == Army.Units.Archer) {
-            state.masters[master].army.archers = state.masters[master]
-                .army
-                .archers
-                .add(amount);
-        } else if (unit == Army.Units.Cavalry) {
-            state.masters[master].army.cavalry = state.masters[master]
-                .army
-                .cavalry
-                .add(amount);
+        for (uint256 i = 0; i < sats.length; i++) {
+            state.masters[master].fleet.shipsAndTechnology[sats[i]
+                .id] += sats[i].amount;
         }
     }
 
-    function subUnit(
+    function removeFromMasterFleet(
         Storage.State storage state,
-        Army.Units unit,
         address master,
-        uint256 amount
+        Types.SatInfo[] memory sats
     ) internal {
-        if (unit == Army.Units.SiegeWeapon) {
-            state.masters[master].army.siegeWeapons = state.masters[master]
-                .army
-                .siegeWeapons
-                .sub(amount);
-        } else if (unit == Army.Units.DefenseStructure) {
-            state.masters[master].army.defenceStructures = state.masters[master]
-                .army
-                .defenceStructures
-                .sub(amount);
-        } else if (unit == Army.Units.Soldier) {
-            state.masters[master].army.soldiers = state.masters[master]
-                .army
-                .soldiers
-                .sub(amount);
-        } else if (unit == Army.Units.Archer) {
-            state.masters[master].army.archers = state.masters[master]
-                .army
-                .archers
-                .sub(amount);
-        } else if (unit == Army.Units.Cavalry) {
-            state.masters[master].army.cavalry = state.masters[master]
-                .army
-                .cavalry
-                .sub(amount);
+        for (uint256 i = 0; i < sats.length; i++) {
+            state.masters[master].fleet.shipsAndTechnology[sats[i]
+                .id] -= sats[i].amount;
+        }
+    }
+
+    function addToStarFleet(
+        Storage.State storage state,
+        Types.StarPosition memory position,
+        Types.SatInfo[] memory sats
+    ) internal {
+        for (uint256 i = 0; i < sats.length; i++) {
+            state.stars[position.quadrant][position.distract][position
+                .sector][position.star]
+                .fleet
+                .shipsAndTechnology[sats[i].id] += sats[i].amount;
+        }
+    }
+
+    function removeFromStarFleet(
+        Storage.State storage state,
+        Types.StarPosition memory position,
+        Types.SatInfo[] memory sats
+    ) internal {
+        for (uint256 i = 0; i < sats.length; i++) {
+            state.stars[position.quadrant][position.distract][position
+                .sector][position.star]
+                .fleet
+                .shipsAndTechnology[sats[i].id] -= sats[i].amount;
         }
     }
 }

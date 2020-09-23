@@ -3,8 +3,8 @@
 pragma solidity 0.6.12;
 pragma experimental ABIEncoderV2;
 
-import {SafeMath} from "@openzeppelin/contracts/math/SafeMath.sol";
-import {Math} from "./Math.sol";
+import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
+import {Math} from './Math.sol';
 
 /**
  * @title Types
@@ -15,68 +15,46 @@ import {Math} from "./Math.sol";
 library Types {
     using Math for uint256;
 
-    // Individual token amount for an account
-    struct Wei {
-        bool sign; // true if positive
-        uint256 value;
+    // TODO: Look into creating a constant library that can be passes into the library
+    // this will allow for balancing tweaks in as the game progresses
+    uint256 constant MAX_QUADRANT = 5;
+    uint256 constant MAX_DISTRACT = 8;
+    uint256 constant MAX_SECTOR = 21;
+    uint256 constant MAX_STAR = 10000;
+
+    struct SatInfo {
+        uint256 amount;
+        uint32 id;
     }
 
-    function zeroWei() internal pure returns (Wei memory) {
-        return Wei({sign: false, value: 0});
+    struct StarPosition {
+        uint8 quadrant;
+        uint8 distract;
+        uint8 sector;
+        uint32 star;
     }
 
-    function sub(Wei memory a, Wei memory b)
+    function isEqualStarPosition(StarPosition memory a, StarPosition memory b)
         internal
-        pure
-        returns (Wei memory)
+        returns (bool)
     {
-        return add(a, negative(b));
+        return (keccak256(
+            abi.encodePacked(a.quadrant, a.distract, a.sector, a.star)
+        ) ==
+            keccak256(
+                abi.encodePacked(b.quadrant, b.distract, b.sector, b.star)
+            ));
     }
 
-    function add(Wei memory a, Wei memory b)
-        internal
-        pure
-        returns (Wei memory)
-    {
-        Wei memory result;
-        if (a.sign == b.sign) {
-            result.sign = a.sign;
-            result.value = SafeMath.add(a.value, b.value);
-        } else {
-            if (a.value >= b.value) {
-                result.sign = a.sign;
-                result.value = SafeMath.sub(a.value, b.value);
-            } else {
-                result.sign = b.sign;
-                result.value = SafeMath.sub(b.value, a.value);
-            }
-        }
-        return result;
+    function isEqualUint(uint256 a, uint256 b) internal returns (bool) {
+        return a == b;
     }
 
-    function equals(Wei memory a, Wei memory b) internal pure returns (bool) {
-        if (a.value == b.value) {
-            if (a.value == 0) {
-                return true;
-            }
-            return a.sign == b.sign;
-        }
-        return false;
-    }
-
-    function negative(Wei memory a) internal pure returns (Wei memory) {
-        return Wei({sign: !a.sign, value: a.value});
-    }
-
-    function isNegative(Wei memory a) internal pure returns (bool) {
-        return !a.sign && a.value > 0;
-    }
-
-    function isPositive(Wei memory a) internal pure returns (bool) {
-        return a.sign && a.value > 0;
-    }
-
-    function isZero(Wei memory a) internal pure returns (bool) {
-        return a.value == 0;
+    function isWithinBoundaries(StarPosition memory a) internal returns (bool) {
+        if (a.quadrant < 0 || a.quadrant > MAX_QUADRANT) return false;
+        if (a.distract < 0 || a.distract > MAX_DISTRACT) return false;
+        if (a.sector < 0 || a.sector > MAX_SECTOR) return false;
+        if (a.star < 0 || a.star > MAX_STAR) return false;
+        return true;
     }
 }

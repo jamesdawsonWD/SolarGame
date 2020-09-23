@@ -12,18 +12,22 @@
             <h2>Available Tsuno</h2>
             <div>{{ TsunoBalance | decimalsPrecision(18) | toFixed(4) }}</div>
             <h2>Date Withdrawable</h2>
-            <div>{{ DateUnlocked }}</div>
+            <div>{{ new Date(DateUnlocked * 1000) }}</div>
             <h2>Recent Error</h2>
-            <div>{{ RecentError | json }}</div>
+            <div>{{ RecentError }}</div>
         </div>
         <h2>Tools</h2>
         <Button title="Get Balance" @clicked="getBalance"></Button>
+        <Button title="Withdraw" @clicked="withdraw"></Button>
+        <Button
+            title="Emergency Withdraw"
+            @clicked="emergencyWithdraw"
+        ></Button>
         <Button
             title="Mint Tsuno"
             buttonStyle="primary"
             @clicked="mintTsuno"
         ></Button>
-
         <DepositForm @submitted="depositAmount"></DepositForm>
     </div>
 </template>
@@ -34,6 +38,7 @@ import DepositForm from '@/components/forms/DepositForm.vue';
 import Modal from '@/components/generics/Modal.vue';
 import Button from '@/components/generics/Button.vue';
 import { Deposit } from '@/store/types';
+import { SECONDS_IN_A_DAY, advanceTime } from '@/utils';
 export default {
     name: 'App',
     computed: {
@@ -59,7 +64,9 @@ export default {
             'getTsunoBalance',
             'deposit',
             'closeModal',
-            'getDateUnlocked'
+            'getDateUnlocked',
+            'withdraw',
+            'emergencyWithdraw'
         ]),
         depositAmount: function(deposit: Deposit) {
             this.deposit(deposit);

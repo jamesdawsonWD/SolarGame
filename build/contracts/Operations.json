@@ -27,40 +27,96 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "emergencyWithdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "defender",
-          "type": "address"
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "quadrant",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "distract",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "sector",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "star",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct Types.StarPosition",
+          "name": "from",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "quadrant",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "distract",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "sector",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "star",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct Types.StarPosition",
+          "name": "to",
+          "type": "tuple"
         }
       ],
-      "name": "attack",
+      "name": "move",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"defender\",\"type\":\"address\"}],\"name\":\"attack\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Big Beluga Primary public function for entering into the protocol\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Operation\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol\":\"Operations\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol\":{\"keccak256\":\"0x7ea7711c37e26722bb442bca0bfa865ca23d54882310a248bc2cef76775f2475\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://031a5eb410b51c7c2e63c4de20cac6894be3ae012cb15805943eb8a6101b61c5\",\"dweb:/ipfs/QmRqWKR1QYvNgo1Bb1PX4QG9xsxjKZyeWxuFkt971Cqpxv\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":{\"keccak256\":\"0x8d35f5414e4181e424678039b1bdefdc88402ff6ee54009347adec0c58fcdcd6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bcfa17b4ce14cb7b93b0ddeea2adb872aedfdaa639d2d976992ee9f4fe1ee316\",\"dweb:/ipfs/QmNYrcxnk98CsWLKtjThUBrZP73SsnPjeeKmSL3rsSGd3u\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/FundOperations.sol\":{\"keccak256\":\"0x8385707c3502fdb07908dabf837116e4d83f97c66b66acfb557346fd577da3d5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://69def92597dfb79c5ca4a87897c91a3d8e45796ebd6698b109fd6811e9749639\",\"dweb:/ipfs/Qmb8hYEVLgg1URse9yQSajbwBs3AbXjqte6fLnWVhW1Spu\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/GameOperations.sol\":{\"keccak256\":\"0x1014c7b79041afa3000483f9bb1df020abc2c4ba8760bda2e017275a16a98816\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6be79ef94fad72c97cb4b37aa04f450ac6716d9275d0c2b7e4a14ef012359e95\",\"dweb:/ipfs/QmVsvpyKBTdvuDHiyvhwmnQ3LR5NneXFVHUwUUHr76G4f5\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/interfaces/ITsuno.sol\":{\"keccak256\":\"0xd00ffd2b9b1712b9323d7f56bbc83b6c47387d3ec2b1cfd8c0b8840bbd47f59b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://df8b894d510e8947256dd4c5fe4bbdc6ad175c11404447163860edc374352e51\",\"dweb:/ipfs/QmRrk1tBfL9FMMn7hazyRZyBXyfLKGm5ArDji2LeL1qSdy\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Army.sol\":{\"keccak256\":\"0x37a693eac5f7338889e1632af6410fa5fbae095382765db963883e839a073bfd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6b3d0bc806a127f0574890bf5428d5fb31f05589c4d982324bef7e4d20a954e5\",\"dweb:/ipfs/QmUKGsGVJaXb84c2FfFGK5Spvvcu8hmoCmxqaPZ5oGcghf\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Battle.sol\":{\"keccak256\":\"0xaef681b45745bfc872b56b02e7ca5995b12a6860aef1150c8ba0085eb8ef305f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dad83e7b63e0ab18345880b4c48cdb10c4685b6a124117bf47ed8e1785d0771e\",\"dweb:/ipfs/Qmf2fQhVsh5Keiix6yHDDfXefcTPii15vmrszDaKEYbeSp\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Events.sol\":{\"keccak256\":\"0x95f13003c8c08f93d92b3d4c552f733f06e19f50e42de7091d8ce083046544b6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f9c0a4b28e7f96a192e7a23dfe3e7d65f4a3d5eb99a1dabdcba1bd1ef657f28\",\"dweb:/ipfs/QmbsEiJ5TzRfTmiZbFatzcewpTCQssBWHr1crfdvbW79uk\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xc3b38e455d59707583600b3a42e8a3389c7406a6d88db5f0384efacaea535b7e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ba39939e485ad6ed1a6536b3da84bcf61bd9922aab49d641648054703c3c7891\",\"dweb:/ipfs/QmRCGqw4GjCL5a33cNRKVscvJ83nY5fCh2iwvTS58aWLeE\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Rewards.sol\":{\"keccak256\":\"0xf02dd22ca23a294a77114d117e7ca3a412728c72012e93d7e73da9ddb69ff78a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cfe00fd8cb41cd503e57915198ebbc85b728f4c83f5a8f5509ceff5291512672\",\"dweb:/ipfs/QmfE2CcRfZ5yoDjoNKu1RyQRhLyh9WVuB82ubMkmgfe9ru\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Samurai.sol\":{\"keccak256\":\"0x6bd2db87a7499bf5112d855bd100b0ff2259434e9b21507503d5e02eb8da67bc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://32098d772673029a5ca6d038cb72c5915aa4215c7992f1e625361b04b8ce7ab6\",\"dweb:/ipfs/QmZXYFdG1Tx1EnMNteWNLEpEJNY4QEKQH8injxF4SSoQnJ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol\":{\"keccak256\":\"0xf8c446dd6279df259996662fec8f3c58e160ab361dde6b39a7498c073816e5ce\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ab2c22da7b5a9eddeaf694d4389418a05a7a88dfc262871c7d09a91d1e037826\",\"dweb:/ipfs/QmZ8ZKXyot4UtcVTB8XHpbWBLmCV78WF4WqwZTsEc45YnH\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Strings.sol\":{\"keccak256\":\"0xb87a99d916fde8005d528022d716f17c39c161a9fb380952f25c3cb061749a4a\",\"urls\":[\"bzz-raw://55e336c2f7d7a2fc2ea0e5640721e82aaf51bac889b0dd102eeacb53c88ed744\",\"dweb:/ipfs/QmPG1rjCcAxiGPauFuYqpgpcdSDZJ3h1XZPFDbAXEpWTNZ\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610281806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80633ccfd60b14610046578063d018db3e14610050578063e2bbb15814610063575b600080fd5b61004e610076565b005b61004e61005e3660046101be565b6100df565b61004e6100713660046101ec565b61014e565b604051626fcb7160e41b815273__FundOperations________________________906306fcb710906100ad9060009060040161020d565b60006040518083038186803b1580156100c557600080fd5b505af41580156100d9573d6000803e3d6000fd5b50505050565b604051638bde9a9f60e01b815273__GameOperations________________________90638bde9a9f9061011b9060009033908690600401610216565b60006040518083038186803b15801561013357600080fd5b505af4158015610147573d6000803e3d6000fd5b5050505050565b6040516339d7f36b60e21b815273__FundOperations________________________9063e75fcdac9061018a9060009086908690600401610235565b60006040518083038186803b1580156101a257600080fd5b505af41580156101b6573d6000803e3d6000fd5b505050505050565b6000602082840312156101cf578081fd5b81356001600160a01b03811681146101e5578182fd5b9392505050565b600080604083850312156101fe578081fd5b50508035926020909101359150565b90815260200190565b9283526001600160a01b03918216602084015216604082015260600190565b928352602083019190915260408201526060019056fea2646970667358221220517365e896b2645543241161025b6c6aeee337d05b26871cbbd3ffdaf02c3b9864736f6c634300060c0033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80633ccfd60b14610046578063d018db3e14610050578063e2bbb15814610063575b600080fd5b61004e610076565b005b61004e61005e3660046101be565b6100df565b61004e6100713660046101ec565b61014e565b604051626fcb7160e41b815273__FundOperations________________________906306fcb710906100ad9060009060040161020d565b60006040518083038186803b1580156100c557600080fd5b505af41580156100d9573d6000803e3d6000fd5b50505050565b604051638bde9a9f60e01b815273__GameOperations________________________90638bde9a9f9061011b9060009033908690600401610216565b60006040518083038186803b15801561013357600080fd5b505af4158015610147573d6000803e3d6000fd5b5050505050565b6040516339d7f36b60e21b815273__FundOperations________________________9063e75fcdac9061018a9060009086908690600401610235565b60006040518083038186803b1580156101a257600080fd5b505af41580156101b6573d6000803e3d6000fd5b505050505050565b6000602082840312156101cf578081fd5b81356001600160a01b03811681146101e5578182fd5b9392505050565b600080604083850312156101fe578081fd5b50508035926020909101359150565b90815260200190565b9283526001600160a01b03918216602084015216604082015260600190565b928352602083019190915260408201526060019056fea2646970667358221220517365e896b2645543241161025b6c6aeee337d05b26871cbbd3ffdaf02c3b9864736f6c634300060c0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"emergencyWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint8\",\"name\":\"quadrant\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"distract\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"sector\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"star\",\"type\":\"uint32\"}],\"internalType\":\"struct Types.StarPosition\",\"name\":\"from\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint8\",\"name\":\"quadrant\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"distract\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"sector\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"star\",\"type\":\"uint32\"}],\"internalType\":\"struct Types.StarPosition\",\"name\":\"to\",\"type\":\"tuple\"}],\"name\":\"move\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Big Beluga Primary public function for entering into the protocol\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Operation\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol\":\"Operations\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol\":{\"keccak256\":\"0x63fe576d12bb45dd0a68ed1fcc764340dd5d7bafa80a93a39576b14973081826\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d729786be1014b65ae1218a8f13fa3e6ae854b99ba27e6dafc46028767a851e8\",\"dweb:/ipfs/QmW5DCdQJSteQkWSUE4qtvgS4weMsCgNJthqgfi5BEHPSa\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":{\"keccak256\":\"0x8d35f5414e4181e424678039b1bdefdc88402ff6ee54009347adec0c58fcdcd6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bcfa17b4ce14cb7b93b0ddeea2adb872aedfdaa639d2d976992ee9f4fe1ee316\",\"dweb:/ipfs/QmNYrcxnk98CsWLKtjThUBrZP73SsnPjeeKmSL3rsSGd3u\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/FundOperations.sol\":{\"keccak256\":\"0xc0b19baf230b8be575bc5a5cdbe1646cb78e05a8b21eab98aab57db5fb96a3c4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e9c3cf93f00bbcaf4cf24372be90ebc5e1fe324e401fc0d291b10425c964cc3d\",\"dweb:/ipfs/QmYepuBg1CndkZmjZg2YNU1m6XZmUwa8giezts32h6GMVr\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/GameOperations.sol\":{\"keccak256\":\"0x551bbf98d9ab67cf2b424fecdf959b4ed0a35c916de01e2d84f296612d1fe651\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://465f69a446daed0720057f02c82dea450248407cf22f155de9e40402546bae20\",\"dweb:/ipfs/QmdEaE5y2X9h5SiP7qmcn8h6K96QVREpfjwkvGx25QX5o7\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/interfaces/ISolar.sol\":{\"keccak256\":\"0x936899df2b28890f33a5c00e8c82029fe8e276e8ec8dde0db0f45e0a2f2d1549\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b4b226ded70bb0aae189d67cfd3abe8cfd9c87db8099068232029845b8beb43e\",\"dweb:/ipfs/QmaKEE4bav3ezdjoUsYxiKpTaY776J9ngazNYsNEZd7miX\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/interfaces/ITsuno.sol\":{\"keccak256\":\"0xd00ffd2b9b1712b9323d7f56bbc83b6c47387d3ec2b1cfd8c0b8840bbd47f59b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://df8b894d510e8947256dd4c5fe4bbdc6ad175c11404447163860edc374352e51\",\"dweb:/ipfs/QmRrk1tBfL9FMMn7hazyRZyBXyfLKGm5ArDji2LeL1qSdy\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Battle.sol\":{\"keccak256\":\"0x5791b1fa0e7f84be20ddd3dacc7e61155a61cff7c432af61dc8cfff911eaa272\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://68ef9a19b49548d7a19203022f1cd4196100aa9bc9989e2cdb35b3aca4fe38ce\",\"dweb:/ipfs/QmctkfaQtBvZer9M7cbLYU38yr9hFU1yiaJ2h6ismqdk7C\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Events.sol\":{\"keccak256\":\"0x95f13003c8c08f93d92b3d4c552f733f06e19f50e42de7091d8ce083046544b6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f9c0a4b28e7f96a192e7a23dfe3e7d65f4a3d5eb99a1dabdcba1bd1ef657f28\",\"dweb:/ipfs/QmbsEiJ5TzRfTmiZbFatzcewpTCQssBWHr1crfdvbW79uk\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Fleet.sol\":{\"keccak256\":\"0x65df152c99fa8b0b2e14ec2856921fd3f68c7a7220959672ef2683e7f9995b20\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://aa0c9628ac18e8fc8a933a1cc003ca9532dc0842ff6c2abfe8a6fbcd03549f66\",\"dweb:/ipfs/Qmcx9icnyNC5u7czXjNLHZrD16PPTPJBgy748NRaKawwxm\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xf91926371c321c80847612a012816e175abacf3aeade530df22ac58e3ab756c9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://20add85ebd3fae76709c5a93cdefd6eaa88f419d33fb9532fcfe4021f3fb8acc\",\"dweb:/ipfs/QmV1uTEJkPuXK8KPi9xPqf8YKXFqmogMPDW3fSWjHJbooH\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Rewards.sol\":{\"keccak256\":\"0xf01ac6db34c8ff7e0f255bd5fdef84a76cbc23131bb54976fbace26747929785\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://46fc7c2aee91db159a4af4eecef2f1922cfb635dcba65ccdc52353688e98dda3\",\"dweb:/ipfs/QmPr7hg4EWk3avKzbpyiWGmLTnBdbh3Ej2wtH2JBVhgGWq\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/StarSystem.sol\":{\"keccak256\":\"0x3e21a7e9dd71656591dcb03f16e1f187a6abe5d744e36b9c227b7fbf8d346314\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f6bd97519ddd6deea9a39911541d4d44004d1b587080c23c29cc779d952fef41\",\"dweb:/ipfs/Qmeovxuew3am7ooh1ccJLJu4XvoYTykcCy12Gn9VNfeZzK\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol\":{\"keccak256\":\"0x996a044b1a4b9a93feaca90376a13394ce86a188ac29b6923d4614f7f02caff8\",\"urls\":[\"bzz-raw://1613db846cb2384aedbeee955805793496ed90dc64c9dd22ddd04461d3a73477\",\"dweb:/ipfs/QmbvfN1ZcAAviwd7Tg1gLBxkhw1rNdzgNzWyejYa2kJcFk\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Strings.sol\":{\"keccak256\":\"0xb87a99d916fde8005d528022d716f17c39c161a9fb380952f25c3cb061749a4a\",\"urls\":[\"bzz-raw://55e336c2f7d7a2fc2ea0e5640721e82aaf51bac889b0dd102eeacb53c88ed744\",\"dweb:/ipfs/QmPG1rjCcAxiGPauFuYqpgpcdSDZJ3h1XZPFDbAXEpWTNZ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol\":{\"keccak256\":\"0x440bea48ef2b7dcf61587eb202249aac4c4f41ec8f97a0f82e1fd6a623b277a1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0b508a10cb8f066e9f2ac262ed6370ef301fbfdc9aebd619a129201e293ea43f\",\"dweb:/ipfs/QmYLdjQ9wkFKFMuHVXeuhPBMmq2oYs94tjxWfXjXa2YtnR\"]},\"@openzeppelin/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0xfa152b6e88a1dc50780e8f1580426dc23ad2e1e2c2f086a088adf206a202f453\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5127b264994adab88fae419b1c493efc5acd07134c19ee5c0397e50018291ebf\",\"dweb:/ipfs/QmWwJZVhvdmvUCdimbb6R2Jiu59zjPqm6XTMchM6LaEHAp\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]},\"@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xaf936da92f3a9a4f98b237323b5eb1d813fb86c4d07a184beba7027cf0509ba3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://aaa210e132e06975eb9f20060db6ba7dee78f6fce691a1c2489525584de521c0\",\"dweb:/ipfs/QmRwzi4nUW3UWBwhY5ik2xW3JZo9NMLN5UyGi1xPpMQYrh\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610381806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80633ccfd60b14610051578063bd3588911461005b578063db2e21bc1461006e578063e2bbb15814610076575b600080fd5b610059610089565b005b610059610069366004610277565b6100f2565b610059610162565b6100596100843660046102ac565b61019a565b604051626fcb7160e41b815273__FundOperations________________________906306fcb710906100c090600090600401610302565b60006040518083038186803b1580156100d857600080fd5b505af41580156100ec573d6000803e3d6000fd5b50505050565b60405163f5a8e92160e01b815273__GameOperations________________________9063f5a8e9219061012e906000908690869060040161030b565b60006040518083038186803b15801561014657600080fd5b505af415801561015a573d6000803e3d6000fd5b505050505050565b6040516315826da360e01b815273__FundOperations________________________906315826da3906100c090600090600401610302565b6040516339d7f36b60e21b815273__FundOperations________________________9063e75fcdac9061012e9060009086908690600401610335565b6000608082840312156101e7578081fd5b6040516080810181811067ffffffffffffffff82111715610206578283fd5b6040529050806102168484610260565b81526102258460208501610260565b60208201526102378460408501610260565b6040820152606083013563ffffffff8116811461025357600080fd5b6060919091015292915050565b803560ff8116811461027157600080fd5b92915050565b600080610100838503121561028a578182fd5b61029484846101d6565b91506102a384608085016101d6565b90509250929050565b600080604083850312156102be578182fd5b50508035926020909101359150565b60ff815116825260ff602082015116602083015260ff604082015116604083015263ffffffff60608201511660608301525050565b90815260200190565b838152610120810161032060208301856102cd565b61032d60a08301846102cd565b949350505050565b928352602083019190915260408201526060019056fea2646970667358221220feb74d6366cc0c467f6f0aa3059261a89de0c20bf8588c8490b6e900721f81d664736f6c634300060c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80633ccfd60b14610051578063bd3588911461005b578063db2e21bc1461006e578063e2bbb15814610076575b600080fd5b610059610089565b005b610059610069366004610277565b6100f2565b610059610162565b6100596100843660046102ac565b61019a565b604051626fcb7160e41b815273__FundOperations________________________906306fcb710906100c090600090600401610302565b60006040518083038186803b1580156100d857600080fd5b505af41580156100ec573d6000803e3d6000fd5b50505050565b60405163f5a8e92160e01b815273__GameOperations________________________9063f5a8e9219061012e906000908690869060040161030b565b60006040518083038186803b15801561014657600080fd5b505af415801561015a573d6000803e3d6000fd5b505050505050565b6040516315826da360e01b815273__FundOperations________________________906315826da3906100c090600090600401610302565b6040516339d7f36b60e21b815273__FundOperations________________________9063e75fcdac9061012e9060009086908690600401610335565b6000608082840312156101e7578081fd5b6040516080810181811067ffffffffffffffff82111715610206578283fd5b6040529050806102168484610260565b81526102258460208501610260565b60208201526102378460408501610260565b6040820152606083013563ffffffff8116811461025357600080fd5b6060919091015292915050565b803560ff8116811461027157600080fd5b92915050565b600080610100838503121561028a578182fd5b61029484846101d6565b91506102a384608085016101d6565b90509250929050565b600080604083850312156102be578182fd5b50508035926020909101359150565b60ff815116825260ff602082015116602083015260ff604082015116604083015263ffffffff60608201511660608301525050565b90815260200190565b838152610120810161032060208301856102cd565b61032d60a08301846102cd565b949350505050565b928352602083019190915260408201526060019056fea2646970667358221220feb74d6366cc0c467f6f0aa3059261a89de0c20bf8588c8490b6e900721f81d664736f6c634300060c0033",
   "immutableReferences": {},
-  "sourceMap": "355:441:4:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "355:441:4:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;602:76;;;:::i;:::-;;684:110;;;;;;:::i;:::-;;:::i;476:120::-;;;;;;:::i;:::-;;:::i;602:76::-;639:32;;-1:-1:-1;;;639:32:4;;:14;;:23;;:32;;663:7;;639:32;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;602:76::o;684:110::-;735:52;;-1:-1:-1;;;735:52:4;;:14;;:21;;:52;;757:7;;766:10;;778:8;;735:52;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;684:110;:::o;476:120::-;542:47;;-1:-1:-1;;;542:47:4;;:14;;:22;;:47;;565:7;;574:6;;582;;542:47;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;476:120;;:::o;279:241:-1:-;;383:2;371:9;362:7;358:23;354:32;351:2;;;-1:-1;;389:12;351:2;72:20;;-1:-1;;;;;2949:54;;3532:35;;3522:2;;-1:-1;;3571:12;3522:2;441:63;345:175;-1:-1;;;345:175::o;527:366::-;;;648:2;636:9;627:7;623:23;619:32;616:2;;;-1:-1;;654:12;616:2;-1:-1;;209:20;;;806:2;845:22;;;209:20;;-1:-1;610:283::o;1442:278::-;1284:18;;;1597:2;1582:18;;1568:152::o;1727:532::-;1284:18;;;-1:-1;;;;;2949:54;;;2154:2;2139:18;;987:58;2949:54;2245:2;2230:18;;1136:37;1946:2;1931:18;;1917:342::o;2266:516::-;1284:18;;;2677:2;2662:18;;1284;;;;2768:2;2753:18;;1284;2477:2;2462:18;;2448:334::o",
-  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {FundOperations} from \"./impl/FundOperations.sol\";\nimport {GameOperations} from \"./impl/GameOperations.sol\";\nimport {State} from \"./State.sol\";\n\n/**\n * @title Operation\n * @author Big Beluga\n *\n * Primary public function for entering into the protocol\n */\ncontract Operations is State {\n    // ============ Constants ============\n\n    bytes32 constant FILE = \"Operation\";\n\n    function deposit(uint256 amount, uint256 length) public {\n        FundOperations.deposit(g_state, amount, length);\n    }\n\n    function withdraw() public {\n        FundOperations.withdraw(g_state);\n    }\n\n    function attack(address defender) public {\n        GameOperations.attack(g_state, msg.sender, defender);\n    }\n}\n",
+  "sourceMap": "394:706:4:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "394:706:4:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;641:76;;;:::i;:::-;;948:150;;;;;;:::i;:::-;;:::i;723:94::-;;;:::i;515:120::-;;;;;;:::i;:::-;;:::i;641:76::-;678:32;;-1:-1:-1;;;678:32:4;;:14;;:23;;:32;;702:7;;678:32;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;641:76::o;948:150::-;1053:38;;-1:-1:-1;;;1053:38:4;;:14;;:19;;:38;;1073:7;;1082:4;;1088:2;;1053:38;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;948:150;;:::o;723:94::-;769:41;;-1:-1:-1;;;769:41:4;;:14;;:32;;:41;;802:7;;769:41;;;:::i;515:120::-;581:47;;-1:-1:-1;;;581:47:4;;:14;;:22;;:47;;604:7;;613:6;;621;;581:47;;;:::i;37:763:-1:-;;156:4;144:9;139:3;135:19;131:30;128:2;;;-1:-1;;164:12;128:2;5097;5091:9;156:4;5127:6;5123:17;5234:6;5222:10;5219:22;5198:18;5186:10;5183:34;5180:62;5177:2;;;-1:-1;;5245:12;5177:2;5097;5264:22;183:29;-1:-1;183:29;298:47;341:3;317:22;298:47;:::i;:::-;280:16;273:73;444:47;487:3;411:2;467:9;463:22;444:47;:::i;:::-;411:2;430:5;426:16;419:73;588:47;631:3;5097:2;611:9;607:22;588:47;:::i;:::-;5097:2;574:5;570:16;563:73;697:2;754:9;750:22;1010:20;5449:10;5769:5;5438:22;5745:5;5742:34;5732:2;;5790:1;;5780:12;5732:2;697;712:16;;;;705:74;122:678;;-1:-1;;122:678::o;1079:126::-;1144:20;;5543:4;5532:16;;5863:33;;5853:2;;5910:1;;5900:12;5853:2;1129:76;;;;:::o;1212:488::-;;;1393:3;1381:9;1372:7;1368:23;1364:33;1361:2;;;-1:-1;;1400:12;1361:2;1462:83;1537:7;1513:22;1462:83;:::i;:::-;1452:93;;1601:83;1676:7;1582:3;1656:9;1652:22;1601:83;:::i;:::-;1591:93;;1355:345;;;;;:::o;1707:366::-;;;1828:2;1816:9;1807:7;1803:23;1799:32;1796:2;;;-1:-1;;1834:12;1796:2;-1:-1;;874:20;;;1986:2;2025:22;;;874:20;;-1:-1;1790:283::o;2141:830::-;5543:4;2378:16;2372:23;5532:16;3422:3;3415:35;5543:4;2551;2544:5;2540:16;2534:23;5532:16;2551:4;2619:3;2615:14;3415:35;5543:4;2711;2704:5;2700:16;2694:23;5532:16;2711:4;2779:3;2775:14;3415:35;5449:10;2869:4;2862:5;2858:16;2852:23;5438:22;2869:4;2939:3;2935:14;3302:36;2275:696;;:::o;3462:278::-;3077:18;;;3617:2;3602:18;;3588:152::o;3747:758::-;3077:18;;;4078:3;4063:19;;4203:140;4339:2;4324:18;;4315:6;4203:140;:::i;:::-;4354:141;4490:3;4479:9;4475:19;4466:6;4354:141;:::i;:::-;4049:456;;;;;;:::o;4512:516::-;3077:18;;;4923:2;4908:18;;3077;;;;5014:2;4999:18;;3077;4723:2;4708:18;;4694:334::o",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {FundOperations} from './impl/FundOperations.sol';\nimport {GameOperations} from './impl/GameOperations.sol';\nimport {State} from './State.sol';\nimport {Types} from './lib/Types.sol';\n\n/**\n * @title Operation\n * @author Big Beluga\n *\n * Primary public function for entering into the protocol\n */\ncontract Operations is State {\n    // ============ Constants ============\n\n    bytes32 constant FILE = 'Operation';\n\n    function deposit(uint256 amount, uint256 length) public {\n        FundOperations.deposit(g_state, amount, length);\n    }\n\n    function withdraw() public {\n        FundOperations.withdraw(g_state);\n    }\n\n    function emergencyWithdraw() public {\n        FundOperations.emergencyWithdraw(g_state);\n    }\n\n    // function attack(address defender) public {\n    //     GameOperations.attack(g_state, msg.sender, defender);\n    // }\n\n    function move(Types.StarPosition memory from, Types.StarPosition memory to)\n        public\n    {\n        GameOperations.move(g_state, from, to);\n    }\n}\n",
   "sourcePath": "C:\\Users\\James\\projects\\tsuno-fe\\contracts\\protocol\\Operations.sol",
   "ast": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol",
     "exportedSymbols": {
       "Operations": [
-        199
+        241
       ]
     },
-    "id": 200,
+    "id": 242,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 144,
+        "id": 173,
         "literals": [
           "solidity",
           "0.6",
@@ -70,7 +126,7 @@
         "src": "33:23:4"
       },
       {
-        "id": 145,
+        "id": 174,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -81,16 +137,16 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/FundOperations.sol",
         "file": "./impl/FundOperations.sol",
-        "id": 147,
+        "id": 176,
         "nodeType": "ImportDirective",
-        "scope": 200,
-        "sourceUnit": 430,
+        "scope": 242,
+        "sourceUnit": 728,
         "src": "92:57:4",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 146,
+              "id": 175,
               "name": "FundOperations",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -109,16 +165,16 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/GameOperations.sol",
         "file": "./impl/GameOperations.sol",
-        "id": 149,
+        "id": 178,
         "nodeType": "ImportDirective",
-        "scope": 200,
-        "sourceUnit": 571,
+        "scope": 242,
+        "sourceUnit": 940,
         "src": "150:57:4",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 148,
+              "id": 177,
               "name": "GameOperations",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -137,21 +193,49 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol",
         "file": "./State.sol",
-        "id": 151,
+        "id": 180,
         "nodeType": "ImportDirective",
-        "scope": 200,
-        "sourceUnit": 209,
+        "scope": 242,
+        "sourceUnit": 399,
         "src": "208:34:4",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 150,
+              "id": 179,
               "name": "State",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
               "src": "216:5:4",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol",
+        "file": "./lib/Types.sol",
+        "id": 182,
+        "nodeType": "ImportDirective",
+        "scope": 242,
+        "sourceUnit": 4066,
+        "src": "243:38:4",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 181,
+              "name": "Types",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "251:5:4",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -169,49 +253,49 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 153,
+              "id": 184,
               "name": "State",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 208,
-              "src": "378:5:4",
+              "referencedDeclaration": 398,
+              "src": "417:5:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_State_$208",
+                "typeIdentifier": "t_contract$_State_$398",
                 "typeString": "contract State"
               }
             },
-            "id": 154,
+            "id": 185,
             "nodeType": "InheritanceSpecifier",
-            "src": "378:5:4"
+            "src": "417:5:4"
           }
         ],
         "contractDependencies": [
-          208
+          398
         ],
         "contractKind": "contract",
         "documentation": {
-          "id": 152,
+          "id": 183,
           "nodeType": "StructuredDocumentation",
-          "src": "244:110:4",
+          "src": "283:110:4",
           "text": " @title Operation\n @author Big Beluga\n Primary public function for entering into the protocol"
         },
         "fullyImplemented": true,
-        "id": 199,
+        "id": 241,
         "linearizedBaseContracts": [
-          199,
-          208
+          241,
+          398
         ],
         "name": "Operations",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 157,
+            "id": 188,
             "mutability": "constant",
             "name": "FILE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 199,
-            "src": "434:35:4",
+            "scope": 241,
+            "src": "473:35:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -219,10 +303,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 155,
+              "id": 186,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "434:7:4",
+              "src": "473:7:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -231,14 +315,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "4f7065726174696f6e",
-              "id": 156,
+              "id": 187,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "458:11:4",
+              "src": "497:11:4",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_692334ac4c5e3b29222e9e2318bb6cada40470996c884dd957f308f9e2b009cc",
@@ -250,9 +334,9 @@
           },
           {
             "body": {
-              "id": 172,
+              "id": 203,
               "nodeType": "Block",
-              "src": "532:64:4",
+              "src": "571:64:4",
               "statements": [
                 {
                   "expression": {
@@ -260,25 +344,25 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 167,
+                        "id": 198,
                         "name": "g_state",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 207,
-                        "src": "565:7:4",
+                        "referencedDeclaration": 397,
+                        "src": "604:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       },
                       {
                         "argumentTypes": null,
-                        "id": 168,
+                        "id": 199,
                         "name": "amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 159,
-                        "src": "574:6:4",
+                        "referencedDeclaration": 190,
+                        "src": "613:6:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -286,12 +370,12 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 169,
+                        "id": 200,
                         "name": "length",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 161,
-                        "src": "582:6:4",
+                        "referencedDeclaration": 192,
+                        "src": "621:6:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -301,7 +385,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         },
                         {
@@ -315,32 +399,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 164,
+                        "id": 195,
                         "name": "FundOperations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 429,
-                        "src": "542:14:4",
+                        "referencedDeclaration": 727,
+                        "src": "581:14:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$429_$",
+                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$727_$",
                           "typeString": "type(library FundOperations)"
                         }
                       },
-                      "id": 166,
+                      "id": 197,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "deposit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 342,
-                      "src": "542:22:4",
+                      "referencedDeclaration": 546,
+                      "src": "581:22:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3030_storage_ptr_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$2775_storage_ptr_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (struct Storage.State storage pointer,uint256,uint256)"
                       }
                     },
-                    "id": 170,
+                    "id": 201,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -348,22 +432,22 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "542:47:4",
+                    "src": "581:47:4",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 171,
+                  "id": 202,
                   "nodeType": "ExpressionStatement",
-                  "src": "542:47:4"
+                  "src": "581:47:4"
                 }
               ]
             },
             "documentation": null,
             "functionSelector": "e2bbb158",
-            "id": 173,
+            "id": 204,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -371,18 +455,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 162,
+              "id": 193,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 159,
+                  "id": 190,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 173,
-                  "src": "493:14:4",
+                  "scope": 204,
+                  "src": "532:14:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -390,10 +474,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 158,
+                    "id": 189,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "493:7:4",
+                    "src": "532:7:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -404,13 +488,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 161,
+                  "id": 192,
                   "mutability": "mutable",
                   "name": "length",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 173,
-                  "src": "509:14:4",
+                  "scope": 204,
+                  "src": "548:14:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -418,10 +502,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 160,
+                    "id": 191,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "509:7:4",
+                    "src": "548:7:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -431,25 +515,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "492:32:4"
+              "src": "531:32:4"
             },
             "returnParameters": {
-              "id": 163,
+              "id": 194,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "532:0:4"
+              "src": "571:0:4"
             },
-            "scope": 199,
-            "src": "476:120:4",
+            "scope": 241,
+            "src": "515:120:4",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 182,
+              "id": 213,
               "nodeType": "Block",
-              "src": "629:49:4",
+              "src": "668:49:4",
               "statements": [
                 {
                   "expression": {
@@ -457,14 +541,14 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 179,
+                        "id": 210,
                         "name": "g_state",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 207,
-                        "src": "663:7:4",
+                        "referencedDeclaration": 397,
+                        "src": "702:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       }
@@ -472,38 +556,38 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 176,
+                        "id": 207,
                         "name": "FundOperations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 429,
-                        "src": "639:14:4",
+                        "referencedDeclaration": 727,
+                        "src": "678:14:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$429_$",
+                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$727_$",
                           "typeString": "type(library FundOperations)"
                         }
                       },
-                      "id": 178,
+                      "id": 209,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "withdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 422,
-                      "src": "639:23:4",
+                      "referencedDeclaration": 626,
+                      "src": "678:23:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3030_storage_ptr_$returns$__$",
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$2775_storage_ptr_$returns$__$",
                         "typeString": "function (struct Storage.State storage pointer)"
                       }
                     },
-                    "id": 180,
+                    "id": 211,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -511,22 +595,22 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "639:32:4",
+                    "src": "678:32:4",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 181,
+                  "id": 212,
                   "nodeType": "ExpressionStatement",
-                  "src": "639:32:4"
+                  "src": "678:32:4"
                 }
               ]
             },
             "documentation": null,
             "functionSelector": "3ccfd60b",
-            "id": 183,
+            "id": 214,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -534,28 +618,28 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 174,
+              "id": 205,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "619:2:4"
+              "src": "658:2:4"
             },
             "returnParameters": {
-              "id": 175,
+              "id": 206,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "629:0:4"
+              "src": "668:0:4"
             },
-            "scope": 199,
-            "src": "602:76:4",
+            "scope": 241,
+            "src": "641:76:4",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 197,
+              "id": 223,
               "nodeType": "Block",
-              "src": "725:69:4",
+              "src": "759:58:4",
               "statements": [
                 {
                   "expression": {
@@ -563,103 +647,53 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 191,
+                        "id": 220,
                         "name": "g_state",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 207,
-                        "src": "757:7:4",
+                        "referencedDeclaration": 397,
+                        "src": "802:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
-                        }
-                      },
-                      {
-                        "argumentTypes": null,
-                        "expression": {
-                          "argumentTypes": null,
-                          "id": 192,
-                          "name": "msg",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": -15,
-                          "src": "766:3:4",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_magic_message",
-                            "typeString": "msg"
-                          }
-                        },
-                        "id": 193,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "memberName": "sender",
-                        "nodeType": "MemberAccess",
-                        "referencedDeclaration": null,
-                        "src": "766:10:4",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_address_payable",
-                          "typeString": "address payable"
-                        }
-                      },
-                      {
-                        "argumentTypes": null,
-                        "id": 194,
-                        "name": "defender",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 185,
-                        "src": "778:8:4",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
                         }
                       }
                     ],
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
-                        },
-                        {
-                          "typeIdentifier": "t_address_payable",
-                          "typeString": "address payable"
-                        },
-                        {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
                         }
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 188,
-                        "name": "GameOperations",
+                        "id": 217,
+                        "name": "FundOperations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
-                        "src": "735:14:4",
+                        "referencedDeclaration": 727,
+                        "src": "769:14:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_GameOperations_$570_$",
-                          "typeString": "type(library GameOperations)"
+                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$727_$",
+                          "typeString": "type(library FundOperations)"
                         }
                       },
-                      "id": 190,
+                      "id": 219,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberName": "attack",
+                      "memberName": "emergencyWithdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 569,
-                      "src": "735:21:4",
+                      "referencedDeclaration": 726,
+                      "src": "769:32:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3030_storage_ptr_$_t_address_$_t_address_$returns$__$",
-                        "typeString": "function (struct Storage.State storage pointer,address,address)"
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$2775_storage_ptr_$returns$__$",
+                        "typeString": "function (struct Storage.State storage pointer)"
                       }
                     },
-                    "id": 195,
+                    "id": 221,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -667,96 +701,267 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "735:52:4",
+                    "src": "769:41:4",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 196,
+                  "id": 222,
                   "nodeType": "ExpressionStatement",
-                  "src": "735:52:4"
+                  "src": "769:41:4"
                 }
               ]
             },
             "documentation": null,
-            "functionSelector": "d018db3e",
-            "id": 198,
+            "functionSelector": "db2e21bc",
+            "id": 224,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "attack",
+            "name": "emergencyWithdraw",
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 186,
+              "id": 215,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "749:2:4"
+            },
+            "returnParameters": {
+              "id": 216,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "759:0:4"
+            },
+            "scope": 241,
+            "src": "723:94:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 239,
+              "nodeType": "Block",
+              "src": "1043:55:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 234,
+                        "name": "g_state",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 397,
+                        "src": "1073:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
+                          "typeString": "struct Storage.State storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 235,
+                        "name": "from",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 226,
+                        "src": "1082:4:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_StarPosition_$3953_memory_ptr",
+                          "typeString": "struct Types.StarPosition memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 236,
+                        "name": "to",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 228,
+                        "src": "1088:2:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_StarPosition_$3953_memory_ptr",
+                          "typeString": "struct Types.StarPosition memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
+                          "typeString": "struct Storage.State storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_StarPosition_$3953_memory_ptr",
+                          "typeString": "struct Types.StarPosition memory"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_StarPosition_$3953_memory_ptr",
+                          "typeString": "struct Types.StarPosition memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 231,
+                        "name": "GameOperations",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 939,
+                        "src": "1053:14:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_GameOperations_$939_$",
+                          "typeString": "type(library GameOperations)"
+                        }
+                      },
+                      "id": 233,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "move",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 938,
+                      "src": "1053:19:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$2775_storage_ptr_$_t_struct$_StarPosition_$3953_memory_ptr_$_t_struct$_StarPosition_$3953_memory_ptr_$returns$__$",
+                        "typeString": "function (struct Storage.State storage pointer,struct Types.StarPosition memory,struct Types.StarPosition memory)"
+                      }
+                    },
+                    "id": 237,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1053:38:4",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 238,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1053:38:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "bd358891",
+            "id": 240,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "move",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 229,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 185,
+                  "id": 226,
                   "mutability": "mutable",
-                  "name": "defender",
+                  "name": "from",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 198,
-                  "src": "700:16:4",
+                  "scope": 240,
+                  "src": "962:30:4",
                   "stateVariable": false,
-                  "storageLocation": "default",
+                  "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
+                    "typeIdentifier": "t_struct$_StarPosition_$3953_memory_ptr",
+                    "typeString": "struct Types.StarPosition"
                   },
                   "typeName": {
-                    "id": 184,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "700:7:4",
-                    "stateMutability": "nonpayable",
+                    "contractScope": null,
+                    "id": 225,
+                    "name": "Types.StarPosition",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3953,
+                    "src": "962:18:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
+                      "typeIdentifier": "t_struct$_StarPosition_$3953_storage_ptr",
+                      "typeString": "struct Types.StarPosition"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 228,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 240,
+                  "src": "994:28:4",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_StarPosition_$3953_memory_ptr",
+                    "typeString": "struct Types.StarPosition"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 227,
+                    "name": "Types.StarPosition",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3953,
+                    "src": "994:18:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_StarPosition_$3953_storage_ptr",
+                      "typeString": "struct Types.StarPosition"
                     }
                   },
                   "value": null,
                   "visibility": "internal"
                 }
               ],
-              "src": "699:18:4"
+              "src": "961:62:4"
             },
             "returnParameters": {
-              "id": 187,
+              "id": 230,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "725:0:4"
+              "src": "1043:0:4"
             },
-            "scope": 199,
-            "src": "684:110:4",
+            "scope": 241,
+            "src": "948:150:4",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 200,
-        "src": "355:441:4"
+        "scope": 242,
+        "src": "394:706:4"
       }
     ],
-    "src": "33:764:4"
+    "src": "33:1068:4"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/Operations.sol",
     "exportedSymbols": {
       "Operations": [
-        199
+        241
       ]
     },
-    "id": 200,
+    "id": 242,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 144,
+        "id": 173,
         "literals": [
           "solidity",
           "0.6",
@@ -766,7 +971,7 @@
         "src": "33:23:4"
       },
       {
-        "id": 145,
+        "id": 174,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -777,16 +982,16 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/FundOperations.sol",
         "file": "./impl/FundOperations.sol",
-        "id": 147,
+        "id": 176,
         "nodeType": "ImportDirective",
-        "scope": 200,
-        "sourceUnit": 430,
+        "scope": 242,
+        "sourceUnit": 728,
         "src": "92:57:4",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 146,
+              "id": 175,
               "name": "FundOperations",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -805,16 +1010,16 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/impl/GameOperations.sol",
         "file": "./impl/GameOperations.sol",
-        "id": 149,
+        "id": 178,
         "nodeType": "ImportDirective",
-        "scope": 200,
-        "sourceUnit": 571,
+        "scope": 242,
+        "sourceUnit": 940,
         "src": "150:57:4",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 148,
+              "id": 177,
               "name": "GameOperations",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -833,21 +1038,49 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol",
         "file": "./State.sol",
-        "id": 151,
+        "id": 180,
         "nodeType": "ImportDirective",
-        "scope": 200,
-        "sourceUnit": 209,
+        "scope": 242,
+        "sourceUnit": 399,
         "src": "208:34:4",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 150,
+              "id": 179,
               "name": "State",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
               "src": "216:5:4",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol",
+        "file": "./lib/Types.sol",
+        "id": 182,
+        "nodeType": "ImportDirective",
+        "scope": 242,
+        "sourceUnit": 4066,
+        "src": "243:38:4",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 181,
+              "name": "Types",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "251:5:4",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -865,49 +1098,49 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 153,
+              "id": 184,
               "name": "State",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 208,
-              "src": "378:5:4",
+              "referencedDeclaration": 398,
+              "src": "417:5:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_State_$208",
+                "typeIdentifier": "t_contract$_State_$398",
                 "typeString": "contract State"
               }
             },
-            "id": 154,
+            "id": 185,
             "nodeType": "InheritanceSpecifier",
-            "src": "378:5:4"
+            "src": "417:5:4"
           }
         ],
         "contractDependencies": [
-          208
+          398
         ],
         "contractKind": "contract",
         "documentation": {
-          "id": 152,
+          "id": 183,
           "nodeType": "StructuredDocumentation",
-          "src": "244:110:4",
+          "src": "283:110:4",
           "text": " @title Operation\n @author Big Beluga\n Primary public function for entering into the protocol"
         },
         "fullyImplemented": true,
-        "id": 199,
+        "id": 241,
         "linearizedBaseContracts": [
-          199,
-          208
+          241,
+          398
         ],
         "name": "Operations",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 157,
+            "id": 188,
             "mutability": "constant",
             "name": "FILE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 199,
-            "src": "434:35:4",
+            "scope": 241,
+            "src": "473:35:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -915,10 +1148,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 155,
+              "id": 186,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "434:7:4",
+              "src": "473:7:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -927,14 +1160,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "4f7065726174696f6e",
-              "id": 156,
+              "id": 187,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "458:11:4",
+              "src": "497:11:4",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_692334ac4c5e3b29222e9e2318bb6cada40470996c884dd957f308f9e2b009cc",
@@ -946,9 +1179,9 @@
           },
           {
             "body": {
-              "id": 172,
+              "id": 203,
               "nodeType": "Block",
-              "src": "532:64:4",
+              "src": "571:64:4",
               "statements": [
                 {
                   "expression": {
@@ -956,25 +1189,25 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 167,
+                        "id": 198,
                         "name": "g_state",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 207,
-                        "src": "565:7:4",
+                        "referencedDeclaration": 397,
+                        "src": "604:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       },
                       {
                         "argumentTypes": null,
-                        "id": 168,
+                        "id": 199,
                         "name": "amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 159,
-                        "src": "574:6:4",
+                        "referencedDeclaration": 190,
+                        "src": "613:6:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -982,12 +1215,12 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 169,
+                        "id": 200,
                         "name": "length",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 161,
-                        "src": "582:6:4",
+                        "referencedDeclaration": 192,
+                        "src": "621:6:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -997,7 +1230,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         },
                         {
@@ -1011,32 +1244,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 164,
+                        "id": 195,
                         "name": "FundOperations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 429,
-                        "src": "542:14:4",
+                        "referencedDeclaration": 727,
+                        "src": "581:14:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$429_$",
+                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$727_$",
                           "typeString": "type(library FundOperations)"
                         }
                       },
-                      "id": 166,
+                      "id": 197,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "deposit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 342,
-                      "src": "542:22:4",
+                      "referencedDeclaration": 546,
+                      "src": "581:22:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3030_storage_ptr_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$2775_storage_ptr_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (struct Storage.State storage pointer,uint256,uint256)"
                       }
                     },
-                    "id": 170,
+                    "id": 201,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1044,22 +1277,22 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "542:47:4",
+                    "src": "581:47:4",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 171,
+                  "id": 202,
                   "nodeType": "ExpressionStatement",
-                  "src": "542:47:4"
+                  "src": "581:47:4"
                 }
               ]
             },
             "documentation": null,
             "functionSelector": "e2bbb158",
-            "id": 173,
+            "id": 204,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1067,18 +1300,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 162,
+              "id": 193,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 159,
+                  "id": 190,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 173,
-                  "src": "493:14:4",
+                  "scope": 204,
+                  "src": "532:14:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1086,10 +1319,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 158,
+                    "id": 189,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "493:7:4",
+                    "src": "532:7:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1100,13 +1333,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 161,
+                  "id": 192,
                   "mutability": "mutable",
                   "name": "length",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 173,
-                  "src": "509:14:4",
+                  "scope": 204,
+                  "src": "548:14:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1114,10 +1347,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 160,
+                    "id": 191,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "509:7:4",
+                    "src": "548:7:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1127,25 +1360,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "492:32:4"
+              "src": "531:32:4"
             },
             "returnParameters": {
-              "id": 163,
+              "id": 194,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "532:0:4"
+              "src": "571:0:4"
             },
-            "scope": 199,
-            "src": "476:120:4",
+            "scope": 241,
+            "src": "515:120:4",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 182,
+              "id": 213,
               "nodeType": "Block",
-              "src": "629:49:4",
+              "src": "668:49:4",
               "statements": [
                 {
                   "expression": {
@@ -1153,14 +1386,14 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 179,
+                        "id": 210,
                         "name": "g_state",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 207,
-                        "src": "663:7:4",
+                        "referencedDeclaration": 397,
+                        "src": "702:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       }
@@ -1168,38 +1401,38 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
                         }
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 176,
+                        "id": 207,
                         "name": "FundOperations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 429,
-                        "src": "639:14:4",
+                        "referencedDeclaration": 727,
+                        "src": "678:14:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$429_$",
+                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$727_$",
                           "typeString": "type(library FundOperations)"
                         }
                       },
-                      "id": 178,
+                      "id": 209,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "withdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 422,
-                      "src": "639:23:4",
+                      "referencedDeclaration": 626,
+                      "src": "678:23:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3030_storage_ptr_$returns$__$",
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$2775_storage_ptr_$returns$__$",
                         "typeString": "function (struct Storage.State storage pointer)"
                       }
                     },
-                    "id": 180,
+                    "id": 211,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1207,22 +1440,22 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "639:32:4",
+                    "src": "678:32:4",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 181,
+                  "id": 212,
                   "nodeType": "ExpressionStatement",
-                  "src": "639:32:4"
+                  "src": "678:32:4"
                 }
               ]
             },
             "documentation": null,
             "functionSelector": "3ccfd60b",
-            "id": 183,
+            "id": 214,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1230,28 +1463,28 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 174,
+              "id": 205,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "619:2:4"
+              "src": "658:2:4"
             },
             "returnParameters": {
-              "id": 175,
+              "id": 206,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "629:0:4"
+              "src": "668:0:4"
             },
-            "scope": 199,
-            "src": "602:76:4",
+            "scope": 241,
+            "src": "641:76:4",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 197,
+              "id": 223,
               "nodeType": "Block",
-              "src": "725:69:4",
+              "src": "759:58:4",
               "statements": [
                 {
                   "expression": {
@@ -1259,103 +1492,53 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 191,
+                        "id": 220,
                         "name": "g_state",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 207,
-                        "src": "757:7:4",
+                        "referencedDeclaration": 397,
+                        "src": "802:7:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
-                        }
-                      },
-                      {
-                        "argumentTypes": null,
-                        "expression": {
-                          "argumentTypes": null,
-                          "id": 192,
-                          "name": "msg",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": -15,
-                          "src": "766:3:4",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_magic_message",
-                            "typeString": "msg"
-                          }
-                        },
-                        "id": 193,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "memberName": "sender",
-                        "nodeType": "MemberAccess",
-                        "referencedDeclaration": null,
-                        "src": "766:10:4",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_address_payable",
-                          "typeString": "address payable"
-                        }
-                      },
-                      {
-                        "argumentTypes": null,
-                        "id": 194,
-                        "name": "defender",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 185,
-                        "src": "778:8:4",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
                         }
                       }
                     ],
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_State_$3030_storage",
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
                           "typeString": "struct Storage.State storage ref"
-                        },
-                        {
-                          "typeIdentifier": "t_address_payable",
-                          "typeString": "address payable"
-                        },
-                        {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
                         }
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 188,
-                        "name": "GameOperations",
+                        "id": 217,
+                        "name": "FundOperations",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
-                        "src": "735:14:4",
+                        "referencedDeclaration": 727,
+                        "src": "769:14:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_GameOperations_$570_$",
-                          "typeString": "type(library GameOperations)"
+                          "typeIdentifier": "t_type$_t_contract$_FundOperations_$727_$",
+                          "typeString": "type(library FundOperations)"
                         }
                       },
-                      "id": 190,
+                      "id": 219,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberName": "attack",
+                      "memberName": "emergencyWithdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 569,
-                      "src": "735:21:4",
+                      "referencedDeclaration": 726,
+                      "src": "769:32:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$3030_storage_ptr_$_t_address_$_t_address_$returns$__$",
-                        "typeString": "function (struct Storage.State storage pointer,address,address)"
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$2775_storage_ptr_$returns$__$",
+                        "typeString": "function (struct Storage.State storage pointer)"
                       }
                     },
-                    "id": 195,
+                    "id": 221,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1363,82 +1546,253 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "735:52:4",
+                    "src": "769:41:4",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 196,
+                  "id": 222,
                   "nodeType": "ExpressionStatement",
-                  "src": "735:52:4"
+                  "src": "769:41:4"
                 }
               ]
             },
             "documentation": null,
-            "functionSelector": "d018db3e",
-            "id": 198,
+            "functionSelector": "db2e21bc",
+            "id": 224,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "attack",
+            "name": "emergencyWithdraw",
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 186,
+              "id": 215,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "749:2:4"
+            },
+            "returnParameters": {
+              "id": 216,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "759:0:4"
+            },
+            "scope": 241,
+            "src": "723:94:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 239,
+              "nodeType": "Block",
+              "src": "1043:55:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 234,
+                        "name": "g_state",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 397,
+                        "src": "1073:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
+                          "typeString": "struct Storage.State storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 235,
+                        "name": "from",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 226,
+                        "src": "1082:4:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_StarPosition_$3953_memory_ptr",
+                          "typeString": "struct Types.StarPosition memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 236,
+                        "name": "to",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 228,
+                        "src": "1088:2:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_StarPosition_$3953_memory_ptr",
+                          "typeString": "struct Types.StarPosition memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_State_$2775_storage",
+                          "typeString": "struct Storage.State storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_StarPosition_$3953_memory_ptr",
+                          "typeString": "struct Types.StarPosition memory"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_StarPosition_$3953_memory_ptr",
+                          "typeString": "struct Types.StarPosition memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 231,
+                        "name": "GameOperations",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 939,
+                        "src": "1053:14:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_GameOperations_$939_$",
+                          "typeString": "type(library GameOperations)"
+                        }
+                      },
+                      "id": 233,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "move",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 938,
+                      "src": "1053:19:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_State_$2775_storage_ptr_$_t_struct$_StarPosition_$3953_memory_ptr_$_t_struct$_StarPosition_$3953_memory_ptr_$returns$__$",
+                        "typeString": "function (struct Storage.State storage pointer,struct Types.StarPosition memory,struct Types.StarPosition memory)"
+                      }
+                    },
+                    "id": 237,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1053:38:4",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 238,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1053:38:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "bd358891",
+            "id": 240,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "move",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 229,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 185,
+                  "id": 226,
                   "mutability": "mutable",
-                  "name": "defender",
+                  "name": "from",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 198,
-                  "src": "700:16:4",
+                  "scope": 240,
+                  "src": "962:30:4",
                   "stateVariable": false,
-                  "storageLocation": "default",
+                  "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
+                    "typeIdentifier": "t_struct$_StarPosition_$3953_memory_ptr",
+                    "typeString": "struct Types.StarPosition"
                   },
                   "typeName": {
-                    "id": 184,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "700:7:4",
-                    "stateMutability": "nonpayable",
+                    "contractScope": null,
+                    "id": 225,
+                    "name": "Types.StarPosition",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3953,
+                    "src": "962:18:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
+                      "typeIdentifier": "t_struct$_StarPosition_$3953_storage_ptr",
+                      "typeString": "struct Types.StarPosition"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 228,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 240,
+                  "src": "994:28:4",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_StarPosition_$3953_memory_ptr",
+                    "typeString": "struct Types.StarPosition"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 227,
+                    "name": "Types.StarPosition",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3953,
+                    "src": "994:18:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_StarPosition_$3953_storage_ptr",
+                      "typeString": "struct Types.StarPosition"
                     }
                   },
                   "value": null,
                   "visibility": "internal"
                 }
               ],
-              "src": "699:18:4"
+              "src": "961:62:4"
             },
             "returnParameters": {
-              "id": 187,
+              "id": 230,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "725:0:4"
+              "src": "1043:0:4"
             },
-            "scope": 199,
-            "src": "684:110:4",
+            "scope": 241,
+            "src": "948:150:4",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 200,
-        "src": "355:441:4"
+        "scope": 242,
+        "src": "394:706:4"
       }
     ],
-    "src": "33:764:4"
+    "src": "33:1068:4"
   },
   "compiler": {
     "name": "solc",
@@ -1446,7 +1800,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-09-21T10:49:25.059Z",
+  "updatedAt": "2020-09-23T19:25:48.055Z",
   "devdoc": {
     "author": "Big Beluga Primary public function for entering into the protocol",
     "kind": "dev",

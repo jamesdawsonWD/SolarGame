@@ -1,62 +1,62 @@
 {
   "contractName": "Actions",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Big Beluga Library that defines and parses valid Actions\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Actions\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Actions.sol\":\"Actions\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Actions.sol\":{\"keccak256\":\"0xcd08c1b7b936c3e0d67a5d7ad3465c2ec4a80baf97e905989e2bb379b8aa92e9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://afd834b886ce7d8e4ddefedbd4ae8e03871d3d1250da52858a06ba268f03c3ca\",\"dweb:/ipfs/QmZAbyoinHx56MfdcLKnc7jYt3WhJ8zbaV4EjQ6euJ6j3r\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol\":{\"keccak256\":\"0xc9db483decf85fb5b994af1ca466fb8ba22749a147ae040ad26181a11da6aa09\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6e442352374e1cc41195e056bce479a32532828bf9763b6d60956f9b365ea5c\",\"dweb:/ipfs/QmUbmyLBBAEosdKrondVbcKJtbxU3NRk6grDcvvj1ataaJ\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
-  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220781024258f38e99d289d37cdc8d7bf9268f668356c3b7d151470275fe190699664736f6c634300060c0033",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220781024258f38e99d289d37cdc8d7bf9268f668356c3b7d151470275fe190699664736f6c634300060c0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Big Beluga Library that defines and parses valid Actions\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Actions\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Actions.sol\":\"Actions\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Actions.sol\":{\"keccak256\":\"0xcd08c1b7b936c3e0d67a5d7ad3465c2ec4a80baf97e905989e2bb379b8aa92e9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://afd834b886ce7d8e4ddefedbd4ae8e03871d3d1250da52858a06ba268f03c3ca\",\"dweb:/ipfs/QmZAbyoinHx56MfdcLKnc7jYt3WhJ8zbaV4EjQ6euJ6j3r\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol\":{\"keccak256\":\"0x440bea48ef2b7dcf61587eb202249aac4c4f41ec8f97a0f82e1fd6a623b277a1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0b508a10cb8f066e9f2ac262ed6370ef301fbfdc9aebd619a129201e293ea43f\",\"dweb:/ipfs/QmYLdjQ9wkFKFMuHVXeuhPBMmq2oYs94tjxWfXjXa2YtnR\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
+  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220cbd27f21ea51144ab9183eef1e744b17eb2b9bd5ad8ba525ae429d14d35e187b64736f6c634300060c0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220cbd27f21ea51144ab9183eef1e744b17eb2b9bd5ad8ba525ae429d14d35e187b64736f6c634300060c0033",
   "immutableReferences": {},
-  "sourceMap": "228:4271:10:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "228:4271:10:-:0;;;;;;;;",
+  "sourceMap": "228:4271:13:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "228:4271:13:-:0;;;;;;;;",
   "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {Types} from \"./Types.sol\";\n\n/**\n * @title Actions\n * @author Big Beluga\n *\n * Library that defines and parses valid Actions\n */\nlibrary Actions {\n    // ============ Enums ============\n    // enum ActionType {\n    //     Fund, // deposit tokens to your balance\n    //     Withdraw, // withdraw tokens from your balance\n    //     Buy, // invest tokens in a trader's equity share\n    //     Close, // close investments from a trader's equity share\n    //     Transfer // transfer balance between accounts\n    // }\n    // // ============ Structs ============\n    // /*\n    //  * Arguments that are passed to the protocol in an ordered list as part of a single operation.\n    //  */\n    // struct ActionArgs {\n    //     ActionType actionType;\n    //     address account;\n    //     address otherAddress;\n    //     uint256 amount;\n    //     bytes data;\n    // }\n    // // ============ Action Types ============\n    // /*\n    //  * Deposit Args for adding tokens to an account balance from a specific address.\n    //  */\n    // struct FundArgs {\n    //     uint256 amount;\n    //     address account;\n    //     address pool;\n    // }\n    // /*\n    //  * Withdraws tokens from an account balance and send them to an address\n    //  */\n    // struct WithdrawArgs {\n    //     uint256 amount;\n    //     address account;\n    //     address to;\n    // }\n    // /*\n    //  * Transfers balance between two accounts. T\n    //  */\n    // struct TransferArgs {\n    //     uint256 amount;\n    //     address account;\n    //     address to;\n    // }\n    // /*\n    //  * Invest an amount in the trader to trade with on your behalf.\n    //  */\n    // struct BuyArgs {\n    //     uint256 amount;\n    //     address account;\n    //     address trader;\n    // }\n    // /*\n    //  * Close an investment with a trader and return the money to the senders balance.\n    //  */\n    // struct CloseArgs {\n    //     uint256 amount;\n    //     address account;\n    //     address trader;\n    // }\n    // // ============ Parsing Functions ============\n    // function parseFundArgs(ActionArgs memory args)\n    //     internal\n    //     pure\n    //     returns (FundArgs memory)\n    // {\n    //     assert(args.actionType == ActionType.Fund);\n    //     return\n    //         FundArgs({\n    //             amount: args.amount,\n    //             account: args.account,\n    //             from: args.otherAddress\n    //         });\n    // }\n    // function parseWithdrawArgs(ActionArgs memory args)\n    //     internal\n    //     pure\n    //     returns (WithdrawArgs memory)\n    // {\n    //     assert(args.actionType == ActionType.Withdraw);\n    //     return\n    //         WithdrawArgs({\n    //             amount: args.amount,\n    //             account: args.account,\n    //             to: args.otherAddress\n    //         });\n    // }\n    // function parseTransferArgs(ActionArgs memory args)\n    //     internal\n    //     pure\n    //     returns (TransferArgs memory)\n    // {\n    //     assert(args.actionType == ActionType.Transfer);\n    //     return\n    //         TransferArgs({\n    //             amount: args.amount,\n    //             account: args.account,\n    //             to: args.otherAddress\n    //         });\n    // }\n    // function parseInvestArgs(ActionArgs memory args)\n    //     internal\n    //     pure\n    //     returns (InvestArgs memory)\n    // {\n    //     assert(args.actionType == ActionType.Invest);\n    //     return\n    //         InvestArgs({\n    //             amount: args.amount,\n    //             account: args.account,\n    //             trader: args.otherAddress\n    //         });\n    // }\n    // function parseCloseArgs(ActionArgs memory args)\n    //     internal\n    //     pure\n    //     returns (CloseArgs memory)\n    // {\n    //     assert(args.actionType == ActionType.Close);\n    //     return\n    //         CloseArgs({\n    //             amount: args.amount,\n    //             account: args.account,\n    //             trader: args.otherAddress\n    //         });\n    // }\n    // function parseTradeArgs(ActionArgs memory args)\n    //     internal\n    //     pure\n    //     returns (TradeArgs memory)\n    // {\n    //     assert(args.actionType == ActionType.Trade);\n    //     return\n    //         TradeArgs({\n    //             amount: args.amount,\n    //             trader: args.account,\n    //             tradeData: args.data\n    //         });\n    // }\n}\n",
   "sourcePath": "C:/Users/James/projects/tsuno-fe/contracts/protocol/lib/Actions.sol",
   "ast": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Actions.sol",
     "exportedSymbols": {
       "Actions": [
-        669
+        797
       ]
     },
-    "id": 670,
+    "id": 798,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 664,
+        "id": 792,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:10"
+        "src": "33:23:13"
       },
       {
-        "id": 665,
+        "id": 793,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "57:33:10"
+        "src": "57:33:13"
       },
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol",
         "file": "./Types.sol",
-        "id": 667,
+        "id": 795,
         "nodeType": "ImportDirective",
-        "scope": 670,
-        "sourceUnit": 4255,
-        "src": "92:34:10",
+        "scope": 798,
+        "sourceUnit": 2954,
+        "src": "92:34:13",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 666,
+              "id": 794,
               "name": "Types",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "100:5:10",
+              "src": "100:5:13",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -73,73 +73,73 @@
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 668,
+          "id": 796,
           "nodeType": "StructuredDocumentation",
-          "src": "128:99:10",
+          "src": "128:99:13",
           "text": " @title Actions\n @author Big Beluga\n Library that defines and parses valid Actions"
         },
         "fullyImplemented": true,
-        "id": 669,
+        "id": 797,
         "linearizedBaseContracts": [
-          669
+          797
         ],
         "name": "Actions",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 670,
-        "src": "228:4271:10"
+        "scope": 798,
+        "src": "228:4271:13"
       }
     ],
-    "src": "33:4467:10"
+    "src": "33:4467:13"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Actions.sol",
     "exportedSymbols": {
       "Actions": [
-        669
+        797
       ]
     },
-    "id": 670,
+    "id": 798,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 664,
+        "id": 792,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:10"
+        "src": "33:23:13"
       },
       {
-        "id": 665,
+        "id": 793,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "57:33:10"
+        "src": "57:33:13"
       },
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol",
         "file": "./Types.sol",
-        "id": 667,
+        "id": 795,
         "nodeType": "ImportDirective",
-        "scope": 670,
-        "sourceUnit": 4255,
-        "src": "92:34:10",
+        "scope": 798,
+        "sourceUnit": 2954,
+        "src": "92:34:13",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 666,
+              "id": 794,
               "name": "Types",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "100:5:10",
+              "src": "100:5:13",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -156,24 +156,24 @@
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 668,
+          "id": 796,
           "nodeType": "StructuredDocumentation",
-          "src": "128:99:10",
+          "src": "128:99:13",
           "text": " @title Actions\n @author Big Beluga\n Library that defines and parses valid Actions"
         },
         "fullyImplemented": true,
-        "id": 669,
+        "id": 797,
         "linearizedBaseContracts": [
-          669
+          797
         ],
         "name": "Actions",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 670,
-        "src": "228:4271:10"
+        "scope": 798,
+        "src": "228:4271:13"
       }
     ],
-    "src": "33:4467:10"
+    "src": "33:4467:13"
   },
   "compiler": {
     "name": "solc",
@@ -181,7 +181,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-09-21T10:49:25.068Z",
+  "updatedAt": "2020-09-23T17:32:38.848Z",
   "devdoc": {
     "author": "Big Beluga Library that defines and parses valid Actions",
     "kind": "dev",

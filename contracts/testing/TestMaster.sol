@@ -6,21 +6,25 @@ import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
 import {Master} from '../protocol/master.sol';
 
 contract TestMaster is Master {
-    constructor(address tsuno) public Master(tsuno) {}
+    constructor(
+        address tsuno,
+        address solar,
+        address sat
+    ) public Master(tsuno, solar, sat) {}
 
-    function giveArmyA() public {
-        g_state.masters[msg.sender].army.soldiers = 1000;
-        g_state.masters[msg.sender].army.cavalry = 1000;
-        g_state.masters[msg.sender].army.archers = 1000;
-        g_state.masters[msg.sender].army.siegeWeapons = 0;
-        g_state.masters[msg.sender].army.defenceStructures = 1000;
-    }
+    // function giveArmyA() public {
+    //     g_state.masters[msg.sender].army.soldiers = 1000;
+    //     g_state.masters[msg.sender].army.cavalry = 1000;
+    //     g_state.masters[msg.sender].army.archers = 1000;
+    //     g_state.masters[msg.sender].army.siegeWeapons = 0;
+    //     g_state.masters[msg.sender].army.defenceStructures = 1000;
+    // }
 
-    function giveArmyB() public {
-        g_state.masters[msg.sender].army.soldiers = 1000;
-        g_state.masters[msg.sender].army.cavalry = 1000;
-        g_state.masters[msg.sender].army.archers = 1000;
-        g_state.masters[msg.sender].army.siegeWeapons = 500;
-        g_state.masters[msg.sender].army.defenceStructures = 750;
-    }
+    // function giveArmyB() public {
+    //     g_state.masters[msg.sender].army.soldiers = 1000;
+    //     g_state.masters[msg.sender].army.cavalry = 1000;
+    //     g_state.masters[msg.sender].army.archers = 1000;
+    //     g_state.masters[msg.sender].army.siegeWeapons = 500;
+    //     g_state.masters[msg.sender].army.defenceStructures = 750;
+    // }
 }

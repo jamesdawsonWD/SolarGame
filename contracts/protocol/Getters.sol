@@ -21,4 +21,8 @@ contract Getters is State {
     {
         return Rewards.calculateReward(stakeTsuno, stakedDays);
     }
+
+    function getDateUnlocked() public view returns (uint256) {
+        return Storage.getDateUnlocked(g_state, msg.sender);
+    }
 }

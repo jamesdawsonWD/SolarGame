@@ -4,7 +4,7 @@ import { RootState, FundOperations } from '../types';
 export const state: FundOperations = {
     balance: 0,
     stakedTime: 0,
-    dateUnlocked: new Date()
+    dateUnlocked: 0
 };
 
 import { getters } from './getters';

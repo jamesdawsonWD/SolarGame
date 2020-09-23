@@ -9,7 +9,13 @@ import {State} from './State.sol';
 import {Operations} from './Operations.sol';
 
 contract Master is State, Operations, Getters {
-    constructor(address _tsuno) public {
+    constructor(
+        address _tsuno,
+        address _solar,
+        address _sat
+    ) public {
         g_state.tsuno = _tsuno;
+        g_state.solar = _solar;
+        g_state.sat = _sat;
     }
 }

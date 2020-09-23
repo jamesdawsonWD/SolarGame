@@ -1,37 +1,21 @@
 import * as BN from 'bignumber.js';
 export const addressZero = '0x' + '0'.repeat(40);
-
-// const isChecksumAddress = function (address: string) {
-//     // Check each case
-//     address = address.replace('0x', '');
-//     const addressHash = sha3(address.toLowerCase());
-//     for (let i = 0; i < 40; i++) {
-//         // the nth letter should be uppercase if the nth digit of casemap is 1
-//         if (
-//             (parseInt(addressHash[i], 16) > 7 &&
-//                 address[i].toUpperCase() !== address[i]) ||
-//             (parseInt(addressHash[i], 16) <= 7 &&
-//                 address[i].toLowerCase() !== address[i])
-//         ) {
-//             return false;
-//         }
-//     }
-
-//     return true;
-// };
-
-// export const isAddress = function (address: string) {
-//     if (!/^(0x)?[0-9a-f]{40}$/i.test(address)) {
-//         // check if it has the basic requirements of an address
-//         return false;
-//     } else if (
-//         /^(0x)?[0-9a-f]{40}$/.test(address) ||
-//         /^(0x)?[0-9A-F]{40}$/.test(address)
-//     ) {
-//         // If it's all small caps or all all caps, return true
-//         return true;
-//     } else {
-//         // Otherwise check each case
-//         return isChecksumAddress(address);
-//     }
-// };
+export const SECONDS_IN_DAY = 86400;
+export const advanceTime = time => {
+    return new Promise((resolve, reject) => {
+        window.web3.currentProvider.send(
+            {
+                jsonrpc: '2.0',
+                method: 'evm_increaseTime',
+                params: [time],
+                id: new Date().getTime()
+            },
+            (err, result) => {
+                if (err) {
+                    return reject(err);
+                }
+                return resolve(result);
+            }
+        );
+    });
+};

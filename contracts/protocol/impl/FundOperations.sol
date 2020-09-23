@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity 0.6.12;
+pragma experimental ABIEncoderV2;
 
 import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
 import {Events} from '../lib/Events.sol';
@@ -64,5 +65,19 @@ library FundOperations {
         Events.logWithdraw(state, msg.sender, reward);
     }
 
-    function emergencyWithdraw(Storage.State storage state) public {}
+    function emergencyWithdraw(Storage.State storage state) public {
+        uint256 reward = Storage.getReward(state, msg.sender);
+        uint256 dateUnlocked = Storage.getDateUnlocked(state, msg.sender);
+
+        uint256 emergancyPercent = ((dateUnlocked / now) * 100) / 50;
+        uint256 actualReward = (reward / 100) * emergancyPercent;
+        uint256 balance = Storage.getBalance(state, msg.sender);
+        address tsuno = Storage.getTsuno(state);
+
+        ITsuno(tsuno).mint(address(this), actualReward);
+        ITsuno(tsuno).transfer(msg.sender, balance + actualReward);
+
+        Storage.unlockTsuno(state, msg.sender);
+        Events.logWithdraw(state, msg.sender, actualReward);
+    }
 }

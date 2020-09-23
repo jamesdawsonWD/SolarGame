@@ -5,58 +5,58 @@
   "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122001f438646740ac2a3fe0b096441e0c38a10bef3cbcc536381564365c332f6d4564736f6c634300060c0033",
   "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122001f438646740ac2a3fe0b096441e0c38a10bef3cbcc536381564365c332f6d4564736f6c634300060c0033",
   "immutableReferences": {},
-  "sourceMap": "862:177:21:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "862:177:21:-:0;;;;;;;;",
+  "sourceMap": "862:177:20:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "862:177:20:-:0;;;;;;;;",
   "source": "// SPDX-License-Identifier: MIT\n/*\n    Copyright 2019 dYdX Trading Inc.\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n    http://www.apache.org/licenses/LICENSE-2.0\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n*/\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {Math} from \"./Math.sol\";\n\n/**\n * @title Time\n * @author dYdX\n *\n * Library for dealing with time, assuming timestamps fit within 32 bits (valid until year 2106)\n */\nlibrary Time {\n    // ============ Library Functions ============\n\n    function currentTime() internal view returns (uint32) {\n        return Math.to32(block.timestamp);\n    }\n}\n",
   "sourcePath": "C:/Users/James/projects/tsuno-fe/contracts/protocol/lib/Time.sol",
   "ast": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Time.sol",
     "exportedSymbols": {
       "Time": [
-        4026
+        4016
       ]
     },
-    "id": 4027,
+    "id": 4017,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4009,
+        "id": 3999,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "630:23:21"
+        "src": "630:23:20"
       },
       {
-        "id": 4010,
+        "id": 4000,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "654:33:21"
+        "src": "654:33:20"
       },
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol",
         "file": "./Math.sol",
-        "id": 4012,
+        "id": 4002,
         "nodeType": "ImportDirective",
-        "scope": 4027,
-        "sourceUnit": 1968,
-        "src": "689:32:21",
+        "scope": 4017,
+        "sourceUnit": 2095,
+        "src": "689:32:20",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 4011,
+              "id": 4001,
               "name": "Math",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "697:4:21",
+              "src": "697:4:20",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -73,24 +73,24 @@
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 4013,
+          "id": 4003,
           "nodeType": "StructuredDocumentation",
-          "src": "723:138:21",
+          "src": "723:138:20",
           "text": " @title Time\n @author dYdX\n Library for dealing with time, assuming timestamps fit within 32 bits (valid until year 2106)"
         },
         "fullyImplemented": true,
-        "id": 4026,
+        "id": 4016,
         "linearizedBaseContracts": [
-          4026
+          4016
         ],
         "name": "Time",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 4024,
+              "id": 4014,
               "nodeType": "Block",
-              "src": "987:50:21",
+              "src": "987:50:20",
               "statements": [
                 {
                   "expression": {
@@ -100,18 +100,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 4020,
+                          "id": 4010,
                           "name": "block",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -4,
-                          "src": "1014:5:21",
+                          "src": "1014:5:20",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_block",
                             "typeString": "block"
                           }
                         },
-                        "id": 4021,
+                        "id": 4011,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -119,7 +119,7 @@
                         "memberName": "timestamp",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "1014:15:21",
+                        "src": "1014:15:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -135,32 +135,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 4018,
+                        "id": 4008,
                         "name": "Math",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1967,
-                        "src": "1004:4:21",
+                        "referencedDeclaration": 2094,
+                        "src": "1004:4:20",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Math_$1967_$",
+                          "typeIdentifier": "t_type$_t_contract$_Math_$2094_$",
                           "typeString": "type(library Math)"
                         }
                       },
-                      "id": 4019,
+                      "id": 4009,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "to32",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1932,
-                      "src": "1004:9:21",
+                      "referencedDeclaration": 2059,
+                      "src": "1004:9:20",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint32_$",
                         "typeString": "function (uint256) pure returns (uint32)"
                       }
                     },
-                    "id": 4022,
+                    "id": 4012,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -168,22 +168,22 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1004:26:21",
+                    "src": "1004:26:20",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
                     }
                   },
-                  "functionReturnParameters": 4017,
-                  "id": 4023,
+                  "functionReturnParameters": 4007,
+                  "id": 4013,
                   "nodeType": "Return",
-                  "src": "997:33:21"
+                  "src": "997:33:20"
                 }
               ]
             },
             "documentation": null,
-            "id": 4025,
+            "id": 4015,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -191,24 +191,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 4014,
+              "id": 4004,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "953:2:21"
+              "src": "953:2:20"
             },
             "returnParameters": {
-              "id": 4017,
+              "id": 4007,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4016,
+                  "id": 4006,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 4025,
-                  "src": "979:6:21",
+                  "scope": 4015,
+                  "src": "979:6:20",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -216,10 +216,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 4015,
+                    "id": 4005,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "979:6:21",
+                    "src": "979:6:20",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -229,69 +229,69 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "978:8:21"
+              "src": "978:8:20"
             },
-            "scope": 4026,
-            "src": "933:104:21",
+            "scope": 4016,
+            "src": "933:104:20",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 4027,
-        "src": "862:177:21"
+        "scope": 4017,
+        "src": "862:177:20"
       }
     ],
-    "src": "630:410:21"
+    "src": "630:410:20"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Time.sol",
     "exportedSymbols": {
       "Time": [
-        4026
+        4016
       ]
     },
-    "id": 4027,
+    "id": 4017,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4009,
+        "id": 3999,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "630:23:21"
+        "src": "630:23:20"
       },
       {
-        "id": 4010,
+        "id": 4000,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "654:33:21"
+        "src": "654:33:20"
       },
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol",
         "file": "./Math.sol",
-        "id": 4012,
+        "id": 4002,
         "nodeType": "ImportDirective",
-        "scope": 4027,
-        "sourceUnit": 1968,
-        "src": "689:32:21",
+        "scope": 4017,
+        "sourceUnit": 2095,
+        "src": "689:32:20",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 4011,
+              "id": 4001,
               "name": "Math",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "697:4:21",
+              "src": "697:4:20",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -308,24 +308,24 @@
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 4013,
+          "id": 4003,
           "nodeType": "StructuredDocumentation",
-          "src": "723:138:21",
+          "src": "723:138:20",
           "text": " @title Time\n @author dYdX\n Library for dealing with time, assuming timestamps fit within 32 bits (valid until year 2106)"
         },
         "fullyImplemented": true,
-        "id": 4026,
+        "id": 4016,
         "linearizedBaseContracts": [
-          4026
+          4016
         ],
         "name": "Time",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 4024,
+              "id": 4014,
               "nodeType": "Block",
-              "src": "987:50:21",
+              "src": "987:50:20",
               "statements": [
                 {
                   "expression": {
@@ -335,18 +335,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 4020,
+                          "id": 4010,
                           "name": "block",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -4,
-                          "src": "1014:5:21",
+                          "src": "1014:5:20",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_block",
                             "typeString": "block"
                           }
                         },
-                        "id": 4021,
+                        "id": 4011,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -354,7 +354,7 @@
                         "memberName": "timestamp",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "1014:15:21",
+                        "src": "1014:15:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -370,32 +370,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 4018,
+                        "id": 4008,
                         "name": "Math",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1967,
-                        "src": "1004:4:21",
+                        "referencedDeclaration": 2094,
+                        "src": "1004:4:20",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Math_$1967_$",
+                          "typeIdentifier": "t_type$_t_contract$_Math_$2094_$",
                           "typeString": "type(library Math)"
                         }
                       },
-                      "id": 4019,
+                      "id": 4009,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "to32",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1932,
-                      "src": "1004:9:21",
+                      "referencedDeclaration": 2059,
+                      "src": "1004:9:20",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint32_$",
                         "typeString": "function (uint256) pure returns (uint32)"
                       }
                     },
-                    "id": 4022,
+                    "id": 4012,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -403,22 +403,22 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1004:26:21",
+                    "src": "1004:26:20",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
                     }
                   },
-                  "functionReturnParameters": 4017,
-                  "id": 4023,
+                  "functionReturnParameters": 4007,
+                  "id": 4013,
                   "nodeType": "Return",
-                  "src": "997:33:21"
+                  "src": "997:33:20"
                 }
               ]
             },
             "documentation": null,
-            "id": 4025,
+            "id": 4015,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -426,24 +426,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 4014,
+              "id": 4004,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "953:2:21"
+              "src": "953:2:20"
             },
             "returnParameters": {
-              "id": 4017,
+              "id": 4007,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4016,
+                  "id": 4006,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 4025,
-                  "src": "979:6:21",
+                  "scope": 4015,
+                  "src": "979:6:20",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -451,10 +451,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 4015,
+                    "id": 4005,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "979:6:21",
+                    "src": "979:6:20",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -464,20 +464,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "978:8:21"
+              "src": "978:8:20"
             },
-            "scope": 4026,
-            "src": "933:104:21",
+            "scope": 4016,
+            "src": "933:104:20",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 4027,
-        "src": "862:177:21"
+        "scope": 4017,
+        "src": "862:177:20"
       }
     ],
-    "src": "630:410:21"
+    "src": "630:410:20"
   },
   "compiler": {
     "name": "solc",
@@ -485,7 +485,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-09-21T10:49:25.137Z",
+  "updatedAt": "2020-09-21T12:58:01.313Z",
   "devdoc": {
     "author": "dYdX Library for dealing with time, assuming timestamps fit within 32 bits (valid until year 2106)",
     "kind": "dev",
