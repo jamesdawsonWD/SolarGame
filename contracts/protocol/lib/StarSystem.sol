@@ -6,6 +6,8 @@ pragma experimental ABIEncoderV2;
 import {Random} from './Random.sol';
 import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
 import {Fleet} from './Fleet.sol';
+import {Events} from './Events.sol';
+import {Constants} from './Constants.sol';
 
 /**
  * @title Star System
@@ -16,79 +18,170 @@ import {Fleet} from './Fleet.sol';
 library StarSystem {
     using SafeMath for uint256;
 
-    uint32 constant LOW_YIELD_LOW = 1;
-    uint32 constant LOW_YIELD_HIGH = 75;
-    uint32 constant MEDIUM_YIELD_LOW = 76;
-    uint32 constant MEDIUM_YIELD_HIGH = 150;
-    uint32 constant HIGH_YIELD_LOW = 151;
-    uint32 constant HIGH_YIELD_HIGH = 400;
-    uint32 constant INSANE_YIELD_LOW = 401;
-    uint32 constant INSANE_YIELD_HIGH = 1000;
-    uint256 constant TOTAL_SYSTEM_TYPES = 7;
-
     enum SystemType {
         Undiscovered,
+        AncientFleetAggressive,
+        SuperComputerEvent,
+        AdvancedAlienFleetAggressive,
+        AiFleetAggressive,
+        AlienFleetAggressive,
+        PiratesEvent,
+        SolarWinds,
+        Asteroids,
         Empty,
         GovermentOwned,
-        // Uninhabitable,
-        // ShipWreck,
-        // BlackMarket,
-        // RegularMarket,
         LowYieldSystem,
+        RandomEvent,
         MediumYieldSystem,
+        ShipWreck,
         HighYieldSystem,
+        AncientMiningSystem,
+        AncientWeaponSystem,
+        AncientShipWreck,
         InsaneYieldSystem,
-        // AlienMarket,
-        // AlienPassive,
-        // AlienAggressive,
-        // PirateOwned,
-        // AdvancedRaceMarket,
-        // AdvancedRacePassive,
-        // AdvancedRaceAggressive,
-        // EretheumMiningSystem,
-        // AncientMiningSystem,
-        // AncientWeaponSystem,
-        AncientShipWreck
+        AncientRacePassive
     }
     struct Info {
         SystemType systemType;
         Fleet.Info fleet;
         uint256 investment;
         uint256 tokenId;
-        uint32 yield;
+        uint16 yield;
         bool hasFleet;
     }
 
-    function randomSystemType() internal returns (SystemType systemType) {
-        uint32 roll = uint32(Random.randrange(1, 10000)); // roll out of 10000
+    function randomSystemType()
+        internal
+        returns (SystemType systemType, uint256 rand)
+    {
+        rand = Random.randrange(1, Constants.MAX_ROLL);
+        uint16 roll = uint16(rand); // roll out of 10000
+        // TODO: replace hard coded numbers with constants once we are happy with
+        // the number of SystemTypes that we want tot have in play
 
-        if (roll < 50) {
+        Events.logRandom(rand);
+        Events.logRandom(roll);
+        if (roll == 1) {
+            systemType = SystemType.AncientFleetAggressive;
+        } else if (roll == 42) {
+            systemType = SystemType.SuperComputerEvent;
+        } else if (roll <= Constants.ONE_PERCENT_MAX_ROLL * 5) {
+            systemType = SystemType.AdvancedAlienFleetAggressive;
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 5 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL * 10
+        ) {
+            systemType = SystemType.AiFleetAggressive;
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 10 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL * 20
+        ) {
+            systemType = SystemType.AlienFleetAggressive;
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 20 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL * 30
+        ) {
+            systemType = SystemType.PiratesEvent;
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 30 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL * 35
+        ) {
+            systemType = SystemType.SolarWinds;
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 35 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL * 40
+        ) {
+            systemType = SystemType.Asteroids;
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 40 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL * 47
+        ) {
             systemType = SystemType.Empty;
-        } else if (roll > 51 && roll <= 300) {
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 47 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL * 60
+        ) {
+            systemType = SystemType.GovermentOwned;
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 60 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL * 65
+        ) {
             systemType = SystemType.LowYieldSystem;
-        } else if (roll > 300 && roll <= 600) {
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 65 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL * 70
+        ) {
+            systemType = SystemType.RandomEvent;
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 70 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL & 75
+        ) {
             systemType = SystemType.MediumYieldSystem;
-        } else if (roll > 600 && roll <= 900) {
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 70 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL & 80
+        ) {
+            systemType = SystemType.ShipWreck;
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 80 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL & 85
+        ) {
             systemType = SystemType.HighYieldSystem;
-        } else if (roll > 900 && roll <= 999) {
-            systemType = SystemType.HighYieldSystem;
-        } else if (roll == 10000) {
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 85 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL & 90
+        ) {
+            systemType = SystemType.AncientMiningSystem;
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 90 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL & 95
+        ) {
+            systemType = SystemType.AncientWeaponSystem;
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 95 &&
+            roll <= Constants.ONE_PERCENT_MAX_ROLL & 99
+        ) {
             systemType = SystemType.AncientShipWreck;
+        } else if (
+            roll > Constants.ONE_PERCENT_MAX_ROLL * 99 &&
+            roll <= Constants.MAX_ROLL - 1
+        ) {
+            systemType = SystemType.InsaneYieldSystem;
+        } else if (roll == Constants.MAX_ROLL) {
+            systemType = SystemType.AncientRacePassive;
+        } else {
+            systemType = SystemType.Empty;
         }
     }
 
-    function randomYield(SystemType systemType) internal returns (uint32 rand) {
+    function randomYield(SystemType systemType) internal returns (uint16 rand) {
         if (systemType == SystemType.LowYieldSystem) {
-            rand = uint32(Random.randrange(LOW_YIELD_LOW, LOW_YIELD_HIGH));
+            rand = uint16(
+                Random.randrange(
+                    Constants.LOW_YIELD_LOW,
+                    Constants.LOW_YIELD_HIGH
+                )
+            );
         } else if (systemType == SystemType.MediumYieldSystem) {
-            rand = uint32(
-                Random.randrange(MEDIUM_YIELD_LOW, MEDIUM_YIELD_HIGH)
+            rand = uint16(
+                Random.randrange(
+                    Constants.MEDIUM_YIELD_LOW,
+                    Constants.MEDIUM_YIELD_HIGH
+                )
             );
         } else if (systemType == SystemType.LowYieldSystem) {
-            rand = uint32(Random.randrange(HIGH_YIELD_LOW, HIGH_YIELD_HIGH));
+            rand = uint16(
+                Random.randrange(
+                    Constants.HIGH_YIELD_LOW,
+                    Constants.HIGH_YIELD_HIGH
+                )
+            );
         } else if (systemType == SystemType.LowYieldSystem) {
-            rand = uint32(
-                Random.randrange(INSANE_YIELD_LOW, INSANE_YIELD_HIGH)
+            rand = uint16(
+                Random.randrange(
+                    Constants.INSANE_YIELD_LOW,
+                    Constants.INSANE_YIELD_HIGH
+                )
             );
         }
     }

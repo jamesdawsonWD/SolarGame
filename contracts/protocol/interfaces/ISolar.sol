@@ -1,14 +1,69 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.6.2;
+/*
 
-import {IERC721} from '@openzeppelin/contracts/token/ERC721/IERC721.sol';
+    Copyright 2019 dYdX Trading Inc.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*/
+
+pragma solidity 0.6.12;
+pragma experimental ABIEncoderV2;
 
 /**
- * @dev Required interface of an ERC721 compliant contract.
+ * @title IErc20
+ * @author dYdX
+ *
+ * Interface for using ERC20 Tokens. We have to use a special interface to call ERC20 functions so
+ * that we don't automatically revert when calling non-compliant tokens that have no return value for
+ * transfer(), transferFrom(), or approve().
  */
-interface ISolar is IERC721 {
-    function mint(address _to, uint256 _tokenId) external;
+interface ISolar {
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
+
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
+
+    function transfer(address to, uint256 value) external;
+
+    function transferFrom(
+        address from,
+        address to,
+        uint256 value
+    ) external;
+
+    function mint(address account, uint256 amount) external;
 
     function setOperator(address _operator) external;
+
+    function approve(address spender, uint256 value) external;
+
+    function name() external view returns (string memory);
+
+    function symbol() external view returns (string memory);
+
+    function decimals() external view returns (uint8);
 }

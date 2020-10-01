@@ -5,5 +5,5 @@ import {ShipsAndTechnology} from '../protocol/ShipsAndTechnology.sol';
 
 /* solium-disable-next-line */
 contract TestShipsAndTechnology is ShipsAndTechnology {
-
+    constructor(address master) public ShipsAndTechnology(master) {}
 }

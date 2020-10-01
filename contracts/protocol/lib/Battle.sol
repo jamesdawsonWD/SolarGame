@@ -19,27 +19,6 @@ library Battle {
 
     bytes32 constant FILE = 'Battle';
 
-    // Unit Health
-    uint256 constant SIEGE_WEAPON_HEALTH = 1500;
-    uint256 constant DEFENCE_STRUCTURE_HEALTH = 200;
-    uint256 constant SOLDIER_HEALTH = 75;
-    uint256 constant CAVALRY_HEALTH = 50;
-    uint256 constant ARCHER_HEALTH = 25;
-    uint256 constant HERO_HEALTH = 1250;
-
-    // Unit Damage
-    uint256 constant SIEGE_WEAPON_DAMAGE = 100;
-    uint256 constant DEFENCE_STRUCTURE_DAMAGE = 0;
-    uint256 constant SOLDIER_DAMAGE = 25;
-    uint256 constant CAVALRY_DAMAGE = 50;
-    uint256 constant ARCHER_DAMAGE = 75;
-    uint256 constant HERO_DAMAGE = 500;
-
-    // Bonus Variables
-    uint256 constant DEFENSE_BONUS = 100000;
-
-    uint256 constant TURNS = 10;
-
     // ============ Library Functions ============
 
     // function attack(Army.Info memory attacker, Army.Info memory defender)

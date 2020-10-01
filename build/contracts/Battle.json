@@ -5,58 +5,58 @@
   "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212205edce1b181bad40e2c96d0ef44c07bc58aaa869d20ddd72cf546b43c63c8f0a064736f6c634300060c0033",
   "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212205edce1b181bad40e2c96d0ef44c07bc58aaa869d20ddd72cf546b43c63c8f0a064736f6c634300060c0033",
   "immutableReferences": {},
-  "sourceMap": "386:9921:14:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "386:9921:14:-:0;;;;;;;;",
+  "sourceMap": "386:9921:15:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "386:9921:15:-:0;;;;;;;;",
   "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {Random} from './Random.sol';\nimport {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';\nimport {Strings} from './Strings.sol';\n\n/**\n * @title Exchange\n * @author Big Beluga\n *\n * Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct\n */\nlibrary Battle {\n    using SafeMath for uint256;\n    // ============ Constants ============\n\n    bytes32 constant FILE = 'Battle';\n\n    // Unit Health\n    uint256 constant SIEGE_WEAPON_HEALTH = 1500;\n    uint256 constant DEFENCE_STRUCTURE_HEALTH = 200;\n    uint256 constant SOLDIER_HEALTH = 75;\n    uint256 constant CAVALRY_HEALTH = 50;\n    uint256 constant ARCHER_HEALTH = 25;\n    uint256 constant HERO_HEALTH = 1250;\n\n    // Unit Damage\n    uint256 constant SIEGE_WEAPON_DAMAGE = 100;\n    uint256 constant DEFENCE_STRUCTURE_DAMAGE = 0;\n    uint256 constant SOLDIER_DAMAGE = 25;\n    uint256 constant CAVALRY_DAMAGE = 50;\n    uint256 constant ARCHER_DAMAGE = 75;\n    uint256 constant HERO_DAMAGE = 500;\n\n    // Bonus Variables\n    uint256 constant DEFENSE_BONUS = 100000;\n\n    uint256 constant TURNS = 10;\n\n    // ============ Library Functions ============\n\n    // function attack(Army.Info memory attacker, Army.Info memory defender)\n    //     internal\n    //     returns (bool winner, bytes memory log)\n    // {\n    //     // Defender always goes first\n    //     uint256 attackerHealth = calculateArmyHealth(attacker);\n    //     uint256 defenderHealth = calculateArmyHealth(defender);\n\n    //     log = abi.encodePacked(\n    //         'Attacker Starting Health: ',\n    //         Strings.stringify(attackerHealth),\n    //         ',Defender Starting Health: ',\n    //         Strings.stringify(defenderHealth)\n    //     );\n\n    //     for (uint256 i = 0; i < TURNS; i++) {\n    //         if (defender.siegeWeapons > 0) {\n    //             attacker = siegeWeaponDamage(attacker, defender.siegeWeapons);\n    //         }\n\n    //         if (attacker.siegeWeapons > 0) {\n    //             defender = siegeWeaponDamage(defender, attacker.siegeWeapons);\n    //         }\n\n    //         if (defender.cavalry > 0) {\n    //             attacker = cavalryDamage(attacker, defender.cavalry);\n    //         }\n    //         if (attacker.cavalry > 0) {\n    //             defender = cavalryDamage(defender, attacker.cavalry);\n    //         }\n\n    //         if (defender.archers > 0) {\n    //             attacker = archerDamage(attacker, defender.archers);\n    //         }\n\n    //         if (attacker.archers > 0) {\n    //             defender = archerDamage(defender, attacker.archers);\n    //         }\n\n    //         if (defender.soldiers > 0) {\n    //             attacker = soldierDamage(attacker, defender.soldiers);\n    //         }\n\n    //         if (attacker.soldiers > 0) {\n    //             defender = soldierDamage(defender, attacker.soldiers);\n    //         }\n\n    //         attackerHealth = calculateArmyHealth(attacker);\n    //         defenderHealth = calculateArmyHealth(defender);\n\n    //         log = abi.encodePacked(\n    //             string(log),\n    //             ',Turn: ',\n    //             Strings.stringify(i + 1),\n    //             ',Attacker Health: ',\n    //             Strings.stringify(attackerHealth),\n    //             ',Defender Health: ',\n    //             Strings.stringify(defenderHealth)\n    //         );\n    //         winner = attackerHealth > defenderHealth;\n    //         if (\n    //             attackerHealth == 0 ||\n    //             defenderHealth == 0 ||\n    //             Army.isDefeated(attacker) ||\n    //             Army.isDefeated(defender)\n    //         ) {\n    //             return (winner, log);\n    //         }\n    //     }\n    //     return (winner, log);\n\n    //     // If attackers have brought defenses they take 80% of damage until they are destroyed\n    //     // Defenders defense structures will take 80% damage from attackers siege weapons\n    //     // the Remaining damage will then be taken by Siege weapons up to a maximum of 50% of\n    //     // the units health. THis process will work through all units until the uint has completed it's\n    //     // attachk. This will continue until we have a winner.\n    // }\n\n    // function siegeWeaponDamage(Army.Info memory army, uint256 siegeWeapons)\n    //     private\n    //     returns (Army.Info memory)\n    // {\n    //     uint256 damage = siegeWeapons * SIEGE_WEAPON_DAMAGE; //300\n    //     if (army.defenceStructures > 0) {\n    //         //800\n    //         army.defenceStructures = army.defenceStructures *\n    //             DEFENCE_STRUCTURE_HEALTH >\n    //             damage // 800 > 300 : true\n    //             ? army.defenceStructures.sub(\n    //                 damage.div(DEFENCE_STRUCTURE_HEALTH) // 300 / 200 = 1.5\n    //             )\n    //             : 0;\n    //     } else if (army.siegeWeapons > 0) {\n    //         army.siegeWeapons = army.siegeWeapons * SIEGE_WEAPON_HEALTH > damage\n    //             ? army.siegeWeapons.sub(damage.div(SIEGE_WEAPON_HEALTH))\n    //             : 0;\n    //     } else if (army.archers > 0) {\n    //         army.archers = army.archers * ARCHER_HEALTH > damage\n    //             ? army.archers.sub(damage.div(ARCHER_HEALTH))\n    //             : 0;\n    //     } else if (army.soldiers > 0) {\n    //         army.soldiers = army.soldiers * SOLDIER_HEALTH > damage\n    //             ? army.soldiers.sub(damage.div(SOLDIER_HEALTH))\n    //             : 0;\n    //     } else if (army.cavalry > 0) {\n    //         army.cavalry = army.cavalry * CAVALRY_HEALTH > damage\n    //             ? army.cavalry.sub(damage.div(CAVALRY_HEALTH))\n    //             : 0;\n    //     }\n    //     return army;\n    // }\n\n    // function cavalryDamage(Army.Info memory army, uint256 cavalry)\n    //     private\n    //     returns (Army.Info memory)\n    // {\n    //     uint256 damage = cavalry * CAVALRY_DAMAGE;\n    //     if (army.soldiers > 0) {\n    //         army.soldiers = army.soldiers * SOLDIER_HEALTH > damage\n    //             ? army.soldiers.sub(damage.div(SOLDIER_HEALTH))\n    //             : 0;\n    //     } else if (army.cavalry > 0) {\n    //         army.cavalry = army.cavalry * CAVALRY_HEALTH > damage\n    //             ? army.cavalry.sub(damage.div(CAVALRY_HEALTH))\n    //             : 0;\n    //     } else if (army.defenceStructures > 0) {\n    //         army.defenceStructures = army.defenceStructures *\n    //             DEFENCE_STRUCTURE_HEALTH >\n    //             damage\n    //             ? army.defenceStructures.sub(\n    //                 damage.div(DEFENCE_STRUCTURE_HEALTH)\n    //             )\n    //             : 0;\n    //     } else if (army.siegeWeapons > 0) {\n    //         army.siegeWeapons = army.siegeWeapons * SIEGE_WEAPON_HEALTH > damage\n    //             ? army.siegeWeapons.sub(damage.div(SIEGE_WEAPON_HEALTH))\n    //             : 0;\n    //     } else if (army.archers > 0) {\n    //         army.archers = army.archers * ARCHER_HEALTH > damage\n    //             ? army.archers.sub(damage.div(ARCHER_HEALTH))\n    //             : 0;\n    //     }\n    //     return army;\n    // }\n\n    // function archerDamage(Army.Info memory army, uint256 archers)\n    //     private\n    //     returns (Army.Info memory)\n    // {\n    //     uint256 damage = archers * ARCHER_DAMAGE;\n    //     if (army.defenceStructures > 0) {\n    //         army.defenceStructures = army.defenceStructures *\n    //             DEFENCE_STRUCTURE_HEALTH >\n    //             damage\n    //             ? army.defenceStructures.sub(\n    //                 damage.div(DEFENCE_STRUCTURE_HEALTH)\n    //             )\n    //             : 0;\n    //     } else if (army.cavalry > 0) {\n    //         army.cavalry = army.cavalry * CAVALRY_HEALTH > damage\n    //             ? army.cavalry.sub(damage.div(CAVALRY_HEALTH))\n    //             : 0;\n    //     } else if (army.archers > 0) {\n    //         army.archers = army.archers * ARCHER_HEALTH > damage\n    //             ? army.archers.sub(damage.div(ARCHER_HEALTH))\n    //             : 0;\n    //     } else if (army.soldiers > 0) {\n    //         army.soldiers = army.soldiers * SOLDIER_HEALTH > damage\n    //             ? army.soldiers.sub(damage.div(SOLDIER_HEALTH))\n    //             : 0;\n    //     } else if (army.siegeWeapons > 0) {\n    //         army.siegeWeapons = army.siegeWeapons * SIEGE_WEAPON_HEALTH > damage\n    //             ? army.siegeWeapons.sub(damage.div(SIEGE_WEAPON_HEALTH))\n    //             : 0;\n    //     }\n    //     return army;\n    // }\n\n    // function soldierDamage(Army.Info memory army, uint256 soldiers)\n    //     private\n    //     returns (Army.Info memory)\n    // {\n    //     uint256 damage = soldiers * SOLDIER_DAMAGE;\n    //     if (army.soldiers > 0) {\n    //         army.soldiers = army.soldiers * SOLDIER_HEALTH > damage\n    //             ? army.soldiers.sub(damage.div(SOLDIER_HEALTH))\n    //             : 0;\n    //     } else if (army.archers > 0) {\n    //         army.archers = army.archers * ARCHER_HEALTH > damage\n    //             ? army.archers.sub(damage.div(ARCHER_HEALTH))\n    //             : 0;\n    //     } else if (army.defenceStructures > 0) {\n    //         army.defenceStructures = army.defenceStructures *\n    //             DEFENCE_STRUCTURE_HEALTH >\n    //             damage\n    //             ? army.defenceStructures.sub(\n    //                 damage.div(DEFENCE_STRUCTURE_HEALTH)\n    //             )\n    //             : 0;\n    //     } else if (army.siegeWeapons > 0) {\n    //         army.siegeWeapons = army.siegeWeapons * SIEGE_WEAPON_HEALTH > damage\n    //             ? army.siegeWeapons.sub(damage.div(SIEGE_WEAPON_HEALTH))\n    //             : 0;\n    //     }\n    //     return army;\n    // }\n\n    // function calculateArmyHealth(Army.Info memory army)\n    //     private\n    //     returns (uint256 health)\n    // {\n    //     return\n    //         army.siegeWeapons *\n    //         SIEGE_WEAPON_HEALTH +\n    //         army.defenceStructures *\n    //         DEFENCE_STRUCTURE_HEALTH +\n    //         army.soldiers *\n    //         SOLDIER_HEALTH +\n    //         army.archers *\n    //         ARCHER_HEALTH +\n    //         army.cavalry *\n    //         CAVALRY_HEALTH;\n    // }\n}\n",
   "sourcePath": "C:\\Users\\James\\projects\\tsuno-fe\\contracts\\protocol\\lib\\Battle.sol",
   "ast": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Battle.sol",
     "exportedSymbols": {
       "Battle": [
-        1117
+        1496
       ]
     },
-    "id": 1118,
+    "id": 1497,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1060,
+        "id": 1439,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:14"
+        "src": "33:23:15"
       },
       {
-        "id": 1061,
+        "id": 1440,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "57:33:14"
+        "src": "57:33:15"
       },
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol",
         "file": "./Random.sol",
-        "id": 1063,
+        "id": 1442,
         "nodeType": "ImportDirective",
-        "scope": 1118,
-        "sourceUnit": 1634,
-        "src": "92:36:14",
+        "scope": 1497,
+        "sourceUnit": 2066,
+        "src": "92:36:15",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 1062,
+              "id": 1441,
               "name": "Random",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "100:6:14",
+              "src": "100:6:15",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -70,21 +70,21 @@
       {
         "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
         "file": "@openzeppelin/contracts/math/SafeMath.sol",
-        "id": 1065,
+        "id": 1444,
         "nodeType": "ImportDirective",
-        "scope": 1118,
-        "sourceUnit": 4584,
-        "src": "129:67:14",
+        "scope": 1497,
+        "sourceUnit": 5340,
+        "src": "129:67:15",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 1064,
+              "id": 1443,
               "name": "SafeMath",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "137:8:14",
+              "src": "137:8:15",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -98,21 +98,21 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Strings.sol",
         "file": "./Strings.sol",
-        "id": 1067,
+        "id": 1446,
         "nodeType": "ImportDirective",
-        "scope": 1118,
-        "sourceUnit": 3898,
-        "src": "197:38:14",
+        "scope": 1497,
+        "sourceUnit": 4617,
+        "src": "197:38:15",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 1066,
+              "id": 1445,
               "name": "Strings",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "205:7:14",
+              "src": "205:7:15",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -129,40 +129,40 @@
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 1068,
+          "id": 1447,
           "nodeType": "StructuredDocumentation",
-          "src": "237:148:14",
+          "src": "237:148:15",
           "text": " @title Exchange\n @author Big Beluga\n Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct"
         },
         "fullyImplemented": true,
-        "id": 1117,
+        "id": 1496,
         "linearizedBaseContracts": [
-          1117
+          1496
         ],
         "name": "Battle",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 1071,
+            "id": 1450,
             "libraryName": {
               "contractScope": null,
-              "id": 1069,
+              "id": 1448,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4583,
-              "src": "413:8:14",
+              "referencedDeclaration": 5339,
+              "src": "413:8:15",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$4583",
+                "typeIdentifier": "t_contract$_SafeMath_$5339",
                 "typeString": "library SafeMath"
               }
             },
             "nodeType": "UsingForDirective",
-            "src": "407:27:14",
+            "src": "407:27:15",
             "typeName": {
-              "id": 1070,
+              "id": 1449,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "426:7:14",
+              "src": "426:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -171,13 +171,13 @@
           },
           {
             "constant": true,
-            "id": 1074,
+            "id": 1453,
             "mutability": "constant",
             "name": "FILE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "483:32:14",
+            "scope": 1496,
+            "src": "483:32:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -185,10 +185,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 1072,
+              "id": 1451,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "483:7:14",
+              "src": "483:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -197,14 +197,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "426174746c65",
-              "id": 1073,
+              "id": 1452,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "507:8:14",
+              "src": "507:8:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_b15ab3083eaf4d342d74aaf1e18ae7b462ff9a419f686f9a38540186cbbe12f2",
@@ -216,13 +216,13 @@
           },
           {
             "constant": true,
-            "id": 1077,
+            "id": 1456,
             "mutability": "constant",
             "name": "SIEGE_WEAPON_HEALTH",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "541:43:14",
+            "scope": 1496,
+            "src": "541:43:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -230,10 +230,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1075,
+              "id": 1454,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "541:7:14",
+              "src": "541:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -242,14 +242,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "31353030",
-              "id": 1076,
+              "id": 1455,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "580:4:14",
+              "src": "580:4:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1500_by_1",
@@ -261,13 +261,13 @@
           },
           {
             "constant": true,
-            "id": 1080,
+            "id": 1459,
             "mutability": "constant",
             "name": "DEFENCE_STRUCTURE_HEALTH",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "590:47:14",
+            "scope": 1496,
+            "src": "590:47:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -275,10 +275,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1078,
+              "id": 1457,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "590:7:14",
+              "src": "590:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -287,14 +287,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "323030",
-              "id": 1079,
+              "id": 1458,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "634:3:14",
+              "src": "634:3:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_200_by_1",
@@ -306,13 +306,13 @@
           },
           {
             "constant": true,
-            "id": 1083,
+            "id": 1462,
             "mutability": "constant",
             "name": "SOLDIER_HEALTH",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "643:36:14",
+            "scope": 1496,
+            "src": "643:36:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -320,10 +320,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1081,
+              "id": 1460,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "643:7:14",
+              "src": "643:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -332,14 +332,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3735",
-              "id": 1082,
+              "id": 1461,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "677:2:14",
+              "src": "677:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_75_by_1",
@@ -351,13 +351,13 @@
           },
           {
             "constant": true,
-            "id": 1086,
+            "id": 1465,
             "mutability": "constant",
             "name": "CAVALRY_HEALTH",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "685:36:14",
+            "scope": 1496,
+            "src": "685:36:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -365,10 +365,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1084,
+              "id": 1463,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "685:7:14",
+              "src": "685:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -377,14 +377,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3530",
-              "id": 1085,
+              "id": 1464,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "719:2:14",
+              "src": "719:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_50_by_1",
@@ -396,13 +396,13 @@
           },
           {
             "constant": true,
-            "id": 1089,
+            "id": 1468,
             "mutability": "constant",
             "name": "ARCHER_HEALTH",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "727:35:14",
+            "scope": 1496,
+            "src": "727:35:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -410,10 +410,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1087,
+              "id": 1466,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "727:7:14",
+              "src": "727:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -422,14 +422,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3235",
-              "id": 1088,
+              "id": 1467,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "760:2:14",
+              "src": "760:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_25_by_1",
@@ -441,13 +441,13 @@
           },
           {
             "constant": true,
-            "id": 1092,
+            "id": 1471,
             "mutability": "constant",
             "name": "HERO_HEALTH",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "768:35:14",
+            "scope": 1496,
+            "src": "768:35:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -455,10 +455,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1090,
+              "id": 1469,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "768:7:14",
+              "src": "768:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -467,14 +467,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "31323530",
-              "id": 1091,
+              "id": 1470,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "799:4:14",
+              "src": "799:4:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1250_by_1",
@@ -486,13 +486,13 @@
           },
           {
             "constant": true,
-            "id": 1095,
+            "id": 1474,
             "mutability": "constant",
             "name": "SIEGE_WEAPON_DAMAGE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "829:42:14",
+            "scope": 1496,
+            "src": "829:42:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -500,10 +500,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1093,
+              "id": 1472,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "829:7:14",
+              "src": "829:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -512,14 +512,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "313030",
-              "id": 1094,
+              "id": 1473,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "868:3:14",
+              "src": "868:3:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_100_by_1",
@@ -531,13 +531,13 @@
           },
           {
             "constant": true,
-            "id": 1098,
+            "id": 1477,
             "mutability": "constant",
             "name": "DEFENCE_STRUCTURE_DAMAGE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "877:45:14",
+            "scope": 1496,
+            "src": "877:45:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -545,10 +545,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1096,
+              "id": 1475,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "877:7:14",
+              "src": "877:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -557,14 +557,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "30",
-              "id": 1097,
+              "id": 1476,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "921:1:14",
+              "src": "921:1:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -576,13 +576,13 @@
           },
           {
             "constant": true,
-            "id": 1101,
+            "id": 1480,
             "mutability": "constant",
             "name": "SOLDIER_DAMAGE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "928:36:14",
+            "scope": 1496,
+            "src": "928:36:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -590,10 +590,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1099,
+              "id": 1478,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "928:7:14",
+              "src": "928:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -602,14 +602,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3235",
-              "id": 1100,
+              "id": 1479,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "962:2:14",
+              "src": "962:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_25_by_1",
@@ -621,13 +621,13 @@
           },
           {
             "constant": true,
-            "id": 1104,
+            "id": 1483,
             "mutability": "constant",
             "name": "CAVALRY_DAMAGE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "970:36:14",
+            "scope": 1496,
+            "src": "970:36:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -635,10 +635,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1102,
+              "id": 1481,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "970:7:14",
+              "src": "970:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -647,14 +647,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3530",
-              "id": 1103,
+              "id": 1482,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1004:2:14",
+              "src": "1004:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_50_by_1",
@@ -666,13 +666,13 @@
           },
           {
             "constant": true,
-            "id": 1107,
+            "id": 1486,
             "mutability": "constant",
             "name": "ARCHER_DAMAGE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "1012:35:14",
+            "scope": 1496,
+            "src": "1012:35:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -680,10 +680,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1105,
+              "id": 1484,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1012:7:14",
+              "src": "1012:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -692,14 +692,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3735",
-              "id": 1106,
+              "id": 1485,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1045:2:14",
+              "src": "1045:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_75_by_1",
@@ -711,13 +711,13 @@
           },
           {
             "constant": true,
-            "id": 1110,
+            "id": 1489,
             "mutability": "constant",
             "name": "HERO_DAMAGE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "1053:34:14",
+            "scope": 1496,
+            "src": "1053:34:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -725,10 +725,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1108,
+              "id": 1487,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1053:7:14",
+              "src": "1053:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -737,14 +737,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "353030",
-              "id": 1109,
+              "id": 1488,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1084:3:14",
+              "src": "1084:3:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_500_by_1",
@@ -756,13 +756,13 @@
           },
           {
             "constant": true,
-            "id": 1113,
+            "id": 1492,
             "mutability": "constant",
             "name": "DEFENSE_BONUS",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "1117:39:14",
+            "scope": 1496,
+            "src": "1117:39:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -770,10 +770,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1111,
+              "id": 1490,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1117:7:14",
+              "src": "1117:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -782,14 +782,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "313030303030",
-              "id": 1112,
+              "id": 1491,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1150:6:14",
+              "src": "1150:6:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_100000_by_1",
@@ -801,13 +801,13 @@
           },
           {
             "constant": true,
-            "id": 1116,
+            "id": 1495,
             "mutability": "constant",
             "name": "TURNS",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "1163:27:14",
+            "scope": 1496,
+            "src": "1163:27:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -815,10 +815,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1114,
+              "id": 1493,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1163:7:14",
+              "src": "1163:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -827,14 +827,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3130",
-              "id": 1115,
+              "id": 1494,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1188:2:14",
+              "src": "1188:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_10_by_1",
@@ -845,60 +845,60 @@
             "visibility": "internal"
           }
         ],
-        "scope": 1118,
-        "src": "386:9921:14"
+        "scope": 1497,
+        "src": "386:9921:15"
       }
     ],
-    "src": "33:10275:14"
+    "src": "33:10275:15"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Battle.sol",
     "exportedSymbols": {
       "Battle": [
-        1117
+        1496
       ]
     },
-    "id": 1118,
+    "id": 1497,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1060,
+        "id": 1439,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:14"
+        "src": "33:23:15"
       },
       {
-        "id": 1061,
+        "id": 1440,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "57:33:14"
+        "src": "57:33:15"
       },
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol",
         "file": "./Random.sol",
-        "id": 1063,
+        "id": 1442,
         "nodeType": "ImportDirective",
-        "scope": 1118,
-        "sourceUnit": 1634,
-        "src": "92:36:14",
+        "scope": 1497,
+        "sourceUnit": 2066,
+        "src": "92:36:15",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 1062,
+              "id": 1441,
               "name": "Random",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "100:6:14",
+              "src": "100:6:15",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -912,21 +912,21 @@
       {
         "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
         "file": "@openzeppelin/contracts/math/SafeMath.sol",
-        "id": 1065,
+        "id": 1444,
         "nodeType": "ImportDirective",
-        "scope": 1118,
-        "sourceUnit": 4584,
-        "src": "129:67:14",
+        "scope": 1497,
+        "sourceUnit": 5340,
+        "src": "129:67:15",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 1064,
+              "id": 1443,
               "name": "SafeMath",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "137:8:14",
+              "src": "137:8:15",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -940,21 +940,21 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Strings.sol",
         "file": "./Strings.sol",
-        "id": 1067,
+        "id": 1446,
         "nodeType": "ImportDirective",
-        "scope": 1118,
-        "sourceUnit": 3898,
-        "src": "197:38:14",
+        "scope": 1497,
+        "sourceUnit": 4617,
+        "src": "197:38:15",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 1066,
+              "id": 1445,
               "name": "Strings",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": null,
-              "src": "205:7:14",
+              "src": "205:7:15",
               "typeDescriptions": {
                 "typeIdentifier": null,
                 "typeString": null
@@ -971,40 +971,40 @@
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 1068,
+          "id": 1447,
           "nodeType": "StructuredDocumentation",
-          "src": "237:148:14",
+          "src": "237:148:15",
           "text": " @title Exchange\n @author Big Beluga\n Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct"
         },
         "fullyImplemented": true,
-        "id": 1117,
+        "id": 1496,
         "linearizedBaseContracts": [
-          1117
+          1496
         ],
         "name": "Battle",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 1071,
+            "id": 1450,
             "libraryName": {
               "contractScope": null,
-              "id": 1069,
+              "id": 1448,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4583,
-              "src": "413:8:14",
+              "referencedDeclaration": 5339,
+              "src": "413:8:15",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$4583",
+                "typeIdentifier": "t_contract$_SafeMath_$5339",
                 "typeString": "library SafeMath"
               }
             },
             "nodeType": "UsingForDirective",
-            "src": "407:27:14",
+            "src": "407:27:15",
             "typeName": {
-              "id": 1070,
+              "id": 1449,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "426:7:14",
+              "src": "426:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1013,13 +1013,13 @@
           },
           {
             "constant": true,
-            "id": 1074,
+            "id": 1453,
             "mutability": "constant",
             "name": "FILE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "483:32:14",
+            "scope": 1496,
+            "src": "483:32:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1027,10 +1027,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 1072,
+              "id": 1451,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "483:7:14",
+              "src": "483:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -1039,14 +1039,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "426174746c65",
-              "id": 1073,
+              "id": 1452,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "507:8:14",
+              "src": "507:8:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_b15ab3083eaf4d342d74aaf1e18ae7b462ff9a419f686f9a38540186cbbe12f2",
@@ -1058,13 +1058,13 @@
           },
           {
             "constant": true,
-            "id": 1077,
+            "id": 1456,
             "mutability": "constant",
             "name": "SIEGE_WEAPON_HEALTH",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "541:43:14",
+            "scope": 1496,
+            "src": "541:43:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1072,10 +1072,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1075,
+              "id": 1454,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "541:7:14",
+              "src": "541:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1084,14 +1084,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "31353030",
-              "id": 1076,
+              "id": 1455,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "580:4:14",
+              "src": "580:4:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1500_by_1",
@@ -1103,13 +1103,13 @@
           },
           {
             "constant": true,
-            "id": 1080,
+            "id": 1459,
             "mutability": "constant",
             "name": "DEFENCE_STRUCTURE_HEALTH",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "590:47:14",
+            "scope": 1496,
+            "src": "590:47:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1117,10 +1117,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1078,
+              "id": 1457,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "590:7:14",
+              "src": "590:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1129,14 +1129,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "323030",
-              "id": 1079,
+              "id": 1458,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "634:3:14",
+              "src": "634:3:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_200_by_1",
@@ -1148,13 +1148,13 @@
           },
           {
             "constant": true,
-            "id": 1083,
+            "id": 1462,
             "mutability": "constant",
             "name": "SOLDIER_HEALTH",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "643:36:14",
+            "scope": 1496,
+            "src": "643:36:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1162,10 +1162,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1081,
+              "id": 1460,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "643:7:14",
+              "src": "643:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1174,14 +1174,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3735",
-              "id": 1082,
+              "id": 1461,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "677:2:14",
+              "src": "677:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_75_by_1",
@@ -1193,13 +1193,13 @@
           },
           {
             "constant": true,
-            "id": 1086,
+            "id": 1465,
             "mutability": "constant",
             "name": "CAVALRY_HEALTH",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "685:36:14",
+            "scope": 1496,
+            "src": "685:36:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1207,10 +1207,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1084,
+              "id": 1463,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "685:7:14",
+              "src": "685:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1219,14 +1219,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3530",
-              "id": 1085,
+              "id": 1464,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "719:2:14",
+              "src": "719:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_50_by_1",
@@ -1238,13 +1238,13 @@
           },
           {
             "constant": true,
-            "id": 1089,
+            "id": 1468,
             "mutability": "constant",
             "name": "ARCHER_HEALTH",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "727:35:14",
+            "scope": 1496,
+            "src": "727:35:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1252,10 +1252,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1087,
+              "id": 1466,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "727:7:14",
+              "src": "727:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1264,14 +1264,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3235",
-              "id": 1088,
+              "id": 1467,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "760:2:14",
+              "src": "760:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_25_by_1",
@@ -1283,13 +1283,13 @@
           },
           {
             "constant": true,
-            "id": 1092,
+            "id": 1471,
             "mutability": "constant",
             "name": "HERO_HEALTH",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "768:35:14",
+            "scope": 1496,
+            "src": "768:35:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1297,10 +1297,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1090,
+              "id": 1469,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "768:7:14",
+              "src": "768:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1309,14 +1309,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "31323530",
-              "id": 1091,
+              "id": 1470,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "799:4:14",
+              "src": "799:4:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1250_by_1",
@@ -1328,13 +1328,13 @@
           },
           {
             "constant": true,
-            "id": 1095,
+            "id": 1474,
             "mutability": "constant",
             "name": "SIEGE_WEAPON_DAMAGE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "829:42:14",
+            "scope": 1496,
+            "src": "829:42:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1342,10 +1342,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1093,
+              "id": 1472,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "829:7:14",
+              "src": "829:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1354,14 +1354,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "313030",
-              "id": 1094,
+              "id": 1473,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "868:3:14",
+              "src": "868:3:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_100_by_1",
@@ -1373,13 +1373,13 @@
           },
           {
             "constant": true,
-            "id": 1098,
+            "id": 1477,
             "mutability": "constant",
             "name": "DEFENCE_STRUCTURE_DAMAGE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "877:45:14",
+            "scope": 1496,
+            "src": "877:45:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1387,10 +1387,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1096,
+              "id": 1475,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "877:7:14",
+              "src": "877:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1399,14 +1399,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "30",
-              "id": 1097,
+              "id": 1476,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "921:1:14",
+              "src": "921:1:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -1418,13 +1418,13 @@
           },
           {
             "constant": true,
-            "id": 1101,
+            "id": 1480,
             "mutability": "constant",
             "name": "SOLDIER_DAMAGE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "928:36:14",
+            "scope": 1496,
+            "src": "928:36:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1432,10 +1432,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1099,
+              "id": 1478,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "928:7:14",
+              "src": "928:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1444,14 +1444,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3235",
-              "id": 1100,
+              "id": 1479,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "962:2:14",
+              "src": "962:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_25_by_1",
@@ -1463,13 +1463,13 @@
           },
           {
             "constant": true,
-            "id": 1104,
+            "id": 1483,
             "mutability": "constant",
             "name": "CAVALRY_DAMAGE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "970:36:14",
+            "scope": 1496,
+            "src": "970:36:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1477,10 +1477,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1102,
+              "id": 1481,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "970:7:14",
+              "src": "970:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1489,14 +1489,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3530",
-              "id": 1103,
+              "id": 1482,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1004:2:14",
+              "src": "1004:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_50_by_1",
@@ -1508,13 +1508,13 @@
           },
           {
             "constant": true,
-            "id": 1107,
+            "id": 1486,
             "mutability": "constant",
             "name": "ARCHER_DAMAGE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "1012:35:14",
+            "scope": 1496,
+            "src": "1012:35:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1522,10 +1522,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1105,
+              "id": 1484,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1012:7:14",
+              "src": "1012:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1534,14 +1534,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3735",
-              "id": 1106,
+              "id": 1485,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1045:2:14",
+              "src": "1045:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_75_by_1",
@@ -1553,13 +1553,13 @@
           },
           {
             "constant": true,
-            "id": 1110,
+            "id": 1489,
             "mutability": "constant",
             "name": "HERO_DAMAGE",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "1053:34:14",
+            "scope": 1496,
+            "src": "1053:34:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1567,10 +1567,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1108,
+              "id": 1487,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1053:7:14",
+              "src": "1053:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1579,14 +1579,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "353030",
-              "id": 1109,
+              "id": 1488,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1084:3:14",
+              "src": "1084:3:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_500_by_1",
@@ -1598,13 +1598,13 @@
           },
           {
             "constant": true,
-            "id": 1113,
+            "id": 1492,
             "mutability": "constant",
             "name": "DEFENSE_BONUS",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "1117:39:14",
+            "scope": 1496,
+            "src": "1117:39:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1612,10 +1612,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1111,
+              "id": 1490,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1117:7:14",
+              "src": "1117:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1624,14 +1624,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "313030303030",
-              "id": 1112,
+              "id": 1491,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1150:6:14",
+              "src": "1150:6:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_100000_by_1",
@@ -1643,13 +1643,13 @@
           },
           {
             "constant": true,
-            "id": 1116,
+            "id": 1495,
             "mutability": "constant",
             "name": "TURNS",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 1117,
-            "src": "1163:27:14",
+            "scope": 1496,
+            "src": "1163:27:15",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1657,10 +1657,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1114,
+              "id": 1493,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1163:7:14",
+              "src": "1163:7:15",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1669,14 +1669,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3130",
-              "id": 1115,
+              "id": 1494,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1188:2:14",
+              "src": "1188:2:15",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_10_by_1",
@@ -1687,11 +1687,11 @@
             "visibility": "internal"
           }
         ],
-        "scope": 1118,
-        "src": "386:9921:14"
+        "scope": 1497,
+        "src": "386:9921:15"
       }
     ],
-    "src": "33:10275:14"
+    "src": "33:10275:15"
   },
   "compiler": {
     "name": "solc",
@@ -1699,7 +1699,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-09-23T19:25:48.105Z",
+  "updatedAt": "2020-09-25T15:32:48.882Z",
   "devdoc": {
     "author": "Big Beluga Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct",
     "kind": "dev",

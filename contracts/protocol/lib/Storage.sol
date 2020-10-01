@@ -6,7 +6,10 @@ import {Math} from './Math.sol';
 import {Require} from './Require.sol';
 import {StarSystem} from './StarSystem.sol';
 import {Types} from './Types.sol';
+import {SATs} from './SATs.sol';
 import {Fleet} from './Fleet.sol';
+import {Constants} from './Constants.sol';
+import {Governance} from './Governance.sol';
 
 /**
  * @title Storage
@@ -38,16 +41,22 @@ library Storage {
         mapping(address => Master) masters;
         // total number of discoverable locations in the galaxy
         mapping(uint8 => mapping(uint8 => mapping(uint8 => mapping(uint32 => StarSystem.Info)))) stars;
-        // total number of SolarTokens
-        uint256 totalSolarTokens;
+        // total number of FhrTokens
+        uint256 totalFhrTokens;
         // a random seed that can be set by an admin
         uint256 seed;
-        // address to the tsunoToken contract
-        address tsuno;
+        // address to the Federal Harvesting Rights NFT contract
+        address fhrAddress;
         // address to the solarToken contract
-        address solar;
+        address solarAddress;
         // address of ships and technology contract;
-        address sat;
+        address satsAddress;
+        // address of the timelock contract
+        address timeLockAddress;
+        // the globabl constants used
+        Constants.State g_constants;
+        // the goverance state
+        Governance.Info governance;
     }
 
     // ============ Functions ============
@@ -60,20 +69,36 @@ library Storage {
         return state.masters[master].balance;
     }
 
-    function getTsuno(Storage.State storage state)
+    function getSolarAddress(Storage.State storage state)
         internal
         view
         returns (address)
     {
-        return state.tsuno;
+        return state.solarAddress;
     }
 
-    function getSolar(Storage.State storage state)
+    function getSATsAddress(Storage.State storage state)
         internal
         view
         returns (address)
     {
-        return state.solar;
+        return state.satsAddress;
+    }
+
+    function getFhrAddress(Storage.State storage state)
+        internal
+        view
+        returns (address)
+    {
+        return state.fhrAddress;
+    }
+
+    function getTimeLockAddress(Storage.State storage state)
+        internal
+        view
+        returns (address)
+    {
+        return state.timeLockAddress;
     }
 
     function getDateLocked(Storage.State storage state, address master)
@@ -100,12 +125,12 @@ library Storage {
         return state.masters[master].reward;
     }
 
-    function getTotalSolarTokens(Storage.State storage state)
+    function getTotalFhrTokens(Storage.State storage state)
         internal
         view
         returns (uint256)
     {
-        return state.totalSolarTokens;
+        return state.totalFhrTokens;
     }
 
     function getStarSystemType(
@@ -189,6 +214,34 @@ library Storage {
         return state.masters[master].position;
     }
 
+    function getProposalCount(Storage.State storage state)
+        internal
+        returns (uint256)
+    {
+        return state.governance.proposalCount;
+    }
+
+    function getProposal(Storage.State storage state, uint256 proposalId)
+        internal
+        returns (Governance.Proposal memory)
+    {
+        return state.governance.proposals[proposalId];
+    }
+
+    function getLatestProposalIds(Storage.State storage state, address proposer)
+        internal
+        returns (uint256)
+    {
+        return state.governance.latestProposalIds[proposer];
+    }
+
+    function getGovernanceGuardian(Storage.State storage state)
+        internal
+        returns (address)
+    {
+        return state.governance.guardian;
+    }
+
     // =============== Setter Functions ===============
 
     function setSeed(Storage.State storage state, uint256 seed) internal {
@@ -208,18 +261,25 @@ library Storage {
     function setStarSystemYield(
         Storage.State storage state,
         Types.StarPosition memory position,
-        uint32 yield
+        uint16 yield
     ) internal {
         state.stars[position.quadrant][position.distract][position
             .sector][position.star]
             .yield = yield;
     }
 
-    function incrementTotalSolarTokens(Storage.State storage state) internal {
-        state.totalSolarTokens += 1;
+    function incrementTotalFhrTokens(Storage.State storage state)
+        internal
+        returns (uint256)
+    {
+        return state.totalFhrTokens += 1;
     }
 
     // =============== Mutation Functions ==============
+
+    function incrementProposalCount(Storage.State storage state) internal {
+        state.governance.proposalCount++;
+    }
 
     function subBalance(
         Storage.State storage state,
@@ -241,7 +301,7 @@ library Storage {
         );
     }
 
-    function lockinTsuno(
+    function lockinSolar(
         Storage.State storage state,
         address master,
         uint256 amount,
@@ -253,7 +313,7 @@ library Storage {
         state.masters[master].reward = reward;
     }
 
-    function unlockTsuno(Storage.State storage state, address master) internal {
+    function unlockSolar(Storage.State storage state, address master) internal {
         state.masters[master].balance = 0;
         state.masters[master].dateUnlocked = 0;
         state.masters[master].reward = 0;
@@ -273,7 +333,7 @@ library Storage {
     function addToMasterFleet(
         Storage.State storage state,
         address master,
-        Types.SatInfo[] memory sats
+        SATs.Info[] memory sats
     ) internal {
         for (uint256 i = 0; i < sats.length; i++) {
             state.masters[master].fleet.shipsAndTechnology[sats[i]
@@ -284,7 +344,7 @@ library Storage {
     function removeFromMasterFleet(
         Storage.State storage state,
         address master,
-        Types.SatInfo[] memory sats
+        SATs.Info[] memory sats
     ) internal {
         for (uint256 i = 0; i < sats.length; i++) {
             state.masters[master].fleet.shipsAndTechnology[sats[i]
@@ -295,7 +355,7 @@ library Storage {
     function addToStarFleet(
         Storage.State storage state,
         Types.StarPosition memory position,
-        Types.SatInfo[] memory sats
+        SATs.Info[] memory sats
     ) internal {
         for (uint256 i = 0; i < sats.length; i++) {
             state.stars[position.quadrant][position.distract][position
@@ -308,7 +368,7 @@ library Storage {
     function removeFromStarFleet(
         Storage.State storage state,
         Types.StarPosition memory position,
-        Types.SatInfo[] memory sats
+        SATs.Info[] memory sats
     ) internal {
         for (uint256 i = 0; i < sats.length; i++) {
             state.stars[position.quadrant][position.distract][position
@@ -316,5 +376,43 @@ library Storage {
                 .fleet
                 .shipsAndTechnology[sats[i].id] -= sats[i].amount;
         }
+    }
+
+    // Constants
+
+    function setBoundaries(
+        Storage.State storage state,
+        Constants.Boundaries memory boundaries
+    ) internal {
+        state.g_constants.boundaries = boundaries;
+    }
+
+    function setGas(Storage.State storage state, Constants.Gas memory gas)
+        internal
+    {
+        state.g_constants.gas = gas;
+    }
+
+    function setStartPosition(
+        Storage.State storage state,
+        Constants.StartPosition memory pos
+    ) internal {
+        state.g_constants.startPosition = pos;
+    }
+
+    function setSatDefense(
+        Storage.State storage state,
+        uint256 id,
+        uint8 amount
+    ) internal {
+        state.g_constants.satDefenses[id] = amount;
+    }
+
+    function setSatOffense(
+        Storage.State storage state,
+        uint256 id,
+        uint8 amount
+    ) internal {
+        state.g_constants.satOffences[id] = amount;
     }
 }

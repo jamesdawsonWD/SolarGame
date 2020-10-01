@@ -6,6 +6,8 @@ pragma experimental ABIEncoderV2;
 import {Random} from './Random.sol';
 import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
 import {Types} from './Types.sol';
+import {Constants} from './Constants.sol';
+import {SATs} from './SATs.sol';
 
 /**
  * @title Exchange
@@ -16,10 +18,21 @@ import {Types} from './Types.sol';
 library Fleet {
     using SafeMath for uint256;
 
-    enum Orders {Attack, Defend}
+    enum Orders {
+        Attack,
+        AttackOnSight,
+        DefendTillDeath,
+        DefendAndRetreat,
+        RetreatWhenAttacked
+    }
     struct Info {
         Types.StarPosition position;
         mapping(uint256 => uint256) shipsAndTechnology;
         Orders orders;
     }
+
+    function attack(Info memory attacker, Info memory defender)
+        internal
+        returns (bool result)
+    {}
 }

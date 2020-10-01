@@ -2,16 +2,19 @@ const truffleAssert = require('truffle-assertions');
 const vals = require('../lib/testValuesCommon.js');
 const protocol = require('../lib/protocol.js');
 const BN = require('bignumber.js');
-const {
-    advanceTime
-} = require('../lib/helpers.js');
+const { advanceTime } = require('../lib/helpers.js');
 contract('FundOperations', accounts => {
     const [Owner, UserA, UserB, UserC] = accounts;
     const ZERO = vals.ZERO;
     const SECONDS_IN_A_DAY = vals.SECONDS_IN_DAY;
     let Master;
     let Tsuno;
-    before(async () => ([Master, Tsuno] = await protocol.deploy(accounts)));
+    let Sat;
+    let Solar;
+    before(
+        async () =>
+            ([Master, Tsuno, Sat, Solar] = await protocol.deploy(accounts))
+    );
 
     describe('#deposit()', () => {
         it('should fail if amount is less than or equal to 0', async () => {

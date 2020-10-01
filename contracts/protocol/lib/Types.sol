@@ -5,6 +5,7 @@ pragma experimental ABIEncoderV2;
 
 import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
 import {Math} from './Math.sol';
+import {Constants} from './Constants.sol';
 
 /**
  * @title Types
@@ -17,15 +18,6 @@ library Types {
 
     // TODO: Look into creating a constant library that can be passes into the library
     // this will allow for balancing tweaks in as the game progresses
-    uint256 constant MAX_QUADRANT = 5;
-    uint256 constant MAX_DISTRACT = 8;
-    uint256 constant MAX_SECTOR = 21;
-    uint256 constant MAX_STAR = 10000;
-
-    struct SatInfo {
-        uint256 amount;
-        uint32 id;
-    }
 
     struct StarPosition {
         uint8 quadrant;
@@ -34,27 +26,34 @@ library Types {
         uint32 star;
     }
 
-    function isEqualStarPosition(StarPosition memory a, StarPosition memory b)
+    function isEqual(StarPosition memory a, StarPosition memory b)
         internal
         returns (bool)
     {
-        return (keccak256(
-            abi.encodePacked(a.quadrant, a.distract, a.sector, a.star)
-        ) ==
-            keccak256(
-                abi.encodePacked(b.quadrant, b.distract, b.sector, b.star)
-            ));
+        return (a.quadrant == b.quadrant &&
+            a.distract == b.distract &&
+            a.sector == b.sector &&
+            a.star == b.star);
     }
 
     function isEqualUint(uint256 a, uint256 b) internal returns (bool) {
         return a == b;
     }
 
+    function notSet(StarPosition memory a) internal returns (bool) {
+        return (a.quadrant == 0 ||
+            a.distract == 0 ||
+            a.sector == 0 ||
+            a.star == 0);
+    }
+
     function isWithinBoundaries(StarPosition memory a) internal returns (bool) {
-        if (a.quadrant < 0 || a.quadrant > MAX_QUADRANT) return false;
-        if (a.distract < 0 || a.distract > MAX_DISTRACT) return false;
-        if (a.sector < 0 || a.sector > MAX_SECTOR) return false;
-        if (a.star < 0 || a.star > MAX_STAR) return false;
+        if (a.quadrant <= 0 || a.quadrant > Constants.MAX_QUADRANT)
+            return false;
+        if (a.distract <= 0 || a.distract > Constants.MAX_DISTRACT)
+            return false;
+        if (a.sector <= 0 || a.sector > Constants.MAX_SECTOR) return false;
+        if (a.star <= 0 || a.star > Constants.MAX_STAR) return false;
         return true;
     }
 }

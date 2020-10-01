@@ -1,27 +1,27 @@
 {
   "contractName": "State",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Big Beluga Base-level contract that holds the state\",\"kind\":\"dev\",\"methods\":{},\"title\":\"State\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":\"State\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":{\"keccak256\":\"0x8d35f5414e4181e424678039b1bdefdc88402ff6ee54009347adec0c58fcdcd6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bcfa17b4ce14cb7b93b0ddeea2adb872aedfdaa639d2d976992ee9f4fe1ee316\",\"dweb:/ipfs/QmNYrcxnk98CsWLKtjThUBrZP73SsnPjeeKmSL3rsSGd3u\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Fleet.sol\":{\"keccak256\":\"0x65df152c99fa8b0b2e14ec2856921fd3f68c7a7220959672ef2683e7f9995b20\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://aa0c9628ac18e8fc8a933a1cc003ca9532dc0842ff6c2abfe8a6fbcd03549f66\",\"dweb:/ipfs/Qmcx9icnyNC5u7czXjNLHZrD16PPTPJBgy748NRaKawwxm\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xf91926371c321c80847612a012816e175abacf3aeade530df22ac58e3ab756c9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://20add85ebd3fae76709c5a93cdefd6eaa88f419d33fb9532fcfe4021f3fb8acc\",\"dweb:/ipfs/QmV1uTEJkPuXK8KPi9xPqf8YKXFqmogMPDW3fSWjHJbooH\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/StarSystem.sol\":{\"keccak256\":\"0x3e21a7e9dd71656591dcb03f16e1f187a6abe5d744e36b9c227b7fbf8d346314\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f6bd97519ddd6deea9a39911541d4d44004d1b587080c23c29cc779d952fef41\",\"dweb:/ipfs/Qmeovxuew3am7ooh1ccJLJu4XvoYTykcCy12Gn9VNfeZzK\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol\":{\"keccak256\":\"0x996a044b1a4b9a93feaca90376a13394ce86a188ac29b6923d4614f7f02caff8\",\"urls\":[\"bzz-raw://1613db846cb2384aedbeee955805793496ed90dc64c9dd22ddd04461d3a73477\",\"dweb:/ipfs/QmbvfN1ZcAAviwd7Tg1gLBxkhw1rNdzgNzWyejYa2kJcFk\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol\":{\"keccak256\":\"0x440bea48ef2b7dcf61587eb202249aac4c4f41ec8f97a0f82e1fd6a623b277a1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0b508a10cb8f066e9f2ac262ed6370ef301fbfdc9aebd619a129201e293ea43f\",\"dweb:/ipfs/QmYLdjQ9wkFKFMuHVXeuhPBMmq2oYs94tjxWfXjXa2YtnR\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220ee89f53bc83c7990802924c05eafb911d7e93e557f45773f959dd453b5a9b66564736f6c634300060c0033",
-  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220ee89f53bc83c7990802924c05eafb911d7e93e557f45773f959dd453b5a9b66564736f6c634300060c0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Big Beluga Base-level contract that holds the state\",\"kind\":\"dev\",\"methods\":{},\"title\":\"State\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":\"State\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol\":{\"keccak256\":\"0xdc8e8b88d8eef8e3398d8152184998919504c3c7364feceec459499cddd0bfe3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a1c16869d6d6d26eb01dd9126d7e682a7e0dee7ad18a0b5a8a39d41ad00515a0\",\"dweb:/ipfs/QmNsLC44w68LNReCam5dpmtNweRVN5dH3ybAq2sYxvWLHS\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Fleet.sol\":{\"keccak256\":\"0x65df152c99fa8b0b2e14ec2856921fd3f68c7a7220959672ef2683e7f9995b20\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://aa0c9628ac18e8fc8a933a1cc003ca9532dc0842ff6c2abfe8a6fbcd03549f66\",\"dweb:/ipfs/Qmcx9icnyNC5u7czXjNLHZrD16PPTPJBgy748NRaKawwxm\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Math.sol\":{\"keccak256\":\"0xd1e16af87c8631b81b59e7a5116fddad80d0efa2263db7b34582029fef36449d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9546b8ef7660644e3d22be988a0d562e761dbf222045f14e8ebc8fb7f8867522\",\"dweb:/ipfs/QmUXjgJzUPNH9XM6URe5ptAXdUy3CAju3bMrmBDdGB8H8P\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Random.sol\":{\"keccak256\":\"0xf91926371c321c80847612a012816e175abacf3aeade530df22ac58e3ab756c9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://20add85ebd3fae76709c5a93cdefd6eaa88f419d33fb9532fcfe4021f3fb8acc\",\"dweb:/ipfs/QmV1uTEJkPuXK8KPi9xPqf8YKXFqmogMPDW3fSWjHJbooH\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Require.sol\":{\"keccak256\":\"0xbcd2c3b3ec3951c0ba1344ecb8b34290b98d96dfa2f209c59262e18797aa6cb8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc0fd50d7000fca3535f5b9a8a279c9cb6ca011b009b19faf1093769daced1be\",\"dweb:/ipfs/QmZDkTCn3vdJwxy598hpvMLnqomgP6J8hjPE2rSjQ2mV6q\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/StarSystem.sol\":{\"keccak256\":\"0x4aee0988b6ba186a1460f112ab60850031fa0fcc45b310ea4307436e72ba40e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8f4cfae8118840c5934c7206dc1afdf96756a74fe91ec1f87cc09057a456637e\",\"dweb:/ipfs/QmSyA7gD5qHpcMA7R8hdCNsUwHPfQfxex51Ha12KihkxhG\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol\":{\"keccak256\":\"0x0b36adc3498148e08e3fd3dd7fbb34dcf05287873a5a9d0affdddf6bc01bf8f9\",\"urls\":[\"bzz-raw://f13a5ff3c9d9fb141c7c2ba0cb7d250e4df848b90f5ae3f9aa602ff040e2201c\",\"dweb:/ipfs/QmR1jKyg2wihxVj77VDqudMyPNREpjNGpN9PqBJATkZCvz\"]},\"/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Types.sol\":{\"keccak256\":\"0xf7f7a5f3383733ca6347acf95e1507b912e73edb6487f39a062efed75d36535a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9197d43072175eb292fb86a861b1f79c9965fe5aa6fe524d6429ffdad24b68f2\",\"dweb:/ipfs/QmQdomckvSSgAW8U1fQ8xbDcbweVCgCkMxs1ejy2MZp2Rc\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220e81b049748caf08b701bce726ab858dd10cb419381d9a33c8a96b24fb3c8d41564736f6c634300060c0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220e81b049748caf08b701bce726ab858dd10cb419381d9a33c8a96b24fb3c8d41564736f6c634300060c0033",
   "immutableReferences": {},
   "sourceMap": "229:45:7:-:0;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "229:45:7:-:0;;;;;",
-  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {Storage} from \"./lib/Storage.sol\";\n\n/**\n * @title State\n * @author Big Beluga\n *\n * Base-level contract that holds the state\n */\ncontract State {\n    Storage.State g_state;\n}\n",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {Storage} from './lib/Storage.sol';\n\n/**\n * @title State\n * @author Big Beluga\n *\n * Base-level contract that holds the state\n */\ncontract State {\n    Storage.State g_state;\n}\n",
   "sourcePath": "C:\\Users\\James\\projects\\tsuno-fe\\contracts\\protocol\\State.sol",
   "ast": {
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol",
     "exportedSymbols": {
       "State": [
-        398
+        556
       ]
     },
-    "id": 399,
+    "id": 557,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 391,
+        "id": 549,
         "literals": [
           "solidity",
           "0.6",
@@ -31,7 +31,7 @@
         "src": "33:23:7"
       },
       {
-        "id": 392,
+        "id": 550,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -42,16 +42,16 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol",
         "file": "./lib/Storage.sol",
-        "id": 394,
+        "id": 552,
         "nodeType": "ImportDirective",
-        "scope": 399,
-        "sourceUnit": 3504,
+        "scope": 557,
+        "sourceUnit": 4223,
         "src": "92:42:7",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 393,
+              "id": 551,
               "name": "Storage",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -73,43 +73,43 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 395,
+          "id": 553,
           "nodeType": "StructuredDocumentation",
           "src": "136:92:7",
           "text": " @title State\n @author Big Beluga\n Base-level contract that holds the state"
         },
         "fullyImplemented": true,
-        "id": 398,
+        "id": 556,
         "linearizedBaseContracts": [
-          398
+          556
         ],
         "name": "State",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 397,
+            "id": 555,
             "mutability": "mutable",
             "name": "g_state",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 398,
+            "scope": 556,
             "src": "250:21:7",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_State_$2775_storage",
+              "typeIdentifier": "t_struct$_State_$3483_storage",
               "typeString": "struct Storage.State"
             },
             "typeName": {
               "contractScope": null,
-              "id": 396,
+              "id": 554,
               "name": "Storage.State",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2775,
+              "referencedDeclaration": 3483,
               "src": "250:13:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_State_$2775_storage_ptr",
+                "typeIdentifier": "t_struct$_State_$3483_storage_ptr",
                 "typeString": "struct Storage.State"
               }
             },
@@ -117,7 +117,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 399,
+        "scope": 557,
         "src": "229:45:7"
       }
     ],
@@ -127,15 +127,15 @@
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/State.sol",
     "exportedSymbols": {
       "State": [
-        398
+        556
       ]
     },
-    "id": 399,
+    "id": 557,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 391,
+        "id": 549,
         "literals": [
           "solidity",
           "0.6",
@@ -145,7 +145,7 @@
         "src": "33:23:7"
       },
       {
-        "id": 392,
+        "id": 550,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -156,16 +156,16 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/protocol/lib/Storage.sol",
         "file": "./lib/Storage.sol",
-        "id": 394,
+        "id": 552,
         "nodeType": "ImportDirective",
-        "scope": 399,
-        "sourceUnit": 3504,
+        "scope": 557,
+        "sourceUnit": 4223,
         "src": "92:42:7",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 393,
+              "id": 551,
               "name": "Storage",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -187,43 +187,43 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 395,
+          "id": 553,
           "nodeType": "StructuredDocumentation",
           "src": "136:92:7",
           "text": " @title State\n @author Big Beluga\n Base-level contract that holds the state"
         },
         "fullyImplemented": true,
-        "id": 398,
+        "id": 556,
         "linearizedBaseContracts": [
-          398
+          556
         ],
         "name": "State",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 397,
+            "id": 555,
             "mutability": "mutable",
             "name": "g_state",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 398,
+            "scope": 556,
             "src": "250:21:7",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_State_$2775_storage",
+              "typeIdentifier": "t_struct$_State_$3483_storage",
               "typeString": "struct Storage.State"
             },
             "typeName": {
               "contractScope": null,
-              "id": 396,
+              "id": 554,
               "name": "Storage.State",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2775,
+              "referencedDeclaration": 3483,
               "src": "250:13:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_State_$2775_storage_ptr",
+                "typeIdentifier": "t_struct$_State_$3483_storage_ptr",
                 "typeString": "struct Storage.State"
               }
             },
@@ -231,7 +231,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 399,
+        "scope": 557,
         "src": "229:45:7"
       }
     ],
@@ -243,7 +243,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-09-23T19:25:48.088Z",
+  "updatedAt": "2020-09-25T15:32:48.859Z",
   "devdoc": {
     "author": "Big Beluga Base-level contract that holds the state",
     "kind": "dev",

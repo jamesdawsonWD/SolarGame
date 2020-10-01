@@ -1,24 +1,31 @@
 const TestMaster = artifacts.require('../../contracts/testing/TestMaster.sol');
-const TestTsuno = artifacts.require('../../contracts/testing/TestTsuno.sol');
+const TestFhr = artifacts.require(
+    '../../contracts/testing/TestFederalHarvestingRights.sol'
+);
+const TestSolar = artifacts.require('../../contracts/testing/TestSolar.sol');
+const TestSat = artifacts.require(
+    '../../contracts/testing/TestShipsAndTechnology.sol'
+);
 const helpers = require('./helpers.js');
 
 const deploy = async accounts => {
-    const Tsuno = await TestTsuno.new();
-    // ETH = await TokenB.new();
+    const Master = await TestMaster.new();
+    const FHR = await TestFhr.new(Master.address);
+    const Solar = await TestSolar.new(Master.address);
+    const Sat = await TestSat.new(Master.address);
+
+    Master.setSATsAddress(Sat.address);
+    Master.setFHRAddress(FHR.address);
+    Master.setSolarAddress(Solar.address);
 
     for (const account of accounts) {
-        await Tsuno.testMint(account, 1000000000, { from: accounts[0] });
+        await Solar.testMint(account, 1000000000, { from: accounts[0] });
     }
-
-    console.log(Tsuno.address);
-    const Master = await TestMaster.new(Tsuno.address);
-
-    Tsuno.setOperator(Master.address);
     for (const account of accounts) {
-        await helpers.setAllowance(Tsuno, account, Master.address, 1000000000);
+        await helpers.setAllowance(Solar, account, Master.address, 1000000000);
     }
 
-    return [Master, Tsuno];
+    return [Master, FHR, Sat, Solar];
 };
 
 module.exports = {

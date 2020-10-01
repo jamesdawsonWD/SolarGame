@@ -4,13 +4,12 @@ pragma experimental ABIEncoderV2;
 
 import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
 import {Master} from '../protocol/master.sol';
+import {
+    ERC1155Holder
+} from '@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol';
 
-contract TestMaster is Master {
-    constructor(
-        address tsuno,
-        address solar,
-        address sat
-    ) public Master(tsuno, solar, sat) {}
+contract TestMaster is Master, ERC1155Holder {
+    constructor() public Master() {}
 
     // function giveArmyA() public {
     //     g_state.masters[msg.sender].army.soldiers = 1000;

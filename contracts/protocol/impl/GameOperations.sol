@@ -6,17 +6,22 @@ pragma experimental ABIEncoderV2;
 import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
 import {Events} from '../lib/Events.sol';
 import {Storage} from '../lib/Storage.sol';
-import {ITsuno} from '../interfaces/ITsuno.sol';
 import {Battle} from '../lib/Battle.sol';
-
-import {ISolar} from '../interfaces/ISolar.sol';
 import {Types} from '../lib/Types.sol';
 import {StarSystem} from '../lib/StarSystem.sol';
 import {Fleet} from '../lib/Fleet.sol';
+import {Constants} from '../lib/Constants.sol';
+import {Discover} from '../lib/Discover.sol';
+import {SATs} from '../lib/SATs.sol';
+
+// Interfaces
+import {ISolar} from '../interfaces/ISolar.sol';
+import {IFHR} from '../interfaces/IFHR.sol';
+import {ISat} from '../interfaces/ISat.sol';
 
 /**
  * @title Operation
- * @author Big Beluga
+ * 4@author Big Beluga
  *
  * Primary public function for entering into the protocol
  */
@@ -70,52 +75,119 @@ library GameOperations {
         uint256 solarSystem
     ) public {}
 
+    function explore(
+        Storage.State storage state,
+        Types.StarPosition memory star
+    ) private {
+        (StarSystem.SystemType systemType, uint256 rand) = StarSystem
+            .randomSystemType();
+        state.setStarSystemType(star, systemType);
+        Events.logStarSystemDiscovery(msg.sender, systemType);
+
+        address sat = state.getSATsAddress();
+
+        // AncientFleetAggressive,
+        // SuperComputerEvent,
+        // AdvancedAlienFleetAggressive,
+        // AiFleetAggressive,
+        // AlienFleetAggressive,
+        // PiratesEvent,
+        // SolarWinds,
+        // Asteroids,
+        // Empty,
+        // GovermentOwned,
+        // LowYieldSystem,
+        // RandomEvent,
+        // MediumYieldSystem,
+        // ShipWreck,
+        // HighYieldSystem,
+        // AncientMiningSystem,
+        // AncientWeaponSystem,
+        // AncientShipWreck,
+        // InsaneYieldSystem,
+        // AncientRacePassive
+        if (systemType == StarSystem.SystemType.Empty) {
+            // There is nothing here.
+            return;
+        } else if (
+            systemType == StarSystem.SystemType.AncientFleetAggressive ||
+            systemType == StarSystem.SystemType.AdvancedAlienFleetAggressive ||
+            systemType == StarSystem.SystemType.AiFleetAggressive ||
+            systemType == StarSystem.SystemType.AlienFleetAggressive
+        ) {
+            // generate fleet and technology with ancient being the strongest and alien being the weakest
+        } else if (
+            systemType == StarSystem.SystemType.LowYieldSystem ||
+            systemType == StarSystem.SystemType.MediumYieldSystem ||
+            systemType == StarSystem.SystemType.HighYieldSystem ||
+            systemType == StarSystem.SystemType.InsaneYieldSystem
+        ) {
+            uint16 yield = StarSystem.randomYield(systemType);
+            state.setStarSystemYield(star, yield);
+            address fhr = state.getFhrAddress();
+            uint256 _id = state.getTotalFhrTokens() + 1;
+            IFHR(fhr).mint(msg.sender, _id);
+            Events.logRandom(state.incrementTotalFhrTokens());
+        } else if (systemType == StarSystem.SystemType.SuperComputerEvent) {
+            // do event by pushing the event type to a mapping of the senders address and event type
+            // which will contain the criteria of the event
+        } else if (systemType == StarSystem.SystemType.ShipWreck) {
+            uint256 multiplier = rand % 2 == 0 ? 2 : 1;
+            SATs.Info memory ship = Discover.singleAllNonAncientShips();
+
+            ISat(sat).safeTransferFrom(
+                address(this),
+                msg.sender,
+                ship.id,
+                ship.amount * multiplier,
+                ''
+            );
+        } else if (systemType == StarSystem.SystemType.AncientMiningSystem) {
+            SATs.Info memory ship = Discover.singleAncientMiningShip();
+
+            ISat(sat).safeTransferFrom(
+                address(this),
+                msg.sender,
+                ship.id,
+                ship.amount,
+                ''
+            );
+        }
+    }
+
     function move(
         Storage.State storage state,
-        Types.StarPosition memory from,
+        Types.StarPosition memory ye,
         Types.StarPosition memory to
     ) public {
         require(
             Types.isWithinBoundaries(to),
             'Position must be within set limits of the known universe'
         );
+        Types.StarPosition memory from = state.getMasterFleetPosition(
+            msg.sender
+        );
+
+        if (Types.notSet(from)) {
+            from = Types.StarPosition({
+                quadrant: Constants.START_POSITION_QUADRANT,
+                distract: Constants.START_POSITION_DISTRACT,
+                sector: Constants.START_POSITION_SECTOR,
+                star: Constants.START_POSITION_STAR
+            });
+        }
+
         require(
-            Types.isEqualStarPosition(
-                state.getMasterFleetPosition(msg.sender),
-                to
-            ),
+            !Types.isEqual(to, from),
             'You cannot move to your current location'
         );
-        // address prevStarOwner = ISolar(state.solar).ownerOf(
-        //     state.getTokenId(state, from)
-        // );
-        // if (prevStarOwner == msg.sender) {
-        // }
+
         state.moveMasterFleet(msg.sender, to);
-        // check if star has been explored
+        Events.logMove(to.quadrant, to.distract, to.sector, to.star);
+
         if (state.getStarSystemType(to) == StarSystem.SystemType.Undiscovered) {
-            // generate undiscovered star systems systemType
-            StarSystem.SystemType systemType = StarSystem.randomSystemType();
-            uint32 yield = StarSystem.randomYield(systemType);
-            state.setStarSystemType(to, systemType);
-            state.setStarSystemYield(to, yield);
-            // Mint SolarSystem NFT to user so they can stake against it
-            address solar = state.getSolar();
-            uint256 _id = state.getTotalSolarTokens() + 1;
-            ISolar(solar).mint(msg.sender, _id);
-            // increment the total number of stars
-            state.incrementTotalSolarTokens();
-            return;
-        }
-        // check if mover is owner of starSystem
-        // if (state.getStarSystemOwner(state, to) == msg.sender) {
-        //     Fleet.Info memory masterFleet = state.getMasterFleet(
-        //         state,
-        //         msg.sender
-        //     );
-        // }
-        // check if star has fleet
-        if (state.getStarSystemHasFleet(to)) {
+            explore(state, to);
+        } else if (state.getStarSystemHasFleet(to)) {
             Fleet.Info memory starFleet = state.getStarSystemFleet(to);
             Fleet.Info memory masterFleet = state.getMasterFleet(msg.sender);
             // if defenders are set to attack on sight, defenders go first
@@ -128,6 +200,14 @@ library GameOperations {
                 return;
             }
         }
+        // check if mover is owner of starSystem
+        // if (state.getStarSystemOwner(state, to) == msg.sender) {
+        //     Fleet.Info memory masterFleet = state.getMasterFleet(
+        //         state,
+        //         msg.sender
+        //     );
+        // }
+        // check if star has fleet
 
         // I think we end here and we move a lot of this battle logic into seperate functions,
         // we can allow people to stack actions e.g [Move, Attack, Move, Defend] in one transaction

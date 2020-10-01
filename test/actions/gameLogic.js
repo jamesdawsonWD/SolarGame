@@ -2,67 +2,46 @@ const truffleAssert = require('truffle-assertions');
 const vals = require('../lib/testValuesCommon.js');
 const protocol = require('../lib/protocol.js');
 const BN = require('bignumber.js');
-contract('GameOperations', (accounts) => {
+contract('GameOperations', accounts => {
     const [Owner, UserA, UserB, UserC] = accounts;
     const ZERO = vals.ZERO;
     let Master;
     let Tsuno;
+    let Sat;
+    let Solar;
     before(async () => {
-        [Master, Tsuno] = await protocol.deploy(accounts);
-        await Master.giveArmyA({
-            from: UserA
-        });
-        await Master.giveArmyB({
-            from: UserB
-        });
+        [Master, Tsuno, Sat, Solar] = await protocol.deploy(accounts);
     });
 
-    describe('#attack()', () => {
-        it('should fail if amount is less than or equal to 0', async () => {
-            const UserA_balanceBefore = await Master.getBalance({
-                from: UserA,
-            });
-            const UserB_balanceBefore = await Master.getBalance({
-                from: UserB,
-            });
+    describe('#move', () => {
+        it('should fail if star position is out of bounds', async () => {
+            const from = [2, 1, 1, 1];
+            const to = [7, 1, 1, 7256];
 
-            assert.ok(new BN(ZERO).isEqualTo(UserB_balanceBefore));
+            const moveP = Master.move(from, to, { from: UserA });
+            await truffleAssert.fails(
+                moveP,
+                truffleAssert.ErrorType.revert,
+                'Position must be within set limits of the known universe'
+            );
+        });
 
-            const UserA_DepositP = Master.deposit(100000, 39, {
-                from: UserA
-            });
-            const UserB_DepositP = Master.deposit(100000, 39, {
-                from: UserB
-            });
+        it('should fail if star position are equal', async () => {
+            const pos = [1, 1, 7, 42];
 
-            const UserA_balanceAfterD = await Master.getBalance({
-                from: UserA,
-            });
-            const UserB_balanceAfterD = await Master.getBalance({
-                from: UserB,
-            });
+            const moveP = Master.move(pos, pos, { from: UserA });
+            await truffleAssert.fails(
+                moveP,
+                truffleAssert.ErrorType.revert,
+                'You cannot move to your current location'
+            );
+        });
 
-            console.log(UserA_balanceAfterD.toString());
-            console.log(UserB_balanceAfterD.toString());
+        it('should move', async () => {
+            const from = [2, 1, 1, 1];
+            const to = [1, 1, 1, 7256];
 
-            await Promise.all([UserA_DepositP, UserB_DepositP]);
-
-            await Master.attack(UserB, {
-                from: UserA
-            });
-
-            const UserA_balanceAfter = await Master.getBalance({
-                from: UserA,
-            });
-            const UserB_balanceAfter = await Master.getBalance({
-                from: UserB,
-            });
-
-            console.log(UserA_balanceAfter.toString());
-            console.log(UserB_balanceAfter.toString());
-            // assert.equal(new BN(ZERO), UserA_balanceAfter.toString());
-            // assert.equal(new BN(ZERO), UserA_balanceAfter.toString());
-            // assert.equal(new BN(ZERO), UserB_balanceAfter.toString());
+            await Master.move(from, to, { from: UserA });
         });
     });
 });

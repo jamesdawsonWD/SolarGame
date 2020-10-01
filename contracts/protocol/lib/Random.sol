@@ -42,8 +42,9 @@ library Random {
      * @dev Generate random uint <= 256^2 with seed = block.timestamp
      * @return uint
      */
+    // TODO: improve this randomness by using a nonce
     function randint() internal view returns (uint256) {
-        return rand(now);
+        return rand(now * block.number);
     }
 
     /**

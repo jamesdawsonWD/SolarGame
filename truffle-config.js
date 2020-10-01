@@ -18,16 +18,17 @@
  *
  */
 
-const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require("@truffle/hdwallet-provider");
 const MNEMONIC = process.env.MNEMONIC;
 const INFURA_KEY = process.env.INFURA_KEY;
 
-const needsInfura = process.env.npm_config_argv &&
-      (process.env.npm_config_argv.includes('rinkeby') ||
-       process.env.npm_config_argv.includes('live'));
+const needsInfura =
+  process.env.npm_config_argv &&
+  (process.env.npm_config_argv.includes("rinkeby") ||
+    process.env.npm_config_argv.includes("live"));
 
 if ((!MNEMONIC || !INFURA_KEY) && needsInfura) {
-  console.error('Please set a mnemonic and infura key.');
+  console.error("Please set a mnemonic and infura key.");
   process.exit(0);
 }
 
@@ -43,19 +44,18 @@ module.exports = {
    */
 
   networks: {
-
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache-cli, geth or parity) in a separate terminal
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     development: {
-      host: 'localhost',
+      host: "localhost",
       port: 7545,
       gas: 4600000,
-      network_id: '*' // Match any network id
+      network_id: "*" // Match any network id
     },
-    
+
     rinkeby: {
       provider: function() {
         return new HDWalletProvider(
@@ -82,9 +82,9 @@ module.exports = {
 
   // Set default mocha options here, use special reporters etc.
   mocha: {
-    reporter: 'eth-gas-reporter',
-    reporterOptions : {
-      currency: 'USD',
+    reporter: "eth-gas-reporter",
+    reporterOptions: {
+      currency: "USD",
       gasPrice: 2
     }
   },
@@ -94,11 +94,12 @@ module.exports = {
     solc: {
       version: "0.6.12",
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
-      settings: {          // See the solidity docs for advice about optimization and evmVersion
-       optimizer: {
-         enabled: true,
-         runs: 200
-       },
+      settings: {
+        // See the solidity docs for advice about optimization and evmVersion
+        optimizer: {
+          enabled: true,
+          runs: 200
+        }
       }
     }
   }
