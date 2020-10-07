@@ -1,7 +1,7 @@
 pragma solidity 0.6.12;
 pragma experimental ABIEncoderV2;
 
-import {FederalHarvestingRights} from '../protocol/FederalHarvestingRights.sol';
+import {FederalHarvestingRights} from '../FederalHarvestingRights.sol';
 
 /* solium-disable-next-line */
 contract TestFederalHarvestingRights is FederalHarvestingRights {
@@ -10,8 +10,4 @@ contract TestFederalHarvestingRights is FederalHarvestingRights {
     }
 
     constructor(address master) public FederalHarvestingRights(master) {}
-
-    function getOperator() public view returns (address) {
-        return operator;
-    }
 }
