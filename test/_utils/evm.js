@@ -1,17 +1,4 @@
-const setAllowance = async (
-    token,
-    ownerAddress,
-    spenderAddress,
-    amount,
-    options
-) => {
-    return token.approve(spenderAddress, amount.toFixed(0), {
-        ...options,
-        from: ownerAddress
-    });
-};
-
-const advanceTime = time => {
+export const advanceTime = time => {
     return new Promise((resolve, reject) => {
         web3.currentProvider.send(
             {
@@ -30,7 +17,7 @@ const advanceTime = time => {
     });
 };
 
-const advanceBlock = () => {
+export const advanceBlock = () => {
     return new Promise((resolve, reject) => {
         web3.currentProvider.send(
             {
@@ -50,7 +37,8 @@ const advanceBlock = () => {
     });
 };
 
-const takeSnapshot = () => {
+// Take a snapshot of the EVM state
+export function takeSnapshot(web3) {
     return new Promise((resolve, reject) => {
         web3.currentProvider.send(
             {
@@ -58,51 +46,41 @@ const takeSnapshot = () => {
                 method: 'evm_snapshot',
                 id: new Date().getTime()
             },
-            (err, snapshotId) => {
+            function(err, response) {
                 if (err) {
-                    return reject(err);
+                    reject(err);
+                } else if (response && response.result) {
+                    resolve(response.result);
+                } else {
+                    reject('Unknown error');
                 }
-                return resolve(snapshotId);
             }
         );
     });
-};
+}
 
-const revertToSnapShot = id => {
+// Restore a snapshot of EVM state
+export function revertSnapshot(web3, snapshotId) {
     return new Promise((resolve, reject) => {
         web3.currentProvider.send(
             {
                 jsonrpc: '2.0',
                 method: 'evm_revert',
-                params: [id],
+                params: [snapshotId],
                 id: new Date().getTime()
             },
-            (err, result) => {
+            function(err, response) {
                 if (err) {
-                    return reject(err);
+                    reject(err);
+                } else {
+                    resolve();
                 }
-                return resolve(result);
             }
         );
     });
-};
-
-const getRandomInt = max => {
-    return Math.floor(Math.random() * Math.floor(max));
-};
-
-const advanceTimeAndBlock = async time => {
+}
+export const advanceTimeAndBlock = async time => {
     await advanceTime(time);
     await advanceBlock();
     return Promise.resolve(web3.eth.getBlock('latest'));
-};
-
-module.exports = {
-    advanceTime,
-    getRandomInt,
-    advanceBlock,
-    advanceTimeAndBlock,
-    takeSnapshot,
-    revertToSnapShot,
-    setAllowance
 };

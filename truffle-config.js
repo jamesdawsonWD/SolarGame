@@ -18,6 +18,22 @@
  *
  */
 
+// Importing babel to be able to use ES6 imports
+require('babel-register')({
+    presets: [
+        [
+            'env',
+            {
+                targets: {
+                    node: '8.0'
+                }
+            }
+        ]
+    ],
+    retainLines: true
+});
+require('babel-eslint');
+require('babel-polyfill');
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const MNEMONIC = process.env.MNEMONIC;
 const INFURA_KEY = process.env.INFURA_KEY;
@@ -42,7 +58,6 @@ module.exports = {
      *
      * $ truffle test --network <network-name>
      */
-
     networks: {
         // Useful for testing. The `development` name is special - truffle uses it by default
         // if it's defined here and no other network is specified at the command line.
@@ -50,7 +65,7 @@ module.exports = {
         // tab if you use this network and you must also set the `host`, `port` and `network_id`
         // options below to some value.
         development: {
-            host: 'localhost',
+            host: '127.0.0.1',
             port: 7545,
             gas: 4600000,
             network_id: '*' // Match any network id
@@ -58,10 +73,7 @@ module.exports = {
 
         rinkeby: {
             provider: function() {
-                return new HDWalletProvider(
-                    MNEMONIC,
-                    'https://rinkeby.infura.io/v3/' + INFURA_KEY
-                );
+                return new HDWalletProvider(MNEMONIC, 'https://rinkeby.infura.io/v3/' + INFURA_KEY);
             },
             network_id: '*',
             gas: 4600000
@@ -70,10 +82,7 @@ module.exports = {
         live: {
             network_id: 1,
             provider: function() {
-                return new HDWalletProvider(
-                    MNEMONIC,
-                    'https://mainnet.infura.io/v3/' + INFURA_KEY
-                );
+                return new HDWalletProvider(MNEMONIC, 'https://mainnet.infura.io/v3/' + INFURA_KEY);
             },
             gas: 4000000,
             gasPrice: 20000000000

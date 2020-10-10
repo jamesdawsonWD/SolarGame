@@ -71,7 +71,7 @@ contract ShipsAndTechnology is Ownable, ERC1155 {
     modifier onlyOperator() {
         // Make sure the access is permitted to only contracts in our Dapp
         require(
-            es.getAddress(keccak256(abi.encodePacked('sats.access', msg.sender))) != address(0x0)
+            es.getAddress(keccak256(abi.encodePacked('sat.access', msg.sender))) != address(0x0)
         );
         _;
     }

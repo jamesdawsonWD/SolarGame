@@ -6,9 +6,7 @@ import {IFHR} from './interfaces/IFHR.sol';
 import {ISolar} from './interfaces/ISolar.sol';
 import {ISat} from './interfaces/ISat.sol';
 import {EternalStorage} from './EternalStorage.sol';
-import {
-    ERC1155Holder
-} from '@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol';
+import {ERC1155Holder} from '@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol';
 
 contract Treasury is ERC1155Holder {
     IFHR fhr;
@@ -20,7 +18,7 @@ contract Treasury is ERC1155Holder {
         es = EternalStorage(_es);
         fhr = IFHR(es.getAddress(keccak256('contract.address.fhr')));
         solar = ISolar(es.getAddress(keccak256('contract.address.solar')));
-        sats = ISat(es.getAddress(keccak256('contract.address.sats')));
+        sats = ISat(es.getAddress(keccak256('contract.address.sat')));
     }
 
     function sendSats(

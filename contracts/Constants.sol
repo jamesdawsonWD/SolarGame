@@ -57,9 +57,9 @@ contract Constants {
     uint256 constant PROPOSAL_MAX_OPERATIONS = 10;
 
     enum ShipAndTechList {
+        FEDERATION_MASTER_VESSEL,
         FEDERATION_CRUISER,
         FEDERATION_DESTROYER,
-        FEDERATION_MASTER_VESSEL,
         FEDERATION_FIGHTER_PLANE,
         FEDERATION_MARKET_SHIP,
         FEDERATION_MINING_SHIP_SMALL,
@@ -212,23 +212,11 @@ contract Constants {
     constructor(address _es) public {
         es = EternalStorage(_es);
 
-        es.setUint(
-            keccak256('constants.governance.total_supply'),
-            TOTAL_SUPPLY
-        );
+        es.setUint(keccak256('constants.governance.total_supply'), TOTAL_SUPPLY);
         es.setUint(keccak256('constants.governance.qorum_votes'), QORUM_VOTES);
-        es.setUint(
-            keccak256('constants.governance.proposal_threshold'),
-            PROPOSAL_THRESHOLD
-        );
-        es.setUint(
-            keccak256('constants.governance.voting_period'),
-            VOTING_PERIOD
-        );
-        es.setUint(
-            keccak256('constants.governance.voting_delay'),
-            VOTING_DELAY
-        );
+        es.setUint(keccak256('constants.governance.proposal_threshold'), PROPOSAL_THRESHOLD);
+        es.setUint(keccak256('constants.governance.voting_period'), VOTING_PERIOD);
+        es.setUint(keccak256('constants.governance.voting_delay'), VOTING_DELAY);
         es.setUint(
             keccak256('constants.governance.proposal_max_operations'),
             PROPOSAL_MAX_OPERATIONS
@@ -237,45 +225,18 @@ contract Constants {
         // Yield Constants
         es.setUint(keccak256('constants.yield.low_yield_low'), LOW_YIELD_LOW);
         es.setUint(keccak256('constants.yield.low_yeild_high'), LOW_YIELD_HIGH);
-        es.setUint(
-            keccak256('constants.yield.medium_yield_low'),
-            MEDIUM_YIELD_LOW
-        );
-        es.setUint(
-            keccak256('constants.yield.medium_yield_high'),
-            MEDIUM_YIELD_HIGH
-        );
+        es.setUint(keccak256('constants.yield.medium_yield_low'), MEDIUM_YIELD_LOW);
+        es.setUint(keccak256('constants.yield.medium_yield_high'), MEDIUM_YIELD_HIGH);
         es.setUint(keccak256('constants.yield.high_yield_low'), HIGH_YIELD_LOW);
-        es.setUint(
-            keccak256('constants.yield.high_yield_high'),
-            HIGH_YIELD_HIGH
-        );
-        es.setUint(
-            keccak256('constants.yield.insane_yield_low'),
-            INSANE_YIELD_LOW
-        );
-        es.setUint(
-            keccak256('constants.yield.insane_yield_high'),
-            INSANE_YIELD_HIGH
-        );
+        es.setUint(keccak256('constants.yield.high_yield_high'), HIGH_YIELD_HIGH);
+        es.setUint(keccak256('constants.yield.insane_yield_low'), INSANE_YIELD_LOW);
+        es.setUint(keccak256('constants.yield.insane_yield_high'), INSANE_YIELD_HIGH);
 
         // Start Position Co-ordinates
-        es.setUint8(
-            keccak256('constants.startPosition.quadrant'),
-            START_POSITION_QUADRANT
-        );
-        es.setUint8(
-            keccak256('constants.startPosition.district'),
-            START_POSITION_DISTRICT
-        );
-        es.setUint8(
-            keccak256('constants.startPosition.sector'),
-            START_POSITION_SECTOR
-        );
-        es.setUint(
-            keccak256('constants.startPosition.star'),
-            START_POSITION_STAR
-        );
+        es.setUint8(keccak256('constants.startPosition.quadrant'), START_POSITION_QUADRANT);
+        es.setUint8(keccak256('constants.startPosition.district'), START_POSITION_DISTRICT);
+        es.setUint8(keccak256('constants.startPosition.sector'), START_POSITION_SECTOR);
+        es.setUint(keccak256('constants.startPosition.star'), START_POSITION_STAR);
 
         // Galaxy Boundaries
         es.setUint8(keccak256('constants.boundaries.quadrant'), MAX_QUADRANT);
@@ -287,14 +248,8 @@ contract Constants {
         es.setUint(keccak256('constants.rolling.maxRoll'), MAX_ROLL);
         es.setUint(keccak256('constants.rolling.star'), START_POSITION_STAR);
         es.setUint(keccak256('constants.rolling.star'), START_POSITION_STAR);
-        es.setUint8(
-            keccak256('constants.rolling.alienfleet.min'),
-            MIN_ALIENFLEET_O_D
-        );
-        es.setUint8(
-            keccak256('constants.rolling.alienfleet.max'),
-            MAX_ALIENFLEET_O_D
-        );
+        es.setUint8(keccak256('constants.rolling.alienfleet.min'), MIN_ALIENFLEET_O_D);
+        es.setUint8(keccak256('constants.rolling.alienfleet.max'), MAX_ALIENFLEET_O_D);
         es.setUint8(
             keccak256('constants.rolling.advancedalienfleet.min'),
             MIN_ADVANCED_ALIENFLEET_O_D
@@ -303,57 +258,36 @@ contract Constants {
             keccak256('constants.rolling.advancedalienfleet.max'),
             MAX_ADVANCED_ALIENFLEET_O_D
         );
-        es.setUint8(
-            keccak256('constants.rolling.ancientfleet.min'),
-            MIN_ANCIENTFLEET_O_D
-        );
-        es.setUint8(
-            keccak256('constants.rolling.ancientfleet.max'),
-            MAX_ANCIENTFLEET_O_D
-        );
+        es.setUint8(keccak256('constants.rolling.ancientfleet.min'), MIN_ANCIENTFLEET_O_D);
+        es.setUint8(keccak256('constants.rolling.ancientfleet.max'), MAX_ANCIENTFLEET_O_D);
         // Ship & Technology Offense
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.FEDERATION_MASTER_VESSEL
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.FEDERATION_MASTER_VESSEL)
             ),
             FEDERATION_MASTER_VESSEL_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.FEDERATION_CRUISER
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.FEDERATION_CRUISER)
             ),
             FEDERATION_CRUISER_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.FEDERATION_DESTROYER
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.FEDERATION_DESTROYER)
             ),
             FEDERATION_DESTROYER_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.FEDERATION_FIGHTER_PLANE
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.FEDERATION_FIGHTER_PLANE)
             ),
             FEDERATION_FIGHTER_PLANE_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.FEDERATION_MARKET_SHIP
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.FEDERATION_MARKET_SHIP)
             ),
             FEDERATION_MARKET_SHIP_OFFENSE
         );
@@ -414,73 +348,45 @@ contract Constants {
 
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ALIEN_MASTER_VESSEL
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.ALIEN_MASTER_VESSEL)
             ),
             ALIEN_MASTER_VESSEL_OFFENSE
         );
         es.setUint8(
-            keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ALIEN_CRUISER
-                )
-            ),
+            keccak256(abi.encodePacked('constants.sats.offense', ShipAndTechList.ALIEN_CRUISER)),
             ALIEN_CRUISER_OFFENSE
         );
         es.setUint8(
-            keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ALIEN_DESTROYER
-                )
-            ),
+            keccak256(abi.encodePacked('constants.sats.offense', ShipAndTechList.ALIEN_DESTROYER)),
             ALIEN_DESTROYER_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ALIEN_FIGHTER_PLANE
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.ALIEN_FIGHTER_PLANE)
             ),
             ALIEN_FIGHTER_PLANE_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ALIEN_MARKET_SHIP
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.ALIEN_MARKET_SHIP)
             ),
             ALIEN_MARKET_SHIP_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ALIEN_MINING_SHIP_SMALL
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.ALIEN_MINING_SHIP_SMALL)
             ),
             ALIEN_MINING_SHIP_SMALL_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ALIEN_MINING_SHIP_MEDIUM
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.ALIEN_MINING_SHIP_MEDIUM)
             ),
             ALIEN_MINING_SHIP_MEDIUM_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ALIEN_MINING_SHIP_LARGE
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.ALIEN_MINING_SHIP_LARGE)
             ),
             ALIEN_MINING_SHIP_LARGE_OFFENSE
         );
@@ -515,27 +421,21 @@ contract Constants {
             keccak256(
                 abi.encodePacked(
                     'constants.sats.offense',
-                    ShipAndTechList.FEDERATION_MASTER_VESSEL
+                    ShipAndTechList.ADVANCED_RACE_MASTER_VESSEL
                 )
             ),
-            FEDERATION_MASTER_VESSEL_OFFENSE
+            ADVANCED_RACE_MASTER_VESSEL_OFFENSE
         );
 
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ADVANCED_RACE_CRUISER
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.ADVANCED_RACE_CRUISER)
             ),
             ADVANCED_RACE_CRUISER_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ADVANCED_RACE_DESTROYER
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.ADVANCED_RACE_DESTROYER)
             ),
             ADVANCED_RACE_DESTROYER_OFFENSE
         );
@@ -614,46 +514,29 @@ contract Constants {
 
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ANCIENT_MASTER_VESSEL
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.ANCIENT_MASTER_VESSEL)
             ),
             ANCIENT_MASTER_VESSEL_OFFENSE
         );
         es.setUint8(
-            keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ANCIENT_CRUISER
-                )
-            ),
+            keccak256(abi.encodePacked('constants.sats.offense', ShipAndTechList.ANCIENT_CRUISER)),
             ANCIENT_CRUISER_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ANCIENT_DESTROYER
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.ANCIENT_DESTROYER)
             ),
             ANCIENT_DESTROYER_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ANCIENT_FIGHTER_PLANE
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.ANCIENT_FIGHTER_PLANE)
             ),
             ANCIENT_FIGHTER_PLANE_OFFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.offense',
-                    ShipAndTechList.ANCIENT_MARKET_SHIP
-                )
+                abi.encodePacked('constants.sats.offense', ShipAndTechList.ANCIENT_MARKET_SHIP)
             ),
             ANCIENT_MARKET_SHIP_OFFENSE
         );
@@ -715,46 +598,31 @@ contract Constants {
         // Ship & Technology Defense
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.FEDERATION_MASTER_VESSEL
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.FEDERATION_MASTER_VESSEL)
             ),
             FEDERATION_MASTER_VESSEL_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.FEDERATION_CRUISER
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.FEDERATION_CRUISER)
             ),
             FEDERATION_CRUISER_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.FEDERATION_DESTROYER
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.FEDERATION_DESTROYER)
             ),
             FEDERATION_DESTROYER_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.FEDERATION_FIGHTER_PLANE
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.FEDERATION_FIGHTER_PLANE)
             ),
             FEDERATION_FIGHTER_PLANE_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.FEDERATION_MARKET_SHIP
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.FEDERATION_MARKET_SHIP)
             ),
             FEDERATION_MARKET_SHIP_DEFENSE
         );
@@ -815,73 +683,45 @@ contract Constants {
 
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ALIEN_MASTER_VESSEL
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.ALIEN_MASTER_VESSEL)
             ),
             ALIEN_MASTER_VESSEL_DEFENSE
         );
         es.setUint8(
-            keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ALIEN_CRUISER
-                )
-            ),
+            keccak256(abi.encodePacked('constants.sats.defense', ShipAndTechList.ALIEN_CRUISER)),
             ALIEN_CRUISER_DEFENSE
         );
         es.setUint8(
-            keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ALIEN_DESTROYER
-                )
-            ),
+            keccak256(abi.encodePacked('constants.sats.defense', ShipAndTechList.ALIEN_DESTROYER)),
             ALIEN_DESTROYER_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ALIEN_FIGHTER_PLANE
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.ALIEN_FIGHTER_PLANE)
             ),
             ALIEN_FIGHTER_PLANE_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ALIEN_MARKET_SHIP
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.ALIEN_MARKET_SHIP)
             ),
             ALIEN_MARKET_SHIP_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ALIEN_MINING_SHIP_SMALL
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.ALIEN_MINING_SHIP_SMALL)
             ),
             ALIEN_MINING_SHIP_SMALL_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ALIEN_MINING_SHIP_MEDIUM
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.ALIEN_MINING_SHIP_MEDIUM)
             ),
             ALIEN_MINING_SHIP_MEDIUM_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ALIEN_MINING_SHIP_LARGE
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.ALIEN_MINING_SHIP_LARGE)
             ),
             ALIEN_MINING_SHIP_LARGE_DEFENSE
         );
@@ -916,27 +756,21 @@ contract Constants {
             keccak256(
                 abi.encodePacked(
                     'constants.sats.defense',
-                    ShipAndTechList.FEDERATION_MASTER_VESSEL
+                    ShipAndTechList.ADVANCED_RACE_MASTER_VESSEL
                 )
             ),
-            FEDERATION_MASTER_VESSEL_DEFENSE
+            ADVANCED_RACE_MASTER_VESSEL_DEFENSE
         );
 
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ADVANCED_RACE_CRUISER
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.ADVANCED_RACE_CRUISER)
             ),
             ADVANCED_RACE_CRUISER_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ADVANCED_RACE_DESTROYER
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.ADVANCED_RACE_DESTROYER)
             ),
             ADVANCED_RACE_DESTROYER_DEFENSE
         );
@@ -1015,46 +849,29 @@ contract Constants {
 
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ANCIENT_MASTER_VESSEL
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.ANCIENT_MASTER_VESSEL)
             ),
             ANCIENT_MASTER_VESSEL_DEFENSE
         );
         es.setUint8(
-            keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ANCIENT_CRUISER
-                )
-            ),
+            keccak256(abi.encodePacked('constants.sats.defense', ShipAndTechList.ANCIENT_CRUISER)),
             ANCIENT_CRUISER_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ANCIENT_DESTROYER
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.ANCIENT_DESTROYER)
             ),
             ANCIENT_DESTROYER_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ANCIENT_FIGHTER_PLANE
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.ANCIENT_FIGHTER_PLANE)
             ),
             ANCIENT_FIGHTER_PLANE_DEFENSE
         );
         es.setUint8(
             keccak256(
-                abi.encodePacked(
-                    'constants.sats.defense',
-                    ShipAndTechList.ANCIENT_MARKET_SHIP
-                )
+                abi.encodePacked('constants.sats.defense', ShipAndTechList.ANCIENT_MARKET_SHIP)
             ),
             ANCIENT_MARKET_SHIP_DEFENSE
         );

@@ -10,9 +10,7 @@ import {Utils} from './Utils.sol';
 // import {Constants} from './Constants.sol';
 // import {Governance} from './Governance.sol';
 import {EternalStorage} from './EternalStorage.sol';
-import {
-    Initializable
-} from '@openzeppelin/upgrades-core/contracts/Initializable.sol';
+import {Initializable} from '@openzeppelin/upgrades-core/contracts/Initializable.sol';
 
 contract GameStorage is Utils, Initializable, Random {
     using SafeMath for uint256;
@@ -31,7 +29,7 @@ contract GameStorage is Utils, Initializable, Random {
     }
 
     function getSatAddress() public view returns (address) {
-        return es.getAddress(keccak256('contract.address.sats'));
+        return es.getAddress(keccak256('contract.address.sat'));
     }
 
     function getTreasuryAddress() public view returns (address) {
@@ -45,15 +43,9 @@ contract GameStorage is Utils, Initializable, Random {
     function getStartPosition() public view returns (Types.Position memory) {
         return
             Types.Position({
-                quadrant: es.getUint8(
-                    keccak256('constants.startPosition.quadrant')
-                ),
-                sector: es.getUint8(
-                    keccak256('constants.startPosition.sector')
-                ),
-                district: es.getUint8(
-                    keccak256('constants.startPosition.district')
-                ),
+                quadrant: es.getUint8(keccak256('constants.startPosition.quadrant')),
+                sector: es.getUint8(keccak256('constants.startPosition.sector')),
+                district: es.getUint8(keccak256('constants.startPosition.district')),
                 star: es.getUint(keccak256('constants.startPosition.star'))
             });
     }
@@ -61,12 +53,8 @@ contract GameStorage is Utils, Initializable, Random {
     function getBoundaries() public view returns (Types.Position memory) {
         return
             Types.Position({
-                quadrant: es.getUint8(
-                    keccak256('constants.boundaries.quadrant')
-                ),
-                district: es.getUint8(
-                    keccak256('constants.boundaries.district')
-                ),
+                quadrant: es.getUint8(keccak256('constants.boundaries.quadrant')),
+                district: es.getUint8(keccak256('constants.boundaries.district')),
                 sector: es.getUint8(keccak256('constants.boundaries.sector')),
                 star: es.getUint(keccak256('constants.boundaries.star'))
             });
@@ -78,11 +66,7 @@ contract GameStorage is Utils, Initializable, Random {
         return _id;
     }
 
-    function getStarSystemType(Types.Position memory pos)
-        public
-        view
-        returns (Types.SystemType)
-    {
+    function getStarSystemType(Types.Position memory pos) public view returns (Types.SystemType) {
         uint256 systemType = es.getUint(
             keccak256(
                 abi.encodePacked(
@@ -97,11 +81,7 @@ contract GameStorage is Utils, Initializable, Random {
         return Types.SystemType(systemType);
     }
 
-    function getRandomSystemType()
-        public
-        view
-        returns (Types.SystemType systemType, uint256 rand)
-    {
+    function getRandomSystemType() public view returns (Types.SystemType systemType, uint256 rand) {
         uint256 MAX_ROLL = es.getUint(keccak256('constants.rolling.maxRoll'));
         uint256 ONE_PERCENT = MAX_ROLL / 100;
         rand = Random.randrange(1, MAX_ROLL);
@@ -151,11 +131,7 @@ contract GameStorage is Utils, Initializable, Random {
         }
     }
 
-    function getRandomYield(Types.SystemType systemType)
-        public
-        view
-        returns (uint16 rand)
-    {
+    function getRandomYield(Types.SystemType systemType) public view returns (uint16 rand) {
         if (systemType == Types.SystemType.LowYieldSystem) {
             rand = uint16(
                 Random.randrange(
@@ -187,10 +163,7 @@ contract GameStorage is Utils, Initializable, Random {
         }
     }
 
-    function setStarSystemType(
-        Types.Position memory pos,
-        Types.SystemType systemType
-    ) public {
+    function setStarSystemType(Types.Position memory pos, Types.SystemType systemType) public {
         es.setUint(
             keccak256(
                 abi.encodePacked(
@@ -205,30 +178,26 @@ contract GameStorage is Utils, Initializable, Random {
         );
     }
 
-    function setStarSystemYield(Types.Position memory pos, uint16 yield)
-        public
-    {
+    function getStarSystemYield(Types.Position memory pos) public view returns (uint16) {
+        es.getUint16(
+            keccak256(
+                abi.encodePacked('stars.yield', pos.quadrant, pos.sector, pos.district, pos.star)
+            )
+        );
+    }
+
+    function setStarSystemYield(Types.Position memory pos, uint16 yield) public {
         es.setUint16(
             keccak256(
-                abi.encodePacked(
-                    'stars.yield',
-                    pos.quadrant,
-                    pos.sector,
-                    pos.district,
-                    pos.star
-                )
+                abi.encodePacked('stars.yield', pos.quadrant, pos.sector, pos.district, pos.star)
             ),
             yield
         );
     }
 
-    function setMasterFleetPosition(address master, Types.Position memory pos)
-        public
-    {
+    function setMasterFleetPosition(address master, Types.Position memory pos) public {
         es.setUint8(
-            keccak256(
-                abi.encodePacked('master.fleet.position.quadrant', master)
-            ),
+            keccak256(abi.encodePacked('master.fleet.position.quadrant', master)),
             pos.quadrant
         );
         es.setUint8(
@@ -236,99 +205,51 @@ contract GameStorage is Utils, Initializable, Random {
             pos.sector
         );
         es.setUint8(
-            keccak256(
-                abi.encodePacked('master.fleet.position.district', master)
-            ),
+            keccak256(abi.encodePacked('master.fleet.position.district', master)),
             pos.district
         );
-        es.setUint(
-            keccak256(abi.encodePacked('master.fleet.position.star', master)),
-            pos.star
-        );
+        es.setUint(keccak256(abi.encodePacked('master.fleet.position.star', master)), pos.star);
     }
 
-    function getMasterFleetPosition(address master)
-        public
-        returns (Types.Position memory)
-    {
+    function getMasterFleetPosition(address master) public view returns (Types.Position memory) {
         return
             Types.Position({
                 quadrant: es.getUint8(
-                    keccak256(
-                        abi.encodePacked(
-                            'master.fleet.position.quadrant',
-                            master
-                        )
-                    )
+                    keccak256(abi.encodePacked('master.fleet.position.quadrant', master))
                 ),
                 sector: es.getUint8(
-                    keccak256(
-                        abi.encodePacked('master.fleet.position.sector', master)
-                    )
+                    keccak256(abi.encodePacked('master.fleet.position.sector', master))
                 ),
                 district: es.getUint8(
-                    keccak256(
-                        abi.encodePacked(
-                            'master.fleet.position.district',
-                            master
-                        )
-                    )
+                    keccak256(abi.encodePacked('master.fleet.position.district', master))
                 ),
-                star: es.getUint(
-                    keccak256(
-                        abi.encodePacked('master.fleet.position.star', master)
-                    )
-                )
+                star: es.getUint(keccak256(abi.encodePacked('master.fleet.position.star', master)))
             });
     }
 
-    function getSatInfo(uint256 id)
+    function getSatInfo(Types.ShipAndTechList satType)
         public
         view
         returns (uint256 offense, uint256 defense)
     {
-        offense = es.getUint8(
-            keccak256(abi.encodePacked('constants.sats.offense', id))
-        );
-        defense = es.getUint8(
-            keccak256(abi.encodePacked('constants.sats.defense', id))
-        );
+        offense = es.getUint8(keccak256(abi.encodePacked('constants.sats.offense', satType)));
+        defense = es.getUint8(keccak256(abi.encodePacked('constants.sats.defense', satType)));
     }
 
-    function getMasterFleetOffense(address master)
-        public
-        view
-        returns (uint256)
-    {
-        return
-            es.getUint(
-                keccak256(abi.encodePacked('master.fleet.offense', master))
-            );
+    function getMasterFleetOffense(address master) public view returns (uint256) {
+        return es.getUint(keccak256(abi.encodePacked('master.fleet.offense', master)));
     }
 
     function setMasterFleetOffense(address master, uint256 offense) public {
-        es.setUint(
-            keccak256(abi.encodePacked('master.fleet.offense', master)),
-            offense
-        );
+        es.setUint(keccak256(abi.encodePacked('master.fleet.offense', master)), offense);
     }
 
-    function getMasterFleetDefense(address master)
-        public
-        view
-        returns (uint256)
-    {
-        return
-            es.getUint(
-                keccak256(abi.encodePacked('master.fleet.defense', master))
-            );
+    function getMasterFleetDefense(address master) public view returns (uint256) {
+        return es.getUint(keccak256(abi.encodePacked('master.fleet.defense', master)));
     }
 
     function setMasterFleetDefense(address master, uint256 defense) public {
-        es.setUint(
-            keccak256(abi.encodePacked('master.fleet.defense', master)),
-            defense
-        );
+        es.setUint(keccak256(abi.encodePacked('master.fleet.defense', master)), defense);
     }
 
     function setMasterLockedInShipInfo(
@@ -336,21 +257,11 @@ contract GameStorage is Utils, Initializable, Random {
         uint256 id,
         uint256 amount
     ) public {
-        es.setUint(
-            keccak256(abi.encodePacked('master.fleet.lockedin', master, id)),
-            amount
-        );
+        es.setUint(keccak256(abi.encodePacked('master.fleet.lockedin', master, id)), amount);
     }
 
-    function getMasterLockedInShipInfo(address master, uint256 id)
-        public
-        view
-        returns (uint256)
-    {
-        return
-            es.getUint(
-                keccak256(abi.encodePacked('master.fleet.lockedin', master, id))
-            );
+    function getMasterLockedInShipInfo(address master, uint256 id) public view returns (uint256) {
+        return es.getUint(keccak256(abi.encodePacked('master.fleet.lockedin', master, id)));
     }
 
     function getMasterFleetInfo(address master)
@@ -368,32 +279,18 @@ contract GameStorage is Utils, Initializable, Random {
         returns (uint256 offense, uint256 defense)
     {
         if (systemType == Types.SystemType.AlienFleetAggressive) {
-            uint8 min = es.getUint8(
-                keccak256('constants.rolling.alienfleet.min')
-            );
-            uint8 max = es.getUint8(
-                keccak256('constants.rolling.alienfleet.max')
-            );
+            uint8 min = es.getUint8(keccak256('constants.rolling.alienfleet.min'));
+            uint8 max = es.getUint8(keccak256('constants.rolling.alienfleet.max'));
             offense = Random.randrange(min, max);
             defense = Random.randrange(min, max);
-        } else if (
-            systemType == Types.SystemType.AdvancedAlienFleetAggressive
-        ) {
-            uint8 min = es.getUint8(
-                keccak256('constants.rolling.advancedalienfleet.min')
-            );
-            uint8 max = es.getUint8(
-                keccak256('constants.rolling.advancedalienfleet.max')
-            );
+        } else if (systemType == Types.SystemType.AdvancedAlienFleetAggressive) {
+            uint8 min = es.getUint8(keccak256('constants.rolling.advancedalienfleet.min'));
+            uint8 max = es.getUint8(keccak256('constants.rolling.advancedalienfleet.max'));
             offense = Random.randrange(min, max);
             defense = Random.randrange(min, max);
         } else if (systemType == Types.SystemType.AncientFleetAggressive) {
-            uint8 min = es.getUint8(
-                keccak256('constants.rolling.ancientfleet.min')
-            );
-            uint8 max = es.getUint8(
-                keccak256('constants.rolling.ancientfleet.max')
-            );
+            uint8 min = es.getUint8(keccak256('constants.rolling.ancientfleet.min'));
+            uint8 max = es.getUint8(keccak256('constants.rolling.ancientfleet.max'));
             offense = Random.randrange(min, max);
             defense = Random.randrange(min, max);
         }

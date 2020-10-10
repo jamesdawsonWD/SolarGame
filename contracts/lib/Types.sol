@@ -9,10 +9,7 @@ library Types {
         uint256 star;
     }
 
-    function positionIsEqual(Position memory a, Position memory b)
-        internal
-        returns (bool)
-    {
+    function positionIsEqual(Position memory a, Position memory b) internal returns (bool) {
         return (a.quadrant == b.quadrant &&
             a.district == b.district &&
             a.sector == b.sector &&
@@ -24,16 +21,13 @@ library Types {
     }
 
     function positionNotSet(Position memory a) internal returns (bool) {
-        return (a.quadrant == 0 ||
-            a.district == 0 ||
-            a.sector == 0 ||
-            a.star == 0);
+        return (a.quadrant == 0 || a.district == 0 || a.sector == 0 || a.star == 0);
     }
 
-    function positionWithinBoundaries(
-        Position memory a,
-        Position memory boundaries
-    ) internal returns (bool) {
+    function positionWithinBoundaries(Position memory a, Position memory boundaries)
+        internal
+        returns (bool)
+    {
         if (a.quadrant <= 0 || a.quadrant > boundaries.quadrant) return false;
         if (a.district <= 0 || a.district > boundaries.district) return false;
         if (a.sector <= 0 || a.sector > boundaries.sector) return false;
@@ -75,9 +69,9 @@ library Types {
     }
 
     enum ShipAndTechList {
+        FEDERATION_MASTER_VESSEL,
         FEDERATION_CRUISER,
         FEDERATION_DESTROYER,
-        FEDERATION_MASTER_VESSEL,
         FEDERATION_FIGHTER_PLANE,
         FEDERATION_MARKET_SHIP,
         FEDERATION_MINING_SHIP_SMALL,

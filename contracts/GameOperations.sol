@@ -5,9 +5,7 @@ pragma experimental ABIEncoderV2;
 
 import {GameStorage} from './GameStorage.sol';
 import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
-import {
-    Initializable
-} from '@openzeppelin/upgrades-core/contracts/Initializable.sol';
+import {Initializable} from '@openzeppelin/upgrades-core/contracts/Initializable.sol';
 import {Types} from './lib/Types.sol';
 import {Discovery} from './Discovery.sol';
 
@@ -26,6 +24,7 @@ contract GameOperations is Initializable, Discovery {
     event LogMove(uint8 quadrant, uint8 district, uint8 sector, uint256 star);
     event LogStarSystemDiscovery(address indexed to, uint8 systemType);
     event Random(uint256 random);
+    event TestUint(uint256 a, uint256 b);
     event BattleStarted(
         uint256 attackerOffense,
         uint256 attackerDefense,
@@ -51,10 +50,7 @@ contract GameOperations is Initializable, Discovery {
             from = GS.getStartPosition();
         }
 
-        require(
-            !Types.positionIsEqual(to, from),
-            'You cannot move to your current location'
-        );
+        require(!Types.positionIsEqual(to, from), 'You cannot move to your current location');
 
         GS.setMasterFleetPosition(msg.sender, to);
         emit LogMove(to.quadrant, to.district, to.sector, to.star);
@@ -87,18 +83,12 @@ contract GameOperations is Initializable, Discovery {
         // we can allow people to stack actions e.g [Move, Attack, Move, Defend] in one transaction
     }
 
-    function withdrawMasterFleet(
-        uint256[] memory _ships,
-        uint256[] memory _amounts
-    ) public {
+    function withdrawMasterFleet(uint256[] memory _ships, uint256[] memory _amounts) public {
         removeMasterFleet(msg.sender, _ships, _amounts);
         TS.sendSats(msg.sender, _ships, _amounts);
     }
 
-    function lockInMasterFleet(
-        uint256[] memory _ships,
-        uint256[] memory _amounts
-    ) public {
+    function lockInMasterFleet(uint256[] memory _ships, uint256[] memory _amounts) public {
         updateMasterFleet(msg.sender, _ships, _amounts);
         TS.recieveSats(msg.sender, _ships, _amounts);
     }
@@ -166,9 +156,7 @@ contract GameOperations is Initializable, Discovery {
         // AncientShipWreck,
         // InsaneYieldSystem,
         // AncientRacePassive
-        (uint256 a_offense, uint256 a_defense) = GS.getMasterFleetInfo(
-            msg.sender
-        );
+        (uint256 a_offense, uint256 a_defense) = GS.getMasterFleetInfo(msg.sender);
         (uint256 d_offense, uint256 d_defense) = GS.getAiFleetInfo(
             Types.SystemType.AlienFleetAggressive
         );
@@ -220,13 +208,16 @@ contract GameOperations is Initializable, Discovery {
         uint256 offense;
         uint256 defense;
         for (uint256 i = 0; i < _ids.length; i++) {
-            (uint256 o, uint256 d) = GS.getSatInfo(_ids[i]);
+            (uint256 o, uint256 d) = GS.getSatInfo(Types.ShipAndTechList(_ids[i]));
+            TestUint(o, d);
             GS.setMasterLockedInShipInfo(_master, _ids[i], _amounts[i]);
             offense += o.mul(_amounts[i]);
             defense += d.mul(_amounts[i]);
+            TestUint(offense, defense);
         }
         GS.setMasterFleetOffense(_master, offense);
         GS.setMasterFleetDefense(_master, defense);
+        emit TestUint(offense, defense);
     }
 
     function removeMasterFleet(
@@ -237,18 +228,11 @@ contract GameOperations is Initializable, Discovery {
         uint256 offense;
         uint256 defense;
         for (uint256 i = 0; i < _ids.length; i++) {
-            (uint256 o, uint256 d) = GS.getSatInfo(_ids[i]);
+            (uint256 o, uint256 d) = GS.getSatInfo(Types.ShipAndTechList(_ids[i]));
             uint256 lockedIn = GS.getMasterLockedInShipInfo(_master, _ids[i]);
             require(lockedIn != 0, 'This ship ID has not been locked in');
-            require(
-                lockedIn >= _amounts[i],
-                'Amount requested is greater than locked into fleet'
-            );
-            GS.setMasterLockedInShipInfo(
-                _master,
-                _ids[i],
-                lockedIn.sub(_amounts[i])
-            );
+            require(lockedIn >= _amounts[i], 'Amount requested is greater than locked into fleet');
+            GS.setMasterLockedInShipInfo(_master, _ids[i], lockedIn.sub(_amounts[i]));
             offense += o.mul(_amounts[i]);
             defense += d.mul(_amounts[i]);
         }
