@@ -53,7 +53,6 @@ export default function() {
 
         it('should get the correct start position', async () => {
             const info = await getStartPosition(Owner);
-            console.log(info);
         });
     });
 }

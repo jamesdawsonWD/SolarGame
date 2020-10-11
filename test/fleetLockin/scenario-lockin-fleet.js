@@ -8,9 +8,17 @@ export async function lockin(accounts) {
     const amounts = Object.values(WEAK_FLEET);
     await lockinMasterFleet(ids, amounts, UserA);
 
-    const offense = ids.reduce((acc, id) => acc + SHIP_INFO[id].offense, 0);
-    const defense = ids.reduce((acc, id) => acc + SHIP_INFO[id].defense, 0);
+    const offense = ids.reduce(
+        (acc, id, currentIndex) => acc + SHIP_INFO[id].offense * amounts[currentIndex],
+        0
+    );
+    const defense = ids.reduce(
+        (acc, id, currentIndex) => acc + SHIP_INFO[id].defense * amounts[currentIndex],
+        0
+    );
 
     const info = await getMasterFleetInfo(UserA);
-    console.log(info.offense.toString());
+
+    assert.equal(info.offense.toString(), offense.toString());
+    assert.equal(info.defense.toString(), defense.toString());
 }
