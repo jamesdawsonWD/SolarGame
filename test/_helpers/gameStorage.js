@@ -8,9 +8,9 @@ export async function getSatAddress(from) {
     const GameStorage = await GameStorageC.deployed();
     return await GameStorage.getSatAddress({ from });
 }
-export async function getFhrAdress(from) {
+export async function getFhrAddress(from) {
     const GameStorage = await GameStorageC.deployed();
-    return await GameStorage.getFhrAdress({ from });
+    return await GameStorage.getFhrAddress({ from });
 }
 export async function getTreasuryAddress(from) {
     const GameStorage = await GameStorageC.deployed();

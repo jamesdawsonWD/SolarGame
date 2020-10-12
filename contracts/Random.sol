@@ -10,10 +10,20 @@ pragma experimental ABIEncoderV2;
  * Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct
  */
 contract Random {
-    function randomrange(uint256 a, uint256 b) internal returns (uint256) {
-        uint256 randomnumber = uint256(keccak256(abi.encodePacked(now, msg.sender, now))) % b;
+    uint256 private seed;
+
+    function randomrange(
+        uint256 a,
+        uint256 b,
+        uint256 nonce
+    ) internal returns (uint256) {
+        uint256 randomnumber = uint256(keccak256(abi.encodePacked(seed * nonce))) % b;
         randomnumber = randomnumber + a;
         return randomnumber;
+    }
+
+    function setSeed(uint256 _seed) public {
+        seed = _seed;
     }
 
     function rand(uint256 seed) internal pure returns (uint256) {

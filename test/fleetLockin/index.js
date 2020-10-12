@@ -8,7 +8,6 @@ import { WEAK_FLEET } from '../lib/testValues';
 import { sendSats, treasuryAddress } from '../_helpers/treasury';
 import { approveForAll } from '../_helpers/sat';
 import { lockin } from './scenario-lockin-fleet';
-import { withdrawAll } from './scenario-withdrawAll-fleet';
 import { withdraw } from './scenario-withdraw-fleet';
 import truffleAssert from 'truffle-assertions';
 export default function() {
@@ -37,17 +36,21 @@ export default function() {
         //
 
         it('should lock in the correct fleet size', async () => {
-            await lockin(accounts);
+            const ids = Object.keys(WEAK_FLEET);
+            const amounts = Object.values(WEAK_FLEET);
+            await lockin(UserA, ids, amounts);
         });
         it('should withdraw the entire fleet from a locked in fleet', async () => {
             const ids = Object.keys(WEAK_FLEET);
             const amounts = Object.values(WEAK_FLEET);
-            await withdraw(accounts, ids, amounts);
+            await lockin(UserA, ids, amounts);
+            await withdraw(UserA, ids, amounts);
         });
         it('should withdraw the correct fleet size from a locked in fleet', async () => {
-            const ids = Object.keys(WEAK_FLEET).slice(2);
-            const amounts = Object.values(WEAK_FLEET).slice(2);
-            await withdraw(accounts, ids, amounts);
+            const ids = Object.keys(WEAK_FLEET);
+            const amounts = Object.values(WEAK_FLEET);
+            await lockin(UserA, ids, amounts);
+            await withdraw(UserA, ids.slice(2), amounts.slice(2));
         });
     });
 }

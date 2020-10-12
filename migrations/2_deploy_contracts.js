@@ -3,7 +3,7 @@ const Web3 = require('web3');
 const { deployProxy } = require('@openzeppelin/truffle-upgrades');
 // Contracts
 const EternalStorage = artifacts.require('EternalStorage');
-const GameOperations = artifacts.require('GameOperations');
+const GameOperationsC = artifacts.require('GameOperations');
 const FHRC = artifacts.require('FederalHarvestingRights');
 const SolarToken = artifacts.require('SolarToken');
 const ShipsAndTechnology = artifacts.require('ShipsAndTechnology');
@@ -14,12 +14,14 @@ const Constants = artifacts.require('Constants');
 const TestFhr = artifacts.require('TestFederalHarvestingRights.sol');
 const TestSolar = artifacts.require('TestSolar.sol');
 const TestShipsAndTechnology = artifacts.require('TestShipsAndTechnology.sol');
+const TestGameOperations = artifacts.require('TestGameOperations.sol');
 // Testing Contracts
 
 async function deployBaseProtocol(deployer, network) {
     const FHR = isDevNetwork(network) ? TestFhr : FHRC;
     const Solar = isDevNetwork(network) ? TestSolar : SolarToken;
     const Sat = isDevNetwork(network) ? TestShipsAndTechnology : ShipsAndTechnology;
+    const GameOperations = isDevNetwork(network) ? TestGameOperations : GameOperationsC;
 
     await deployer.deploy(EternalStorage);
     const esD = await EternalStorage.deployed();
@@ -53,7 +55,7 @@ async function deployBaseProtocol(deployer, network) {
         esD.setAddress(Web3.utils.soliditySha3(`contract.address.fhr`), FHR.address),
         esD.setAddress(Web3.utils.soliditySha3(`contract.address.sat`), Sat.address),
         esD.setAddress(Web3.utils.soliditySha3(`contract.address.solar`), Solar.address),
-        esD.setAddress(Web3.utils.soliditySha3('fhr.access', Treasury.address), Solar.address)
+        esD.setAddress(Web3.utils.soliditySha3('fhr.access', Treasury.address), Treasury.address)
     ]);
 
     const [GameStorageD, TreasuryD, GameOperationsD] = await Promise.all([
@@ -64,6 +66,7 @@ async function deployBaseProtocol(deployer, network) {
     await GameStorageD.initialize(esD.address);
     await TreasuryD.initialize(esD.address);
     await GameOperationsD.initialize(GameStorage.address);
+    await GameOperationsD.setSeed(1927367382);
 }
 
 module.exports = async function(deployer, network) {

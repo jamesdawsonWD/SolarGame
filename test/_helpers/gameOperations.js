@@ -17,6 +17,13 @@ export async function lockinMasterFleet(ids, amounts, from) {
     });
 }
 
+export async function attack(defender, turns, from) {
+    const GameOperations = await GameOperationsC.deployed();
+    await GameOperations.attack(defender, turns, {
+        from
+    });
+}
+
 export async function withdrawMasterFleet(ids, amounts, from) {
     const GameOperations = await GameOperationsC.deployed();
     await GameOperations.withdrawMasterFleet(ids, amounts, {

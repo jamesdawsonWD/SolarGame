@@ -24,7 +24,7 @@ contract GameStorage is Utils, Initializable, Random {
         return es.getAddress(keccak256('contract.address.solar'));
     }
 
-    function getFHRAddress() public view returns (address) {
+    function getFhrAddress() public view returns (address) {
         return es.getAddress(keccak256('contract.address.fhr'));
     }
 
@@ -60,6 +60,10 @@ contract GameStorage is Utils, Initializable, Random {
             });
     }
 
+    function getMaxRoll() public view returns (uint256) {
+        return es.getUint(keccak256('constants.rolling.maxRoll'));
+    }
+
     function incrementTotalFhr() public returns (uint256) {
         uint256 _id = es.getUint(keccak256('fhr.total')) + 1;
         es.setUint(keccak256('fhr.total'), _id);
@@ -81,85 +85,22 @@ contract GameStorage is Utils, Initializable, Random {
         return Types.SystemType(systemType);
     }
 
-    function getRandomSystemType() public view returns (Types.SystemType systemType, uint256 rand) {
-        uint256 MAX_ROLL = es.getUint(keccak256('constants.rolling.maxRoll'));
-        uint256 ONE_PERCENT = MAX_ROLL / 100;
-        rand = Random.randrange(1, MAX_ROLL);
-        uint16 roll = uint16(rand);
-        if (roll == 1) {
-            systemType = Types.SystemType.AncientFleetAggressive;
-        } else if (roll == 42) {
-            systemType = Types.SystemType.SuperComputerEvent;
-        } else if (roll <= ONE_PERCENT * 5) {
-            systemType = Types.SystemType.AdvancedAlienFleetAggressive;
-        } else if (roll > ONE_PERCENT * 5 && roll <= ONE_PERCENT * 10) {
-            systemType = Types.SystemType.AiFleetAggressive;
-        } else if (roll > ONE_PERCENT * 10 && roll <= ONE_PERCENT * 20) {
-            systemType = Types.SystemType.AlienFleetAggressive;
-        } else if (roll > ONE_PERCENT * 20 && roll <= ONE_PERCENT * 30) {
-            systemType = Types.SystemType.PiratesEvent;
-        } else if (roll > ONE_PERCENT * 30 && roll <= ONE_PERCENT * 35) {
-            systemType = Types.SystemType.SolarWinds;
-        } else if (roll > ONE_PERCENT * 35 && roll <= ONE_PERCENT * 40) {
-            systemType = Types.SystemType.Asteroids;
-        } else if (roll > ONE_PERCENT * 40 && roll <= ONE_PERCENT * 47) {
-            systemType = Types.SystemType.Empty;
-        } else if (roll > ONE_PERCENT * 47 && roll <= ONE_PERCENT * 60) {
-            systemType = Types.SystemType.GovermentOwned;
-        } else if (roll > ONE_PERCENT * 60 && roll <= ONE_PERCENT * 65) {
-            systemType = Types.SystemType.LowYieldSystem;
-        } else if (roll > ONE_PERCENT * 65 && roll <= ONE_PERCENT * 70) {
-            systemType = Types.SystemType.RandomEvent;
-        } else if (roll > ONE_PERCENT * 70 && roll <= ONE_PERCENT & 75) {
-            systemType = Types.SystemType.MediumYieldSystem;
-        } else if (roll > ONE_PERCENT * 70 && roll <= ONE_PERCENT & 80) {
-            systemType = Types.SystemType.ShipWreck;
-        } else if (roll > ONE_PERCENT * 80 && roll <= ONE_PERCENT & 85) {
-            systemType = Types.SystemType.HighYieldSystem;
-        } else if (roll > ONE_PERCENT * 85 && roll <= ONE_PERCENT & 90) {
-            systemType = Types.SystemType.AncientMiningSystem;
-        } else if (roll > ONE_PERCENT * 90 && roll <= ONE_PERCENT & 95) {
-            systemType = Types.SystemType.AncientWeaponSystem;
-        } else if (roll > ONE_PERCENT * 95 && roll <= ONE_PERCENT & 99) {
-            systemType = Types.SystemType.AncientShipWreck;
-        } else if (roll > ONE_PERCENT * 99 && roll <= MAX_ROLL - 1) {
-            systemType = Types.SystemType.InsaneYieldSystem;
-        } else if (roll == MAX_ROLL) {
-            systemType = Types.SystemType.AncientRacePassive;
-        } else {
-            systemType = Types.SystemType.Empty;
-        }
-    }
-
-    function getRandomYield(Types.SystemType systemType) public view returns (uint16 rand) {
+    function getStarSystemYieldRange(Types.SystemType systemType)
+        public
+        returns (uint256 low, uint256 high)
+    {
         if (systemType == Types.SystemType.LowYieldSystem) {
-            rand = uint16(
-                Random.randrange(
-                    es.getUint(keccak256('constants.yield.low_yield_low')),
-                    es.getUint(keccak256('constants.yield.low_yield_high'))
-                )
-            );
+            low = es.getUint(keccak256('constants.yield.low_yield_low'));
+            high = es.getUint(keccak256('constants.yield.low_yield_high'));
         } else if (systemType == Types.SystemType.MediumYieldSystem) {
-            rand = uint16(
-                Random.randrange(
-                    es.getUint(keccak256('constants.yield.medium_yield_low')),
-                    es.getUint(keccak256('constants.yield.medium_yield_high'))
-                )
-            );
+            low = es.getUint(keccak256('constants.yield.medium_yield_low'));
+            high = es.getUint(keccak256('constants.yield.medium_yield_high'));
         } else if (systemType == Types.SystemType.LowYieldSystem) {
-            rand = uint16(
-                Random.randrange(
-                    es.getUint(keccak256('constants.yield.high_yield_low')),
-                    es.getUint(keccak256('constants.yield.high_yield_high'))
-                )
-            );
+            low = es.getUint(keccak256('constants.yield.high_yield_low'));
+            high = es.getUint(keccak256('constants.yield.high_yield_high'));
         } else if (systemType == Types.SystemType.LowYieldSystem) {
-            rand = uint16(
-                Random.randrange(
-                    es.getUint(keccak256('constants.yield.insane_yield_low')),
-                    es.getUint(keccak256('constants.yield.insane_yield_high'))
-                )
-            );
+            low = es.getUint(keccak256('constants.yield.insane_yield_low'));
+            high = es.getUint(keccak256('constants.yield.insane_yield_high'));
         }
     }
 
@@ -186,12 +127,12 @@ contract GameStorage is Utils, Initializable, Random {
         );
     }
 
-    function setStarSystemYield(Types.Position memory pos, uint16 yield) public {
+    function setStarSystemYield(Types.Position memory pos, uint256 yield) public {
         es.setUint16(
             keccak256(
                 abi.encodePacked('stars.yield', pos.quadrant, pos.sector, pos.district, pos.star)
             ),
-            yield
+            uint16(yield)
         );
     }
 

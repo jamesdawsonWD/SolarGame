@@ -8,7 +8,6 @@ import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
 import {Initializable} from '@openzeppelin/upgrades-core/contracts/Initializable.sol';
 import {Types} from './lib/Types.sol';
 import {Discovery} from './Discovery.sol';
-
 import {ITreasury} from './interfaces/ITreasury.sol';
 
 /**
@@ -23,11 +22,14 @@ contract GameOperations is Initializable, Discovery {
     // ============ Constants ============
     event LogMove(uint8 quadrant, uint8 district, uint8 sector, uint256 star);
     event LogStarSystemDiscovery(address indexed to, uint8 systemType);
+    event LogBattle(bool result, uint256 attackersHealth, uint256 defendersHealth);
     event Random(uint256 random);
-    event TestUint(uint256 a, uint256 b);
+    event LogRound(uint256 aDamage, uint256 dDamage, uint256 aHealth, uint256 dHealth);
     event BattleStarted(
+        address attacker,
         uint256 attackerOffense,
         uint256 attackerDefense,
+        address defender,
         uint256 defenderOffense,
         uint256 defenderDefense
     );
@@ -37,6 +39,16 @@ contract GameOperations is Initializable, Discovery {
     function initialize(address _gameStorage) public initializer {
         GS = GameStorage(_gameStorage);
         TS = ITreasury(GS.getTreasuryAddress());
+    }
+
+    function withdrawMasterFleet(uint256[] memory _ships, uint256[] memory _amounts) public {
+        removeMasterFleet(msg.sender, _ships, _amounts);
+        TS.sendSats(msg.sender, _ships, _amounts);
+    }
+
+    function lockInMasterFleet(uint256[] memory _ships, uint256[] memory _amounts) public {
+        updateMasterFleet(msg.sender, _ships, _amounts);
+        TS.recieveSats(msg.sender, _ships, _amounts);
     }
 
     function move(Types.Position memory to) public {
@@ -57,111 +69,93 @@ contract GameOperations is Initializable, Discovery {
 
         if (GS.getStarSystemType(to) == Types.SystemType.Undiscovered) {
             explore(to);
-        } // else if (state.getStarSystemHasFleet(to)) {
-        // Fleet.Info memory starFleet = state.getStarSystemFleet(to);
-        // Fleet.Info memory masterFleet = state.getMasterFleet(msg.sender);
-        // // if defenders are set to attack on sight, defenders go first
-        // if (starFleet.orders == Fleet.Orders.Attack) {
-        //     // battle(starFleet, masterFleet);
-        // } else if (masterFleet.orders == Fleet.Orders.Attack) {
-        //     // battle(masterFleet, starFleet);
-        // } else {
-        //     // both sides are passive
-        //     return;
-        // }
-        // }
-        // check if mover is owner of starSystem
-        // if (state.getStarSystemOwner(state, to) == msg.sender) {
-        //     Fleet.Info memory masterFleet = state.getMasterFleet(
-        //         state,
-        //         msg.sender
-        //     );
-        // }
-        // check if star has fleet
-
-        // I think we end here and we move a lot of this battle logic into seperate functions,
-        // we can allow people to stack actions e.g [Move, Attack, Move, Defend] in one transaction
+        }
     }
 
-    function withdrawMasterFleet(uint256[] memory _ships, uint256[] memory _amounts) public {
-        removeMasterFleet(msg.sender, _ships, _amounts);
-        TS.sendSats(msg.sender, _ships, _amounts);
-    }
-
-    function lockInMasterFleet(uint256[] memory _ships, uint256[] memory _amounts) public {
-        updateMasterFleet(msg.sender, _ships, _amounts);
-        TS.recieveSats(msg.sender, _ships, _amounts);
-    }
-
-    function attack(
+    function battle(
         uint256 a_offense,
-        uint256 a_defense,
+        uint256 a_health,
         uint256 d_offense,
-        uint256 d_defense
-    ) public {
+        uint256 d_health,
+        bool defenderGoesFirst,
+        uint8 turns
+    ) private returns (bool result) {
+        uint256 turnThreshold = 10;
+        uint256 attackerAttack = uint256(
+            a_offense.div(turnThreshold) != 0 ? a_offense.div(turnThreshold) : 1
+        );
+        uint256 defenderAttack = uint256(
+            d_offense.div(turnThreshold) != 0 ? d_offense.div(turnThreshold) : 1
+        );
+
+        uint256 nonce = attackerAttack * defenderAttack;
+        uint256 damageD;
+        uint256 damageA;
+        for (uint8 i = 0; i < turns; i++) {
+            if (defenderGoesFirst) {
+                damageD = randomrange(1, defenderAttack, uint256(i));
+                damageA = randomrange(1, attackerAttack, uint256(i));
+                emit LogRound(damageA, damageD, a_health, d_health);
+                a_health = a_health > damageD ? a_health.sub(damageD) : 0;
+                d_health = d_health > damageA ? d_health.sub(damageA) : 0;
+            } else {
+                damageD = randomrange(1, defenderAttack, uint256(i));
+                damageA = randomrange(1, attackerAttack, uint256(i));
+                d_health = d_health > damageA ? d_health.sub(damageA) : 0;
+                a_health = a_health > damageD ? a_health.sub(damageD) : 0;
+            }
+            if (a_health == 0 || d_health == 0) break;
+        }
+
+        // the result is true if the attacker wins and false if the denfender wins
+        result = a_health > d_health;
+
+        emit LogBattle(result, a_health, d_health);
+    }
+
+    function attack(address defender, uint8 turns) public {
+        require(defender != msg.sender, 'You cannot attack yourself');
+        require(
+            defender != address(0) && msg.sender != address(0),
+            'Addresses must exist must exist'
+        );
+
+        Types.Position memory attackerPos = GS.getMasterFleetPosition(msg.sender);
+        Types.Position memory defenderPos = GS.getMasterFleetPosition(defender);
+
+        require(
+            Types.positionIsEqual(attackerPos, defenderPos),
+            'You can only attack people at your current star location'
+        );
+
+        (uint256 a_offense, uint256 a_defense) = GS.getMasterFleetInfo(msg.sender);
+        (uint256 d_offense, uint256 d_defense) = GS.getMasterFleetInfo(defender);
+
+        emit BattleStarted(msg.sender, a_offense, a_defense, defender, d_offense, d_defense);
+
+        bool result = battle(a_offense, a_defense, d_offense, d_defense, true, turns);
+        // if (attacker)
+
         // Get the armies
-        emit BattleStarted(a_offense, a_defense, d_offense, d_defense);
         // TODO: convert string array to bytes32 array
 
+        // defender always go first
         // if (result) {
-        //     uint256 reward = Storage.getBalance(state, defender).div(100).mul(
-        //         80
-        //     );
-        //     Storage.addBalance(state, attacker, reward);
+        //     uint256 reward = Storage.getBalance(state, defender).div(100).mul(80);
+        //     Storage.addBalance(state, Aier, reward);
         //     Storage.subBalance(state, defender, reward);
         // } else {
-        //     uint256 reward = Storage.getBalance(state, attacker).div(100).mul(
-        //         40
-        //     );
+        //     uint256 reward = Storage.getBalance(state, Aier).div(100).mul(40);
         //     Storage.addBalance(state, defender, reward);
-        //     Storage.subBalance(state, attacker, reward);
+        //     Storage.subBalance(state, Aier, reward);
         // }
-        // Events.logBattle(attacker, defender, result, string(log));
     }
 
-    // function attackSolarSystem(
-    //     Storage.State storage state,
-    //     address attacker,
-    //     uint256 solarSystem
-    // ) public {}
-
-    // function assignShipsToSolarSystem(
-    //     Storage.State storage state,
-    //     address attacker,
-    //     uint256 solarSystem
-    // ) public {}
-
     function explore(Types.Position memory star) private {
-        (Types.SystemType systemType, uint256 rand) = GS.getRandomSystemType();
+        (Types.SystemType systemType, uint256 rand) = Discovery.randomSystemType();
         GS.setStarSystemType(star, systemType);
         emit LogStarSystemDiscovery(msg.sender, uint8(systemType));
 
-        // AncientFleetAggressive,
-        // SuperComputerEvent,
-        // AdvancedAlienFleetAggressive,
-        // AiFleetAggressive,
-        // AlienFleetAggressive,
-        // PiratesEvent,
-        // SolarWinds,
-        // Asteroids,
-        // Empty,
-        // GovermentOwned,
-        // LowYieldSystem,
-        // RandomEvent,
-        // MediumYieldSystem,
-        // ShipWreck,
-        // HighYieldSystem,
-        // AncientMiningSystem,
-        // AncientWeaponSystem,
-        // AncientShipWreck,
-        // InsaneYieldSystem,
-        // AncientRacePassive
-        (uint256 a_offense, uint256 a_defense) = GS.getMasterFleetInfo(msg.sender);
-        (uint256 d_offense, uint256 d_defense) = GS.getAiFleetInfo(
-            Types.SystemType.AlienFleetAggressive
-        );
-
-        attack(a_offense, a_defense, d_offense, d_defense);
         if (systemType == Types.SystemType.Empty) {
             // There is nothing here.
             return;
@@ -170,14 +164,33 @@ contract GameOperations is Initializable, Discovery {
             systemType == Types.SystemType.AdvancedAlienFleetAggressive ||
             systemType == Types.SystemType.AlienFleetAggressive
         ) {
+            (uint256 a_offense, uint256 a_defense) = GS.getAiFleetInfo(
+                Types.SystemType.AlienFleetAggressive
+            );
+            (uint256 d_offense, uint256 d_defense) = GS.getMasterFleetInfo(msg.sender);
+            emit BattleStarted(
+                msg.sender,
+                a_offense,
+                a_defense,
+                address(this),
+                d_offense,
+                d_defense
+            );
+
+            bool result = battle(a_offense, a_defense, d_offense, d_defense, true, 10);
+
             // generate fleet and technology with ancient being the strongest andsoftfisting alien being the weakest
         } else if (
             systemType == Types.SystemType.LowYieldSystem ||
             systemType == Types.SystemType.MediumYieldSystem ||
             systemType == Types.SystemType.HighYieldSystem ||
             systemType == Types.SystemType.InsaneYieldSystem
-        ) {} else if (systemType == Types.SystemType.SuperComputerEvent) {
-            uint16 yield = GS.getRandomYield(systemType);
+        ) {
+            (uint256 low, uint256 high) = GS.getStarSystemYieldRange(systemType);
+            emit Random(low);
+            emit Random(high);
+            uint256 yield = randomrange(low, high, rand);
+
             GS.setStarSystemYield(star, yield);
             TS.mintFhr(msg.sender, GS.incrementTotalFhr());
         } else if (systemType == Types.SystemType.ShipWreck) {
@@ -209,15 +222,12 @@ contract GameOperations is Initializable, Discovery {
         uint256 defense;
         for (uint256 i = 0; i < _ids.length; i++) {
             (uint256 o, uint256 d) = GS.getSatInfo(Types.ShipAndTechList(_ids[i]));
-            TestUint(o, d);
             GS.setMasterLockedInShipInfo(_master, _ids[i], _amounts[i]);
             offense += o.mul(_amounts[i]);
             defense += d.mul(_amounts[i]);
-            TestUint(offense, defense);
         }
         GS.setMasterFleetOffense(_master, offense);
         GS.setMasterFleetDefense(_master, defense);
-        emit TestUint(offense, defense);
     }
 
     function removeMasterFleet(

@@ -5,5 +5,5 @@ export const TestSolarC = artifacts.require('TestSolar.sol');
 export const TestSatC = artifacts.require('TestShipsAndTechnology.sol');
 export const TreasuryC = artifacts.require('Treasury.sol');
 export const GameStorageC = artifacts.require('GameStorage.sol');
-export const GameOperationsC = artifacts.require('GameOperations.sol');
+export const GameOperationsC = artifacts.require('TestGameOperations.sol');
 export const ConstantsC = artifacts.require('Constants.sol');

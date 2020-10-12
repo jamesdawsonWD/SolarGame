@@ -2,11 +2,13 @@ import { takeSnapshot, revertSnapshot } from '../_utils/evm';
 import {
     getSolarAddress,
     getSatAddress,
+    getFhrAddress,
     getSatInfo,
     getStartPosition
 } from '../_helpers/gameStorage';
 import { satAddress } from '../_helpers/sat';
 import { solarAddress } from '../_helpers/solar';
+import { fhrAddress } from '../_helpers/fhr';
 import { SHIP_INFO } from '../lib/testValues';
 import truffleAssert from 'truffle-assertions';
 export default function() {
@@ -39,6 +41,12 @@ export default function() {
         it('should get the correct solar address', async () => {
             const address = await getSolarAddress(Owner);
             const acctualAddress = await solarAddress();
+            assert.equal(address, acctualAddress);
+        });
+
+        it('should get the correct fhr address', async () => {
+            const address = await getFhrAddress(Owner);
+            const acctualAddress = await fhrAddress();
             assert.equal(address, acctualAddress);
         });
 

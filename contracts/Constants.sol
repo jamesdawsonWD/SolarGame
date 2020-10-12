@@ -224,7 +224,7 @@ contract Constants {
 
         // Yield Constants
         es.setUint(keccak256('constants.yield.low_yield_low'), LOW_YIELD_LOW);
-        es.setUint(keccak256('constants.yield.low_yeild_high'), LOW_YIELD_HIGH);
+        es.setUint(keccak256('constants.yield.low_yield_high'), LOW_YIELD_HIGH);
         es.setUint(keccak256('constants.yield.medium_yield_low'), MEDIUM_YIELD_LOW);
         es.setUint(keccak256('constants.yield.medium_yield_high'), MEDIUM_YIELD_HIGH);
         es.setUint(keccak256('constants.yield.high_yield_low'), HIGH_YIELD_LOW);

@@ -117,6 +117,7 @@ library Types {
         PIRATE_WEAPON
     }
 
+    // SHIPS AND TECHNOLOGY
     struct SatInfo {
         uint256 amount;
         uint256 id;
