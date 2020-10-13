@@ -4,7 +4,7 @@ import {
     lockinMasterFleet,
     gameOperationsAddress
 } from '../_helpers/gameOperations';
-import { WEAK_FLEET } from '../lib/testValues';
+import { WEAK_FLEET, AVERAGE_FLEET, ALL_SHIPS } from '../lib/testValues';
 import { sendSats, treasuryAddress } from '../_helpers/treasury';
 import { approveForAll } from '../_helpers/sat';
 import { lockin } from './scenario-lockin-fleet';
@@ -27,7 +27,7 @@ export default function() {
         // Setup
         before(async () => {
             const treasury = await treasuryAddress();
-            await sendSats(UserA, Object.keys(WEAK_FLEET), Object.values(WEAK_FLEET), UserA);
+            await sendSats(UserA, Object.keys(ALL_SHIPS), Object.values(ALL_SHIPS), UserA);
             await approveForAll(treasury, true, UserA);
         });
 
@@ -51,6 +51,16 @@ export default function() {
             const amounts = Object.values(WEAK_FLEET);
             await lockin(UserA, ids, amounts);
             await withdraw(UserA, ids.slice(2), amounts.slice(2));
+        });
+        it('should work with locking in every ship possible', async () => {
+            const ids = Object.keys(ALL_SHIPS);
+            const amounts = Object.values(ALL_SHIPS);
+            await lockin(UserA, ids, amounts);
+            await withdraw(UserA, ids, amounts);
+        });
+        it('should work when locking in the ships back to back', async () => {
+            await lockin(UserA, Object.keys(WEAK_FLEET), Object.values(WEAK_FLEET));
+            await lockin(UserA, Object.keys(AVERAGE_FLEET), Object.values(AVERAGE_FLEET));
         });
     });
 }

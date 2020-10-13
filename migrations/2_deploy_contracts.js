@@ -55,7 +55,7 @@ async function deployBaseProtocol(deployer, network) {
         esD.setAddress(Web3.utils.soliditySha3(`contract.address.fhr`), FHR.address),
         esD.setAddress(Web3.utils.soliditySha3(`contract.address.sat`), Sat.address),
         esD.setAddress(Web3.utils.soliditySha3(`contract.address.solar`), Solar.address),
-        esD.setAddress(Web3.utils.soliditySha3('fhr.access', Treasury.address), Treasury.address)
+        esD.setBool(Web3.utils.soliditySha3('fhr.access', Treasury.address), true)
     ]);
 
     const [GameStorageD, TreasuryD, GameOperationsD] = await Promise.all([

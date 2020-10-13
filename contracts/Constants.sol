@@ -42,7 +42,7 @@ contract Constants {
     uint32 constant START_POSITION_STAR = 42;
 
     // Total Ships & Technology
-    uint16 constant TOTAL_SAT_ITEMS = 46;
+    uint16 constant TOTAL_SAT_ITEMS = 44;
 
     // Bonus Variables
     uint256 constant DEFENSE_BONUS = 100000;
@@ -260,6 +260,9 @@ contract Constants {
         );
         es.setUint8(keccak256('constants.rolling.ancientfleet.min'), MIN_ANCIENTFLEET_O_D);
         es.setUint8(keccak256('constants.rolling.ancientfleet.max'), MAX_ANCIENTFLEET_O_D);
+
+        es.setUint(keccak256('constants.totalSats'), TOTAL_SAT_ITEMS);
+
         // Ship & Technology Offense
         es.setUint8(
             keccak256(

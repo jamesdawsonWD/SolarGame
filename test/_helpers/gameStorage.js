@@ -88,3 +88,7 @@ export async function getMasterFleetInfo(from) {
     const GameStorage = await GameStorageC.deployed();
     return await GameStorage.getMasterFleetInfo(from, { from });
 }
+export async function getMasterAddressToShipIds(from) {
+    const GameStorage = await GameStorageC.deployed();
+    return await GameStorage.getMasterAddressToShipIds(from, { from });
+}

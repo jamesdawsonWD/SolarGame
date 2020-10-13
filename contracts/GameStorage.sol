@@ -15,6 +15,7 @@ import {Initializable} from '@openzeppelin/upgrades-core/contracts/Initializable
 contract GameStorage is Utils, Initializable, Random {
     using SafeMath for uint256;
     EternalStorage es;
+    mapping(address => bool[]) private addressToShipIds;
 
     function initialize(address _es) public initializer {
         es = EternalStorage(_es);
@@ -168,15 +169,6 @@ contract GameStorage is Utils, Initializable, Random {
             });
     }
 
-    function getSatInfo(Types.ShipAndTechList satType)
-        public
-        view
-        returns (uint256 offense, uint256 defense)
-    {
-        offense = es.getUint8(keccak256(abi.encodePacked('constants.sats.offense', satType)));
-        defense = es.getUint8(keccak256(abi.encodePacked('constants.sats.defense', satType)));
-    }
-
     function getMasterFleetOffense(address master) public view returns (uint256) {
         return es.getUint(keccak256(abi.encodePacked('master.fleet.offense', master)));
     }
@@ -214,6 +206,14 @@ contract GameStorage is Utils, Initializable, Random {
         defense = getMasterFleetDefense(master);
     }
 
+    function getMasterAddressToShipIds(address master) public view returns (bool[] memory) {
+        return addressToShipIds[master];
+    }
+
+    function setMasterAddressToShipIds(address master, bool[] memory ids) public {
+        addressToShipIds[master] = ids;
+    }
+
     function getAiFleetInfo(Types.SystemType systemType)
         public
         view
@@ -235,5 +235,18 @@ contract GameStorage is Utils, Initializable, Random {
             offense = Random.randrange(min, max);
             defense = Random.randrange(min, max);
         }
+    }
+
+    function getTotalSats() public view returns (uint256) {
+        return es.getUint(keccak256('constants.totalSats'));
+    }
+
+    function getSatInfo(Types.ShipAndTechList satType)
+        public
+        view
+        returns (uint256 offense, uint256 defense)
+    {
+        offense = es.getUint8(keccak256(abi.encodePacked('constants.sats.offense', satType)));
+        defense = es.getUint8(keccak256(abi.encodePacked('constants.sats.defense', satType)));
     }
 }

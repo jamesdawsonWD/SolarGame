@@ -26,12 +26,12 @@ contract Random {
         seed = _seed;
     }
 
-    function rand(uint256 seed) internal pure returns (uint256) {
+    function rand(uint256 _seed) internal pure returns (uint256) {
         bytes32 data;
-        if (seed % 2 == 0) {
-            data = keccak256(abi.encode(bytes32(seed)));
+        if (_seed % 2 == 0) {
+            data = keccak256(abi.encode(bytes32(_seed)));
         } else {
-            data = keccak256(abi.encode(keccak256(abi.encode(bytes32(seed)))));
+            data = keccak256(abi.encode(keccak256(abi.encode(bytes32(_seed)))));
         }
         uint256 sum;
         for (uint256 i; i < 32; i++) {

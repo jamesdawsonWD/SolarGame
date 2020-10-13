@@ -79,7 +79,7 @@ contract GameOperations is Initializable, Discovery {
         uint256 d_health,
         bool defenderGoesFirst,
         uint8 turns
-    ) private returns (bool result) {
+    ) internal returns (bool result) {
         uint256 turnThreshold = 10;
         uint256 attackerAttack = uint256(
             a_offense.div(turnThreshold) != 0 ? a_offense.div(turnThreshold) : 1
@@ -107,7 +107,7 @@ contract GameOperations is Initializable, Discovery {
             if (a_health == 0 || d_health == 0) break;
         }
 
-        // the result is true if the attacker wins and false if the denfender wins
+        // the result is true if the attacker wins and false if the defender wins
         result = a_health > d_health;
 
         emit LogBattle(result, a_health, d_health);
@@ -149,9 +149,15 @@ contract GameOperations is Initializable, Discovery {
         //     Storage.addBalance(state, defender, reward);
         //     Storage.subBalance(state, Aier, reward);
         // }
+
+        // if result is true then attacker has won
+        if (result) {}
+        // find out who won
+        // reduce both fleets
+        // reward the victor either with solar or NFT
     }
 
-    function explore(Types.Position memory star) private {
+    function explore(Types.Position memory star) internal {
         (Types.SystemType systemType, uint256 rand) = Discovery.randomSystemType();
         GS.setStarSystemType(star, systemType);
         emit LogStarSystemDiscovery(msg.sender, uint8(systemType));
@@ -164,10 +170,9 @@ contract GameOperations is Initializable, Discovery {
             systemType == Types.SystemType.AdvancedAlienFleetAggressive ||
             systemType == Types.SystemType.AlienFleetAggressive
         ) {
-            (uint256 a_offense, uint256 a_defense) = GS.getAiFleetInfo(
-                Types.SystemType.AlienFleetAggressive
-            );
+            (uint256 a_offense, uint256 a_defense) = GS.getAiFleetInfo(systemType);
             (uint256 d_offense, uint256 d_defense) = GS.getMasterFleetInfo(msg.sender);
+
             emit BattleStarted(
                 msg.sender,
                 a_offense,
@@ -178,8 +183,6 @@ contract GameOperations is Initializable, Discovery {
             );
 
             bool result = battle(a_offense, a_defense, d_offense, d_defense, true, 10);
-
-            // generate fleet and technology with ancient being the strongest andsoftfisting alien being the weakest
         } else if (
             systemType == Types.SystemType.LowYieldSystem ||
             systemType == Types.SystemType.MediumYieldSystem ||
@@ -190,7 +193,6 @@ contract GameOperations is Initializable, Discovery {
             emit Random(low);
             emit Random(high);
             uint256 yield = randomrange(low, high, rand);
-
             GS.setStarSystemYield(star, yield);
             TS.mintFhr(msg.sender, GS.incrementTotalFhr());
         } else if (systemType == Types.SystemType.ShipWreck) {
@@ -220,12 +222,23 @@ contract GameOperations is Initializable, Discovery {
     ) internal {
         uint256 offense;
         uint256 defense;
+
+        bool[] memory previousIds = GS.getMasterAddressToShipIds(_master);
+        uint256 totalSats = GS.getTotalSats();
+
+        if (previousIds.length == 0 || previousIds.length != totalSats) {
+            previousIds = new bool[](totalSats);
+        }
+
         for (uint256 i = 0; i < _ids.length; i++) {
             (uint256 o, uint256 d) = GS.getSatInfo(Types.ShipAndTechList(_ids[i]));
             GS.setMasterLockedInShipInfo(_master, _ids[i], _amounts[i]);
             offense += o.mul(_amounts[i]);
             defense += d.mul(_amounts[i]);
+            previousIds[_ids[i]] = true;
         }
+
+        GS.setMasterAddressToShipIds(_master, previousIds);
         GS.setMasterFleetOffense(_master, offense);
         GS.setMasterFleetDefense(_master, defense);
     }
@@ -237,6 +250,7 @@ contract GameOperations is Initializable, Discovery {
     ) internal {
         uint256 offense;
         uint256 defense;
+        bool[] memory previousIds = GS.getMasterAddressToShipIds(_master);
         for (uint256 i = 0; i < _ids.length; i++) {
             (uint256 o, uint256 d) = GS.getSatInfo(Types.ShipAndTechList(_ids[i]));
             uint256 lockedIn = GS.getMasterLockedInShipInfo(_master, _ids[i]);
@@ -245,6 +259,7 @@ contract GameOperations is Initializable, Discovery {
             GS.setMasterLockedInShipInfo(_master, _ids[i], lockedIn.sub(_amounts[i]));
             offense += o.mul(_amounts[i]);
             defense += d.mul(_amounts[i]);
+            previousIds[_ids[i]] = false;
         }
 
         uint256 currentOffense = GS.getMasterFleetOffense(_master);
@@ -253,6 +268,7 @@ contract GameOperations is Initializable, Discovery {
             currentOffense >= offense && currentDefense >= defense,
             'The amount is greater than your current fleet'
         );
+        GS.setMasterAddressToShipIds(_master, previousIds);
         GS.setMasterFleetOffense(_master, currentOffense.sub(offense));
         GS.setMasterFleetDefense(_master, currentDefense.sub(defense));
     }

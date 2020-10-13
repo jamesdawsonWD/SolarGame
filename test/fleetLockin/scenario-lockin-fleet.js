@@ -1,6 +1,7 @@
-import { WEAK_FLEET, SHIP_INFO } from '../lib/testValues';
+import { SHIP_INFO } from '../lib/testValues';
 import { lockinMasterFleet } from '../_helpers/gameOperations';
-import { getMasterFleetInfo } from '../_helpers/gameStorage';
+import { makeShipArrayList, hasEqualValues } from '../_utils/base';
+import { getMasterFleetInfo, getMasterAddressToShipIds } from '../_helpers/gameStorage';
 export async function lockin(account, ids, amounts) {
     await lockinMasterFleet(ids, amounts, account);
 
@@ -14,7 +15,11 @@ export async function lockin(account, ids, amounts) {
     );
 
     const info = await getMasterFleetInfo(account);
-
+    const storedIds = await getMasterAddressToShipIds(account);
+    // const actualIds = makeShipArrayList(ids, Object.keys(SHIP_INFO).length);
+    // console.log(actualIds);
+    // console.log(storedIds);
+    // assert.ok(hasEqualValues(storedIds, actualIds));
     assert.equal(info.offense.toString(), offense.toString());
     assert.equal(info.defense.toString(), defense.toString());
 }
