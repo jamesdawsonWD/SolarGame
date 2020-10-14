@@ -16,9 +16,21 @@ export async function getTreasuryAddress(from) {
     const GameStorage = await GameStorageC.deployed();
     return await GameStorage.getTreasuryAddress({ from });
 }
-export async function getUserBalance(from) {
+export async function getDateStakeLocked(account, tokenId, from) {
     const GameStorage = await GameStorageC.deployed();
-    return await GameStorage.getUserBalance(from, { from });
+    return await GameStorage.getDateStakeLocked(account, tokenId, { from });
+}
+export async function setDateStakeLocked(account, tokenId, locked, from) {
+    const GameStorage = await GameStorageC.deployed();
+    return await GameStorage.setDateStakeLocked(account, tokenId, locked, { from });
+}
+export async function getStakedBalance(account, tokenId, from) {
+    const GameStorage = await GameStorageC.deployed();
+    return await GameStorage.getStakedBalance(account, tokenId, { from });
+}
+export async function setStakedBalance(account, tokenId, balance, from) {
+    const GameStorage = await GameStorageC.deployed();
+    return await GameStorage.setStakedBalance(account, tokenId, balance, { from });
 }
 export async function getStartPosition(from) {
     const GameStorage = await GameStorageC.deployed();
@@ -40,13 +52,13 @@ export async function setStarSystemType(pos, type, from) {
     const GameStorage = await GameStorageC.deployed();
     await GameStorage.setStarSystemType(pos, type, { from });
 }
-export async function getStarSystemYield(pos, from) {
+export async function getStarSystemYield(id, from) {
     const GameStorage = await GameStorageC.deployed();
-    return await GameStorage.getStarSystemYield(pos, { from });
+    return await GameStorage.getStarSystemYield(id, { from });
 }
-export async function setStarSystemYield(pos, systemYield, from) {
+export async function setStarSystemYield(id, systemYield, from) {
     const GameStorage = await GameStorageC.deployed();
-    await GameStorage.setStarSystemYield(pos, systemYield, { from });
+    await GameStorage.setStarSystemYield(id, systemYield, { from });
 }
 export async function getMasterFleetPosition(from) {
     const GameStorage = await GameStorageC.deployed();

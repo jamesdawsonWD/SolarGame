@@ -9,6 +9,9 @@ import {Initializable} from '@openzeppelin/upgrades-core/contracts/Initializable
 import {Types} from './lib/Types.sol';
 import {Discovery} from './Discovery.sol';
 import {ITreasury} from './interfaces/ITreasury.sol';
+import {IFHR} from './interfaces/IFHR.sol';
+import {ISolar} from './interfaces/ISolar.sol';
+import {ISat} from './interfaces/ISat.sol';
 
 /**
  * @title Operation
@@ -18,7 +21,9 @@ import {ITreasury} from './interfaces/ITreasury.sol';
  */
 contract GameOperations is Initializable, Discovery {
     using SafeMath for uint256;
-
+    IFHR fhr;
+    ISolar solar;
+    ISat sats;
     // ============ Constants ============
     event LogMove(uint8 quadrant, uint8 district, uint8 sector, uint256 star);
     event LogStarSystemDiscovery(address indexed to, uint8 systemType);
@@ -39,6 +44,9 @@ contract GameOperations is Initializable, Discovery {
     function initialize(address _gameStorage) public initializer {
         GS = GameStorage(_gameStorage);
         TS = ITreasury(GS.getTreasuryAddress());
+        fhr = IFHR(GS.getFhrAddress());
+        solar = ISolar(GS.getSolarAddress());
+        sats = ISat(GS.getSatAddress());
     }
 
     function withdrawMasterFleet(uint256[] memory _ships, uint256[] memory _amounts) public {
@@ -70,6 +78,41 @@ contract GameOperations is Initializable, Discovery {
         if (GS.getStarSystemType(to) == Types.SystemType.Undiscovered) {
             explore(to);
         }
+    }
+
+    function stakeSolarToPlanet(uint256 amount, uint256 tokenId) public {
+        require(fhr.ownerOf(tokenId) == msg.sender, 'Sender not owner');
+
+        // if (!fhr.isApprovedForAll(msg.sender, GS.getTreasuryAddress()))
+
+        TS.recieveFhr(msg.sender, tokenId);
+        solar.approve(GS.getTreasuryAddress(), amount);
+        TS.recieveSolar(msg.sender, amount);
+
+        uint256 _amount = GS.getStakedBalance(msg.sender, tokenId).add(amount);
+        emit Random(_amount);
+        GS.setStakedBalance(msg.sender, tokenId, _amount);
+        GS.setStakedTokenToOwner(tokenId, msg.sender);
+        GS.setDateStakeLocked(msg.sender, tokenId, now);
+    }
+
+    function withdrawSolarFromPlanet(uint256 amount, uint256 tokenId) public {
+        require(GS.getStakedTokenToOwner(tokenId) == msg.sender, 'Sender not owner');
+
+        uint256 staked = GS.getStakedBalance(msg.sender, tokenId);
+        // require(amount <= staked, 'Amount greater than balance');
+
+        emit Random(now);
+        emit Random(GS.getDateStakeLocked(msg.sender, tokenId));
+        uint256 yield = GS.getStarSystemYield(tokenId);
+        uint256 locked = (now.sub(GS.getDateStakeLocked(msg.sender, tokenId))).div(365 days).mul(
+            100
+        );
+        uint256 reward = staked.div(uint256(yield)).mul(locked);
+        emit Random(locked);
+        emit Random(reward);
+
+        // TS.sendSolarReward(msg.sender, amount, reward);
     }
 
     function battle(
@@ -190,11 +233,10 @@ contract GameOperations is Initializable, Discovery {
             systemType == Types.SystemType.InsaneYieldSystem
         ) {
             (uint256 low, uint256 high) = GS.getStarSystemYieldRange(systemType);
-            emit Random(low);
-            emit Random(high);
             uint256 yield = randomrange(low, high, rand);
-            GS.setStarSystemYield(star, yield);
-            TS.mintFhr(msg.sender, GS.incrementTotalFhr());
+            uint256 _id = GS.incrementTotalFhr();
+            TS.mintFhr(msg.sender, _id);
+            GS.setStarSystemYield(_id, yield);
         } else if (systemType == Types.SystemType.ShipWreck) {
             uint256 multiplier = rand.mod(2) == 0 ? 2 : 1;
             Types.SatInfo memory ship = Discovery.singleAllNonAncientShips();

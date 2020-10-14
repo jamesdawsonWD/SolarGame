@@ -1,6 +1,6 @@
 export const EternalStorageC = artifacts.require('EternalStorage.sol');
 export const TypesLibC = artifacts.require('Types.sol');
-export const TestFhrC = artifacts.require('TestFederalHarvestingRights.sol');
+export const FhrC = artifacts.require('FederalHarvestingRights.sol');
 export const TestSolarC = artifacts.require('TestSolar.sol');
 export const TestSatC = artifacts.require('TestShipsAndTechnology.sol');
 export const TreasuryC = artifacts.require('Treasury.sol');

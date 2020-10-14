@@ -7,8 +7,9 @@ import {ISolar} from './interfaces/ISolar.sol';
 import {ISat} from './interfaces/ISat.sol';
 import {EternalStorage} from './EternalStorage.sol';
 import {ERC1155Holder} from '@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol';
+import {ERC721Holder} from '@openzeppelin/contracts/token/ERC721/ERC721Holder.sol';
 
-contract Treasury is ERC1155Holder {
+contract Treasury is ERC1155Holder, ERC721Holder {
     IFHR fhr;
     ISolar solar;
     ISat sats;
@@ -39,5 +40,34 @@ contract Treasury is ERC1155Holder {
 
     function mintFhr(address _to, uint256 _tokenId) public {
         fhr.mint(_to, _tokenId);
+    }
+
+    function recieveFhr(address _from, uint256 _tokenId) public {
+        fhr.safeTransferFrom(_from, address(this), _tokenId);
+    }
+
+    function sendFhr(address _to, uint256 _tokenId) public {
+        fhr.safeTransferFrom(address(this), _to, _tokenId);
+    }
+
+    function mintSolar(address _to, uint256 _amount) public {
+        solar.mint(_to, _amount);
+    }
+
+    function sendSolar(address _to, uint256 _amount) public {
+        solar.transferFrom(address(this), _to, _amount);
+    }
+
+    function sendSolarReward(
+        address _to,
+        uint256 _amount,
+        uint256 _reward
+    ) public {
+        solar.transferFrom(address(this), _to, _amount);
+        solar.mint(_to, _reward);
+    }
+
+    function recieveSolar(address _from, uint256 _amount) public {
+        solar.transferFrom(_from, address(this), _amount);
     }
 }

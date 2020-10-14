@@ -16,6 +16,7 @@ contract GameStorage is Utils, Initializable, Random {
     using SafeMath for uint256;
     EternalStorage es;
     mapping(address => bool[]) private addressToShipIds;
+    mapping(uint256 => address) private stakedTokenToOwner;
 
     function initialize(address _es) public initializer {
         es = EternalStorage(_es);
@@ -37,8 +38,36 @@ contract GameStorage is Utils, Initializable, Random {
         return es.getAddress(keccak256('contract.address.treasury'));
     }
 
-    function getBalance(address user) public view returns (uint256) {
-        return es.getUint(keccak256(abi.encodePacked('user.balance', user)));
+    function getStakedBalance(address user, uint256 tokenId) public view returns (uint256) {
+        return es.getUint(keccak256(abi.encodePacked('user.stakedBalance', user, tokenId)));
+    }
+
+    function setStakedBalance(
+        address user,
+        uint256 tokenId,
+        uint256 newBalance
+    ) public {
+        es.setUint(keccak256(abi.encodePacked('user.stakedBalance', user, tokenId)), newBalance);
+    }
+
+    function getDateStakeLocked(address user, uint256 tokenId) public view returns (uint256) {
+        return es.getUint(keccak256(abi.encodePacked('date.stakeLocked', user, tokenId)));
+    }
+
+    function setDateStakeLocked(
+        address user,
+        uint256 tokenId,
+        uint256 locked
+    ) public {
+        es.setUint(keccak256(abi.encodePacked('date.stakeLocked', user, tokenId)), locked);
+    }
+
+    function setStakedTokenToOwner(uint256 tokenId, address owner) public {
+        stakedTokenToOwner[tokenId] = owner;
+    }
+
+    function getStakedTokenToOwner(uint256 tokenId) public returns (address) {
+        return stakedTokenToOwner[tokenId];
     }
 
     function getStartPosition() public view returns (Types.Position memory) {
@@ -120,21 +149,12 @@ contract GameStorage is Utils, Initializable, Random {
         );
     }
 
-    function getStarSystemYield(Types.Position memory pos) public view returns (uint16) {
-        es.getUint16(
-            keccak256(
-                abi.encodePacked('stars.yield', pos.quadrant, pos.sector, pos.district, pos.star)
-            )
-        );
+    function getStarSystemYield(uint256 _tokenId) public view returns (uint256) {
+        return es.getUint(keccak256(abi.encodePacked('stars.yield', _tokenId)));
     }
 
-    function setStarSystemYield(Types.Position memory pos, uint256 yield) public {
-        es.setUint16(
-            keccak256(
-                abi.encodePacked('stars.yield', pos.quadrant, pos.sector, pos.district, pos.star)
-            ),
-            uint16(yield)
-        );
+    function setStarSystemYield(uint256 _tokenId, uint256 yield) public {
+        es.setUint(keccak256(abi.encodePacked('stars.yield', _tokenId)), uint256(yield));
     }
 
     function setMasterFleetPosition(address master, Types.Position memory pos) public {

@@ -30,3 +30,17 @@ export async function withdrawMasterFleet(ids, amounts, from) {
         from
     });
 }
+
+export async function stakeSolarToPlanet(amount, tokenId, from) {
+    const GameOperations = await GameOperationsC.deployed();
+    await GameOperations.stakeSolarToPlanet(amount, tokenId, {
+        from
+    });
+}
+withdrawSolarFromPlanet;
+export async function withdrawSolarFromPlanet(amount, tokenId, from) {
+    const GameOperations = await GameOperationsC.deployed();
+    await GameOperations.withdrawSolarFromPlanet(amount, tokenId, {
+        from
+    });
+}

@@ -23,8 +23,9 @@ contract TestGameOperations is GameOperations {
     ) public {
         (uint256 low, uint256 high) = GS.getStarSystemYieldRange(starSystem);
         uint256 yield = randomrange(low, high, rand);
-        GS.setStarSystemYield(star, yield);
-        TS.mintFhr(msg.sender, GS.incrementTotalFhr());
+        uint256 _id = GS.incrementTotalFhr();
+        TS.mintFhr(msg.sender, _id);
+        GS.setStarSystemYield(_id, yield);
     }
 
     function testSatDiscovery(
