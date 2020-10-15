@@ -26,6 +26,10 @@ contract GameStorage is Utils, Initializable, Random {
         return es.getAddress(keccak256('contract.address.solar'));
     }
 
+    function getPlanetManagerAddress() public view returns (address) {
+        return es.getAddress(keccak256('contract.address.planetManager'));
+    }
+
     function getFhrAddress() public view returns (address) {
         return es.getAddress(keccak256('contract.address.fhr'));
     }
@@ -36,6 +40,10 @@ contract GameStorage is Utils, Initializable, Random {
 
     function getTreasuryAddress() public view returns (address) {
         return es.getAddress(keccak256('contract.address.treasury'));
+    }
+
+    function getSolarAccess(address _address) public view returns (bool) {
+        return es.getBool(keccak256(abi.encodePacked('solar.access', _address)));
     }
 
     function getStakedBalance(address user, uint256 tokenId) public view returns (uint256) {
@@ -189,19 +197,19 @@ contract GameStorage is Utils, Initializable, Random {
             });
     }
 
-    function getMasterFleetOffense(address master) public view returns (uint256) {
+    function getPlanetFleetOffense(address master) public view returns (uint256) {
         return es.getUint(keccak256(abi.encodePacked('master.fleet.offense', master)));
     }
 
-    function setMasterFleetOffense(address master, uint256 offense) public {
+    function setPlanetFleetOffense(address master, uint256 offense) public {
         es.setUint(keccak256(abi.encodePacked('master.fleet.offense', master)), offense);
     }
 
-    function getMasterFleetDefense(address master) public view returns (uint256) {
+    function getPlanetFleetDefense(address master) public view returns (uint256) {
         return es.getUint(keccak256(abi.encodePacked('master.fleet.defense', master)));
     }
 
-    function setMasterFleetDefense(address master, uint256 defense) public {
+    function setPlanetFleetDefense(address master, uint256 defense) public {
         es.setUint(keccak256(abi.encodePacked('master.fleet.defense', master)), defense);
     }
 
@@ -217,13 +225,13 @@ contract GameStorage is Utils, Initializable, Random {
         return es.getUint(keccak256(abi.encodePacked('master.fleet.lockedin', master, id)));
     }
 
-    function getMasterFleetInfo(address master)
+    function getPlanetFleetInfo(address master)
         public
         view
         returns (uint256 offense, uint256 defense)
     {
-        offense = getMasterFleetOffense(master);
-        defense = getMasterFleetDefense(master);
+        offense = getPlanetFleetOffense(master);
+        defense = getPlanetFleetDefense(master);
     }
 
     function getMasterAddressToShipIds(address master) public view returns (bool[] memory) {

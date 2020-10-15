@@ -2,23 +2,21 @@
 
 pragma solidity 0.6.12;
 import {ERC20} from '@openzeppelin/contracts/token/ERC20/ERC20.sol';
-import {Ownable} from '@openzeppelin/contracts/access/Ownable.sol';
 import {EternalStorage} from './EternalStorage.sol';
 
-contract SolarToken is ERC20('SolarToken', 'SOLAR'), Ownable {
-    address internal operator;
+contract SolarToken is ERC20 {
     EternalStorage es;
-
     modifier onlyOperator() {
         // Make sure the access is permitted to only contracts in our Dapp
         require(
-            es.getAddress(keccak256(abi.encodePacked('solar.access', msg.sender))) != address(0x0)
+            es.getBool(keccak256(abi.encodePacked('solar.access', msg.sender))),
+            'Sender does not have access to SOLAR'
         );
         _;
     }
 
-    constructor(address _es) public {
-        es = EternalStorage(es);
+    constructor(address _es) public ERC20('SolarToken', 'SOLAR') {
+        es = EternalStorage(_es);
     }
 
     function mint(address _to, uint256 _amount) public onlyOperator {

@@ -5,11 +5,6 @@ export async function solarAddress() {
     return Solar.address;
 }
 
-export async function mintSolar(to, amount, from) {
-    const Solar = await TestSolarC.deployed();
-    return await Solar.testMint(to, amount, { from });
-}
-
 export async function solarBalanceOf(account, from) {
     const Solar = await TestSolarC.deployed();
     return await Solar.balanceOf(account, { from });

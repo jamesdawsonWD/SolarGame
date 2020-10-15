@@ -10,7 +10,7 @@ contract TestGameOperations is GameOperations {
 
     function testAiFleetAttack(Types.SystemType starSystem) public {
         (uint256 a_offense, uint256 a_defense) = GS.getAiFleetInfo(starSystem);
-        (uint256 d_offense, uint256 d_defense) = GS.getMasterFleetInfo(msg.sender);
+        (uint256 d_offense, uint256 d_defense) = calculateStats(msg.sender);
         emit BattleStarted(msg.sender, a_offense, a_defense, address(this), d_offense, d_defense);
 
         bool result = battle(a_offense, a_defense, d_offense, d_defense, true, 10);
@@ -34,7 +34,7 @@ contract TestGameOperations is GameOperations {
         uint256[] memory amounts
     ) public {
         TS.sendSats(msg.sender, ships, amounts);
-        updateMasterFleet(msg.sender, ships, amounts);
+        // updateMasterFleet(msg.sender, ships, amounts);
     }
 
     function testUpdateMasterFleet(
@@ -42,6 +42,6 @@ contract TestGameOperations is GameOperations {
         uint256[] memory ids,
         uint256[] memory amounts
     ) public {
-        updateMasterFleet(master, ids, amounts);
+        // updateMasterFleet(master, ids, amounts);
     }
 }

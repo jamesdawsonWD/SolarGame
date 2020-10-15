@@ -20,3 +20,10 @@ export async function mintFhr(to, tokenId, from) {
         from
     });
 }
+
+export async function mintSolar(to, amount, from) {
+    const Treasury = await TreasuryC.deployed();
+    await Treasury.mintSolar(to, amount, {
+        from
+    });
+}

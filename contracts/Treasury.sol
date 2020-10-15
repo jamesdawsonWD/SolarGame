@@ -55,7 +55,7 @@ contract Treasury is ERC1155Holder, ERC721Holder {
     }
 
     function sendSolar(address _to, uint256 _amount) public {
-        solar.transferFrom(address(this), _to, _amount);
+        solar.transfer(_to, _amount);
     }
 
     function sendSolarReward(
@@ -63,7 +63,7 @@ contract Treasury is ERC1155Holder, ERC721Holder {
         uint256 _amount,
         uint256 _reward
     ) public {
-        solar.transferFrom(address(this), _to, _amount);
+        solar.transfer(_to, _amount);
         solar.mint(_to, _reward);
     }
 
