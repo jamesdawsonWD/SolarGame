@@ -10,12 +10,14 @@ import {
     getStakedBalance,
     setStakedBalance,
     getDateStakeLocked,
-    setDateStakeLocked
+    setDateStakeLocked,
+    getTokenAddress,
+    setTokenAddress
 } from '../_helpers/gameStorage';
 import { satAddress } from '../_helpers/sat';
 import { solarAddress } from '../_helpers/solar';
 import { fhrAddress } from '../_helpers/fhr';
-import { SHIP_INFO } from '../lib/testValues';
+import { SHIP_INFO, TEST_ADDRESS } from '../lib/testValues';
 import truffleAssert from 'truffle-assertions';
 export default function() {
     contract('Game Operations Unit Testing', async accounts => {
@@ -69,20 +71,10 @@ export default function() {
             const info = await getStartPosition(Owner);
         });
 
-        it('should set & get the correct star system yield', async () => {
-            await setStarSystemYield(1, 140, Owner);
-            const systemYield = await getStarSystemYield(1, Owner);
-            assert.equal(systemYield.toString(), '140');
-        });
-        it('should set & get the correct staked balance', async () => {
-            await setStakedBalance(UserA, 1, 1000000, Owner);
-            const balance = await getStakedBalance(UserA, 1, Owner);
-            assert.equal(balance.toString(), '1000000');
-        });
-        it('should set & get the date stake locked in', async () => {
-            await setDateStakeLocked(UserA, 1, 1000000, Owner);
-            const balance = await getDateStakeLocked(UserA, 1, Owner);
-            assert.equal(balance.toString(), '1000000');
+        it('should set & get the tokenAddress', async () => {
+            await setTokenAddress(1, TEST_ADDRESS, Owner);
+            const address = await getTokenAddress(1, Owner);
+            assert.equal(address.toString(), TEST_ADDRESS);
         });
     });
 }

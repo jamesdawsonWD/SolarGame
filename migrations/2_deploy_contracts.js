@@ -12,6 +12,7 @@ const GameStorage = artifacts.require('GameStorage');
 const TypesLib = artifacts.require('Types');
 const Constants = artifacts.require('Constants');
 const PlanetManager = artifacts.require('PlanetManager');
+const Planet = artifacts.require('Planet');
 const TestShipsAndTechnology = artifacts.require('TestShipsAndTechnology.sol');
 const TestGameOperations = artifacts.require('TestGameOperations.sol');
 // Testing Contracts
@@ -29,7 +30,8 @@ async function deployBaseProtocol(deployer, network, accounts) {
     await deployer.deploy(Treasury, EternalStorage.address);
     await deployer.deploy(Sat, EternalStorage.address, Treasury.address);
     await deployer.deploy(FHR, EternalStorage.address);
-    await deployer.deploy(PlanetManager, Treasury.address, FHR.address, Solar.address);
+    await deployer.deploy(Planet);
+    await deployer.deploy(PlanetManager, Planet.address);
     await Promise.all([
         deployer.link(TypesLib, GameStorage),
         deployer.link(TypesLib, GameOperations)

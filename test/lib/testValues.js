@@ -6,19 +6,54 @@ const toBN = web3.utils.toBN;
 const BYTES_32 = `0x6c00000000000000000000000000000000000000000000000000000000000000`;
 
 const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000';
+const TEST_ADDRESS = '0x7Bb66D304c1F50AB17Bd56031D21de749404081e';
 const MAX_UINT256 = '0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF';
 const MAX_UINT256_BN = toBN(MAX_UINT256);
-const ACTIONS = {
-    DEPOSIT: 0,
-    WITHDRAW: 1,
-    INVEST: 2,
-    CLOSE: 3,
-    TRADE: 4,
-    TRANSFER: 5
+
+const YIELDS = {
+    LowYieldSystem: {
+        low: 1,
+        high: 75
+    },
+    InsaneYieldSystem: {
+        low: 401,
+        high: 1000
+    },
+    MediumYieldSystem: {
+        low: 76,
+        high: 150
+    },
+    HighYieldSystem: {
+        low: 151,
+        high: 400
+    }
 };
+
 const ZERO = new BN(0);
 const SECONDS_IN_DAY = 86400;
-
+const SYSTEM_TYPES = {
+    Undiscovered: 0,
+    AncientFleetAggressive: 1,
+    SuperComputerEvent: 2,
+    AdvancedAlienFleetAggressive: 3,
+    AiFleetAggressive: 4,
+    AlienFleetAggressive: 5,
+    PiratesEvent: 6,
+    SolarWinds: 7,
+    Asteroids: 8,
+    Empty: 9,
+    GovermentOwned: 10,
+    LowYieldSystem: 11,
+    RandomEvent: 12,
+    MediumYieldSystem: 13,
+    ShipWreck: 14,
+    HighYieldSystem: 15,
+    AncientMiningSystem: 16,
+    AncientWeaponSystem: 17,
+    AncientShipWreck: 18,
+    InsaneYieldSystem: 19,
+    AncientRacePassive: 20
+};
 const WEAK_FLEET = {
     1: 5,
     2: 1,
@@ -268,15 +303,17 @@ const SHIP_INFO = {
 
 module.exports = {
     ADDRESS_ZERO,
+    TEST_ADDRESS,
     MAX_UINT256,
     MAX_UINT256_BN,
     BYTES_32,
-    ACTIONS,
     ZERO,
     SECONDS_IN_DAY,
     WEAK_FLEET,
     AVERAGE_FLEET,
     STRONG_FLEET,
     SHIP_INFO,
-    ALL_SHIPS
+    ALL_SHIPS,
+    SYSTEM_TYPES,
+    YIELDS
 };

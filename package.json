@@ -17,6 +17,7 @@
     "ganache": "ganache-cli -a 10 -e 1000 -p 7545"
   },
   "dependencies": {
+    "@openzeppelin/upgrades": "^2.8.0",
     "@truffle/hdwallet-provider": "1.0.40",
     "bignumber.js": "^9.0.0",
     "core-js": "^3.6.5",

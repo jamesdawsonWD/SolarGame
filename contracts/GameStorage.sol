@@ -42,6 +42,14 @@ contract GameStorage is Utils, Initializable, Random {
         return es.getAddress(keccak256('contract.address.treasury'));
     }
 
+    function getTokenAddress(uint256 token) public view returns (address) {
+        return es.getAddress(keccak256(abi.encodePacked('contract.planet', token)));
+    }
+
+    function setTokenAddress(uint256 token, address _address) public {
+        es.setAddress(keccak256(abi.encodePacked('contract.planet', token)), _address);
+    }
+
     function getSolarAccess(address _address) public view returns (bool) {
         return es.getBool(keccak256(abi.encodePacked('solar.access', _address)));
     }
@@ -133,10 +141,10 @@ contract GameStorage is Utils, Initializable, Random {
         } else if (systemType == Types.SystemType.MediumYieldSystem) {
             low = es.getUint(keccak256('constants.yield.medium_yield_low'));
             high = es.getUint(keccak256('constants.yield.medium_yield_high'));
-        } else if (systemType == Types.SystemType.LowYieldSystem) {
+        } else if (systemType == Types.SystemType.HighYieldSystem) {
             low = es.getUint(keccak256('constants.yield.high_yield_low'));
             high = es.getUint(keccak256('constants.yield.high_yield_high'));
-        } else if (systemType == Types.SystemType.LowYieldSystem) {
+        } else if (systemType == Types.SystemType.InsaneYieldSystem) {
             low = es.getUint(keccak256('constants.yield.insane_yield_low'));
             high = es.getUint(keccak256('constants.yield.insane_yield_high'));
         }

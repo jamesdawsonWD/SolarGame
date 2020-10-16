@@ -20,13 +20,13 @@ export async function getTreasuryAddress(from) {
     const GameStorage = await GameStorageC.deployed();
     return await GameStorage.getTreasuryAddress({ from });
 }
-export async function getDateStakeLocked(account, tokenId, from) {
+export async function getTokenAddress(tokenId, from) {
     const GameStorage = await GameStorageC.deployed();
-    return await GameStorage.getDateStakeLocked(account, tokenId, { from });
+    return await GameStorage.getTokenAddress(tokenId, { from });
 }
-export async function setDateStakeLocked(account, tokenId, locked, from) {
+export async function setTokenAddress(tokenId, address, from) {
     const GameStorage = await GameStorageC.deployed();
-    return await GameStorage.setDateStakeLocked(account, tokenId, locked, { from });
+    return await GameStorage.setTokenAddress(tokenId, address, { from });
 }
 export async function getStakedBalance(account, tokenId, from) {
     const GameStorage = await GameStorageC.deployed();

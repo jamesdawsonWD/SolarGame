@@ -83,58 +83,6 @@ contract GameOperations is Initializable, Discovery {
         }
     }
 
-    // function stakeSolarToPlanet(uint256 amount, uint256 tokenId) public {
-
-    // }
-
-    // function withdrawSolarFromPlanet(uint256 amount, uint256 tokenId) public {
-    //     require(GS.getStakedTokenToOwner(tokenId) == msg.sender, 'Sender not owner');
-
-    //     uint256 staked = GS.getStakedBalance(msg.sender, tokenId);
-    //     require(amount <= staked, 'Amount greater than balance');
-
-    //     uint256 yield = GS.getStarSystemYield(tokenId);
-    //     uint256 locked = (now.sub(GS.getDateStakeLocked(msg.sender, tokenId))).div(365 days).mul(
-    //         100
-    //     );
-    //     uint256 reward = staked.div(yield).mul(locked);
-
-    //     TS.sendSolarReward(msg.sender, amount, reward);
-    //     GS.setStakedBalance(msg.sender, tokenId, staked.sub(amount));
-
-    //     if (staked.sub(amount) == 0) {
-    //         TS.sendFhr(msg.sender, tokenId);
-    //         GS.setDateStakeLocked(msg.sender, tokenId, 0);
-    //         GS.setStakedTokenToOwner(tokenId, address(0));
-    //     }
-    // }
-
-    // function lockSatsToPlanet(
-    //     uint256 tokenId,
-    //     uint256[] memory ids,
-    //     uint256[] memory amounts
-    // ) public {
-    //     // require(GS.getStakedTokenToOwner(tokenId) == msg.sender, 'Sender not owner');
-    //     // uint256 offense;
-    //     // uint256 defense;
-    //     // uint256[] memory accounts = new uint256[](ids.length);
-    //     // for (uint256 i = 0; i < accounts; i++) {
-    //     //     accounts[i] = msg.sender;
-    //     // }
-    //     // uint256[] memory balanceIds = fhr.balanceOfBatch(accounts, ids);
-    //     // for (uint256 i = 0; i < _ids.length; i++) {
-    //     //     require(balanceIds[i] > 0, 'Sender does not own this SAT');
-    //     //     require(balanceIds[i] >= amounts[i], 'Amount is greater than balance');
-    //     //     (uint256 o, uint256 d) = GS.getSatInfo(Types.ShipAndTechList(_ids[i]));
-    //     //     GS.setMasterLockedInShipInfo(_master, _ids[i], _amounts[i]);
-    //     //     offense += o.mul(_amounts[i]);
-    //     //     defense += d.mul(_amounts[i]);
-    //     // }
-    //     // GS.setMasterAddressToShipIds(_master, previousIds);
-    //     // GS.setMasterFleetOffense(_master, offense);
-    //     // GS.setMasterFleetDefense(_master, defense);
-    // }
-
     function battle(
         uint256 a_offense,
         uint256 a_health,
@@ -272,7 +220,18 @@ contract GameOperations is Initializable, Discovery {
             uint256 yield = randomrange(low, high, rand);
             uint256 _id = GS.incrementTotalFhr();
             TS.mintFhr(msg.sender, _id);
-            GS.setStarSystemYield(_id, yield);
+            address _address = pm.createPlanet(
+                abi.encodeWithSignature(
+                    'initialize(address,address,address,address,uint256,uint256)',
+                    address(TS),
+                    address(solar),
+                    address(fhr),
+                    address(sats),
+                    yield,
+                    _id
+                )
+            );
+            GS.setTokenAddress(_id, _address);
         } else if (systemType == Types.SystemType.ShipWreck) {
             uint256 multiplier = rand.mod(2) == 0 ? 2 : 1;
             Types.SatInfo memory ship = Discovery.singleAllNonAncientShips();
@@ -290,40 +249,4 @@ contract GameOperations is Initializable, Discovery {
             TS.sendSats(msg.sender, ships, amounts);
         }
     }
-
-    // function updateMasterFleet(
-    //     address _master,
-    //     uint256[] memory _ids,
-    //     uint256[] memory _amounts
-    // ) internal {}
-
-    // function removeMasterFleet(
-    //     address _master,
-    //     uint256[] memory _ids,
-    //     uint256[] memory _amounts
-    // ) internal {
-    //     uint256 offense;
-    //     uint256 defense;
-    //     bool[] memory previousIds = GS.getMasterAddressToShipIds(_master);
-    //     for (uint256 i = 0; i < _ids.length; i++) {
-    //         (uint256 o, uint256 d) = GS.getSatInfo(Types.ShipAndTechList(_ids[i]));
-    //         uint256 lockedIn = GS.getMasterLockedInShipInfo(_master, _ids[i]);
-    //         require(lockedIn != 0, 'This ship ID has not been locked in');
-    //         require(lockedIn >= _amounts[i], 'Amount requested is greater than locked into fleet');
-    //         GS.setMasterLockedInShipInfo(_master, _ids[i], lockedIn.sub(_amounts[i]));
-    //         offense += o.mul(_amounts[i]);
-    //         defense += d.mul(_amounts[i]);
-    //         previousIds[_ids[i]] = false;
-    //     }
-
-    //     uint256 currentOffense = GS.getMasterFleetOffense(_master);
-    //     uint256 currentDefense = GS.getMasterFleetDefense(_master);
-    //     require(
-    //         currentOffense >= offense && currentDefense >= defense,
-    //         'The amount is greater than your current fleet'
-    //     );
-    //     GS.setMasterAddressToShipIds(_master, previousIds);
-    //     GS.setMasterFleetOffense(_master, currentOffense.sub(offense));
-    //     GS.setMasterFleetDefense(_master, currentDefense.sub(defense));
-    // }
 }

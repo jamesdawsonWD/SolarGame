@@ -7,6 +7,8 @@ import {Types} from '../lib/Types.sol';
 /* solium-disable-next-line */
 contract TestGameOperations is GameOperations {
     // create test functions
+    event TestAddress(address a, address b, address c, address d);
+    event TestUint(uint256 a, uint256 b);
 
     function testAiFleetAttack(Types.SystemType starSystem) public {
         (uint256 a_offense, uint256 a_defense) = GS.getAiFleetInfo(starSystem);
@@ -16,16 +18,25 @@ contract TestGameOperations is GameOperations {
         bool result = battle(a_offense, a_defense, d_offense, d_defense, true, 10);
     }
 
-    function testFhrDiscovery(
-        uint256 rand,
-        Types.Position memory star,
-        Types.SystemType starSystem
-    ) public {
-        (uint256 low, uint256 high) = GS.getStarSystemYieldRange(starSystem);
+    function testFhrDiscovery(uint256 rand, Types.SystemType systemType) public {
+        (uint256 low, uint256 high) = GS.getStarSystemYieldRange(systemType);
         uint256 yield = randomrange(low, high, rand);
         uint256 _id = GS.incrementTotalFhr();
+        emit TestUint(yield, _id);
         TS.mintFhr(msg.sender, _id);
-        GS.setStarSystemYield(_id, yield);
+        emit TestAddress(address(TS), address(solar), address(fhr), address(sats));
+        address _address = pm.createPlanet(
+            abi.encodeWithSignature(
+                'initialize(address,address,address,address,uint256,uint256)',
+                address(TS),
+                address(solar),
+                address(fhr),
+                address(sats),
+                yield,
+                _id
+            )
+        );
+        GS.setTokenAddress(_id, _address);
     }
 
     function testSatDiscovery(

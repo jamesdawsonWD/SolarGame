@@ -7,3 +7,5 @@ export const TreasuryC = artifacts.require('Treasury.sol');
 export const GameStorageC = artifacts.require('GameStorage.sol');
 export const GameOperationsC = artifacts.require('TestGameOperations.sol');
 export const ConstantsC = artifacts.require('Constants.sol');
+export const PlanetC = artifacts.require('Planet');
+export const PlanetManagerC = artifacts.require('PlanetManager');

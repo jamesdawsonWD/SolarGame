@@ -37,10 +37,16 @@ export async function stakeSolarToPlanet(amount, tokenId, from) {
         from
     });
 }
-withdrawSolarFromPlanet;
 export async function withdrawSolarFromPlanet(amount, tokenId, from) {
     const GameOperations = await GameOperationsC.deployed();
     await GameOperations.withdrawSolarFromPlanet(amount, tokenId, {
+        from
+    });
+}
+
+export async function testFhrDiscovery(rand, systemType, from) {
+    const GameOperations = await GameOperationsC.deployed();
+    await GameOperations.testFhrDiscovery(rand, systemType, {
         from
     });
 }
