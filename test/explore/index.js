@@ -20,11 +20,7 @@ export default function() {
         });
 
         // Setup
-        before(async () => {
-            await mintFhr(Owner, 2, Owner);
-            await mintFhr(UserA, 3, Owner);
-            await mintFhr(UserB, 4, Owner);
-        });
+        before(async () => {});
 
         it('should discover a low yield planet', async () => {
             await fhrDiscovery(Owner, SYSTEM_TYPES.LowYieldSystem);

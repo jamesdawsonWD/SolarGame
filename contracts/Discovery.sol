@@ -20,7 +20,7 @@ contract Discovery is Random {
     function federationShips(uint256 amount) internal returns (Types.SatInfo memory) {
         uint256[8] memory _ids = Types.getFederationShips();
 
-        uint256 pos = Random.randrange(0, _ids.length);
+        uint256 pos = randomrange(0, _ids.length);
         uint256 _id = _ids[pos];
 
         return Types.SatInfo({id: _id, amount: amount});
@@ -29,7 +29,7 @@ contract Discovery is Random {
     function singleFederationShip(uint256 amount) internal returns (Types.SatInfo memory) {
         uint256[8] memory _ids = Types.getFederationShips();
 
-        uint256 pos = Random.randrange(0, _ids.length);
+        uint256 pos = randomrange(0, _ids.length);
         uint256 _id = _ids[pos];
 
         return Types.SatInfo({id: _id, amount: 1});
@@ -38,7 +38,7 @@ contract Discovery is Random {
     function singleAncientMiningShip() internal returns (Types.SatInfo memory) {
         uint256[3] memory _ids = Types.getAncientMiningShip();
 
-        uint256 pos = Random.randrange(0, _ids.length);
+        uint256 pos = randomrange(0, _ids.length);
         uint256 _id = _ids[pos];
 
         return Types.SatInfo({id: _id, amount: 1});
@@ -47,16 +47,16 @@ contract Discovery is Random {
     function singleAllNonAncientShips() internal returns (Types.SatInfo memory) {
         uint256[24] memory _ids = Types.getAllNonAncientShips();
 
-        uint256 pos = Random.randrange(0, _ids.length);
+        uint256 pos = randomrange(0, _ids.length);
         uint256 _id = _ids[pos];
 
         return Types.SatInfo({id: _id, amount: 1});
     }
 
-    function randomSystemType() public view returns (Types.SystemType systemType, uint256 rand) {
+    function randomSystemType() internal returns (Types.SystemType systemType, uint256 rand) {
         uint256 MAX_ROLL = 10000;
         uint256 ONE_PERCENT = MAX_ROLL / 100;
-        rand = Random.randrange(1, MAX_ROLL);
+        rand = randomrange(1, MAX_ROLL);
         uint16 roll = uint16(rand);
         if (roll == 1) {
             systemType = Types.SystemType.AncientFleetAggressive;

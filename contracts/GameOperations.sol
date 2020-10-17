@@ -104,14 +104,14 @@ contract GameOperations is Initializable, Discovery {
         uint256 damageA;
         for (uint8 i = 0; i < turns; i++) {
             if (defenderGoesFirst) {
-                damageD = randomrange(1, defenderAttack, uint256(i));
-                damageA = randomrange(1, attackerAttack, uint256(i));
+                damageD = randomrange(1, defenderAttack);
+                damageA = randomrange(1, attackerAttack);
                 emit LogRound(damageA, damageD, a_health, d_health);
                 a_health = a_health > damageD ? a_health.sub(damageD) : 0;
                 d_health = d_health > damageA ? d_health.sub(damageA) : 0;
             } else {
-                damageD = randomrange(1, defenderAttack, uint256(i));
-                damageA = randomrange(1, attackerAttack, uint256(i));
+                damageD = randomrange(1, defenderAttack);
+                damageA = randomrange(1, attackerAttack);
                 d_health = d_health > damageA ? d_health.sub(damageA) : 0;
                 a_health = a_health > damageD ? a_health.sub(damageD) : 0;
             }
@@ -159,7 +159,6 @@ contract GameOperations is Initializable, Discovery {
         (uint256 d_offense, uint256 d_defense) = calculateStats(defender);
 
         emit BattleStarted(msg.sender, a_offense, a_defense, defender, d_offense, d_defense);
-
         bool result = battle(a_offense, a_defense, d_offense, d_defense, true, turns);
         // if (attacker)
 
@@ -217,7 +216,7 @@ contract GameOperations is Initializable, Discovery {
             systemType == Types.SystemType.InsaneYieldSystem
         ) {
             (uint256 low, uint256 high) = GS.getStarSystemYieldRange(systemType);
-            uint256 yield = randomrange(low, high, rand);
+            uint256 yield = randomrange(low, high);
             uint256 _id = GS.incrementTotalFhr();
             TS.mintFhr(msg.sender, _id);
             address _address = pm.createPlanet(

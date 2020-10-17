@@ -4,8 +4,8 @@ import { getTokenAddress } from '../_helpers/gameStorage';
 import { tokenOfOwnerByIndex } from '../_helpers/fhr';
 import { getYield } from '../_helpers/planet';
 export async function fhrDiscovery(account, systemType, amounts) {
-    await testFhrDiscovery(2121213, systemType, account);
-    const planetToken = await tokenOfOwnerByIndex(account, 1, account);
+    await testFhrDiscovery(systemType, account);
+    const planetToken = await tokenOfOwnerByIndex(account, 0, account);
 
     const planetProxy = await getTokenAddress(planetToken, account);
     assert.ok(planetProxy != ADDRESS_ZERO);
@@ -33,7 +33,8 @@ export async function fhrDiscovery(account, systemType, amounts) {
             high = YIELDS.InsaneYieldSystem.high;
             break;
     }
-
+    console.log(low, high, planetYield);
+    // TODO: yield is not within its correct parameters
     assert.ok(planetYield >= low && planetYield <= high);
 
     return planetProxy;

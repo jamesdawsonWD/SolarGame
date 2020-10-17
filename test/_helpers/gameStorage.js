@@ -64,6 +64,10 @@ export async function setStarSystemYield(id, systemYield, from) {
     const GameStorage = await GameStorageC.deployed();
     await GameStorage.setStarSystemYield(id, systemYield, { from });
 }
+export async function getStarSystemYieldRange(systemType, from) {
+    const GameStorage = await GameStorageC.deployed();
+    return await GameStorage.getStarSystemYieldRange(systemType, { from });
+}
 export async function getMasterFleetPosition(from) {
     const GameStorage = await GameStorageC.deployed();
     return await GameStorage.getMasterFleetPosition(from, { from });

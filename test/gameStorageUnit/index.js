@@ -11,13 +11,14 @@ import {
     setStakedBalance,
     getDateStakeLocked,
     setDateStakeLocked,
+    getStarSystemYieldRange,
     getTokenAddress,
     setTokenAddress
 } from '../_helpers/gameStorage';
 import { satAddress } from '../_helpers/sat';
 import { solarAddress } from '../_helpers/solar';
 import { fhrAddress } from '../_helpers/fhr';
-import { SHIP_INFO, TEST_ADDRESS } from '../lib/testValues';
+import { SHIP_INFO, TEST_ADDRESS, SYSTEM_TYPES } from '../lib/testValues';
 import truffleAssert from 'truffle-assertions';
 export default function() {
     contract('Game Operations Unit Testing', async accounts => {
@@ -69,6 +70,10 @@ export default function() {
 
         it('should get the correct start position', async () => {
             const info = await getStartPosition(Owner);
+        });
+
+        it('should get the correct yield ranges', async () => {
+            const info = await getStarSystemYieldRange(SYSTEM_TYPES.LowYieldSystem, Owner);
         });
 
         it('should set & get the tokenAddress', async () => {

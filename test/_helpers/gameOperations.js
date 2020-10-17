@@ -44,9 +44,9 @@ export async function withdrawSolarFromPlanet(amount, tokenId, from) {
     });
 }
 
-export async function testFhrDiscovery(rand, systemType, from) {
+export async function testFhrDiscovery(systemType, from) {
     const GameOperations = await GameOperationsC.deployed();
-    await GameOperations.testFhrDiscovery(rand, systemType, {
+    await GameOperations.testFhrDiscovery(systemType, {
         from
     });
 }

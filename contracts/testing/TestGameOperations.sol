@@ -18,9 +18,9 @@ contract TestGameOperations is GameOperations {
         bool result = battle(a_offense, a_defense, d_offense, d_defense, true, 10);
     }
 
-    function testFhrDiscovery(uint256 rand, Types.SystemType systemType) public {
+    function testFhrDiscovery(Types.SystemType systemType) public {
         (uint256 low, uint256 high) = GS.getStarSystemYieldRange(systemType);
-        uint256 yield = randomrange(low, high, rand);
+        uint256 yield = randomrange(low, high);
         uint256 _id = GS.incrementTotalFhr();
         emit TestUint(yield, _id);
         TS.mintFhr(msg.sender, _id);

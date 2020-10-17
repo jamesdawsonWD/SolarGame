@@ -4,17 +4,17 @@ import {EternalStorage} from './EternalStorage.sol';
 contract Constants {
     EternalStorage es;
 
-    uint32 constant LOW_YIELD_LOW = 1;
-    uint32 constant LOW_YIELD_HIGH = 75;
+    uint32 constant LOW_YIELD_LOW = 100;
+    uint32 constant LOW_YIELD_HIGH = 7500;
 
-    uint32 constant MEDIUM_YIELD_LOW = 76;
-    uint32 constant MEDIUM_YIELD_HIGH = 150;
+    uint32 constant MEDIUM_YIELD_LOW = 7501;
+    uint32 constant MEDIUM_YIELD_HIGH = 15000;
 
-    uint32 constant HIGH_YIELD_LOW = 151;
-    uint32 constant HIGH_YIELD_HIGH = 400;
+    uint32 constant HIGH_YIELD_LOW = 15001;
+    uint32 constant HIGH_YIELD_HIGH = 40000;
 
-    uint32 constant INSANE_YIELD_LOW = 401;
-    uint32 constant INSANE_YIELD_HIGH = 1000;
+    uint32 constant INSANE_YIELD_LOW = 40001;
+    uint32 constant INSANE_YIELD_HIGH = 100000;
 
     // Total System Types
     uint256 constant TOTAL_SYSTEM_TYPES = 7;

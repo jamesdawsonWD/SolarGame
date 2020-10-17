@@ -252,24 +252,23 @@ contract GameStorage is Utils, Initializable, Random {
 
     function getAiFleetInfo(Types.SystemType systemType)
         public
-        view
         returns (uint256 offense, uint256 defense)
     {
         if (systemType == Types.SystemType.AlienFleetAggressive) {
             uint8 min = es.getUint8(keccak256('constants.rolling.alienfleet.min'));
             uint8 max = es.getUint8(keccak256('constants.rolling.alienfleet.max'));
-            offense = Random.randrange(min, max);
-            defense = Random.randrange(min, max);
+            offense = randomrange(min, max);
+            defense = randomrange(min, max);
         } else if (systemType == Types.SystemType.AdvancedAlienFleetAggressive) {
             uint8 min = es.getUint8(keccak256('constants.rolling.advancedalienfleet.min'));
             uint8 max = es.getUint8(keccak256('constants.rolling.advancedalienfleet.max'));
-            offense = Random.randrange(min, max);
-            defense = Random.randrange(min, max);
+            offense = randomrange(min, max);
+            defense = randomrange(min, max);
         } else if (systemType == Types.SystemType.AncientFleetAggressive) {
             uint8 min = es.getUint8(keccak256('constants.rolling.ancientfleet.min'));
             uint8 max = es.getUint8(keccak256('constants.rolling.ancientfleet.max'));
-            offense = Random.randrange(min, max);
-            defense = Random.randrange(min, max);
+            offense = randomrange(min, max);
+            defense = randomrange(min, max);
         }
     }
 

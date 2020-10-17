@@ -13,6 +13,7 @@ contract Planet is ERC1155Holder, Initializable {
     uint256 public yield;
     uint256 public dateLocked;
     uint256 public minHold;
+    uint256 public staked;
     IFHR fhr;
     ISolar solar;
     ITreasury ts;
@@ -42,22 +43,22 @@ contract Planet is ERC1155Holder, Initializable {
     }
 
     function depositSolar(uint256 amount) public onlyTokenHolder() {
-        if (solar.balanceOf(address(this)) > 0) {
+        if (staked > 0) {
             // calculate and pay interest so far if there is already solar deposited
         }
-        solar.transfer(address(this), amount);
+        solar.transferFrom(msg.sender, address(this), amount);
+        staked = staked.add(amount);
         dateLocked = now;
     }
 
     function withdrawSolar(uint256 amount) public onlyTokenHolder() {
-        uint256 staked = solar.balanceOf(address(this));
         require(amount <= staked, 'Amount greater than balance');
 
         uint256 held = now.sub(dateLocked);
         require(held >= minHold, 'Minimum hold not complete');
 
         uint256 percentageOfYear = held.div(365 days).mul(100);
-        uint256 reward = staked.div(yield).mul(percentageOfYear);
+        uint256 reward = staked.div(100).mul(yield.div(100).mul(percentageOfYear));
         ts.mintSolar(msg.sender, reward);
         solar.transfer(msg.sender, amount);
 
