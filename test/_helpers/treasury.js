@@ -7,7 +7,7 @@ export async function treasuryAddress() {
 
 export async function sendSats(to, ids, amounts, from) {
     const Treasury = await TreasuryC.deployed();
-    await Treasury.sendSats(to, ids, amounts, { from });
+    await Treasury.testSendSats(to, ids, amounts, { from });
 }
 export async function recieveSats(from, ids, amounts) {
     const Treasury = await TreasuryC.deployed();
@@ -23,7 +23,7 @@ export async function mintFhr(to, tokenId, from) {
 
 export async function mintSolar(to, amount, from) {
     const Treasury = await TreasuryC.deployed();
-    await Treasury.mintSolar(to, amount, {
+    await Treasury.testMintSolar(to, amount, {
         from
     });
 }

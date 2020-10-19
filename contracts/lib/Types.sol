@@ -123,6 +123,21 @@ library Types {
         uint256 id;
     }
 
+    struct SatStats {
+        uint8 offense;
+        uint8 defense;
+    }
+
+    struct RangeUint8 {
+        uint8 low;
+        uint8 high;
+    }
+
+    struct Range {
+        uint256 low;
+        uint256 high;
+    }
+
     function getFederationShips() public pure returns (uint256[8] memory) {
         return [
             uint256(ShipAndTechList.FEDERATION_CRUISER),

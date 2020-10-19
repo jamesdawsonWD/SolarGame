@@ -22,11 +22,11 @@ export async function getTreasuryAddress(from) {
 }
 export async function getTokenAddress(tokenId, from) {
     const GameStorage = await GameStorageC.deployed();
-    return await GameStorage.getTokenAddress(tokenId, { from });
+    return await GameStorage.getTokenIdToProxyAddress(tokenId, { from });
 }
 export async function setTokenAddress(tokenId, address, from) {
     const GameStorage = await GameStorageC.deployed();
-    return await GameStorage.setTokenAddress(tokenId, address, { from });
+    return await GameStorage.setTokenIdToProxyAddress(tokenId, address, { from });
 }
 export async function getStakedBalance(account, tokenId, from) {
     const GameStorage = await GameStorageC.deployed();

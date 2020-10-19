@@ -1,10 +1,13 @@
 import {ERC1155Holder} from '@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol';
 import {IFHR} from './interfaces/IFHR.sol';
 import {ISolar} from './interfaces/ISolar.sol';
-import {ITreasury} from './interfaces/ITreasury.sol';
 import {ISat} from './interfaces/ISat.sol';
 import '@openzeppelin/upgrades/contracts/Initializable.sol';
 import {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';
+
+interface IPlanetManager {
+    function rewardPlanet(address _to, uint256 _amount) external;
+}
 
 contract Planet is ERC1155Holder, Initializable {
     using SafeMath for uint256;
@@ -16,11 +19,11 @@ contract Planet is ERC1155Holder, Initializable {
     uint256 public staked;
     IFHR fhr;
     ISolar solar;
-    ITreasury ts;
+    IPlanetManager pm;
     ISat sats;
 
     function initialize(
-        address _treasury,
+        address _planetManager,
         address _solar,
         address _fhr,
         address _sats,
@@ -34,7 +37,7 @@ contract Planet is ERC1155Holder, Initializable {
         solar = ISolar(_solar);
         fhr = IFHR(_fhr);
         sats = ISat(_sats);
-        ts = ITreasury(_treasury);
+        pm = IPlanetManager(_planetManager);
     }
 
     modifier onlyTokenHolder() {
@@ -57,10 +60,10 @@ contract Planet is ERC1155Holder, Initializable {
         uint256 held = now.sub(dateLocked);
         require(held >= minHold, 'Minimum hold not complete');
 
-        uint256 percentageOfYear = held.div(365 days).mul(100);
-        uint256 reward = staked.div(100).mul(yield.div(100).mul(percentageOfYear));
-        ts.mintSolar(msg.sender, reward);
+        uint256 percentageOfYear = held.mul(100).div(365 days);
+        uint256 reward = staked.mul(yield.mul(percentageOfYear).div(100)).div(100);
         solar.transfer(msg.sender, amount);
+        pm.rewardPlanet(msg.sender, reward);
 
         if (staked.sub(amount) == 0) dateLocked = 0;
     }

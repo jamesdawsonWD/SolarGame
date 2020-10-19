@@ -3,22 +3,22 @@
 pragma solidity 0.6.12;
 import {ERC721} from '@openzeppelin/contracts/token/ERC721/ERC721.sol';
 import {Ownable} from '@openzeppelin/contracts/access/Ownable.sol';
-import {EternalStorage} from './EternalStorage.sol';
 
 contract FederalHarvestingRights is ERC721, Ownable {
-    EternalStorage es;
     event Mint(address to, address from, uint256 id);
+    mapping(address => bool) operators;
 
-    constructor(address _es) public ERC721('FederalHarvestingRights', 'FHR') {
-        es = EternalStorage(_es);
+    constructor(address _treasury) public ERC721('FederalHarvestingRights', 'FHR') {
+        addOperator(_treasury);
+    }
+
+    function addOperator(address _operator) public onlyOwner {
+        operators[_operator] = true;
     }
 
     modifier onlyOperator() {
         // Make sure the access is permitted to only contracts in our Dapp
-        require(
-            es.getBool(keccak256(abi.encodePacked('fhr.access', msg.sender))),
-            'Sender does not have access to FHR'
-        );
+        require(operators[msg.sender], 'Only Operator');
         _;
     }
 

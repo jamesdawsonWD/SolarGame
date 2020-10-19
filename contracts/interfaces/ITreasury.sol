@@ -32,4 +32,10 @@ interface ITreasury {
     ) external;
 
     function recieveSolar(address _from, uint256 _amount) external;
+
+    function transferFhr(
+        address _from,
+        address _to,
+        uint256 _tokenId
+    ) external;
 }

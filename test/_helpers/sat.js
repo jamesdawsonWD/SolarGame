@@ -5,15 +5,15 @@ export async function satAddress() {
     return Sat.address;
 }
 
-export async function approveForAll(approver, approveBool, from) {
+export async function satApproveForAll(approver, approveBool, from) {
     const Sat = await TestSatC.deployed();
     await Sat.setApprovalForAll(approver, approveBool, {
         from
     });
 }
-export async function balanceOfBatch(accounts, ids, from) {
+export async function satBalanceOfBatch(accounts, ids, from) {
     const Sat = await TestSatC.deployed();
-    await Sat.balanceOfBatch(accounts, ids, {
+    return await Sat.balanceOfBatch(accounts, ids, {
         from
     });
 }

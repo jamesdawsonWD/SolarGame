@@ -8,25 +8,43 @@ import {ISat} from './interfaces/ISat.sol';
 import {EternalStorage} from './EternalStorage.sol';
 import {ERC1155Holder} from '@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol';
 import {ERC721Holder} from '@openzeppelin/contracts/token/ERC721/ERC721Holder.sol';
+import {Ownable} from '@openzeppelin/contracts/access/Ownable.sol';
 
-contract Treasury is ERC1155Holder, ERC721Holder {
+contract Treasury is ERC1155Holder, ERC721Holder, Ownable {
     IFHR fhr;
     ISolar solar;
     ISat sats;
-    EternalStorage es;
+    mapping(address => bool) operators;
 
-    function initialize(address _es) public {
-        es = EternalStorage(_es);
-        fhr = IFHR(es.getAddress(keccak256('contract.address.fhr')));
-        solar = ISolar(es.getAddress(keccak256('contract.address.solar')));
-        sats = ISat(es.getAddress(keccak256('contract.address.sat')));
+    modifier onlyOperator() {
+        // Make sure the access is permitted to only contracts in our Dapp
+        require(operators[msg.sender], 'Only Operator');
+        _;
+    }
+
+    function initialize(
+        address _fhr,
+        address _solar,
+        address _sats,
+        address _gameOperations,
+        address _planetManager
+    ) public onlyOwner {
+        fhr = IFHR(_fhr);
+        solar = ISolar(_solar);
+        sats = ISat(_sats);
+        operators[_gameOperations] = true;
+        operators[_planetManager] = true;
+    }
+
+    function addOperator(address _operator) public onlyOwner {
+        operators[_operator] = true;
     }
 
     function sendSats(
         address _to,
         uint256[] memory _ids,
         uint256[] memory _amounts
-    ) public {
+    ) public onlyOperator {
         sats.safeBatchTransferFrom(address(this), _to, _ids, _amounts, '');
     }
 
@@ -34,27 +52,35 @@ contract Treasury is ERC1155Holder, ERC721Holder {
         address _from,
         uint256[] memory _ids,
         uint256[] memory _amounts
-    ) public {
+    ) public onlyOperator {
         sats.safeBatchTransferFrom(_from, address(this), _ids, _amounts, '');
     }
 
-    function mintFhr(address _to, uint256 _tokenId) public {
+    function mintFhr(address _to, uint256 _tokenId) public onlyOperator {
         fhr.mint(_to, _tokenId);
     }
 
-    function recieveFhr(address _from, uint256 _tokenId) public {
+    function recieveFhr(address _from, uint256 _tokenId) public onlyOperator {
         fhr.safeTransferFrom(_from, address(this), _tokenId);
     }
 
-    function sendFhr(address _to, uint256 _tokenId) public {
+    function transferFhr(
+        address _from,
+        address _to,
+        uint256 _tokenId
+    ) public onlyOperator {
+        fhr.safeTransferFrom(_from, _to, _tokenId);
+    }
+
+    function sendFhr(address _to, uint256 _tokenId) public onlyOperator {
         fhr.safeTransferFrom(address(this), _to, _tokenId);
     }
 
-    function mintSolar(address _to, uint256 _amount) public {
+    function mintSolar(address _to, uint256 _amount) public onlyOperator {
         solar.mint(_to, _amount);
     }
 
-    function sendSolar(address _to, uint256 _amount) public {
+    function sendSolar(address _to, uint256 _amount) public onlyOperator {
         solar.transfer(_to, _amount);
     }
 
@@ -62,12 +88,12 @@ contract Treasury is ERC1155Holder, ERC721Holder {
         address _to,
         uint256 _amount,
         uint256 _reward
-    ) public {
+    ) public onlyOperator {
         solar.transfer(_to, _amount);
         solar.mint(_to, _reward);
     }
 
-    function recieveSolar(address _from, uint256 _amount) public {
+    function recieveSolar(address _from, uint256 _amount) public onlyOperator {
         solar.transferFrom(_from, address(this), _amount);
     }
 }

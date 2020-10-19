@@ -13,6 +13,7 @@ import {IFHR} from './interfaces/IFHR.sol';
 import {ISolar} from './interfaces/ISolar.sol';
 import {ISat} from './interfaces/ISat.sol';
 import {PlanetManager} from './PlanetManager.sol';
+import {GameStorage} from './GameStorage.sol';
 
 /**
  * @title Operation
@@ -40,6 +41,21 @@ contract GameOperations is Initializable, Discovery {
         uint256 defenderOffense,
         uint256 defenderDefense
     );
+
+    struct AttackInfo {
+        Types.Position attackerPos;
+        uint256 a_offense;
+        uint256 a_defense;
+        uint256[] a_balances;
+        uint256[] a_ids;
+        Types.Position defenderPos;
+        uint256 d_offense;
+        uint256 d_defense;
+        uint256[] d_balances;
+        uint256[] d_ids;
+        uint256[] d_retreated;
+    }
+
     GameStorage GS;
     ITreasury TS;
 
@@ -124,17 +140,25 @@ contract GameOperations is Initializable, Discovery {
         emit LogBattle(result, a_health, d_health);
     }
 
-    function calculateStats(address fleet) internal returns (uint256 offense, uint256 defense) {
-        uint256[] memory ids = new uint256[](GS.getTotalSats());
+    function calculateStats(address fleet)
+        internal
+        returns (
+            uint256 offense,
+            uint256 defense,
+            uint256[] memory balances,
+            uint256[] memory ids
+        )
+    {
+        ids = new uint256[](GS.getTotalSats());
         address[] memory accounts = new address[](ids.length);
         for (uint256 i = 0; i < ids.length; i++) {
             ids[i] = i;
             accounts[i] = fleet;
         }
-        uint256[] memory balances = sats.balanceOfBatch(accounts, ids);
-
+        balances = sats.balanceOfBatch(accounts, ids);
+        (uint256[] memory offenses, uint256[] memory defenses) = GS.batchGetSatInfo(ids);
         for (uint256 i = 0; i < balances.length; i++) {
-            (uint256 o, uint256 d) = GS.getSatInfo(Types.ShipAndTechList(ids[i]));
+            (uint256 o, uint256 d) = (offenses[i], defenses[i]);
             offense += o.mul(balances[i]);
             defense += d.mul(balances[i]);
         }
@@ -146,38 +170,126 @@ contract GameOperations is Initializable, Discovery {
             defender != address(0) && msg.sender != address(0),
             'Addresses must exist must exist'
         );
+        AttackInfo memory info;
 
-        Types.Position memory attackerPos = GS.getMasterFleetPosition(msg.sender);
-        Types.Position memory defenderPos = GS.getMasterFleetPosition(defender);
+        info.attackerPos = GS.getMasterFleetPosition(msg.sender);
+        info.defenderPos = GS.getMasterFleetPosition(defender);
 
         require(
-            Types.positionIsEqual(attackerPos, defenderPos),
+            Types.positionIsEqual(info.attackerPos, info.defenderPos),
             'You can only attack people at your current star location'
         );
 
-        (uint256 a_offense, uint256 a_defense) = calculateStats(msg.sender);
-        (uint256 d_offense, uint256 d_defense) = calculateStats(defender);
+        (info.a_offense, info.a_defense, info.a_balances, info.a_ids) = calculateStats(msg.sender);
+        (info.d_offense, info.d_defense, info.d_balances, info.d_ids) = calculateStats(defender);
 
-        emit BattleStarted(msg.sender, a_offense, a_defense, defender, d_offense, d_defense);
-        bool result = battle(a_offense, a_defense, d_offense, d_defense, true, turns);
-        // if (attacker)
+        emit BattleStarted(
+            msg.sender,
+            info.a_offense,
+            info.a_defense,
+            defender,
+            info.d_offense,
+            info.d_defense
+        );
+        bool result = battle(
+            info.a_offense,
+            info.a_defense,
+            info.d_offense,
+            info.d_defense,
+            true,
+            turns
+        );
 
-        // Get the armies
-        // TODO: convert string array to bytes32 array
+        if (result) {
+            for (uint256 i = 0; i < info.a_balances.length; i++) {
+                info.a_balances[i] = info.a_balances[i] > 0
+                    ? info.a_balances[i].mul(20).div(100)
+                    : 0; // 20% of attackers fleet is lost in a successful attack
+            }
+            TS.recieveSats(msg.sender, info.a_ids, info.a_balances);
 
-        // defender always go first
-        // if (result) {
-        //     uint256 reward = Storage.getBalance(state, defender).div(100).mul(80);
-        //     Storage.addBalance(state, Aier, reward);
-        //     Storage.subBalance(state, defender, reward);
-        // } else {
-        //     uint256 reward = Storage.getBalance(state, Aier).div(100).mul(40);
-        //     Storage.addBalance(state, defender, reward);
-        //     Storage.subBalance(state, Aier, reward);
+            info.d_retreated = new uint256[](info.d_balances.length);
+            for (uint256 i = 0; i < info.d_balances.length; i++) {
+                // 70% of defenders fleet is lost in a successful attack
+                uint256 losses = info.d_balances[i].mul(70).div(100);
+                info.d_balances[i] = info.d_balances[i] > 0 ? losses : 0;
+                info.d_retreated[i] = info.d_balances[i] > losses
+                    ? info.d_balances[i].sub(losses)
+                    : 0;
+            }
+
+            uint256 _tokenId = GS.getProxyAddressToTokenId(defender);
+            if (_tokenId > 0) {
+                // the remaining fleet managed to escape back to command
+                // while destroying the mining equipment
+                address owner = fhr.ownerOf(_tokenId);
+                TS.sendSats(owner, info.d_ids, info.d_retreated);
+                TS.transferFhr(owner, msg.sender, _tokenId);
+            }
+            TS.recieveSats(defender, info.d_ids, info.d_balances);
+        } else {
+            for (uint256 i = 0; i < info.a_balances.length; i++) {
+                info.a_balances[i] = info.a_balances[i] > 0
+                    ? info.a_balances[i].mul(90).div(100)
+                    : 0; // 20% of attackers fleet is lost in a successful attack
+            }
+            TS.recieveSats(msg.sender, info.a_ids, info.a_balances);
+
+            info.d_retreated = new uint256[](info.d_balances.length);
+            for (uint256 i = 0; i < info.d_balances.length; i++) {
+                // 70% of defenders fleet is lost in a successful attack
+                uint256 losses = info.d_balances[i].mul(10).div(100);
+                info.d_balances[i] = info.d_balances[i] > 0 ? losses : 0;
+                info.d_retreated[i] = info.d_balances[i] > losses
+                    ? info.d_balances[i].sub(losses)
+                    : 0;
+            }
+
+            TS.recieveSats(defender, info.d_ids, info.d_balances);
+        }
+
+        // // if false the defender has won
+        // else {
+        // uint256 a_actualBalance;
+        // for (uint256 i = 0; i < a_balances.length; i++) {
+        //     if (a_balances[i] > 0) a_actualBalance++;
         // }
+        // uint256[] memory a_ids = new uint256[](a_actualBalance);
+        // uint256[] memory a_amounts = new uint256[](a_actualBalance);
+        // uint256 a_pos = 0;
+        // for (uint256 i = 0; i < a_balances.length; i++) {
+        //     if (a_balances[i] > 0) {
+        //         _ids[pos] = i;
+        //         _amounts[pos] = a_balances[i].mul(20).div(100); // 20% of attackers fleet is lost in a successful attack
+        //         pos++;
+        //     }
+        // }
+        // TS.recieveSats(msg.sender, a_ids, a_amounts);
 
+        // uint256 d_actualBalance;
+        // for (uint256 i = 0; i < a_balances.length; i++) {
+        //     if (a_balances[i] > 0) d_actualBalance++;
+        // }
+        // uint256[] memory d_ids = new uint256[](d_actualBalance);
+        // uint256[] memory d_amounts = new uint256[](d_actualBalance);
+        // uint256 d_pos = 0;
+        // for (uint256 i = 0; i < a_balances.length; i++) {
+        //     if (a_balances[i] > 0) {
+        //         _ids[pos] = i;
+        //         _amounts[pos] = a_balances[i].mul(70).div(100); // 70% of defenders fleet is lost in a successful attack
+        //         pos++;
+        //     }
+        // }
+        // TS.recieveSats(msg.sender, d_ids, d_amounts);
+
+        // uint256 _tokenId = GS.getProxyAddressToTokenId(defender);
+        // if (_tokenId > 0) {
+        //     address owner = fhr.ownerOf(_tokenId);
+        //     TS.transferFhr(owner, msg.sender, _tokenId);
+        // }
+        // }
         // if result is true then attacker has won
-        if (result) {}
+        // if (result) {}
         // find out who won
         // reduce both fleets
         // reward the victor either with solar or NFT
@@ -197,7 +309,12 @@ contract GameOperations is Initializable, Discovery {
             systemType == Types.SystemType.AlienFleetAggressive
         ) {
             (uint256 a_offense, uint256 a_defense) = GS.getAiFleetInfo(systemType);
-            (uint256 d_offense, uint256 d_defense) = calculateStats(msg.sender);
+            (
+                uint256 d_offense,
+                uint256 d_defense,
+                uint256[] memory d_balances,
+                uint256[] memory d_ids
+            ) = calculateStats(msg.sender);
 
             emit BattleStarted(
                 msg.sender,
@@ -207,7 +324,6 @@ contract GameOperations is Initializable, Discovery {
                 d_offense,
                 d_defense
             );
-
             bool result = battle(a_offense, a_defense, d_offense, d_defense, true, 10);
         } else if (
             systemType == Types.SystemType.LowYieldSystem ||
@@ -220,9 +336,10 @@ contract GameOperations is Initializable, Discovery {
             uint256 _id = GS.incrementTotalFhr();
             TS.mintFhr(msg.sender, _id);
             address _address = pm.createPlanet(
+                _id,
                 abi.encodeWithSignature(
                     'initialize(address,address,address,address,uint256,uint256)',
-                    address(TS),
+                    address(pm),
                     address(solar),
                     address(fhr),
                     address(sats),
@@ -230,7 +347,9 @@ contract GameOperations is Initializable, Discovery {
                     _id
                 )
             );
-            GS.setTokenAddress(_id, _address);
+            GS.setMasterFleetPosition(_address, star);
+            GS.setTokenIdToProxyAddress(_id, _address);
+            GS.setProxyAddressToTokenId(_id, _address);
         } else if (systemType == Types.SystemType.ShipWreck) {
             uint256 multiplier = rand.mod(2) == 0 ? 2 : 1;
             Types.SatInfo memory ship = Discovery.singleAllNonAncientShips();

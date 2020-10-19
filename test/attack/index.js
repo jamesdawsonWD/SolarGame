@@ -2,8 +2,7 @@ import { takeSnapshot, revertSnapshot } from '../_utils/evm';
 import { attack } from '../_helpers/gameOperations';
 import { WEAK_FLEET, AVERAGE_FLEET } from '../lib/testValues';
 import { sendSats, treasuryAddress } from '../_helpers/treasury';
-import { approveForAll } from '../_helpers/sat';
-import { lockin } from '../fleetLockin/scenario-lockin-fleet';
+import { satApproveForAll } from '../_helpers/sat';
 
 import truffleAssert from 'truffle-assertions';
 export default function() {
@@ -24,18 +23,15 @@ export default function() {
         before(async () => {
             const treasury = await treasuryAddress();
 
-            console.log(treasury);
             const WeakFleetIds = Object.keys(WEAK_FLEET);
             const WeakFleetAmounts = Object.values(WEAK_FLEET);
             await sendSats(UserA, WeakFleetIds, WeakFleetAmounts, UserA);
-            await approveForAll(treasury, true, UserA);
-            await lockin(UserA, WeakFleetIds, WeakFleetAmounts);
+            await satApproveForAll(treasury, true, UserA);
 
             const AverageFleetIds = Object.keys(AVERAGE_FLEET);
             const AverageFleetAmounts = Object.values(AVERAGE_FLEET);
             await sendSats(UserB, AverageFleetIds, AverageFleetAmounts, UserB);
-            await approveForAll(treasury, true, UserB);
-            await lockin(UserB, AverageFleetIds, AverageFleetAmounts);
+            await satApproveForAll(treasury, true, UserB);
         });
 
         //

@@ -12,20 +12,20 @@ const MAX_UINT256_BN = toBN(MAX_UINT256);
 
 const YIELDS = {
     LowYieldSystem: {
-        low: 100,
-        high: 7500
-    },
-    MediumYieldSystem: {
-        low: 7501,
-        high: 15000
-    },
-    HighYieldSystem: {
-        low: 15001,
-        high: 40000
+        low: 1,
+        high: 75
     },
     InsaneYieldSystem: {
-        low: 40001,
-        high: 100000
+        low: 401,
+        high: 1000
+    },
+    MediumYieldSystem: {
+        low: 76,
+        high: 150
+    },
+    HighYieldSystem: {
+        low: 151,
+        high: 400
     }
 };
 

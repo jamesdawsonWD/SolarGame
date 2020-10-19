@@ -5,8 +5,5 @@ import {ShipsAndTechnology} from '../ShipsAndTechnology.sol';
 
 /* solium-disable-next-line */
 contract TestShipsAndTechnology is ShipsAndTechnology {
-    constructor(address eternalStorage, address holder)
-        public
-        ShipsAndTechnology(eternalStorage, holder)
-    {}
+    constructor(address holder) public ShipsAndTechnology(holder) {}
 }

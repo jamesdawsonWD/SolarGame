@@ -1,28 +1,60 @@
 pragma solidity 0.6.12;
 pragma experimental ABIEncoderV2;
 import {Planet} from './Planet.sol';
-import {GameStorage} from './GameStorage.sol';
+import {Ownable} from '@openzeppelin/contracts/access/Ownable.sol';
+import {ITreasury} from './interfaces/ITreasury.sol';
 
-contract PlanetManager {
+contract PlanetManager is Ownable {
     address public planetImplementation;
-    address private treasury;
+    ITreasury ts;
     address private fhr;
     address private solar;
+    mapping(address => bool) operators;
+    mapping(address => uint256) addressToTokenId;
     event ProxyCreated(address proxy);
-    event TestBytes(bytes b);
 
-    constructor(address _planetImplementation) public {
+    constructor(
+        address _planetImplementation,
+        address _gameOperations,
+        address _treasury
+    ) public {
         planetImplementation = _planetImplementation;
+        ts = ITreasury(_treasury);
+        addOperator(_gameOperations);
     }
 
-    function createPlanet(bytes memory _data) public returns (address) {
+    function addOperator(address _operator) public onlyOwner {
+        operators[_operator] = true;
+    }
+
+    modifier onlyOperator() {
+        // Make sure the access is permitted to only contracts in our Dapp
+        require(operators[msg.sender], 'Only Operator');
+        _;
+    }
+
+    modifier onlyPlanet() {
+        require(addressToTokenId[msg.sender] != 0, 'Only planets');
+        _;
+    }
+
+    function createPlanet(uint256 tokenId, bytes memory _data)
+        public
+        onlyOperator
+        returns (address)
+    {
         emit ProxyCreated(planetImplementation);
-        emit TestBytes(_data);
         address proxy = deployMinimal(planetImplementation, _data);
+        addressToTokenId[proxy] = tokenId;
         return proxy;
     }
 
-    function deployMinimal(address _logic, bytes memory _data) public returns (address proxy) {
+    function rewardPlanet(address _to, uint256 _amount) public onlyPlanet {
+        //TODO: more security on this
+        ts.mintSolar(_to, _amount);
+    }
+
+    function deployMinimal(address _logic, bytes memory _data) internal returns (address proxy) {
         bytes20 targetBytes = bytes20(_logic);
         assembly {
             let clone := mload(0x40)

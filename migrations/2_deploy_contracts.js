@@ -7,72 +7,57 @@ const GameOperationsC = artifacts.require('GameOperations');
 const FHR = artifacts.require('FederalHarvestingRights');
 const Solar = artifacts.require('SolarToken');
 const ShipsAndTechnology = artifacts.require('ShipsAndTechnology');
-const Treasury = artifacts.require('Treasury');
+const TreasuryC = artifacts.require('Treasury');
 const GameStorage = artifacts.require('GameStorage');
 const TypesLib = artifacts.require('Types');
-const Constants = artifacts.require('Constants');
 const PlanetManager = artifacts.require('PlanetManager');
 const Planet = artifacts.require('Planet');
 const TestShipsAndTechnology = artifacts.require('TestShipsAndTechnology.sol');
 const TestGameOperations = artifacts.require('TestGameOperations.sol');
+const TestTreasury = artifacts.require('TestTreasury.sol');
+
 // Testing Contracts
 
 async function deployBaseProtocol(deployer, network, accounts) {
     const Sat = isDevNetwork(network) ? TestShipsAndTechnology : ShipsAndTechnology;
     const GameOperations = isDevNetwork(network) ? TestGameOperations : GameOperationsC;
-
-    await deployer.deploy(EternalStorage);
-    const esD = await EternalStorage.deployed();
+    const Treasury = isDevNetwork(network) ? TestTreasury : TreasuryC;
 
     await deployer.deploy(TypesLib);
-    await deployer.deploy(Constants, EternalStorage.address);
-    await deployer.deploy(Solar, EternalStorage.address);
-    await deployer.deploy(Treasury, EternalStorage.address);
-    await deployer.deploy(Sat, EternalStorage.address, Treasury.address);
-    await deployer.deploy(FHR, EternalStorage.address);
+    await deployer.deploy(Treasury);
+    await deployer.deploy(Solar, Treasury.address);
+    await deployer.deploy(Sat, Treasury.address);
+    await deployer.deploy(FHR, Treasury.address);
     await deployer.deploy(Planet);
-    await deployer.deploy(PlanetManager, Planet.address);
     await Promise.all([
         deployer.link(TypesLib, GameStorage),
         deployer.link(TypesLib, GameOperations)
     ]);
 
-    await deployer.deploy(GameStorage, EternalStorage.address);
-    await deployer.deploy(GameOperations, GameStorage.address);
-
-    await Promise.all([
-        esD.setBool(Web3.utils.soliditySha3('contract.exists', GameOperations.address), true),
-        esD.setBool(web3.utils.soliditySha3('contract.exists', Treasury.address), true),
-        esD.setBool(web3.utils.soliditySha3('contract.exists', FHR.address), true),
-        esD.setBool(web3.utils.soliditySha3('contract.exists', Sat.address), true),
-        esD.setBool(web3.utils.soliditySha3('contract.exists', Solar.address), true),
-        esD.setAddress(
-            Web3.utils.soliditySha3(`contract.address.gameoperations`),
-            GameOperations.address
-        ),
-        esD.setAddress(Web3.utils.soliditySha3(`contract.address.treasury`), Treasury.address),
-        esD.setAddress(Web3.utils.soliditySha3(`contract.address.fhr`), FHR.address),
-        esD.setAddress(Web3.utils.soliditySha3(`contract.address.sat`), Sat.address),
-        esD.setAddress(Web3.utils.soliditySha3(`contract.address.solar`), Solar.address),
-        esD.setAddress(
-            Web3.utils.soliditySha3(`contract.address.planetManager`),
-            PlanetManager.address
-        ),
-        esD.setBool(Web3.utils.soliditySha3('fhr.access', Treasury.address), true),
-        esD.setBool(Web3.utils.soliditySha3('solar.access', Treasury.address), true),
-        esD.setBool(
-            Web3.utils.soliditySha3('fhr.access', isDevNetwork(network) ? accounts[0] : ''),
-            true
-        )
-    ]);
+    await deployer.deploy(GameStorage);
+    await deployer.deploy(GameOperations);
+    await deployer.deploy(PlanetManager, Planet.address, GameOperations.address, Treasury.address);
 
     const [GameStorageD, TreasuryD, GameOperationsD] = await Promise.all([
         GameStorage.deployed(),
         Treasury.deployed(),
         GameOperations.deployed()
     ]);
-    await GameStorageD.initialize(esD.address);
-    await TreasuryD.initialize(esD.address);
+    await GameStorageD.initialize(
+        Solar.address,
+        Sat.address,
+        FHR.address,
+        Treasury.address,
+        PlanetManager.address,
+        GameOperations.address
+    );
+    await TreasuryD.initialize(
+        FHR.address,
+        Solar.address,
+        Sat.address,
+        GameOperations.address,
+        PlanetManager.address
+    );
     await GameOperationsD.initialize(GameStorage.address);
     await GameOperationsD.setSeed(1927367382);
 }

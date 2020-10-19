@@ -33,8 +33,6 @@ export async function fhrDiscovery(account, systemType, amounts) {
             high = YIELDS.InsaneYieldSystem.high;
             break;
     }
-    console.log(low, high, planetYield);
-    // TODO: yield is not within its correct parameters
     assert.ok(planetYield >= low && planetYield <= high);
 
     return planetProxy;

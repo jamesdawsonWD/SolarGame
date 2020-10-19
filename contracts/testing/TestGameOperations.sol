@@ -12,7 +12,12 @@ contract TestGameOperations is GameOperations {
 
     function testAiFleetAttack(Types.SystemType starSystem) public {
         (uint256 a_offense, uint256 a_defense) = GS.getAiFleetInfo(starSystem);
-        (uint256 d_offense, uint256 d_defense) = calculateStats(msg.sender);
+        (
+            uint256 d_offense,
+            uint256 d_defense,
+            uint256[] memory d_balances,
+            uint256[] memory d_ids
+        ) = calculateStats(msg.sender);
         emit BattleStarted(msg.sender, a_offense, a_defense, address(this), d_offense, d_defense);
 
         bool result = battle(a_offense, a_defense, d_offense, d_defense, true, 10);
@@ -24,11 +29,12 @@ contract TestGameOperations is GameOperations {
         uint256 _id = GS.incrementTotalFhr();
         emit TestUint(yield, _id);
         TS.mintFhr(msg.sender, _id);
-        emit TestAddress(address(TS), address(solar), address(fhr), address(sats));
+        emit TestAddress(address(pm), address(solar), address(fhr), address(sats));
         address _address = pm.createPlanet(
+            _id,
             abi.encodeWithSignature(
                 'initialize(address,address,address,address,uint256,uint256)',
-                address(TS),
+                address(pm),
                 address(solar),
                 address(fhr),
                 address(sats),
@@ -36,7 +42,8 @@ contract TestGameOperations is GameOperations {
                 _id
             )
         );
-        GS.setTokenAddress(_id, _address);
+        GS.setTokenIdToProxyAddress(_id, _address);
+        GS.setProxyAddressToTokenId(_id, _address);
     }
 
     function testSatDiscovery(
