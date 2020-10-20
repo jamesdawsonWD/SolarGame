@@ -1,8 +1,14 @@
+import { state } from './index';
 import { ActionTree, ActionContext } from 'vuex';
 import { RootState, Network } from '../types';
 import Web3 from 'web3';
-import Master from '@/../build/contracts/TestMaster.json';
-import Tsuno from '@/../build/contracts/TestTsuno.json';
+import Treasury from '@/../build/contracts/TestTreasury.json';
+import GameOperations from '@/../build/contracts/GameOperations.json';
+import Solar from '@/../build/contracts/SolarToken.json';
+import Sat from '@/../build/contracts/ShipsAndTechnology.json';
+import FHR from '@/../build/contracts/FederalHarvestingRights.json';
+import GameStorage from '@/../build/contracts/GameStorage.json';
+import Planet from '@/../build/contracts/Planet.json';
 export const actions: ActionTree<Network, RootState> = {
     setupWeb3(context: ActionContext<Network, RootState>) {
         let web3;
@@ -42,36 +48,82 @@ export const actions: ActionTree<Network, RootState> = {
         context: ActionContext<Network, RootState>,
         payload
     ) {
-        console.log(payload);
         const setupWeb3 = context.dispatch('setupWeb3');
         const network = context.dispatch('getNetworkData');
         const address = context.dispatch('getAddress');
         await Promise.all([setupWeb3, network, address]);
-        await context.dispatch('setupMaster');
-        await context.dispatch('setupTsuno');
+        await context.dispatch('setupGameStorage');
+        await context.dispatch('setupTreasury');
+        await context.dispatch('setupGameOperations');
+        await context.dispatch('setupTreasury');
+        await context.dispatch('setupSolar');
+        await context.dispatch('setupSat');
+        await context.dispatch('setupFhr');
     },
 
-    async setupMaster(context: ActionContext<Network, RootState>) {
+    async setupGameOperations(context: ActionContext<Network, RootState>) {
         const { Web3, NetworkId } = context.getters;
-        const networks: Networks = Master.networks;
+        const networks: Networks = GameOperations.networks;
         const master = new Web3.eth.Contract(
-            Master.abi,
+            GameOperations.abi,
             networks['5777'].address
         );
-        context.commit('SET_MASTER_CONTRACT', master);
+        context.commit('SET_GAMEOPERATIONS', master);
+    },
+    async setupGameStorage(context: ActionContext<Network, RootState>) {
+        const { Web3, NetworkId } = context.getters;
+        const networks: Networks = GameStorage.networks;
+        const storage = new Web3.eth.Contract(
+            GameStorage.abi,
+            networks['5777'].address
+        );
+        context.commit('SET_GAMESTORAGE', storage);
+    },
+    async setupTreasury(context: ActionContext<Network, RootState>) {
+        const { Web3, NetworkId } = context.getters;
+        const networks: Networks = Treasury.networks;
+        const treasury = new Web3.eth.Contract(
+            Treasury.abi,
+            networks['5777'].address
+        );
+        context.commit('SET_GAMESTORAGE', treasury);
     },
 
-    async setupTsuno(context: ActionContext<Network, RootState>) {
+    async setupSolar(context: ActionContext<Network, RootState>) {
         const { Web3 } = context.getters;
-        const networks: Networks = Tsuno.networks;
-        console.log(networks['5777'].address);
-        const tsuno = new Web3.eth.Contract(
-            Tsuno.abi,
+        const networks: Networks = Solar.networks;
+        const solar = new Web3.eth.Contract(
+            Solar.abi,
             networks['5777'].address
         );
-        console.log(tsuno);
-        context.commit('SET_TSUNO_CONTRACT', tsuno);
-    }
+        context.commit('SET_SOLAR_CONTRACT', solar);
+    },
+    async setupSat(context: ActionContext<Network, RootState>) {
+        const { Web3 } = context.getters;
+        const networks: Networks = Sat.networks;
+        const sat = new Web3.eth.Contract(
+            Sat.abi,
+            networks['5777'].address
+        );
+        context.commit('SET_SAT_CONTRACT', sat);
+    },
+    async setupFhr(context: ActionContext<Network, RootState>) {
+        const { Web3 } = context.getters;
+        const networks: Networks = FHR.networks;
+        const fhr = new Web3.eth.Contract(
+            FHR.abi,
+            networks['5777'].address
+        );
+        context.commit('SET_SAT_CONTRACT', fhr);
+    },
+    async setupPlanet(context: ActionContext<Network, RootState>, payload: string) {
+        const { Web3 } = context.getters;
+        const planet = new Web3.eth.Contract(
+            Planet.abi,
+            payload
+        );
+        context.commit('ADD_VISITED_PLANET', planet);
+    },
 };
 
 interface Networks {

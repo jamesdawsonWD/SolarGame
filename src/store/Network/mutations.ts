@@ -7,8 +7,18 @@ export const mutations: MutationTree<Network> = {
         (state.networkData = payload),
     SET_ADDRESS: (state: Network, payload: string) =>
         (state.userAddress = payload),
-    SET_MASTER_CONTRACT: (state: Network, payload: any) =>
-        (state.master = payload),
-    SET_TSUNO_CONTRACT: (state: Network, payload: any) =>
-        (state.tsuno = payload)
+    SET_GAMEOPERATIONS: (state: Network, payload: any) =>
+        (state.contracts.gameOperations = payload),
+    SET_SOLAR_CONTRACT: (state: Network, payload: any) =>
+        (state.contracts.solar = payload),
+    SET_SAT_CONTRACT: (state: Network, payload: any) =>
+        (state.contracts.sat = payload),
+    SET_FHR_CONTRACT: (state: Network, payload: any) =>
+        (state.contracts.fhr = payload),
+    SET_GAMESTORAGE: (state: Network, payload: any) =>
+        (state.contracts.gameStorage = payload),
+    SET_TREASURY: (state: Network, payload: any) =>
+        (state.contracts.treasury = payload),
+    ADD_VISITED_PLANET: (state: Network, payload: any) =>
+        (state.contracts.planets.push(payload)),
 };

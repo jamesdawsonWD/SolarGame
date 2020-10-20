@@ -1,9 +1,10 @@
 import { Module } from 'vuex';
-import { RootState, TsunoOperations } from '../types';
+import { RootState, FhrOperations } from '../types';
 import { addressZero } from '@/utils';
 
-export const state: TsunoOperations = {
-    balance: 0
+export const state: FhrOperations = {
+    balance: [],
+    treasuryApproved: false
 };
 
 import { getters } from './getters';
@@ -12,7 +13,7 @@ import { mutations } from './mutations';
 
 const namespaced = false;
 
-export const tsunoOperations: Module<TsunoOperations, RootState> = {
+export const fhrOperations: Module<FhrOperations, RootState> = {
     namespaced,
     state,
     getters,

@@ -68,16 +68,6 @@ contract GameOperations is Initializable, Discovery {
         pm = PlanetManager(GS.getPlanetManagerAddress());
     }
 
-    function withdrawMasterFleet(uint256[] memory _ships, uint256[] memory _amounts) public {
-        // removeMasterFleet(msg.sender, _ships, _amounts);
-        TS.sendSats(msg.sender, _ships, _amounts);
-    }
-
-    function lockInMasterFleet(uint256[] memory _ships, uint256[] memory _amounts) public {
-        // updateMasterFleet(msg.sender, _ships, _amounts);
-        TS.recieveSats(msg.sender, _ships, _amounts);
-    }
-
     function move(Types.Position memory to) public {
         require(
             Types.positionWithinBoundaries(to, GS.getBoundaries()),
@@ -247,52 +237,6 @@ contract GameOperations is Initializable, Discovery {
 
             TS.recieveSats(defender, info.d_ids, info.d_balances);
         }
-
-        // // if false the defender has won
-        // else {
-        // uint256 a_actualBalance;
-        // for (uint256 i = 0; i < a_balances.length; i++) {
-        //     if (a_balances[i] > 0) a_actualBalance++;
-        // }
-        // uint256[] memory a_ids = new uint256[](a_actualBalance);
-        // uint256[] memory a_amounts = new uint256[](a_actualBalance);
-        // uint256 a_pos = 0;
-        // for (uint256 i = 0; i < a_balances.length; i++) {
-        //     if (a_balances[i] > 0) {
-        //         _ids[pos] = i;
-        //         _amounts[pos] = a_balances[i].mul(20).div(100); // 20% of attackers fleet is lost in a successful attack
-        //         pos++;
-        //     }
-        // }
-        // TS.recieveSats(msg.sender, a_ids, a_amounts);
-
-        // uint256 d_actualBalance;
-        // for (uint256 i = 0; i < a_balances.length; i++) {
-        //     if (a_balances[i] > 0) d_actualBalance++;
-        // }
-        // uint256[] memory d_ids = new uint256[](d_actualBalance);
-        // uint256[] memory d_amounts = new uint256[](d_actualBalance);
-        // uint256 d_pos = 0;
-        // for (uint256 i = 0; i < a_balances.length; i++) {
-        //     if (a_balances[i] > 0) {
-        //         _ids[pos] = i;
-        //         _amounts[pos] = a_balances[i].mul(70).div(100); // 70% of defenders fleet is lost in a successful attack
-        //         pos++;
-        //     }
-        // }
-        // TS.recieveSats(msg.sender, d_ids, d_amounts);
-
-        // uint256 _tokenId = GS.getProxyAddressToTokenId(defender);
-        // if (_tokenId > 0) {
-        //     address owner = fhr.ownerOf(_tokenId);
-        //     TS.transferFhr(owner, msg.sender, _tokenId);
-        // }
-        // }
-        // if result is true then attacker has won
-        // if (result) {}
-        // find out who won
-        // reduce both fleets
-        // reward the victor either with solar or NFT
     }
 
     function explore(Types.Position memory star) internal {

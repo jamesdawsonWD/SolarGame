@@ -6,5 +6,6 @@ export const mutations: MutationTree<UserInterfaceManager> = {
         (state.isLoading = payload),
     SET_MODAL_STATE: (state: UserInterfaceManager, payload: Modal) =>
         (state.modal = payload),
-    SET_ERROR: (state: UserInterfaceManager, err: Error) => (state.error = err)
+    SET_ERROR: (state: UserInterfaceManager, err: Error) => (state.error = err),
+    SET_SUCCESS_MESSAGE: (state: UserInterfaceManager, msg: string) => (state.success.msg = msg),
 };

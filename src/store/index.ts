@@ -1,9 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { network } from './Network';
-import { tsunoOperations } from './TsunoOperations';
-import { fundOperations } from './FundOperations';
-import { userInterfaceManager } from './UserInterfaceManager/index';
+import { planet } from './Planet';
+import { fhrOperations } from './FhrOperations';
+import { gameStorage } from './GameStorage';
+import { gameOperations } from './GameOperation';
+import { solarOperations } from './SolarOperations';
+import { treasuryOperations } from './Treasury';
+import { userInterfaceManager } from './UserInterfaceManager';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -12,6 +16,15 @@ export default new Vuex.Store({
     },
     mutations: {},
     actions: {},
-    modules: { network, fundOperations, tsunoOperations, userInterfaceManager },
+    modules: {
+        network,
+        planet,
+        fhrOperations,
+        gameStorage,
+        gameOperations,
+        solarOperations,
+        treasuryOperations,
+        userInterfaceManager,
+    },
     plugins: []
 });

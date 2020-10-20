@@ -8,8 +8,15 @@ export interface Network {
     coinbaseReady: boolean;
     web3Ready: boolean;
     web3: any;
-    master: any;
-    tsuno: any;
+    contracts: {
+        solar: any;
+        fhr: any;
+        sat: any;
+        gameOperations: any;
+        gameStorage: any;
+        treasury: any;
+        planets: { [key: string]: any };
+    }
     ethReady: boolean;
     userAddress: string;
     sentTransactions: {};
@@ -21,24 +28,76 @@ export interface NetworkData {
     networkId: number;
 }
 
-export interface FundOperations {
-    balance: number;
-    stakedTime: number;
-    dateUnlocked: number;
+export interface SatInfo {
+    offense: number;
+    defense: number;
 }
 
+export interface Sat {
+    id: number;
+    balance: number;
+}
+
+export interface SatsInfo {
+    [key: number]: SatInfo
+}
+export interface StarInfo {
+    systemType: number;
+}
+export interface GameStorage {
+    currentStarLocation: StarPosition | null;
+    satsInfo: SatsInfo,
+    planetsToTokenId: {
+        [key: string]: number;
+    },
+    tokenIdToPlanet: {
+        [key: number]: string;
+    },
+    starsInfo: {
+        [key: string]: StarInfo
+    }
+}
+
+export interface StarPosition {
+    quadrant: number;
+    sector: number;
+    district: number;
+    star: number;
+}
 export interface GameOperations {
-    soldiers: number;
-    cavalry: number;
-    siegeWeapons: number;
-    defenseStructures: number;
-    totalArmyHealth: number;
-}
 
-export interface TsunoOperations {
+}
+export interface TreasuryOperations {
+
+}
+export interface SolarOperations {
     balance: number;
 }
 
+export interface PlanetInfo {
+    yield: number;
+    balance: number;
+    sats: { [key: number]: Sat };
+    dateLocked: Date;
+    tokenId: number;
+    minHold: number;
+
+}
+export interface Planets {
+    [key: string]: PlanetInfo
+}
+
+export interface FhrOperations {
+    balance: number[];
+    treasuryApproved: boolean;
+}
+
+export interface SatOperations {
+    balances: {
+        [key: number]: number;
+    },
+    treasuryApproved: boolean;
+}
 export interface Deposit {
     amount: number;
     length: number;
@@ -48,6 +107,9 @@ export interface UserInterfaceManager {
     isLoading: boolean;
     modal: Modal;
     error: Error;
+    success: {
+        msg: string;
+    }
 }
 
 export interface Modal {

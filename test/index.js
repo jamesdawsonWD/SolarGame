@@ -9,7 +9,7 @@ import deploy from './deploy';
 gameStorageUnit();
 // planetManager();
 planet();
-// userMove();
+userMove();
 explore();
 // deploy();
 attack();

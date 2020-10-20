@@ -1,35 +1,5 @@
 <template>
-    <div id="app">
-        <modal v-if="ShowModal" @close="closeModal"></modal>
-        <div id="nav">
-            <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link>
-        </div>
-        <router-view />
-        <div>
-            <h2>Deposited</h2>
-            <div>{{ Balance | decimalsPrecision(18) | toFixed(4) }}</div>
-            <h2>Available Tsuno</h2>
-            <div>{{ TsunoBalance | decimalsPrecision(18) | toFixed(4) }}</div>
-            <h2>Date Withdrawable</h2>
-            <div>{{ new Date(DateUnlocked * 1000) }}</div>
-            <h2>Recent Error</h2>
-            <div>{{ RecentError }}</div>
-        </div>
-        <h2>Tools</h2>
-        <Button title="Get Balance" @clicked="getBalance"></Button>
-        <Button title="Withdraw" @clicked="withdraw"></Button>
-        <Button
-            title="Emergency Withdraw"
-            @clicked="emergencyWithdraw"
-        ></Button>
-        <Button
-            title="Mint Tsuno"
-            buttonStyle="primary"
-            @clicked="mintTsuno"
-        ></Button>
-        <DepositForm @submitted="depositAmount"></DepositForm>
-    </div>
+    <div id="app"></div>
 </template>
 <script lang="ts">
 import { mapActions } from 'vuex';
@@ -42,14 +12,14 @@ import { SECONDS_IN_A_DAY, advanceTime } from '@/utils';
 export default {
     name: 'App',
     computed: {
-        ...mapGetters([
-            'Address',
-            'Balance',
-            'TsunoBalance',
-            'ShowModal',
-            'DateUnlocked',
-            'RecentError'
-        ])
+        // ...mapGetters([
+        //     'Address',
+        //     'Balance',
+        //     'TsunoBalance',
+        //     'ShowModal',
+        //     'DateUnlocked',
+        //     'RecentError'
+        // ])
     },
     components: {
         DepositForm,
@@ -57,27 +27,27 @@ export default {
         Button
     },
     methods: {
-        ...mapActions([
-            'bootstrapContracts',
-            'getBalance',
-            'mintTsuno',
-            'getTsunoBalance',
-            'deposit',
-            'closeModal',
-            'getDateUnlocked',
-            'withdraw',
-            'emergencyWithdraw'
-        ]),
-        depositAmount: function(deposit: Deposit) {
-            this.deposit(deposit);
-        }
+        // ...mapActions([
+        //     'bootstrapContracts',
+        //     'getBalance',
+        //     'mintTsuno',
+        //     'getTsunoBalance',
+        //     'deposit',
+        //     'closeModal',
+        //     'getDateUnlocked',
+        //     'withdraw',
+        //     'emergencyWithdraw'
+        // ]),
+        // depositAmount: function(deposit: Deposit) {
+        //     this.deposit(deposit);
+        // }
     },
 
     async mounted() {
-        await this.bootstrapContracts();
-        await this.getBalance();
-        await this.getTsunoBalance();
-        await this.getDateUnlocked();
+        // await this.bootstrapContracts();
+        // await this.getBalance();
+        // await this.getTsunoBalance();
+        // await this.getDateUnlocked();
     }
 };
 </script>

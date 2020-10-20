@@ -1,10 +1,9 @@
+import { RootState, TreasuryOperations } from '../types';
 import { Module } from 'vuex';
-import { RootState, FundOperations } from '../types';
 
-export const state: FundOperations = {
-    balance: 0,
-    stakedTime: 0,
-    dateUnlocked: 0
+export const state: TreasuryOperations = {
+    balances: {},
+    treasuryApproved: false
 };
 
 import { getters } from './getters';
@@ -13,7 +12,7 @@ import { mutations } from './mutations';
 
 const namespaced = false;
 
-export const fundOperations: Module<FundOperations, RootState> = {
+export const treasuryOperations: Module<TreasuryOperations, RootState> = {
     namespaced,
     state,
     getters,

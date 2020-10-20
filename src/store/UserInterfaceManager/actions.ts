@@ -15,7 +15,12 @@ export const actions: ActionTree<UserInterfaceManager, RootState> = {
         };
         context.commit('SET_MODAL_STATE', modal);
     },
-
+    setSuccessMessage(
+        context: ActionContext<UserInterfaceManager, RootState>,
+        msg: string
+    ) {
+        context.commit('SET_SUCCESS_MESSAGE', msg);
+    },
     setError(
         context: ActionContext<UserInterfaceManager, RootState>,
         err: Error

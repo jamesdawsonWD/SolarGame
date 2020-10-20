@@ -12,8 +12,17 @@ export const state: Network = {
     coinbaseReady: false,
     userAddress: addressZero,
     web3Ready: false,
-    master: null,
-    tsuno: null,
+    contracts: {
+        solar: null,
+        fhr: null,
+        sat: null,
+        gameStorage: null,
+        gameOperations: null,
+        treasury: null,
+        planets: {
+
+        }
+    },
     web3: null,
     ethReady: false,
     sentTransactions: {}
