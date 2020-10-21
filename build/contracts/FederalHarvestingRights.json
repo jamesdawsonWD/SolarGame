@@ -568,7 +568,7 @@
         "id": 1522,
         "nodeType": "ImportDirective",
         "scope": 1604,
-        "sourceUnit": 10210,
+        "sourceUnit": 10172,
         "src": "57:71:4",
         "symbolAliases": [
           {
@@ -596,7 +596,7 @@
         "id": 1524,
         "nodeType": "ImportDirective",
         "scope": 1604,
-        "sourceUnit": 7151,
+        "sourceUnit": 7113,
         "src": "129:67:4",
         "symbolAliases": [
           {
@@ -628,10 +628,10 @@
               "id": 1525,
               "name": "ERC721",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 10209,
+              "referencedDeclaration": 10171,
               "src": "234:6:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721_$10209",
+                "typeIdentifier": "t_contract$_ERC721_$10171",
                 "typeString": "contract ERC721"
               }
             },
@@ -646,10 +646,10 @@
               "id": 1527,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 7150,
+              "referencedDeclaration": 7112,
               "src": "242:7:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$7150",
+                "typeIdentifier": "t_contract$_Ownable_$7112",
                 "typeString": "contract Ownable"
               }
             },
@@ -659,14 +659,14 @@
           }
         ],
         "contractDependencies": [
-          7041,
-          7150,
-          7207,
-          7219,
-          10209,
-          10352,
-          10383,
-          10410
+          7003,
+          7112,
+          7169,
+          7181,
+          10171,
+          10314,
+          10345,
+          10372
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -674,14 +674,14 @@
         "id": 1603,
         "linearizedBaseContracts": [
           1603,
-          7150,
-          10209,
-          10383,
-          10410,
-          10352,
-          7207,
-          7219,
-          7041
+          7112,
+          10171,
+          10345,
+          10372,
+          10314,
+          7169,
+          7181,
+          7003
         ],
         "name": "FederalHarvestingRights",
         "nodeType": "ContractDefinition",
@@ -951,10 +951,10 @@
                   "name": "ERC721",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 10209,
+                  "referencedDeclaration": 10171,
                   "src": "389:6:4",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_ERC721_$10209_$",
+                    "typeIdentifier": "t_type$_t_contract$_ERC721_$10171_$",
                     "typeString": "type(contract ERC721)"
                   }
                 },
@@ -1114,7 +1114,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 7099,
+                  "referencedDeclaration": 7061,
                   "src": "522:9:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1484,10 +1484,10 @@
                       "name": "_safeMint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        9857,
-                        9886
+                        9819,
+                        9848
                       ],
-                      "referencedDeclaration": 9857,
+                      "referencedDeclaration": 9819,
                       "src": "883:9:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -1654,7 +1654,7 @@
         "id": 1522,
         "nodeType": "ImportDirective",
         "scope": 1604,
-        "sourceUnit": 10210,
+        "sourceUnit": 10172,
         "src": "57:71:4",
         "symbolAliases": [
           {
@@ -1682,7 +1682,7 @@
         "id": 1524,
         "nodeType": "ImportDirective",
         "scope": 1604,
-        "sourceUnit": 7151,
+        "sourceUnit": 7113,
         "src": "129:67:4",
         "symbolAliases": [
           {
@@ -1714,10 +1714,10 @@
               "id": 1525,
               "name": "ERC721",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 10209,
+              "referencedDeclaration": 10171,
               "src": "234:6:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721_$10209",
+                "typeIdentifier": "t_contract$_ERC721_$10171",
                 "typeString": "contract ERC721"
               }
             },
@@ -1732,10 +1732,10 @@
               "id": 1527,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 7150,
+              "referencedDeclaration": 7112,
               "src": "242:7:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$7150",
+                "typeIdentifier": "t_contract$_Ownable_$7112",
                 "typeString": "contract Ownable"
               }
             },
@@ -1745,14 +1745,14 @@
           }
         ],
         "contractDependencies": [
-          7041,
-          7150,
-          7207,
-          7219,
-          10209,
-          10352,
-          10383,
-          10410
+          7003,
+          7112,
+          7169,
+          7181,
+          10171,
+          10314,
+          10345,
+          10372
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -1760,14 +1760,14 @@
         "id": 1603,
         "linearizedBaseContracts": [
           1603,
-          7150,
-          10209,
-          10383,
-          10410,
-          10352,
-          7207,
-          7219,
-          7041
+          7112,
+          10171,
+          10345,
+          10372,
+          10314,
+          7169,
+          7181,
+          7003
         ],
         "name": "FederalHarvestingRights",
         "nodeType": "ContractDefinition",
@@ -2037,10 +2037,10 @@
                   "name": "ERC721",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 10209,
+                  "referencedDeclaration": 10171,
                   "src": "389:6:4",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_ERC721_$10209_$",
+                    "typeIdentifier": "t_type$_t_contract$_ERC721_$10171_$",
                     "typeString": "type(contract ERC721)"
                   }
                 },
@@ -2200,7 +2200,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 7099,
+                  "referencedDeclaration": 7061,
                   "src": "522:9:4",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2570,10 +2570,10 @@
                       "name": "_safeMint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        9857,
-                        9886
+                        9819,
+                        9848
                       ],
-                      "referencedDeclaration": 9857,
+                      "referencedDeclaration": 9819,
                       "src": "883:9:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -2841,12 +2841,12 @@
         }
       },
       "links": {},
-      "address": "0xc347b072bf22f33dbC8e487fAe8D5e5A2cF2bb9f",
-      "transactionHash": "0x4d7491233d14797c31a1b28e166bf8dc329f69e85fa5494c849bd1d39ed35b9a"
+      "address": "0x897324eAe500D98A277241922D5d4F2fb3cd5870",
+      "transactionHash": "0x9e524b5473d00926b64cf57c97d156253f71adfa2521a90029ac205c7f8bbfd2"
     }
   },
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-20T10:07:07.109Z",
+  "updatedAt": "2020-10-20T18:48:17.427Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

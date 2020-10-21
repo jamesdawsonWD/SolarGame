@@ -24,7 +24,7 @@ export default new Vuex.Store({
         gameOperations,
         solarOperations,
         treasuryOperations,
-        userInterfaceManager,
+        userInterfaceManager
     },
     plugins: []
 });

@@ -1,0 +1,379 @@
+<svg
+    id="Layer_1"
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 441.31 444.87"
+>
+        <defs>
+            <style>
+                .cls-1,
+                .cls-10,
+                .cls-11,
+                .cls-12,
+                .cls-13,
+                .cls-14,
+                .cls-15,
+                .cls-16,
+                .cls-17,
+                .cls-18,
+                .cls-19,
+                .cls-2,
+                .cls-20,
+                .cls-21,
+                .cls-3,
+                .cls-4,
+                .cls-5,
+                .cls-6,
+                .cls-7,
+                .cls-8,
+                .cls-9 {
+                    fill: none;
+                    stroke-miterlimit: 10;
+                    stroke-width: 13px;
+                }
+                .cls-1 {
+                    stroke: url(#linear-gradient);
+                }
+                .cls-2 {
+                    stroke: url(#linear-gradient-2);
+                }
+                .cls-3 {
+                    stroke: url(#linear-gradient-3);
+                }
+                .cls-4 {
+                    stroke: url(#linear-gradient-4);
+                }
+                .cls-5 {
+                    stroke: url(#linear-gradient-5);
+                }
+                .cls-6 {
+                    stroke: url(#linear-gradient-6);
+                }
+                .cls-7 {
+                    stroke: url(#linear-gradient-7);
+                }
+                .cls-8 {
+                    stroke: url(#linear-gradient-8);
+                }
+                .cls-9 {
+                    stroke: url(#linear-gradient-9);
+                }
+                .cls-10 {
+                    stroke: url(#linear-gradient-10);
+                }
+                .cls-11 {
+                    stroke: url(#linear-gradient-11);
+                }
+                .cls-12 {
+                    stroke: url(#linear-gradient-12);
+                }
+                .cls-13 {
+                    stroke: url(#linear-gradient-13);
+                }
+                .cls-14 {
+                    stroke: url(#linear-gradient-14);
+                }
+                .cls-15 {
+                    stroke: url(#linear-gradient-15);
+                }
+                .cls-16 {
+                    stroke: url(#linear-gradient-16);
+                }
+                .cls-17 {
+                    stroke: url(#linear-gradient-17);
+                }
+                .cls-18 {
+                    stroke: url(#linear-gradient-18);
+                }
+                .cls-19 {
+                    stroke: url(#linear-gradient-19);
+                }
+                .cls-20 {
+                    stroke: url(#linear-gradient-20);
+                }
+                .cls-21 {
+                    stroke: url(#linear-gradient-21);
+                }
+            </style>
+            <linearGradient
+                id="linear-gradient"
+                x1="0.53"
+                y1="122.21"
+                x2="94.19"
+                y2="122.21"
+                gradientUnits="userSpaceOnUse"
+            >
+                <stop offset="0" stop-color="#ffea6a" />
+                <stop offset="1" stop-color="#ff7a6a" />
+            </linearGradient>
+            <linearGradient
+                id="linear-gradient-2"
+                x1="70.42"
+                y1="161.91"
+                x2="164.08"
+                y2="161.91"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-3"
+                x1="0"
+                y1="202.65"
+                x2="93.66"
+                y2="202.65"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-4"
+                x1="70.68"
+                y1="243.01"
+                x2="164.35"
+                y2="243.01"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-5"
+                x1="140.31"
+                y1="202.65"
+                x2="233.97"
+                y2="202.65"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-6"
+                x1="140.51"
+                y1="121.49"
+                x2="234.17"
+                y2="121.49"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-7"
+                x1="70.29"
+                y1="81.01"
+                x2="163.95"
+                y2="81.01"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-8"
+                x1="138.84"
+                y1="283.53"
+                x2="232.5"
+                y2="283.53"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-9"
+                x1="208.73"
+                y1="323.22"
+                x2="302.39"
+                y2="323.22"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-10"
+                x1="138.31"
+                y1="363.96"
+                x2="231.97"
+                y2="363.96"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-11"
+                x1="208.99"
+                y1="404.32"
+                x2="302.66"
+                y2="404.32"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-12"
+                x1="278.62"
+                y1="363.96"
+                x2="372.28"
+                y2="363.96"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-13"
+                x1="278.81"
+                y1="282.8"
+                x2="372.48"
+                y2="282.8"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-14"
+                x1="208.59"
+                y1="242.32"
+                x2="302.26"
+                y2="242.32"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-15"
+                x1="207.67"
+                y1="81.77"
+                x2="301.34"
+                y2="81.77"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-16"
+                x1="277.56"
+                y1="121.46"
+                x2="371.23"
+                y2="121.46"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-17"
+                x1="207.14"
+                y1="162.21"
+                x2="300.81"
+                y2="162.21"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-18"
+                x1="277.83"
+                y1="202.56"
+                x2="371.49"
+                y2="202.56"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-19"
+                x1="347.45"
+                y1="162.21"
+                x2="441.12"
+                y2="162.21"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-20"
+                x1="347.65"
+                y1="81.04"
+                x2="441.31"
+                y2="81.04"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-21"
+                x1="277.43"
+                y1="40.56"
+                x2="371.09"
+                y2="40.56"
+                xlink:href="#linear-gradient"
+            />
+        </defs>
+        <polygon
+            id="0"
+
+            class="cls-1"
+            points="86.69 122.21 67.02 156.27 27.7 156.27 8.03 122.21 27.7 88.16 67.02 88.16 86.69 122.21"
+        />
+        <polygon
+            id="1"
+
+            class="cls-2"
+            points="156.58 161.91 136.91 195.97 97.59 195.97 77.92 161.91 97.59 127.85 136.91 127.85 156.58 161.91"
+        />
+        <polygon
+            id="2"
+
+            class="cls-3"
+            points="86.16 202.65 66.5 236.71 27.17 236.71 7.51 202.65 27.17 168.6 66.5 168.6 86.16 202.65"
+        />
+        <polygon
+            id="3"
+            class="cls-4"
+            points="156.84 243 137.18 277.06 97.85 277.06 78.19 243 97.85 208.95 137.18 208.95 156.84 243"
+        />
+        <polygon
+            id="4"
+            class="cls-5"
+            points="226.47 202.65 206.8 236.71 167.48 236.71 147.81 202.65 167.48 168.6 206.8 168.6 226.47 202.65"
+        />
+        <polygon
+            id="5"
+            class="cls-6"
+            points="226.66 121.49 207 155.55 167.68 155.55 148.01 121.49 167.68 87.43 207 87.43 226.66 121.49"
+        />
+        <polygon
+            id="6"
+            class="cls-7"
+            points="156.44 81 136.78 115.06 97.45 115.06 77.79 81 97.45 46.95 136.78 46.95 156.44 81"
+        />
+        <polygon
+            id="7"
+            class="cls-8"
+            points="225 283.52 205.33 317.58 166.01 317.58 146.34 283.52 166.01 249.47 205.33 249.47 225 283.52"
+        />
+        <polygon
+            id="8"
+            class="cls-9"
+            points="294.89 323.22 275.22 357.28 235.9 357.28 216.23 323.22 235.9 289.16 275.22 289.16 294.89 323.22"
+        />
+        <polygon
+            id="9"
+            class="cls-10"
+            points="224.47 363.96 204.81 398.02 165.48 398.02 145.81 363.96 165.48 329.91 204.81 329.91 224.47 363.96"
+        />
+        <polygon
+            id="10"
+            class="cls-11"
+            points="295.15 404.32 275.49 438.37 236.16 438.37 216.5 404.32 236.16 370.26 275.49 370.26 295.15 404.32"
+        />
+        <polygon
+            id="11"
+            class="cls-12"
+            points="364.78 363.96 345.11 398.02 305.79 398.02 286.12 363.96 305.79 329.91 345.11 329.91 364.78 363.96"
+        />
+        <polygon
+            id="12"
+            class="cls-13"
+            points="364.97 282.8 345.31 316.86 305.98 316.86 286.32 282.8 305.98 248.74 345.31 248.74 364.97 282.8"
+        />
+        <polygon
+            id="13"
+            class="cls-14"
+            points="294.75 242.32 275.09 276.37 235.76 276.37 216.1 242.32 235.76 208.26 275.09 208.26 294.75 242.32"
+        />
+        <polygon
+            id="14"
+            class="cls-15"
+            points="293.83 81.77 274.17 115.83 234.84 115.83 215.18 81.77 234.84 47.71 274.17 47.71 293.83 81.77"
+        />
+        <polygon
+            id="15"
+            class="cls-16"
+            points="363.72 121.46 344.06 155.52 304.73 155.52 285.07 121.46 304.73 87.4 344.06 87.4 363.72 121.46"
+        />
+        <polygon
+            id="16"
+            class="cls-17"
+            points="293.3 162.21 273.64 196.26 234.31 196.26 214.65 162.21 234.31 128.15 273.64 128.15 293.3 162.21"
+        />
+        <polygon
+            id="17"
+            class="cls-18"
+            points="363.99 202.56 344.32 236.62 305 236.62 285.33 202.56 305 168.5 344.32 168.5 363.99 202.56"
+        />
+        <polygon
+            id="18"
+            class="cls-19"
+            points="433.61 162.21 413.95 196.26 374.62 196.26 354.96 162.21 374.62 128.15 413.95 128.15 433.61 162.21"
+        />
+        <polygon
+            id="19"
+            class="cls-20"
+            points="433.81 81.04 414.15 115.1 374.82 115.1 355.15 81.04 374.82 46.98 414.15 46.98 433.81 81.04"
+        />
+        <polygon
+            id="20"
+            class="cls-21"
+            points="363.59 40.56 343.93 74.62 304.6 74.62 284.94 40.56 304.6 6.5 343.93 6.5 363.59 40.56"
+        />
+    </svg>

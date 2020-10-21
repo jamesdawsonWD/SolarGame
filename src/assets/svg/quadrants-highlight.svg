@@ -1,0 +1,99 @@
+
+    <svg
+        id="Layer_1"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 453.86 455.85"
+    >
+        <defs>
+            <style>
+                .cls-1,
+                .cls-2,
+                .cls-3,
+                .cls-4 {
+                    fill: none;
+                    stroke-miterlimit: 10;
+                    stroke-width: 13px;
+                }
+                .cls-1 {
+                    stroke: url(#linear-gradient);
+                }
+                .cls-2 {
+                    stroke: url(#linear-gradient-2);
+                }
+                .cls-3 {
+                    stroke: url(#linear-gradient-3);
+                }
+                .cls-4 {
+                    stroke: url(#linear-gradient-4);
+                }
+            </style>
+            <linearGradient
+                id="linear-gradient"
+                x1="226.2"
+                y1="309.77"
+                x2="394.07"
+                y2="143.31"
+                gradientTransform="translate(702.32 165.91) rotate(89.76)"
+                gradientUnits="userSpaceOnUse"
+            >
+                <stop offset="0" stop-color="#e9fffe" />
+                <stop offset="0.35" stop-color="#6afff8" />
+                <stop offset="0.59" stop-color="#b562fe" />
+                <stop offset="1" stop-color="#423a7f" />
+            </linearGradient>
+            <linearGradient
+                id="linear-gradient-2"
+                x1="-591.43"
+                y1="913.55"
+                x2="-423.56"
+                y2="747.08"
+                gradientTransform="translate(-171.47 1317.28) rotate(179.19)"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-3"
+                x1="-559.05"
+                y1="1926.39"
+                x2="-391.18"
+                y2="1759.93"
+                gradientTransform="translate(-1527.67 -124.79) rotate(-90.81)"
+                xlink:href="#linear-gradient"
+            />
+            <linearGradient
+                id="linear-gradient-4"
+                x1="-62.68"
+                y1="2266.89"
+                x2="105.19"
+                y2="2100.42"
+                gradientTransform="translate(423.54 -1861.96) rotate(-0.81)"
+                xlink:href="#linear-gradient"
+            />
+        </defs>
+        <path
+            id="0"
+            class="cls-1"
+            d="M619.93,400.24v-.8l-220.39.93.92,220.39h.8C522.54,620.25,620.44,521.52,619.93,400.24Z"
+            transform="translate(-173.07 -172.58)"
+        />
+        <path
+            id="1"
+            class="cls-2"
+            d="M402.35,621.9l.79,0L400,401.52l-220.36,3.13v.79C181.37,526.71,281.08,623.62,402.35,621.9Z"
+            transform="translate(-173.07 -172.58)"
+        />
+        <path
+            class="cls-3"
+            id="2"
+            d="M180,402.25c0,.27,0,.53,0,.79l220.37-3.13-3.13-220.37h-.8C275.17,181.27,178.26,281,180,402.25Z"
+            transform="translate(-173.07 -172.58)"
+        />
+        <path
+            class="cls-4"
+            id="3"
+            d="M397.65,179.1l-.79,0L400,399.48l220.36-3.13v-.79C618.63,274.29,518.92,177.38,397.65,179.1Z"
+            transform="translate(-173.07 -172.58)"
+        />
+    </svg>
+

@@ -4,11 +4,7 @@
             We do not have permission to send
             {{ amount ? amount : 'that much' }} Tsuno on your behalf.
         </h4>
-        <Button
-            title="Grant Permission"
-            @clicked="submit"
-            buttonStyle="primary"
-        ></Button>
+        <Button title="Grant Permission" @clicked="submit" buttonStyle="primary"></Button>
     </form>
 </template>
 
@@ -26,22 +22,17 @@ import Button from '@/components/generics/Button.vue';
         };
     },
     methods: {
-        ...mapActions([
-            'setAllowance',
-            'increaseAllowance',
-            'setError',
-            'closeModal'
-        ]),
+        ...mapActions(['setAllowance', 'increaseAllowance', 'setError', 'closeModal']),
         submit: async function() {
-            if (!this.formSubmitted) {
-                this.formSubmitted = true;
+            if (!this.$data.formSubmitted) {
+                this.$data.formSubmitted = true;
                 try {
-                    await this.setAllowance(this.amount);
+                    await this.$action.setAllowance(this.amount);
                     await this.closeModal();
-                    this.formSubmitted = false;
+                    this.$data.formSubmitted = false;
                 } catch {
                     err => this.setError(err);
-                    this.formSubmitted = false;
+                    this.$data.formSubmitted = false;
                 }
             }
         }

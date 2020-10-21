@@ -7,4 +7,5 @@ export const getters: GetterTree<UserInterfaceManager, RootState> = {
     ShowModal: state => state.modal.show,
     RecentError: state => state.error,
     UIM_getSuccessMessage: state => state.success.msg,
+    UIM_getLocalStarPosition: state => state.localStarPosition
 };

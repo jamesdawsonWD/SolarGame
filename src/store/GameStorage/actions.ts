@@ -1,8 +1,8 @@
+import { RootState, GameStorageOperations, StarPosition } from './../types';
 import { ActionTree, ActionContext } from 'vuex';
-import { RootState, GameStorage, StarPosition } from '../types';
 import BN from 'bignumber.js';
-export const actions: ActionTree<GameStorage, RootState> = {
-    getCurrentStarPosition(context: ActionContext<GameStorage, RootState>) {
+export const actions: ActionTree<GameStorageOperations, RootState> = {
+    GS_retrieveCurrentStarPosition(context: ActionContext<GameStorageOperations, RootState>) {
         const { GameStorage, Address } = context.getters;
         GameStorage.methods
             .getMasterFleetPosition(Address)
@@ -10,32 +10,47 @@ export const actions: ActionTree<GameStorage, RootState> = {
             .then((pos: StarPosition) => context.commit('SET_CURRENT_STAR_POSITION', pos))
             .catch((err: Error) => context.dispatch('setError', err));
     },
-    getProxyAddressToTokenId(context: ActionContext<GameStorage, RootState>, address: string) {
+    GS_retrieveProxyAddressToTokenId(
+        context: ActionContext<GameStorageOperations, RootState>,
+        address: string
+    ) {
         const { GameStorage, Address } = context.getters;
         GameStorage.methods
             .getProxyAddressToTokenId(address)
             .call({ from: Address })
-            .then((tokenId: number) => context.commit('SET_PLANET_TO_TOKEN_ID', { address, tokenId }))
+            .then((tokenId: number) =>
+                context.commit('SET_PLANET_TO_TOKEN_ID', { address, tokenId })
+            )
             .catch((err: Error) => context.dispatch('setError', err));
     },
-    getTokenIdToProxyAddress(context: ActionContext<GameStorage, RootState>, tokenId: number) {
+    GS_retrieveTokenIdToProxyAddress(
+        context: ActionContext<GameStorageOperations, RootState>,
+        tokenId: number
+    ) {
         const { GameStorage, Address } = context.getters;
         GameStorage.methods
             .getTokenIdToProxyAddress(tokenId)
             .call({ from: Address })
-            .then((address: string) => context.commit('SET_TOKEN_ID_TO_PLANET', { tokenId, address }))
+            .then((address: string) =>
+                context.commit('SET_TOKEN_ID_TO_PLANET', { tokenId, address })
+            )
             .catch((err: Error) => context.dispatch('setError', err));
     },
-    getStarSystemType(context: ActionContext<GameStorage, RootState>, pos: StarPosition) {
+    GS_retrieveStarSystemType(
+        context: ActionContext<GameStorageOperations, RootState>,
+        pos: StarPosition
+    ) {
         const { GameStorage, Address } = context.getters;
         const posP = [pos.quadrant, pos.sector, pos.district, pos.star];
         GameStorage.methods
             .getStarSystemType(posP)
             .call({ from: Address })
-            .then((type: any) => context.commit('SET_STAR_POSITION_TYPE', { pos, type }))
+            .then((type: any) => {
+                context.commit('SET_STAR_POSITION_TYPE', { pos, type });
+            })
             .catch((err: Error) => context.dispatch('setError', err));
     },
-    batchGetSatInfo(context: ActionContext<GameStorage, RootState>, ids: number[]) {
+    GS_batchGetSatInfo(context: ActionContext<GameStorageOperations, RootState>, ids: number[]) {
         const { GameStorage, Address } = context.getters;
         GameStorage.methods
             .batchGetSatInfo(ids)
@@ -43,4 +58,20 @@ export const actions: ActionTree<GameStorage, RootState> = {
             .then((info: any) => context.commit('SET_ALL_SAT_INFO', { info }))
             .catch((err: Error) => context.dispatch('setError', err));
     },
+    GS_retrieveBoundaries(context: ActionContext<GameStorageOperations, RootState>) {
+        const { GameStorage, Address } = context.getters;
+        console.log(GameStorage);
+        GameStorage.methods
+            .getBoundaries()
+            .call({ from: Address })
+            .then((boundaries: any) =>
+                context.commit('SET_BOUNDARIES', {
+                    quadrant: boundaries.quadrant,
+                    sector: boundaries.sector,
+                    district: boundaries.district,
+                    star: boundaries.star
+                })
+            )
+            .catch((err: Error) => context.dispatch('setError', err));
+    }
 };

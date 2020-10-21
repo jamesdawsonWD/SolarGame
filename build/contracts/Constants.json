@@ -3081,7 +3081,7 @@
                         "referencedDeclaration": 56,
                         "src": "4067:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -3092,7 +3092,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5903,
+                      "referencedDeclaration": 5865,
                       "src": "4067:17:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3143,7 +3143,7 @@
                         "referencedDeclaration": 56,
                         "src": "4110:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -3154,7 +3154,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5905,
+                      "referencedDeclaration": 5867,
                       "src": "4110:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3205,7 +3205,7 @@
                         "referencedDeclaration": 58,
                         "src": "4155:16:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -3216,7 +3216,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5903,
+                      "referencedDeclaration": 5865,
                       "src": "4155:20:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3267,7 +3267,7 @@
                         "referencedDeclaration": 58,
                         "src": "4204:16:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -3278,7 +3278,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5905,
+                      "referencedDeclaration": 5867,
                       "src": "4204:21:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3329,7 +3329,7 @@
                         "referencedDeclaration": 60,
                         "src": "4255:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -3340,7 +3340,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5903,
+                      "referencedDeclaration": 5865,
                       "src": "4255:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3391,7 +3391,7 @@
                         "referencedDeclaration": 60,
                         "src": "4300:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -3402,7 +3402,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5905,
+                      "referencedDeclaration": 5867,
                       "src": "4300:19:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3453,7 +3453,7 @@
                         "referencedDeclaration": 62,
                         "src": "4347:16:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -3464,7 +3464,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5903,
+                      "referencedDeclaration": 5865,
                       "src": "4347:20:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3515,7 +3515,7 @@
                         "referencedDeclaration": 62,
                         "src": "4396:16:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -3526,7 +3526,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5905,
+                      "referencedDeclaration": 5867,
                       "src": "4396:21:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3575,7 +3575,7 @@
                       "referencedDeclaration": 46,
                       "src": "4448:13:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Position_$5664_storage",
+                        "typeIdentifier": "t_struct$_Position_$5626_storage",
                         "typeString": "struct Types.Position storage ref"
                       }
                     },
@@ -3662,10 +3662,10 @@
                           "name": "Types",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6677,
+                          "referencedDeclaration": 6639,
                           "src": "4464:5:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                            "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                             "typeString": "type(library Types)"
                           }
                         },
@@ -3676,10 +3676,10 @@
                         "lValueRequested": false,
                         "memberName": "Position",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 5664,
+                        "referencedDeclaration": 5626,
                         "src": "4464:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_Position_$5664_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_Position_$5626_storage_ptr_$",
                           "typeString": "type(struct Types.Position storage pointer)"
                         }
                       },
@@ -3699,13 +3699,13 @@
                       "src": "4464:202:1",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Position_$5664_memory_ptr",
+                        "typeIdentifier": "t_struct$_Position_$5626_memory_ptr",
                         "typeString": "struct Types.Position memory"
                       }
                     },
                     "src": "4448:218:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Position_$5664_storage",
+                      "typeIdentifier": "t_struct$_Position_$5626_storage",
                       "typeString": "struct Types.Position storage ref"
                     }
                   },
@@ -3730,7 +3730,7 @@
                       "referencedDeclaration": 48,
                       "src": "4676:10:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Position_$5664_storage",
+                        "typeIdentifier": "t_struct$_Position_$5626_storage",
                         "typeString": "struct Types.Position storage ref"
                       }
                     },
@@ -3817,10 +3817,10 @@
                           "name": "Types",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6677,
+                          "referencedDeclaration": 6639,
                           "src": "4689:5:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                            "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                             "typeString": "type(library Types)"
                           }
                         },
@@ -3831,10 +3831,10 @@
                         "lValueRequested": false,
                         "memberName": "Position",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 5664,
+                        "referencedDeclaration": 5626,
                         "src": "4689:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_Position_$5664_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_Position_$5626_storage_ptr_$",
                           "typeString": "type(struct Types.Position storage pointer)"
                         }
                       },
@@ -3854,13 +3854,13 @@
                       "src": "4689:158:1",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Position_$5664_memory_ptr",
+                        "typeIdentifier": "t_struct$_Position_$5626_memory_ptr",
                         "typeString": "struct Types.Position memory"
                       }
                     },
                     "src": "4676:171:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Position_$5664_storage",
+                      "typeIdentifier": "t_struct$_Position_$5626_storage",
                       "typeString": "struct Types.Position storage ref"
                     }
                   },
@@ -3933,7 +3933,7 @@
                         "referencedDeclaration": 64,
                         "src": "4887:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RangeUint8_$5901_storage",
+                          "typeIdentifier": "t_struct$_RangeUint8_$5863_storage",
                           "typeString": "struct Types.RangeUint8 storage ref"
                         }
                       },
@@ -3944,7 +3944,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5898,
+                      "referencedDeclaration": 5860,
                       "src": "4887:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -3995,7 +3995,7 @@
                         "referencedDeclaration": 64,
                         "src": "4933:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RangeUint8_$5901_storage",
+                          "typeIdentifier": "t_struct$_RangeUint8_$5863_storage",
                           "typeString": "struct Types.RangeUint8 storage ref"
                         }
                       },
@@ -4006,7 +4006,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5900,
+                      "referencedDeclaration": 5862,
                       "src": "4933:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -4057,7 +4057,7 @@
                         "referencedDeclaration": 66,
                         "src": "4981:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RangeUint8_$5901_storage",
+                          "typeIdentifier": "t_struct$_RangeUint8_$5863_storage",
                           "typeString": "struct Types.RangeUint8 storage ref"
                         }
                       },
@@ -4068,7 +4068,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5898,
+                      "referencedDeclaration": 5860,
                       "src": "4981:17:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -4119,7 +4119,7 @@
                         "referencedDeclaration": 66,
                         "src": "5038:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RangeUint8_$5901_storage",
+                          "typeIdentifier": "t_struct$_RangeUint8_$5863_storage",
                           "typeString": "struct Types.RangeUint8 storage ref"
                         }
                       },
@@ -4130,7 +4130,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5900,
+                      "referencedDeclaration": 5862,
                       "src": "5038:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -4181,7 +4181,7 @@
                         "referencedDeclaration": 68,
                         "src": "5097:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RangeUint8_$5901_storage",
+                          "typeIdentifier": "t_struct$_RangeUint8_$5863_storage",
                           "typeString": "struct Types.RangeUint8 storage ref"
                         }
                       },
@@ -4192,7 +4192,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5898,
+                      "referencedDeclaration": 5860,
                       "src": "5097:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -4243,7 +4243,7 @@
                         "referencedDeclaration": 68,
                         "src": "5145:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RangeUint8_$5901_storage",
+                          "typeIdentifier": "t_struct$_RangeUint8_$5863_storage",
                           "typeString": "struct Types.RangeUint8 storage ref"
                         }
                       },
@@ -4254,7 +4254,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5900,
+                      "referencedDeclaration": 5862,
                       "src": "5145:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -4349,7 +4349,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_SatStats_$5896_memory_ptr_$17_memory_ptr",
+                        "typeIdentifier": "t_array$_t_struct$_SatStats_$5858_memory_ptr_$17_memory_ptr",
                         "typeString": "struct Types.SatStats[17]"
                       },
                       "typeName": {
@@ -4358,10 +4358,10 @@
                           "id": 403,
                           "name": "Types.SatStats",
                           "nodeType": "UserDefinedTypeName",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "5233:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_SatStats_$5896_storage_ptr",
+                            "typeIdentifier": "t_struct$_SatStats_$5858_storage_ptr",
                             "typeString": "struct Types.SatStats"
                           }
                         },
@@ -4387,7 +4387,7 @@
                         "nodeType": "ArrayTypeName",
                         "src": "5233:18:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_SatStats_$5896_storage_$17_storage_ptr",
+                          "typeIdentifier": "t_array$_t_struct$_SatStats_$5858_storage_$17_storage_ptr",
                           "typeString": "struct Types.SatStats[17]"
                         }
                       },
@@ -4446,10 +4446,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "5281:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -4460,10 +4460,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "5281:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -4481,7 +4481,7 @@
                         "src": "5281:148:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -4532,10 +4532,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "5443:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -4546,10 +4546,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "5443:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -4567,7 +4567,7 @@
                         "src": "5443:136:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -4618,10 +4618,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "5593:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -4632,10 +4632,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "5593:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -4653,7 +4653,7 @@
                         "src": "5593:140:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -4704,10 +4704,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "5747:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -4718,10 +4718,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "5747:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -4739,7 +4739,7 @@
                         "src": "5747:148:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -4790,10 +4790,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "5909:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -4804,10 +4804,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "5909:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -4825,7 +4825,7 @@
                         "src": "5909:138:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -4876,10 +4876,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6061:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -4890,10 +4890,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6061:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -4911,7 +4911,7 @@
                         "src": "6061:80:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -4962,10 +4962,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6155:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -4976,10 +4976,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6155:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -4997,7 +4997,7 @@
                         "src": "6155:84:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -5048,10 +5048,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6253:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -5062,10 +5062,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6253:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -5083,7 +5083,7 @@
                         "src": "6253:138:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -5134,10 +5134,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6405:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -5148,10 +5148,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6405:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -5169,7 +5169,7 @@
                         "src": "6405:154:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -5220,10 +5220,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6573:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -5234,10 +5234,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6573:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -5255,7 +5255,7 @@
                         "src": "6573:142:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -5306,10 +5306,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6729:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -5320,10 +5320,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6729:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -5341,7 +5341,7 @@
                         "src": "6729:146:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -5392,10 +5392,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6889:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -5406,10 +5406,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6889:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -5427,7 +5427,7 @@
                         "src": "6889:154:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -5478,10 +5478,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "7057:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -5492,10 +5492,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "7057:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -5513,7 +5513,7 @@
                         "src": "7057:142:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -5564,10 +5564,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "7213:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -5578,10 +5578,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "7213:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -5599,7 +5599,7 @@
                         "src": "7213:84:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -5650,10 +5650,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "7311:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -5664,10 +5664,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "7311:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -5685,7 +5685,7 @@
                         "src": "7311:134:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -5736,10 +5736,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "7459:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -5750,10 +5750,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "7459:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -5771,7 +5771,7 @@
                         "src": "7459:142:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -5822,10 +5822,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "7615:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -5836,10 +5836,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "7615:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -5857,7 +5857,7 @@
                         "src": "7615:76:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       }
@@ -5871,7 +5871,7 @@
                     "nodeType": "TupleExpression",
                     "src": "5267:2434:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_SatStats_$5896_memory_ptr_$17_memory_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_SatStats_$5858_memory_ptr_$17_memory_ptr",
                       "typeString": "struct Types.SatStats memory[17] memory"
                     }
                   },
@@ -5903,7 +5903,7 @@
                               "referencedDeclaration": 24,
                               "src": "7768:12:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_SatStats_$5896_storage_$",
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_SatStats_$5858_storage_$",
                                 "typeString": "mapping(uint256 => struct Types.SatStats storage ref)"
                               }
                             },
@@ -5928,7 +5928,7 @@
                             "nodeType": "IndexAccess",
                             "src": "7768:15:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_SatStats_$5896_storage",
+                              "typeIdentifier": "t_struct$_SatStats_$5858_storage",
                               "typeString": "struct Types.SatStats storage ref"
                             }
                           },
@@ -5945,7 +5945,7 @@
                               "referencedDeclaration": 405,
                               "src": "7786:5:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_SatStats_$5896_memory_ptr_$17_memory_ptr",
+                                "typeIdentifier": "t_array$_t_struct$_SatStats_$5858_memory_ptr_$17_memory_ptr",
                                 "typeString": "struct Types.SatStats memory[17] memory"
                               }
                             },
@@ -5970,13 +5970,13 @@
                             "nodeType": "IndexAccess",
                             "src": "7786:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                              "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                               "typeString": "struct Types.SatStats memory"
                             }
                           },
                           "src": "7768:26:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_SatStats_$5896_storage",
+                            "typeIdentifier": "t_struct$_SatStats_$5858_storage",
                             "typeString": "struct Types.SatStats storage ref"
                           }
                         },
@@ -6023,7 +6023,7 @@
                         "referencedDeclaration": 405,
                         "src": "7735:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_SatStats_$5896_memory_ptr_$17_memory_ptr",
+                          "typeIdentifier": "t_array$_t_struct$_SatStats_$5858_memory_ptr_$17_memory_ptr",
                           "typeString": "struct Types.SatStats memory[17] memory"
                         }
                       },
@@ -9241,7 +9241,7 @@
                         "referencedDeclaration": 56,
                         "src": "4067:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -9252,7 +9252,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5903,
+                      "referencedDeclaration": 5865,
                       "src": "4067:17:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -9303,7 +9303,7 @@
                         "referencedDeclaration": 56,
                         "src": "4110:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -9314,7 +9314,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5905,
+                      "referencedDeclaration": 5867,
                       "src": "4110:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -9365,7 +9365,7 @@
                         "referencedDeclaration": 58,
                         "src": "4155:16:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -9376,7 +9376,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5903,
+                      "referencedDeclaration": 5865,
                       "src": "4155:20:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -9427,7 +9427,7 @@
                         "referencedDeclaration": 58,
                         "src": "4204:16:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -9438,7 +9438,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5905,
+                      "referencedDeclaration": 5867,
                       "src": "4204:21:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -9489,7 +9489,7 @@
                         "referencedDeclaration": 60,
                         "src": "4255:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -9500,7 +9500,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5903,
+                      "referencedDeclaration": 5865,
                       "src": "4255:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -9551,7 +9551,7 @@
                         "referencedDeclaration": 60,
                         "src": "4300:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -9562,7 +9562,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5905,
+                      "referencedDeclaration": 5867,
                       "src": "4300:19:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -9613,7 +9613,7 @@
                         "referencedDeclaration": 62,
                         "src": "4347:16:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -9624,7 +9624,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5903,
+                      "referencedDeclaration": 5865,
                       "src": "4347:20:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -9675,7 +9675,7 @@
                         "referencedDeclaration": 62,
                         "src": "4396:16:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Range_$5906_storage",
+                          "typeIdentifier": "t_struct$_Range_$5868_storage",
                           "typeString": "struct Types.Range storage ref"
                         }
                       },
@@ -9686,7 +9686,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5905,
+                      "referencedDeclaration": 5867,
                       "src": "4396:21:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -9735,7 +9735,7 @@
                       "referencedDeclaration": 46,
                       "src": "4448:13:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Position_$5664_storage",
+                        "typeIdentifier": "t_struct$_Position_$5626_storage",
                         "typeString": "struct Types.Position storage ref"
                       }
                     },
@@ -9822,10 +9822,10 @@
                           "name": "Types",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6677,
+                          "referencedDeclaration": 6639,
                           "src": "4464:5:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                            "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                             "typeString": "type(library Types)"
                           }
                         },
@@ -9836,10 +9836,10 @@
                         "lValueRequested": false,
                         "memberName": "Position",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 5664,
+                        "referencedDeclaration": 5626,
                         "src": "4464:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_Position_$5664_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_Position_$5626_storage_ptr_$",
                           "typeString": "type(struct Types.Position storage pointer)"
                         }
                       },
@@ -9859,13 +9859,13 @@
                       "src": "4464:202:1",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Position_$5664_memory_ptr",
+                        "typeIdentifier": "t_struct$_Position_$5626_memory_ptr",
                         "typeString": "struct Types.Position memory"
                       }
                     },
                     "src": "4448:218:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Position_$5664_storage",
+                      "typeIdentifier": "t_struct$_Position_$5626_storage",
                       "typeString": "struct Types.Position storage ref"
                     }
                   },
@@ -9890,7 +9890,7 @@
                       "referencedDeclaration": 48,
                       "src": "4676:10:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Position_$5664_storage",
+                        "typeIdentifier": "t_struct$_Position_$5626_storage",
                         "typeString": "struct Types.Position storage ref"
                       }
                     },
@@ -9977,10 +9977,10 @@
                           "name": "Types",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6677,
+                          "referencedDeclaration": 6639,
                           "src": "4689:5:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                            "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                             "typeString": "type(library Types)"
                           }
                         },
@@ -9991,10 +9991,10 @@
                         "lValueRequested": false,
                         "memberName": "Position",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 5664,
+                        "referencedDeclaration": 5626,
                         "src": "4689:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_Position_$5664_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_Position_$5626_storage_ptr_$",
                           "typeString": "type(struct Types.Position storage pointer)"
                         }
                       },
@@ -10014,13 +10014,13 @@
                       "src": "4689:158:1",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Position_$5664_memory_ptr",
+                        "typeIdentifier": "t_struct$_Position_$5626_memory_ptr",
                         "typeString": "struct Types.Position memory"
                       }
                     },
                     "src": "4676:171:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Position_$5664_storage",
+                      "typeIdentifier": "t_struct$_Position_$5626_storage",
                       "typeString": "struct Types.Position storage ref"
                     }
                   },
@@ -10093,7 +10093,7 @@
                         "referencedDeclaration": 64,
                         "src": "4887:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RangeUint8_$5901_storage",
+                          "typeIdentifier": "t_struct$_RangeUint8_$5863_storage",
                           "typeString": "struct Types.RangeUint8 storage ref"
                         }
                       },
@@ -10104,7 +10104,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5898,
+                      "referencedDeclaration": 5860,
                       "src": "4887:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -10155,7 +10155,7 @@
                         "referencedDeclaration": 64,
                         "src": "4933:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RangeUint8_$5901_storage",
+                          "typeIdentifier": "t_struct$_RangeUint8_$5863_storage",
                           "typeString": "struct Types.RangeUint8 storage ref"
                         }
                       },
@@ -10166,7 +10166,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5900,
+                      "referencedDeclaration": 5862,
                       "src": "4933:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -10217,7 +10217,7 @@
                         "referencedDeclaration": 66,
                         "src": "4981:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RangeUint8_$5901_storage",
+                          "typeIdentifier": "t_struct$_RangeUint8_$5863_storage",
                           "typeString": "struct Types.RangeUint8 storage ref"
                         }
                       },
@@ -10228,7 +10228,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5898,
+                      "referencedDeclaration": 5860,
                       "src": "4981:17:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -10279,7 +10279,7 @@
                         "referencedDeclaration": 66,
                         "src": "5038:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RangeUint8_$5901_storage",
+                          "typeIdentifier": "t_struct$_RangeUint8_$5863_storage",
                           "typeString": "struct Types.RangeUint8 storage ref"
                         }
                       },
@@ -10290,7 +10290,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5900,
+                      "referencedDeclaration": 5862,
                       "src": "5038:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -10341,7 +10341,7 @@
                         "referencedDeclaration": 68,
                         "src": "5097:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RangeUint8_$5901_storage",
+                          "typeIdentifier": "t_struct$_RangeUint8_$5863_storage",
                           "typeString": "struct Types.RangeUint8 storage ref"
                         }
                       },
@@ -10352,7 +10352,7 @@
                       "lValueRequested": true,
                       "memberName": "low",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5898,
+                      "referencedDeclaration": 5860,
                       "src": "5097:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -10403,7 +10403,7 @@
                         "referencedDeclaration": 68,
                         "src": "5145:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RangeUint8_$5901_storage",
+                          "typeIdentifier": "t_struct$_RangeUint8_$5863_storage",
                           "typeString": "struct Types.RangeUint8 storage ref"
                         }
                       },
@@ -10414,7 +10414,7 @@
                       "lValueRequested": true,
                       "memberName": "high",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5900,
+                      "referencedDeclaration": 5862,
                       "src": "5145:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -10509,7 +10509,7 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_SatStats_$5896_memory_ptr_$17_memory_ptr",
+                        "typeIdentifier": "t_array$_t_struct$_SatStats_$5858_memory_ptr_$17_memory_ptr",
                         "typeString": "struct Types.SatStats[17]"
                       },
                       "typeName": {
@@ -10518,10 +10518,10 @@
                           "id": 403,
                           "name": "Types.SatStats",
                           "nodeType": "UserDefinedTypeName",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "5233:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_SatStats_$5896_storage_ptr",
+                            "typeIdentifier": "t_struct$_SatStats_$5858_storage_ptr",
                             "typeString": "struct Types.SatStats"
                           }
                         },
@@ -10547,7 +10547,7 @@
                         "nodeType": "ArrayTypeName",
                         "src": "5233:18:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_SatStats_$5896_storage_$17_storage_ptr",
+                          "typeIdentifier": "t_array$_t_struct$_SatStats_$5858_storage_$17_storage_ptr",
                           "typeString": "struct Types.SatStats[17]"
                         }
                       },
@@ -10606,10 +10606,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "5281:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -10620,10 +10620,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "5281:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -10641,7 +10641,7 @@
                         "src": "5281:148:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -10692,10 +10692,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "5443:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -10706,10 +10706,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "5443:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -10727,7 +10727,7 @@
                         "src": "5443:136:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -10778,10 +10778,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "5593:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -10792,10 +10792,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "5593:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -10813,7 +10813,7 @@
                         "src": "5593:140:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -10864,10 +10864,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "5747:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -10878,10 +10878,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "5747:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -10899,7 +10899,7 @@
                         "src": "5747:148:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -10950,10 +10950,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "5909:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -10964,10 +10964,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "5909:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -10985,7 +10985,7 @@
                         "src": "5909:138:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -11036,10 +11036,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6061:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -11050,10 +11050,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6061:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -11071,7 +11071,7 @@
                         "src": "6061:80:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -11122,10 +11122,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6155:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -11136,10 +11136,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6155:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -11157,7 +11157,7 @@
                         "src": "6155:84:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -11208,10 +11208,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6253:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -11222,10 +11222,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6253:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -11243,7 +11243,7 @@
                         "src": "6253:138:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -11294,10 +11294,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6405:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -11308,10 +11308,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6405:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -11329,7 +11329,7 @@
                         "src": "6405:154:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -11380,10 +11380,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6573:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -11394,10 +11394,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6573:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -11415,7 +11415,7 @@
                         "src": "6573:142:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -11466,10 +11466,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6729:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -11480,10 +11480,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6729:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -11501,7 +11501,7 @@
                         "src": "6729:146:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -11552,10 +11552,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "6889:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -11566,10 +11566,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "6889:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -11587,7 +11587,7 @@
                         "src": "6889:154:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -11638,10 +11638,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "7057:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -11652,10 +11652,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "7057:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -11673,7 +11673,7 @@
                         "src": "7057:142:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -11724,10 +11724,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "7213:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -11738,10 +11738,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "7213:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -11759,7 +11759,7 @@
                         "src": "7213:84:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -11810,10 +11810,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "7311:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -11824,10 +11824,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "7311:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -11845,7 +11845,7 @@
                         "src": "7311:134:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -11896,10 +11896,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "7459:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -11910,10 +11910,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "7459:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -11931,7 +11931,7 @@
                         "src": "7459:142:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       },
@@ -11982,10 +11982,10 @@
                             "name": "Types",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6677,
+                            "referencedDeclaration": 6639,
                             "src": "7615:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Types_$6677_$",
+                              "typeIdentifier": "t_type$_t_contract$_Types_$6639_$",
                               "typeString": "type(library Types)"
                             }
                           },
@@ -11996,10 +11996,10 @@
                           "lValueRequested": false,
                           "memberName": "SatStats",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 5896,
+                          "referencedDeclaration": 5858,
                           "src": "7615:14:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5896_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_SatStats_$5858_storage_ptr_$",
                             "typeString": "type(struct Types.SatStats storage pointer)"
                           }
                         },
@@ -12017,7 +12017,7 @@
                         "src": "7615:76:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                          "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                           "typeString": "struct Types.SatStats memory"
                         }
                       }
@@ -12031,7 +12031,7 @@
                     "nodeType": "TupleExpression",
                     "src": "5267:2434:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_SatStats_$5896_memory_ptr_$17_memory_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_SatStats_$5858_memory_ptr_$17_memory_ptr",
                       "typeString": "struct Types.SatStats memory[17] memory"
                     }
                   },
@@ -12063,7 +12063,7 @@
                               "referencedDeclaration": 24,
                               "src": "7768:12:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_SatStats_$5896_storage_$",
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_SatStats_$5858_storage_$",
                                 "typeString": "mapping(uint256 => struct Types.SatStats storage ref)"
                               }
                             },
@@ -12088,7 +12088,7 @@
                             "nodeType": "IndexAccess",
                             "src": "7768:15:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_SatStats_$5896_storage",
+                              "typeIdentifier": "t_struct$_SatStats_$5858_storage",
                               "typeString": "struct Types.SatStats storage ref"
                             }
                           },
@@ -12105,7 +12105,7 @@
                               "referencedDeclaration": 405,
                               "src": "7786:5:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_SatStats_$5896_memory_ptr_$17_memory_ptr",
+                                "typeIdentifier": "t_array$_t_struct$_SatStats_$5858_memory_ptr_$17_memory_ptr",
                                 "typeString": "struct Types.SatStats memory[17] memory"
                               }
                             },
@@ -12130,13 +12130,13 @@
                             "nodeType": "IndexAccess",
                             "src": "7786:8:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_SatStats_$5896_memory_ptr",
+                              "typeIdentifier": "t_struct$_SatStats_$5858_memory_ptr",
                               "typeString": "struct Types.SatStats memory"
                             }
                           },
                           "src": "7768:26:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_SatStats_$5896_storage",
+                            "typeIdentifier": "t_struct$_SatStats_$5858_storage",
                             "typeString": "struct Types.SatStats storage ref"
                           }
                         },
@@ -12183,7 +12183,7 @@
                         "referencedDeclaration": 405,
                         "src": "7735:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_SatStats_$5896_memory_ptr_$17_memory_ptr",
+                          "typeIdentifier": "t_array$_t_struct$_SatStats_$5858_memory_ptr_$17_memory_ptr",
                           "typeString": "struct Types.SatStats memory[17] memory"
                         }
                       },
@@ -12343,7 +12343,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-20T10:06:53.986Z",
+  "updatedAt": "2020-10-20T18:48:06.246Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

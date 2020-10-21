@@ -1,3 +1,4 @@
+import { StarPosition } from './types';
 export interface RootState {
     version: string;
 }
@@ -16,7 +17,7 @@ export interface Network {
         gameStorage: any;
         treasury: any;
         planets: { [key: string]: any };
-    }
+    };
     ethReady: boolean;
     userAddress: string;
     sentTransactions: {};
@@ -39,23 +40,24 @@ export interface Sat {
 }
 
 export interface SatsInfo {
-    [key: number]: SatInfo
+    [key: number]: SatInfo;
 }
 export interface StarInfo {
     systemType: number;
 }
-export interface GameStorage {
+export interface GameStorageOperations {
     currentStarLocation: StarPosition | null;
-    satsInfo: SatsInfo,
+    satsInfo: SatsInfo;
+    starsInfo: {
+        [key: string]: StarInfo;
+    };
     planetsToTokenId: {
         [key: string]: number;
-    },
+    };
     tokenIdToPlanet: {
         [key: number]: string;
-    },
-    starsInfo: {
-        [key: string]: StarInfo
-    }
+    };
+    boundaries: StarPosition;
 }
 
 export interface StarPosition {
@@ -64,12 +66,8 @@ export interface StarPosition {
     district: number;
     star: number;
 }
-export interface GameOperations {
-
-}
-export interface TreasuryOperations {
-
-}
+export interface GameOperations { }
+export interface TreasuryOperations { }
 export interface SolarOperations {
     balance: number;
 }
@@ -81,10 +79,9 @@ export interface PlanetInfo {
     dateLocked: Date;
     tokenId: number;
     minHold: number;
-
 }
 export interface Planets {
-    [key: string]: PlanetInfo
+    [key: string]: PlanetInfo;
 }
 
 export interface FhrOperations {
@@ -95,7 +92,7 @@ export interface FhrOperations {
 export interface SatOperations {
     balances: {
         [key: number]: number;
-    },
+    };
     treasuryApproved: boolean;
 }
 export interface Deposit {
@@ -109,7 +106,8 @@ export interface UserInterfaceManager {
     error: Error;
     success: {
         msg: string;
-    }
+    };
+    localStarPosition: StarPosition;
 }
 
 export interface Modal {

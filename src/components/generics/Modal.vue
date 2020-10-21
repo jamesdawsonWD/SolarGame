@@ -10,15 +10,12 @@
                     </div>
 
                     <div class="modal-body">
-                        <AllowanceForm
-                            :amount="Modal.data.amount"
-                        ></AllowanceForm>
+                        <AllowanceForm :amount="Modal.data.amount"></AllowanceForm>
                     </div>
 
                     <div class="modal-footer">
                         <slot name="footer">
-                            <Button title="Close" @clicked="$emit('close')">
-                            </Button>
+                            <Button title="Close" @clicked="$emit('close')"> </Button>
                         </slot>
                     </div>
                 </div>

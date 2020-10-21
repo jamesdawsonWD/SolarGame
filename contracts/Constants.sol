@@ -32,7 +32,7 @@ contract Constants is BaseStorage {
     uint8 constant MAX_QUADRANT = 4;
     uint8 constant MAX_DISTRICT = 8;
     uint8 constant MAX_SECTOR = 21;
-    uint256 constant MAX_STAR = 10000;
+    uint256 constant MAX_STAR = 1000;
 
     // Starting Position for all new addresses
     uint8 constant START_POSITION_QUADRANT = 1;

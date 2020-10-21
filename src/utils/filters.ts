@@ -1,9 +1,6 @@
 import Vue from 'vue';
 import BN from 'bignumber.js';
-Vue.filter('decimalsPrecision', function (
-    value: BN | number | string,
-    precision: number
-) {
+Vue.filter('decimalsPrecision', function (value: BN | number | string, precision: number) {
     if (!value) {
         return '';
     }
@@ -15,6 +12,12 @@ Vue.filter('toFixed', function (value: BN | number | string, fixed: number) {
         return '';
     }
     return new BN(value).toFixed(fixed);
+});
+Vue.filter('increment', function (value: number, amount: number) {
+    if (!value) {
+        return '';
+    }
+    return value + amount;
 });
 
 Vue.filter('removeHyphens', function (value: string) {

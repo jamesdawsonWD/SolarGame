@@ -11,7 +11,8 @@ new Vue({
 }).$mount('#app');
 
 import '@/utils/filters';
-
+import * as Utils from '@/utils';
+Object.defineProperty(Vue.prototype, '$utils', { value: Utils });
 declare global {
     interface Window {
         ethereum: any;
