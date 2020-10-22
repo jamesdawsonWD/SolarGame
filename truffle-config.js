@@ -20,14 +20,15 @@
 
 // Importing babel to be able to use ES6 imports
 require('@babel/standalone');
+require('@babel/register');
+require('@babel/polyfill');
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const MNEMONIC = process.env.MNEMONIC;
 const INFURA_KEY = process.env.INFURA_KEY;
 
 const needsInfura =
     process.env.npm_config_argv &&
-    (process.env.npm_config_argv.includes('rinkeby') ||
-        process.env.npm_config_argv.includes('live'));
+    (process.env.npm_config_argv.includes('rinkeby') || process.env.npm_config_argv.includes('live'));
 
 if ((!MNEMONIC || !INFURA_KEY) && needsInfura) {
     console.error('Please set a mnemonic and infura key.');

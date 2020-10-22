@@ -1,4 +1,5 @@
 import { StarPosition } from './types';
+import { TransactionReceipt, Log, EventLog } from 'web3/types';
 export interface RootState {
     version: string;
 }
@@ -45,6 +46,7 @@ export interface SatsInfo {
 export interface StarInfo {
     systemType: number;
 }
+
 export interface GameStorageOperations {
     currentStarLocation: StarPosition | null;
     satsInfo: SatsInfo;
@@ -54,8 +56,8 @@ export interface GameStorageOperations {
     planetsToTokenId: {
         [key: string]: number;
     };
-    tokenIdToPlanet: {
-        [key: number]: string;
+    tokenIdToYield: {
+        [key: number]: number;
     };
     boundaries: StarPosition;
 }
@@ -90,9 +92,7 @@ export interface FhrOperations {
 }
 
 export interface SatOperations {
-    balances: {
-        [key: number]: number;
-    };
+    balances: number[];
     treasuryApproved: boolean;
 }
 export interface Deposit {
@@ -108,12 +108,51 @@ export interface UserInterfaceManager {
         msg: string;
     };
     localStarPosition: StarPosition;
+    planetDiscoveredMessage: string;
+    planetDiscoveredHeader: string;
 }
 
 export interface Modal {
     show: boolean;
     content: string;
-    data: {
+    data?: {
         [key: string]: string | boolean | number;
     };
+}
+export type Address = string;
+
+export interface TxResult {
+    transactionHash?: string;
+    transactionIndex?: number;
+    blockHash?: string;
+    blockNumber?: number;
+    from?: string;
+    to?: string;
+    contractAddress?: string;
+    cumulativeGasUsed?: number;
+    gasUsed?: number;
+    logs?: any[];
+    events?: {
+        [eventName: string]: EventLog;
+    };
+    nonce?: number; // non-standard field, returned only through dYdX Sender service
+    status?: boolean;
+    confirmation?: Promise<TransactionReceipt>;
+    gasEstimate?: number;
+    gas?: number;
+}
+
+export interface EventLog {
+    address?: Address;
+    blockHash?: Address;
+    blockNumber?: number;
+    event?: string;
+    id?: string;
+    logIndex?: number;
+    raw?: any;
+    returnValues?: any;
+    signature?: Address;
+    transactionHash?: Address;
+    transactionIndex?: number;
+    type?: string;
 }

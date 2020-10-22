@@ -20,7 +20,9 @@ export const state: UserInterfaceManager = {
         sector: 0,
         district: 0,
         star: 0
-    }
+    },
+    planetDiscoveredMessage: '',
+    planetDiscoveredHeader: ''
 };
 
 import { getters } from './getters';

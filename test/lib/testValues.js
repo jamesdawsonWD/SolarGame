@@ -122,182 +122,129 @@ const ALL_SHIPS = {
     43: 5
 };
 
+FEDERATION_DESTROYER,
+    FEDERATION_FIGHTER_PLANE,
+    ALIEN_MASTER_VESSEL,
+    ALIEN_CRUISER,
+    ALIEN_FIGHTER_PLANE,
+    ADVANCED_RACE_MASTER_VESSEL,
+    ADVANCED_RACE_CRUISER,
+    ADVANCED_RACE_DESTROYER,
+    ADVANCED_RACE_FIGHTER_PLANE,
+    ANCIENT_MASTER_VESSEL,
+    ANCIENT_CRUISER,
+    ANCIENT_DESTROYER,
+    ANCIENT_FIGHTER_PLANE,
+    PIRATE_SHIP,
+    PIRATE_WEAPON;
 const SHIP_INFO = {
     0: {
+        viewName: 'Federation Master Vessel',
+        name: 'FEDERATION_MASTER_VESSEL',
         offense: 9,
         defense: 9
     },
     1: {
+        viewName: 'Federation Cruiser',
+        name: 'FEDERATION_CRUISER',
         offense: 10,
         defense: 10
     },
     2: {
+        viewName: 'Federation Destroyer',
+        name: 'FEDERATION_DESTROYER',
         offense: 15,
         defense: 15
     },
     3: {
+        viewName: 'Federation Fighter Plane',
+        name: 'FEDERATION_FIGHTER_PLANE',
         offense: 2,
         defense: 2
     },
     4: {
+        viewName: 'Alien Master Vessel',
+        name: 'ALIEN_MASTER_VESSEL',
         offense: 1,
         defense: 1
     },
     5: {
+        viewName: 'Alien Cruiser',
+        name: 'ALIEN_CRUISER',
         offense: 1,
         defense: 1
     },
     6: {
+        viewName: 'Alien Destroyer',
+        name: 'ALIEN_DESTROYER',
         offense: 1,
         defense: 1
     },
     7: {
+        viewName: 'Alien Fighter Plane',
+        name: 'ALIEN_FIGHTER_PLANE',
         offense: 2,
         defense: 2
     },
     8: {
+        viewName: 'Federation Cruiser',
+        name: 'ADVANCED_RACE_MASTER_VESSEL',
         offense: 1,
         defense: 1
     },
     9: {
+        viewName: 'Federation Cruiser',
+        name: 'ADVANCED_RACE_CRUISER',
         offense: 2,
         defense: 2
     },
     10: {
+        viewName: 'Federation Cruiser',
+        name: 'ADVANCED_RACE_DESTROYER',
         offense: 3,
         defense: 3
     },
     11: {
+        viewName: 'Federation Cruiser',
+        name: 'ADVANCED_RACE_FIGHTER_PLANE',
         offense: 12,
         defense: 12
     },
     12: {
+        viewName: 'Federation Cruiser',
+        name: 'ANCIENT_MASTER_VESSEL',
         offense: 13,
         defense: 13
     },
     13: {
+        viewName: 'Federation Cruiser',
+        name: 'ANCIENT_CRUISER',
         offense: 10,
         defense: 10
     },
     14: {
+        viewName: 'Federation Cruiser',
+        name: 'ANCIENT_DESTROYER',
         offense: 3,
         defense: 3
     },
     15: {
+        viewName: 'Federation Cruiser',
+        name: 'ANCIENT_FIGHTER_PLANE',
         offense: 1,
         defense: 1
     },
     16: {
+        viewName: 'Federation Cruiser',
+        name: 'PIRATE_SHIP',
         offense: 1,
         defense: 1
     },
     17: {
+        viewName: 'Federation Cruiser',
+        name: 'PIRATE_WEAPON',
         offense: 2,
         defense: 2
-    },
-    18: {
-        offense: 3,
-        defense: 3
-    },
-    19: {
-        offense: 2,
-        defense: 2
-    },
-    20: {
-        offense: 3,
-        defense: 3
-    },
-    21: {
-        offense: 4,
-        defense: 4
-    },
-    22: {
-        offense: 15,
-        defense: 15
-    },
-    23: {
-        offense: 15,
-        defense: 15
-    },
-    24: {
-        offense: 20,
-        defense: 20
-    },
-    25: {
-        offense: 5,
-        defense: 5
-    },
-    26: {
-        offense: 2,
-        defense: 2
-    },
-    27: {
-        offense: 2,
-        defense: 2
-    },
-    28: {
-        offense: 3,
-        defense: 3
-    },
-    29: {
-        offense: 4,
-        defense: 4
-    },
-    30: {
-        offense: 5,
-        defense: 5
-    },
-    31: {
-        offense: 6,
-        defense: 6
-    },
-    32: {
-        offense: 7,
-        defense: 7
-    },
-    33: {
-        offense: 20,
-        defense: 20
-    },
-    34: {
-        offense: 21,
-        defense: 21
-    },
-    35: {
-        offense: 30,
-        defense: 30
-    },
-    36: {
-        offense: 10,
-        defense: 10
-    },
-    37: {
-        offense: 5,
-        defense: 5
-    },
-    38: {
-        offense: 5,
-        defense: 5
-    },
-    39: {
-        offense: 6,
-        defense: 6
-    },
-    40: {
-        offense: 7,
-        defense: 7
-    },
-    41: {
-        offense: 8,
-        defense: 8
-    },
-    42: {
-        offense: 9,
-        defense: 9
-    },
-    43: {
-        offense: 10,
-        defense: 10
     }
 };
 

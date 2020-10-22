@@ -8,20 +8,14 @@
             <h3>Star: {{ starPosition.star }}</h3>
         </div>
         <div v-if="mapView == 'quadrant'" class="quadrant-map">
+            <Galaxy class="map galaxy-svg" />
             <Quadrants class="map quadrants" />
-            <QuadrantsHighlighted
-                v-on:click="quadrantSelected($event)"
-                class="map quadrants-highlights"
-            />
+            <QuadrantsHighlighted v-on:click="quadrantSelected($event)" class="map quadrants-highlights" />
         </div>
         <div v-if="mapView == 'sector'" class="map sector-map">
             <Hex20 class="sectors" v-on:click="sectorSelected($event)" />
         </div>
-        <div
-            v-if="mapView == 'district'"
-            v-on:click="districtSelected($event)"
-            class="map sector-map"
-        >
+        <div v-if="mapView == 'district'" v-on:click="districtSelected($event)" class="map sector-map">
             <Districts class="sectors" />
         </div>
         <div v-if="mapView == 'stars'" class="map star-map">
@@ -37,6 +31,7 @@ import { mapActions } from 'vuex';
 import { mapGetters } from 'vuex';
 import Quadrants from '@/assets/svg/quadrants.svg';
 import Stars from '@/assets/svg/stars.svg';
+import Galaxy from '@/assets/svg/galaxy.svg';
 import Districts from '@/assets/svg/districts.svg';
 import QuadrantsHighlighted from '@/assets/svg/quadrants-highlight.svg';
 import Hex20 from '@/assets/svg/20hex.svg';
@@ -51,7 +46,8 @@ export default {
         QuadrantsHighlighted,
         Hex20,
         Districts,
-        Stars
+        Stars,
+        Galaxy
         // DepositForm,
         // Modal,
         // Button
@@ -105,6 +101,7 @@ export default {
 .mapView {
     height: 90%;
     position: relative;
+    overflow: hidden;
 
     .coordinates {
         position: absolute;
@@ -112,7 +109,7 @@ export default {
         width: auto;
         margin: 20px;
         background: #000208;
-        color: #f7fff7;
+        color: var(--offset-white);
         border-radius: 20px;
         padding: 20px;
         display: flex;
@@ -129,15 +126,23 @@ export default {
         justify-content: center;
         align-items: center;
     }
+
+    & .galaxy-svg {
+        position: absolute;
+        height: 90%;
+        z-index: 0;
+    }
     & .quadrant-map {
         & .quadrants {
             position: absolute;
             height: 90%;
+            z-index: 1;
         }
 
         & .quadrants-highlights {
             position: absolute;
             height: 90%;
+            z-index: 2;
             & path {
                 visibility: hidden;
                 fill: none;

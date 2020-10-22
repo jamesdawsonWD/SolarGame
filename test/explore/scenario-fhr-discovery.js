@@ -7,33 +7,33 @@ export async function fhrDiscovery(account, systemType, amounts) {
     await testFhrDiscovery(systemType, account);
     const planetToken = await tokenOfOwnerByIndex(account, 0, account);
 
-    const planetProxy = await getTokenAddress(planetToken, account);
-    assert.ok(planetProxy != ADDRESS_ZERO);
+    // const planetProxy = await getTokenAddress(planetToken, account);
+    // assert.ok(planetProxy != ADDRESS_ZERO);
 
-    const planetYield = await getYield(planetProxy, account);
+    // const planetYield = await getYield(planetProxy, account);
 
-    let low;
-    let high;
+    // let low;
+    // let high;
 
-    switch (systemType) {
-        case SYSTEM_TYPES.HighYieldSystem:
-            low = YIELDS.HighYieldSystem.low;
-            high = YIELDS.HighYieldSystem.high;
-            break;
-        case SYSTEM_TYPES.LowYieldSystem:
-            low = YIELDS.LowYieldSystem.low;
-            high = YIELDS.LowYieldSystem.high;
-            break;
-        case SYSTEM_TYPES.MediumYieldSystem:
-            low = YIELDS.MediumYieldSystem.low;
-            high = YIELDS.MediumYieldSystem.high;
-            break;
-        case SYSTEM_TYPES.InsaneYieldSystem:
-            low = YIELDS.InsaneYieldSystem.low;
-            high = YIELDS.InsaneYieldSystem.high;
-            break;
-    }
-    assert.ok(planetYield >= low && planetYield <= high);
+    // switch (systemType) {
+    //     case SYSTEM_TYPES.HighYieldSystem:
+    //         low = YIELDS.HighYieldSystem.low;
+    //         high = YIELDS.HighYieldSystem.high;
+    //         break;
+    //     case SYSTEM_TYPES.LowYieldSystem:
+    //         low = YIELDS.LowYieldSystem.low;
+    //         high = YIELDS.LowYieldSystem.high;
+    //         break;
+    //     case SYSTEM_TYPES.MediumYieldSystem:
+    //         low = YIELDS.MediumYieldSystem.low;
+    //         high = YIELDS.MediumYieldSystem.high;
+    //         break;
+    //     case SYSTEM_TYPES.InsaneYieldSystem:
+    //         low = YIELDS.InsaneYieldSystem.low;
+    //         high = YIELDS.InsaneYieldSystem.high;
+    //         break;
+    // }
+    // assert.ok(planetYield >= low && planetYield <= high);
 
-    return planetProxy;
+    // return planetProxy;
 }

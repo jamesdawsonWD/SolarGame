@@ -1,0 +1,12 @@
+$main-white: #f7fff7;
+$offset-white: #ebebeb;
+$main-black: #141414;
+$background-color: #020c3d;
+
+:root {
+    // RIGHT, will work in all Sass versions.
+    --main-white: #{$main-white};
+    --offset-white: #{$offset-white};
+    --main-black: #{$main-black};
+    --background-color: #{$background-color};
+}

@@ -15,9 +15,11 @@ contract Random {
     event Random(uint256 random);
 
     function randomrange(uint256 a, uint256 b) internal returns (uint256 randomnumber) {
-        randomnumber = uint256(keccak256(abi.encodePacked(now, msg.sender, seed, nonce))) % b;
+        randomnumber = uint256(keccak256(abi.encodePacked(msg.sender, seed, nonce))) % b;
         randomnumber = randomnumber < a ? randomnumber + a : randomnumber;
         nonce++;
+        emit Random(randomnumber);
+
         return randomnumber;
     }
 

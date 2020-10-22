@@ -74,11 +74,7 @@ contract Discovery is Random {
             systemType = Types.SystemType.SolarWinds;
         } else if (roll > ONE_PERCENT * 35 && roll <= ONE_PERCENT * 40) {
             systemType = Types.SystemType.Asteroids;
-        } else if (roll > ONE_PERCENT * 40 && roll <= ONE_PERCENT * 47) {
-            systemType = Types.SystemType.Empty;
-        } else if (roll > ONE_PERCENT * 47 && roll <= ONE_PERCENT * 60) {
-            systemType = Types.SystemType.GovermentOwned;
-        } else if (roll > ONE_PERCENT * 60 && roll <= ONE_PERCENT * 65) {
+        } else if (roll > ONE_PERCENT * 40 && roll <= ONE_PERCENT * 65) {
             systemType = Types.SystemType.LowYieldSystem;
         } else if (roll > ONE_PERCENT * 65 && roll <= ONE_PERCENT * 70) {
             systemType = Types.SystemType.RandomEvent;

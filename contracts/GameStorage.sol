@@ -96,10 +96,7 @@ contract GameStorage is Random, Constants, Ownable {
         return totalFhr;
     }
 
-    function getStarSystemYieldRange(Types.SystemType systemType)
-        public
-        returns (uint256 low, uint256 high)
-    {
+    function getStarSystemYieldRange(Types.SystemType systemType) public returns (uint256 low, uint256 high) {
         if (systemType == Types.SystemType.LowYieldSystem) {
             low = lowYieldRange.low;
             high = lowYieldRange.high;
@@ -113,6 +110,14 @@ contract GameStorage is Random, Constants, Ownable {
             low = insaneYieldRange.low;
             high = insaneYieldRange.high;
         }
+    }
+
+    function setTokenIdToYield(uint256 tokenId, uint256 yield) public {
+        tokenIdToYield[tokenId] = yield;
+    }
+
+    function getTokenIdToYield(uint256 tokenId) public view returns (uint256) {
+        return tokenIdToYield[tokenId];
     }
 
     function setStarSystemType(Types.Position memory pos, Types.SystemType systemType) public {
@@ -131,10 +136,7 @@ contract GameStorage is Random, Constants, Ownable {
         return fleetToPosition[fleet];
     }
 
-    function getAiFleetInfo(Types.SystemType systemType)
-        public
-        returns (uint256 offense, uint256 defense)
-    {
+    function getAiFleetInfo(Types.SystemType systemType) public returns (uint256 offense, uint256 defense) {
         if (systemType == Types.SystemType.AlienFleetAggressive) {
             uint8 min = easyAiRange.low;
             uint8 max = easyAiRange.high;

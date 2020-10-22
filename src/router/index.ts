@@ -3,7 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router';
 import MapView from '../views/MapView.vue';
 import FleetManagerView from '../views/FleetManagerView.vue';
 import PlanetView from '../views/PlanetView.vue';
-import MarketView from '../views/PlanetView.vue';
+import MarketView from '../views/MarketView.vue';
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [

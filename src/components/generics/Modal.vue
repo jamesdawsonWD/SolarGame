@@ -5,12 +5,12 @@
                 <div class="modal-container">
                     <div class="modal-header">
                         <h2 name="header">
-                            {{ Modal.content | removeHyphens }}
+                            {{ Modal.content }}
                         </h2>
                     </div>
 
                     <div class="modal-body">
-                        <AllowanceForm :amount="Modal.data.amount"></AllowanceForm>
+                        <DeployPlanetModal :tokenId="Modal.data.tokenId"></DeployPlanetModal>
                     </div>
 
                     <div class="modal-footer">
@@ -28,13 +28,13 @@
 import { mapGetters } from 'vuex';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import DepositForm from '@/components/forms/DepositForm.vue';
-import AllowanceForm from '@/components/forms/AllowanceForm.vue';
+import DeployPlanetModal from '@/components/forms/DeployPlanetModal.vue';
 import Button from '@/components/generics/Button.vue';
 
 @Component({
     components: {
         DepositForm,
-        AllowanceForm,
+        DeployPlanetModal,
         Button
     },
     computed: {
@@ -58,6 +58,11 @@ export default class Modal extends Vue {
     background-color: rgba(0, 0, 0, 0.5);
     display: table;
     transition: opacity 0.3s ease;
+
+    h2,
+    h3 {
+        color: var(--main-black);
+    }
 }
 .modal-wrapper {
     display: table-cell;
@@ -68,21 +73,22 @@ export default class Modal extends Vue {
     width: 70%;
     margin: 0px auto;
     padding: 20px 30px;
-    background-color: #fff;
+    background-color: var(--main-white);
     border-radius: 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
     transition: all 0.3s ease;
+    border-radius: 25px;
     font-family: Helvetica, Arial, sans-serif;
 }
+
 .modal-header {
-    text-transform: capitalize;
-}
-.modal-header h3 {
-    margin-top: 0;
+    margin: 35px;
     color: #42b983;
 }
 .modal-body {
     margin: 20px 0;
+    display: flex;
+    justify-content: center;
 }
 .modal-default-button {
     float: right;

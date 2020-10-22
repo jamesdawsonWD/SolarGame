@@ -15,7 +15,9 @@ module.exports = {
                                 { removeComments: true },
                                 { cleanupIDs: false },
                                 { collapseGroups: false },
-                                { removeEmptyContainers: false }
+                                { removeEmptyContainers: false },
+                                { inlineStyles: true },
+                                { convertStyleToAttrs: true }
                             ]
                         }
                     }

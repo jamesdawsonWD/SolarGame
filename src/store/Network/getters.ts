@@ -12,5 +12,5 @@ export const getters: GetterTree<Network, RootState> = {
     Sat: state => state.contracts.sat,
     Treasury: state => state.contracts.treasury,
     GameStorage: state => state.contracts.gameStorage,
-    Planet: (state) => (planet: string) => state.contracts.planets[planet],
+    Planet: state => (planet: string) => state.contracts.planets[planet]
 };

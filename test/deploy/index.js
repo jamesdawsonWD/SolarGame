@@ -1,12 +1,11 @@
 import { takeSnapshot, revertSnapshot } from '../_utils/evm';
-import { getBool } from '../_helpers/eternalStorage';
-import { treasuryAddress } from '../_helpers/treasury';
-import truffleAssert from 'truffle-assertions';
-import { getTreasuryAddress, getSolarAccess } from '../_helpers/gameStorage';
+import { SYSTEM_TYPES } from '../lib/testValues';
+import { deployPlanet, testFhrDiscovery } from '../_helpers/gameOperations';
+import { tokenOfOwnerByIndex } from '../_helpers/fhr';
 export default function() {
     contract('Deploy', async accounts => {
         // Accounts
-        const [owner, UserA, UserB, UserC, UserD] = accounts;
+        const [Owner, UserA, UserB, UserC, UserD] = accounts;
 
         // State snapshotting
         let snapshotId;
@@ -17,10 +16,10 @@ export default function() {
             await revertSnapshot(web3, snapshotId);
         });
 
-        it('should get the bool for treasury solar access', async () => {
-            const treasury = await treasuryAddress();
-            const solarAccess = await getSolarAccess(treasury, UserA);
-            assert.equal(solarAccess, true);
+        it('should deploy a planet', async () => {
+            await testFhrDiscovery(SYSTEM_TYPES.HighYieldSystem, Owner);
+            const planetToken = await tokenOfOwnerByIndex(Owner, 0, Owner);
+            await deployPlanet(planetToken, Owner);
         });
     });
 }

@@ -50,3 +50,10 @@ export async function testFhrDiscovery(systemType, from) {
         from
     });
 }
+
+export async function deployPlanet(tokenId, from) {
+    const GameOperations = await GameOperationsC.deployed();
+    await GameOperations.deployPlanet(tokenId, {
+        from
+    });
+}

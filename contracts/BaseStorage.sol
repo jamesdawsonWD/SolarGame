@@ -6,6 +6,7 @@ contract BaseStorage {
     mapping(uint256 => address) internal stakedTokenToOwner;
     mapping(address => uint256) internal proxyAddressToTokenId;
     mapping(uint256 => address) internal tokenIdToProxyAddress;
+    mapping(uint256 => uint256) internal tokenIdToYield;
     mapping(address => Types.Position) internal fleetToPosition;
     mapping(uint256 => Types.SatStats) internal idToSatStats;
     mapping(uint256 => mapping(uint256 => mapping(uint256 => mapping(uint256 => Types.SystemType))))

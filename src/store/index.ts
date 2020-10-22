@@ -6,6 +6,7 @@ import { fhrOperations } from './FhrOperations';
 import { gameStorage } from './GameStorage';
 import { gameOperations } from './GameOperation';
 import { solarOperations } from './SolarOperations';
+import { satOperations } from './SatOperations';
 import { treasuryOperations } from './Treasury';
 import { userInterfaceManager } from './UserInterfaceManager';
 Vue.use(Vuex);
@@ -23,6 +24,7 @@ export default new Vuex.Store({
         gameStorage,
         gameOperations,
         solarOperations,
+        satOperations,
         treasuryOperations,
         userInterfaceManager
     },

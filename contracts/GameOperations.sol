@@ -59,6 +59,11 @@ contract GameOperations is Initializable, Discovery {
     GameStorage GS;
     ITreasury TS;
 
+    modifier onlyTokenHolder(uint256 tokenId) {
+        require(fhr.ownerOf(tokenId) == msg.sender, 'Sender not owner');
+        _;
+    }
+
     function initialize(address _gameStorage) public initializer {
         GS = GameStorage(_gameStorage);
         TS = ITreasury(GS.getTreasuryAddress());
@@ -156,10 +161,7 @@ contract GameOperations is Initializable, Discovery {
 
     function attack(address defender, uint8 turns) public {
         require(defender != msg.sender, 'You cannot attack yourself');
-        require(
-            defender != address(0) && msg.sender != address(0),
-            'Addresses must exist must exist'
-        );
+        require(defender != address(0) && msg.sender != address(0), 'Addresses must exist must exist');
         AttackInfo memory info;
 
         info.attackerPos = GS.getMasterFleetPosition(msg.sender);
@@ -181,20 +183,11 @@ contract GameOperations is Initializable, Discovery {
             info.d_offense,
             info.d_defense
         );
-        bool result = battle(
-            info.a_offense,
-            info.a_defense,
-            info.d_offense,
-            info.d_defense,
-            true,
-            turns
-        );
+        bool result = battle(info.a_offense, info.a_defense, info.d_offense, info.d_defense, true, turns);
 
         if (result) {
             for (uint256 i = 0; i < info.a_balances.length; i++) {
-                info.a_balances[i] = info.a_balances[i] > 0
-                    ? info.a_balances[i].mul(20).div(100)
-                    : 0; // 20% of attackers fleet is lost in a successful attack
+                info.a_balances[i] = info.a_balances[i] > 0 ? info.a_balances[i].mul(20).div(100) : 0; // 20% of attackers fleet is lost in a successful attack
             }
             TS.recieveSats(msg.sender, info.a_ids, info.a_balances);
 
@@ -203,9 +196,7 @@ contract GameOperations is Initializable, Discovery {
                 // 70% of defenders fleet is lost in a successful attack
                 uint256 losses = info.d_balances[i].mul(70).div(100);
                 info.d_balances[i] = info.d_balances[i] > 0 ? losses : 0;
-                info.d_retreated[i] = info.d_balances[i] > losses
-                    ? info.d_balances[i].sub(losses)
-                    : 0;
+                info.d_retreated[i] = info.d_balances[i] > losses ? info.d_balances[i].sub(losses) : 0;
             }
 
             uint256 _tokenId = GS.getProxyAddressToTokenId(defender);
@@ -219,9 +210,7 @@ contract GameOperations is Initializable, Discovery {
             TS.recieveSats(defender, info.d_ids, info.d_balances);
         } else {
             for (uint256 i = 0; i < info.a_balances.length; i++) {
-                info.a_balances[i] = info.a_balances[i] > 0
-                    ? info.a_balances[i].mul(90).div(100)
-                    : 0; // 20% of attackers fleet is lost in a successful attack
+                info.a_balances[i] = info.a_balances[i] > 0 ? info.a_balances[i].mul(90).div(100) : 0; // 20% of attackers fleet is lost in a successful attack
             }
             TS.recieveSats(msg.sender, info.a_ids, info.a_balances);
 
@@ -230,13 +219,29 @@ contract GameOperations is Initializable, Discovery {
                 // 70% of defenders fleet is lost in a successful attack
                 uint256 losses = info.d_balances[i].mul(10).div(100);
                 info.d_balances[i] = info.d_balances[i] > 0 ? losses : 0;
-                info.d_retreated[i] = info.d_balances[i] > losses
-                    ? info.d_balances[i].sub(losses)
-                    : 0;
+                info.d_retreated[i] = info.d_balances[i] > losses ? info.d_balances[i].sub(losses) : 0;
             }
 
             TS.recieveSats(defender, info.d_ids, info.d_balances);
         }
+    }
+
+    function deployPlanet(uint256 tokenId) public onlyTokenHolder(tokenId) {
+        uint256 yield = GS.getTokenIdToYield(tokenId);
+        address _address = pm.createPlanet(
+            tokenId,
+            abi.encodeWithSignature(
+                'initialize(address,address,address,address,uint256,uint256)',
+                address(pm),
+                address(solar),
+                address(fhr),
+                address(sats),
+                tokenId,
+                yield
+            )
+        );
+        GS.setTokenIdToProxyAddress(tokenId, _address);
+        GS.setProxyAddressToTokenId(tokenId, _address);
     }
 
     function explore(Types.Position memory star) internal {
@@ -260,14 +265,7 @@ contract GameOperations is Initializable, Discovery {
                 uint256[] memory d_ids
             ) = calculateStats(msg.sender);
 
-            emit BattleStarted(
-                msg.sender,
-                a_offense,
-                a_defense,
-                address(this),
-                d_offense,
-                d_defense
-            );
+            emit BattleStarted(msg.sender, a_offense, a_defense, address(this), d_offense, d_defense);
             bool result = battle(a_offense, a_defense, d_offense, d_defense, true, 10);
         } else if (
             systemType == Types.SystemType.LowYieldSystem ||
@@ -276,24 +274,9 @@ contract GameOperations is Initializable, Discovery {
             systemType == Types.SystemType.InsaneYieldSystem
         ) {
             (uint256 low, uint256 high) = GS.getStarSystemYieldRange(systemType);
-            uint256 yield = randomrange(low, high);
             uint256 _id = GS.incrementTotalFhr();
+            GS.setTokenIdToYield(_id, randomrange(low, high));
             TS.mintFhr(msg.sender, _id);
-            address _address = pm.createPlanet(
-                _id,
-                abi.encodeWithSignature(
-                    'initialize(address,address,address,address,uint256,uint256)',
-                    address(pm),
-                    address(solar),
-                    address(fhr),
-                    address(sats),
-                    yield,
-                    _id
-                )
-            );
-            GS.setMasterFleetPosition(_address, star);
-            GS.setTokenIdToProxyAddress(_id, _address);
-            GS.setProxyAddressToTokenId(_id, _address);
         } else if (systemType == Types.SystemType.ShipWreck) {
             uint256 multiplier = rand.mod(2) == 0 ? 2 : 1;
             Types.SatInfo memory ship = Discovery.singleAllNonAncientShips();

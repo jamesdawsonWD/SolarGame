@@ -652,15 +652,15 @@
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/testing/TestSolar.sol",
     "exportedSymbols": {
       "TestSolar": [
-        6932
+        6952
       ]
     },
-    "id": 6933,
+    "id": 6953,
     "license": null,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6904,
+        "id": 6924,
         "literals": [
           "solidity",
           "0.6",
@@ -670,7 +670,7 @@
         "src": "0:23:23"
       },
       {
-        "id": 6905,
+        "id": 6925,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -681,16 +681,16 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/SolarToken.sol",
         "file": "../SolarToken.sol",
-        "id": 6907,
+        "id": 6927,
         "nodeType": "ImportDirective",
-        "scope": 6933,
-        "sourceUnit": 5013,
+        "scope": 6953,
+        "sourceUnit": 5033,
         "src": "59:45:23",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 6906,
+              "id": 6926,
               "name": "SolarToken",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -713,52 +713,52 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 6908,
+              "id": 6928,
               "name": "SolarToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5012,
+              "referencedDeclaration": 5032,
               "src": "159:10:23",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SolarToken_$5012",
+                "typeIdentifier": "t_contract$_SolarToken_$5032",
                 "typeString": "contract SolarToken"
               }
             },
-            "id": 6909,
+            "id": 6929,
             "nodeType": "InheritanceSpecifier",
             "src": "159:10:23"
           }
         ],
         "contractDependencies": [
-          5012,
-          7003,
-          7112,
-          9162,
-          9240
+          5032,
+          7023,
+          7132,
+          9182,
+          9260
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 6932,
+        "id": 6952,
         "linearizedBaseContracts": [
-          6932,
-          5012,
-          7112,
-          9162,
-          9240,
-          7003
+          6952,
+          5032,
+          7132,
+          9182,
+          9260,
+          7023
         ],
         "name": "TestSolar",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 6917,
+              "id": 6937,
               "nodeType": "Block",
               "src": "234:2:23",
               "statements": []
             },
             "documentation": null,
-            "id": 6918,
+            "id": 6938,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
@@ -766,11 +766,11 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 6914,
+                    "id": 6934,
                     "name": "treasury",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 6911,
+                    "referencedDeclaration": 6931,
                     "src": "224:8:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -778,17 +778,17 @@
                     }
                   }
                 ],
-                "id": 6915,
+                "id": 6935,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 6913,
+                  "id": 6933,
                   "name": "SolarToken",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 5012,
+                  "referencedDeclaration": 5032,
                   "src": "213:10:23",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_SolarToken_$5012_$",
+                    "typeIdentifier": "t_type$_t_contract$_SolarToken_$5032_$",
                     "typeString": "type(contract SolarToken)"
                   }
                 },
@@ -800,17 +800,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6912,
+              "id": 6932,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6911,
+                  "id": 6931,
                   "mutability": "mutable",
                   "name": "treasury",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6918,
+                  "scope": 6938,
                   "src": "188:16:23",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -819,7 +819,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6910,
+                    "id": 6930,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "188:7:23",
@@ -836,12 +836,12 @@
               "src": "187:18:23"
             },
             "returnParameters": {
-              "id": 6916,
+              "id": 6936,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "234:0:23"
             },
-            "scope": 6932,
+            "scope": 6952,
             "src": "176:60:23",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -849,7 +849,7 @@
           },
           {
             "body": {
-              "id": 6930,
+              "id": 6950,
               "nodeType": "Block",
               "src": "297:36:23",
               "statements": [
@@ -859,11 +859,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 6926,
+                        "id": 6946,
                         "name": "_to",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6920,
+                        "referencedDeclaration": 6940,
                         "src": "313:3:23",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -872,11 +872,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 6927,
+                        "id": 6947,
                         "name": "_amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6922,
+                        "referencedDeclaration": 6942,
                         "src": "318:7:23",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -895,18 +895,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 6925,
+                      "id": 6945,
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9038,
+                      "referencedDeclaration": 9058,
                       "src": "307:5:23",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256)"
                       }
                     },
-                    "id": 6928,
+                    "id": 6948,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -921,7 +921,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 6929,
+                  "id": 6949,
                   "nodeType": "ExpressionStatement",
                   "src": "307:19:23"
                 }
@@ -929,7 +929,7 @@
             },
             "documentation": null,
             "functionSelector": "f28e093d",
-            "id": 6931,
+            "id": 6951,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -937,17 +937,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6923,
+              "id": 6943,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6920,
+                  "id": 6940,
                   "mutability": "mutable",
                   "name": "_to",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6931,
+                  "scope": 6951,
                   "src": "260:11:23",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -956,7 +956,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6919,
+                    "id": 6939,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "260:7:23",
@@ -971,12 +971,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6922,
+                  "id": 6942,
                   "mutability": "mutable",
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6931,
+                  "scope": 6951,
                   "src": "273:15:23",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -985,7 +985,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6921,
+                    "id": 6941,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "273:7:23",
@@ -1001,19 +1001,19 @@
               "src": "259:30:23"
             },
             "returnParameters": {
-              "id": 6924,
+              "id": 6944,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "297:0:23"
             },
-            "scope": 6932,
+            "scope": 6952,
             "src": "242:91:23",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 6933,
+        "scope": 6953,
         "src": "137:198:23"
       }
     ],
@@ -1023,15 +1023,15 @@
     "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/testing/TestSolar.sol",
     "exportedSymbols": {
       "TestSolar": [
-        6932
+        6952
       ]
     },
-    "id": 6933,
+    "id": 6953,
     "license": null,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6904,
+        "id": 6924,
         "literals": [
           "solidity",
           "0.6",
@@ -1041,7 +1041,7 @@
         "src": "0:23:23"
       },
       {
-        "id": 6905,
+        "id": 6925,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -1052,16 +1052,16 @@
       {
         "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/SolarToken.sol",
         "file": "../SolarToken.sol",
-        "id": 6907,
+        "id": 6927,
         "nodeType": "ImportDirective",
-        "scope": 6933,
-        "sourceUnit": 5013,
+        "scope": 6953,
+        "sourceUnit": 5033,
         "src": "59:45:23",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 6906,
+              "id": 6926,
               "name": "SolarToken",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -1084,52 +1084,52 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 6908,
+              "id": 6928,
               "name": "SolarToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5012,
+              "referencedDeclaration": 5032,
               "src": "159:10:23",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SolarToken_$5012",
+                "typeIdentifier": "t_contract$_SolarToken_$5032",
                 "typeString": "contract SolarToken"
               }
             },
-            "id": 6909,
+            "id": 6929,
             "nodeType": "InheritanceSpecifier",
             "src": "159:10:23"
           }
         ],
         "contractDependencies": [
-          5012,
-          7003,
-          7112,
-          9162,
-          9240
+          5032,
+          7023,
+          7132,
+          9182,
+          9260
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 6932,
+        "id": 6952,
         "linearizedBaseContracts": [
-          6932,
-          5012,
-          7112,
-          9162,
-          9240,
-          7003
+          6952,
+          5032,
+          7132,
+          9182,
+          9260,
+          7023
         ],
         "name": "TestSolar",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 6917,
+              "id": 6937,
               "nodeType": "Block",
               "src": "234:2:23",
               "statements": []
             },
             "documentation": null,
-            "id": 6918,
+            "id": 6938,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
@@ -1137,11 +1137,11 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 6914,
+                    "id": 6934,
                     "name": "treasury",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 6911,
+                    "referencedDeclaration": 6931,
                     "src": "224:8:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1149,17 +1149,17 @@
                     }
                   }
                 ],
-                "id": 6915,
+                "id": 6935,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 6913,
+                  "id": 6933,
                   "name": "SolarToken",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 5012,
+                  "referencedDeclaration": 5032,
                   "src": "213:10:23",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_SolarToken_$5012_$",
+                    "typeIdentifier": "t_type$_t_contract$_SolarToken_$5032_$",
                     "typeString": "type(contract SolarToken)"
                   }
                 },
@@ -1171,17 +1171,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6912,
+              "id": 6932,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6911,
+                  "id": 6931,
                   "mutability": "mutable",
                   "name": "treasury",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6918,
+                  "scope": 6938,
                   "src": "188:16:23",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1190,7 +1190,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6910,
+                    "id": 6930,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "188:7:23",
@@ -1207,12 +1207,12 @@
               "src": "187:18:23"
             },
             "returnParameters": {
-              "id": 6916,
+              "id": 6936,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "234:0:23"
             },
-            "scope": 6932,
+            "scope": 6952,
             "src": "176:60:23",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1220,7 +1220,7 @@
           },
           {
             "body": {
-              "id": 6930,
+              "id": 6950,
               "nodeType": "Block",
               "src": "297:36:23",
               "statements": [
@@ -1230,11 +1230,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 6926,
+                        "id": 6946,
                         "name": "_to",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6920,
+                        "referencedDeclaration": 6940,
                         "src": "313:3:23",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1243,11 +1243,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 6927,
+                        "id": 6947,
                         "name": "_amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6922,
+                        "referencedDeclaration": 6942,
                         "src": "318:7:23",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1266,18 +1266,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 6925,
+                      "id": 6945,
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9038,
+                      "referencedDeclaration": 9058,
                       "src": "307:5:23",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256)"
                       }
                     },
-                    "id": 6928,
+                    "id": 6948,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1292,7 +1292,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 6929,
+                  "id": 6949,
                   "nodeType": "ExpressionStatement",
                   "src": "307:19:23"
                 }
@@ -1300,7 +1300,7 @@
             },
             "documentation": null,
             "functionSelector": "f28e093d",
-            "id": 6931,
+            "id": 6951,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1308,17 +1308,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6923,
+              "id": 6943,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6920,
+                  "id": 6940,
                   "mutability": "mutable",
                   "name": "_to",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6931,
+                  "scope": 6951,
                   "src": "260:11:23",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1327,7 +1327,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6919,
+                    "id": 6939,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "260:7:23",
@@ -1342,12 +1342,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6922,
+                  "id": 6942,
                   "mutability": "mutable",
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6931,
+                  "scope": 6951,
                   "src": "273:15:23",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1356,7 +1356,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6921,
+                    "id": 6941,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "273:7:23",
@@ -1372,19 +1372,19 @@
               "src": "259:30:23"
             },
             "returnParameters": {
-              "id": 6924,
+              "id": 6944,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "297:0:23"
             },
-            "scope": 6932,
+            "scope": 6952,
             "src": "242:91:23",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 6933,
+        "scope": 6953,
         "src": "137:198:23"
       }
     ],
@@ -1396,7 +1396,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-20T18:46:02.917Z",
+  "updatedAt": "2020-10-21T15:32:08.707Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

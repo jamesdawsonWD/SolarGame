@@ -5,7 +5,7 @@ export const state: GameStorageOperations = {
     currentStarLocation: null,
     satsInfo: {},
     planetsToTokenId: {},
-    tokenIdToPlanet: {},
+    tokenIdToYield: {},
     starsInfo: {},
     boundaries: {
         quadrant: 0,

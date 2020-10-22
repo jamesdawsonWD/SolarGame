@@ -10,6 +10,7 @@ new Vue({
     render: h => h(App)
 }).$mount('#app');
 
+import '@/styles/index.scss';
 import '@/utils/filters';
 import * as Utils from '@/utils';
 Object.defineProperty(Vue.prototype, '$utils', { value: Utils });
