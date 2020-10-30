@@ -40,12 +40,12 @@ contract Planet is ERC1155Holder, Initializable {
         pm = IPlanetManager(_planetManager);
     }
 
-    modifier onlyTokenHolder() {
-        require(fhr.ownerOf(tokenId) == msg.sender, 'Sender not owner');
-        _;
-    }
+    // modifier onlyTokenHolder() {
+    //     require(fhr.ownerOf(tokenId) == msg.sender, 'Sender not owner');
+    //     _;
+    // }
 
-    function depositSolar(uint256 amount) public onlyTokenHolder() {
+    function depositSolar(uint256 amount) public {
         if (staked > 0) {
             // calculate and pay interest so far if there is already solar deposited
         }
@@ -54,7 +54,7 @@ contract Planet is ERC1155Holder, Initializable {
         dateLocked = now;
     }
 
-    function withdrawSolar(uint256 amount) public onlyTokenHolder() {
+    function withdrawSolar(uint256 amount) public {
         require(amount <= staked, 'Amount greater than balance');
 
         uint256 held = now.sub(dateLocked);
@@ -68,17 +68,11 @@ contract Planet is ERC1155Holder, Initializable {
         if (staked.sub(amount) == 0) dateLocked = 0;
     }
 
-    function depositSats(uint256[] memory _ids, uint256[] memory _amounts)
-        public
-        onlyTokenHolder()
-    {
+    function depositSats(uint256[] memory _ids, uint256[] memory _amounts) public {
         sats.safeBatchTransferFrom(msg.sender, address(this), _ids, _amounts, '');
     }
 
-    function withdrawSats(uint256[] memory _ids, uint256[] memory _amounts)
-        public
-        onlyTokenHolder()
-    {
+    function withdrawSats(uint256[] memory _ids, uint256[] memory _amounts) public {
         sats.safeBatchTransferFrom(address(this), msg.sender, _ids, _amounts, '');
     }
 }

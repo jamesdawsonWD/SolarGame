@@ -1,8 +1,11 @@
 <template>
     <div id="app">
         <div id="nav">
-            <router-link to="/">Map</router-link> | <router-link to="/fleetManager">Fleet</router-link> |
-            <router-link to="/market">Market</router-link>
+            <Logo class="logo" />
+            <div>
+                <router-link to="/"><Map class="nav-icon"/></router-link>
+                <router-link to="/fleetManager"><Fleet class="nav-icon"/></router-link>
+            </div>
         </div>
         <router-view />
         <Modal v-if="ShowModal" @close="UIM_closeModal" />
@@ -11,6 +14,9 @@
 <script lang="ts">
 import { mapActions } from 'vuex';
 import { mapGetters } from 'vuex';
+import Logo from '@/assets/svg/logo.svg';
+import Map from '@/assets/svg/map-nav.svg';
+import Fleet from '@/assets/svg/fleet-nav.svg';
 import Modal from '@/components/generics/Modal.vue';
 // import Button from '@/components/generics/Button.vue';
 export default {
@@ -27,7 +33,10 @@ export default {
     },
     components: {
         // DepositForm,
-        Modal
+        Modal,
+        Logo,
+        Map,
+        Fleet
         // Button
     },
     methods: {
@@ -59,7 +68,30 @@ export default {
 }
 
 #nav {
-    padding: 30px;
+    padding: 15px;
+    height: 150px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+
+    div > * {
+        margin-right: 100px;
+
+        .nav-icon {
+            height: 100px;
+            transition: 0.5s;
+            &:hover {
+                transform: translateY(10px);
+            }
+        }
+    }
+    .logo {
+        margin-left: 90px;
+        top: 10px;
+        height: 100px;
+    }
     a {
         font-weight: bold;
         color: #2c3e50;

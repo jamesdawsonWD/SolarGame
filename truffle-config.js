@@ -20,12 +20,26 @@
 
 // Importing babel to be able to use ES6 imports
 require('@babel/standalone');
-require('@babel/register');
-require('@babel/polyfill');
+require('babel-register')({
+    presets: [
+        [
+            'env',
+            {
+                targets: {
+                    node: '8.0'
+                }
+            }
+        ]
+    ],
+    retainLines: true
+});
+require('babel-eslint');
+require('babel-polyfill');
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const MNEMONIC = process.env.MNEMONIC;
 const INFURA_KEY = process.env.INFURA_KEY;
 
+console.log(MNEMONIC);
 const needsInfura =
     process.env.npm_config_argv &&
     (process.env.npm_config_argv.includes('rinkeby') || process.env.npm_config_argv.includes('live'));
@@ -57,7 +71,12 @@ module.exports = {
             gas: 4600000,
             network_id: '*' // Match any network id
         },
-
+        matic: {
+            provider: function() {
+                return new HDWalletProvider(MNEMONIC, 'https://rpc-mumbai.matic.today');
+            },
+            network_id: '80001'
+        },
         rinkeby: {
             provider: function() {
                 return new HDWalletProvider(MNEMONIC, 'https://rinkeby.infura.io/v3/' + INFURA_KEY);

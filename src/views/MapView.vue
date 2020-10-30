@@ -99,7 +99,7 @@ export default {
 </script>
 <style lang="scss">
 .mapView {
-    height: 90%;
+    height: 85vh;
     position: relative;
     overflow: hidden;
 

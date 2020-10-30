@@ -10,10 +10,13 @@ export const actions: ActionTree<SolarOperations, RootState> = {
         const solar = await Solar.methods.balanceOf(payload.address).call();
         context.commit('SET_SOLAR_BALANCE', solar);
     },
-    async SOLAR_setAllowance(context: ActionContext<SolarOperations, RootState>, amount: number) {
+    async SOLAR_setAllowance(
+        context: ActionContext<SolarOperations, RootState>,
+        payload: { amount: number; address: string }
+    ) {
         const { Solar, Address, Treasury } = context.getters;
         await Solar.methods
-            .approve(Treasury._address, new BN(amount).multipliedBy(10 ** 18))
+            .approve(payload.address, new BN(payload.amount).multipliedBy(10 ** 18))
             .send({ from: Address });
     }
 };

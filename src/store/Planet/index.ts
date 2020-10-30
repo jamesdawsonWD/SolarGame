@@ -1,7 +1,10 @@
 import { RootState, Planets } from './../types';
 import { Module } from 'vuex';
 
-export const state: Planets = {};
+export const state: Planets = {
+    tokenIdToProxy: {},
+    planets: {}
+};
 
 import { getters } from './getters';
 import { actions } from './actions';

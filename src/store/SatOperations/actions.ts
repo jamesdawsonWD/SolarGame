@@ -13,7 +13,7 @@ export const actions: ActionTree<SatOperations, RootState> = {
             .call({ from: Address })
             .then((balances: number[]) => {
                 console.log(balances);
-                context.commit('SET_SAT_BALANCES', { balances });
+                context.commit('SET_SAT_BALANCES', { balances, address: payload.address });
             })
             .catch((err: Error) => context.dispatch('setError', err));
     },
@@ -25,7 +25,9 @@ export const actions: ActionTree<SatOperations, RootState> = {
         Sat.methods
             .balanceOf(payload.address, payload.id)
             .call({ from: Address })
-            .then((balance: number) => context.commit('SET_SAT_BALANCE', { balance, id: payload.id }))
+            .then((balance: number) =>
+                context.commit('SET_SAT_BALANCE', { balance, id: payload.id, address: payload.address })
+            )
             .catch((err: Error) => context.dispatch('setError', err));
     },
     SAT_getTreasuryApprovedForAllSats(context: ActionContext<SatOperations, RootState>) {
@@ -36,10 +38,10 @@ export const actions: ActionTree<SatOperations, RootState> = {
             .then((result: boolean) => context.commit('SET_TREASURY_APPROVED', result))
             .catch((err: Error) => context.dispatch('setError', err));
     },
-    SAT_setTreasuryApprovalForAllSats(context: ActionContext<SatOperations, RootState>) {
+    SAT_approvalForAllSats(context: ActionContext<SatOperations, RootState>, payload: { address: string }) {
         const { Sat, Address, Treasury } = context.getters;
         Sat.methods
-            .setApprovalForAll(Treasury._address, true)
+            .setApprovalForAll(payload.address, true)
             .send({ from: Address })
             .then(() => context.dispatch('setSuccessMessage', 'SAT: Treasury approval successful.'))
             .catch((err: Error) => context.dispatch('setError', err));

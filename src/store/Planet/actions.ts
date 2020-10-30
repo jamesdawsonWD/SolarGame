@@ -1,15 +1,19 @@
 import { ActionTree, ActionContext } from 'vuex';
 import { RootState, Planets } from './../types';
+import { SHIP_INFO } from '@/utils';
 export const actions: ActionTree<Planets, RootState> = {
-    depositSolar(context: ActionContext<Planets, RootState>, payload: { planet: string; amount: number }) {
+    PLANET_depositSolar(
+        context: ActionContext<Planets, RootState>,
+        payload: { planet: string; amount: number }
+    ) {
         const { Address, Planet } = context.getters;
         const ProxyPlanet = Planet(payload.planet);
         ProxyPlanet.methods
             .depositSolar(payload.amount)
-            .send({ from: Address })
+            .send({ from: Address, gas: 4000000 })
             .then(() =>
-                context.commit('ADD_PLANET_BALANCE', {
-                    amount: payload.amount,
+                context.commit('SET_STAKED', {
+                    staked: payload.amount,
                     planet: payload.planet
                 })
             )
@@ -29,7 +33,7 @@ export const actions: ActionTree<Planets, RootState> = {
             )
             .catch((err: Error) => context.dispatch('setError', err));
     },
-    depositSats(
+    PLANET_depositSats(
         context: ActionContext<Planets, RootState>,
         payload: { planet: string; ids: number[]; amounts: number[] }
     ) {
@@ -37,7 +41,7 @@ export const actions: ActionTree<Planets, RootState> = {
         const ProxyPlanet = Planet(payload.planet);
         ProxyPlanet.methods
             .depositSats(payload.ids, payload.amounts)
-            .send({ from: Address })
+            .send({ from: Address, gasPrice: 30000000 })
             .then(() =>
                 context.commit('ADD_PLANET_SATS', {
                     planet: payload.planet,
@@ -65,16 +69,21 @@ export const actions: ActionTree<Planets, RootState> = {
             )
             .catch((err: Error) => context.dispatch('setError', err));
     },
-    getPlanetYield(context: ActionContext<Planets, RootState>, payload: { planet: string }) {
+    async PLANET_retrievePlanetYield(
+        context: ActionContext<Planets, RootState>,
+        payload: { planet: string }
+    ) {
         const { Address, Planet } = context.getters;
         const ProxyPlanet = Planet(payload.planet);
         ProxyPlanet.methods
             .yield()
             .call({ from: Address })
-            .then((planetYield: number) =>
-                context.commit('SET_PLANET_YIELD', { planet: payload.planet, planetYield })
-            )
-            .catch((err: Error) => context.dispatch('setError', err));
+            .then((planetYield: number) => {
+                context.commit('SET_PLANET_YIELD', { planet: payload.planet, planetYield });
+            })
+            .catch((err: Error) => {
+                context.dispatch('setError', err);
+            });
     },
     getPlanetDateLocked(context: ActionContext<Planets, RootState>, payload: { planet: string }) {
         const { Address, Planet } = context.getters;
@@ -87,7 +96,36 @@ export const actions: ActionTree<Planets, RootState> = {
             )
             .catch((err: Error) => context.dispatch('setError', err));
     },
-    getPlanetMinHold(context: ActionContext<Planets, RootState>, payload: { planet: string }) {
+    PLANET_retrieveStaked(context: ActionContext<Planets, RootState>, payload: { planet: string }) {
+        const { Address, Planet } = context.getters;
+        const ProxyPlanet = Planet(payload.planet);
+        ProxyPlanet.methods
+            .staked()
+            .call({ from: Address })
+            .then((staked: number) => context.commit('SET_STAKED', { planet: payload.planet, staked }))
+            .catch((err: Error) => context.dispatch('setError', err));
+    },
+    PLANET_retrieveDetails(context: ActionContext<Planets, RootState>, payload: { planet: string }) {
+        const { Address, Planet } = context.getters;
+        const ProxyPlanet = Planet(payload.planet);
+        ProxyPlanet.methods
+            .dateLocked()
+            .call({ from: Address })
+            .then((dateLocked: number) =>
+                Promise.all([
+                    context.dispatch('PLANET_retrieveStaked', { planet: payload.planet }),
+                    context.dispatch('PLANET_retrieveMinHold', { planet: payload.planet }),
+                    context.dispatch('PLANET_dateLocked', { planet: payload.planet }),
+                    context.dispatch('PLANET_retrievePlanetYield', { planet: payload.planet }),
+                    context.dispatch('SAT_getSatBalanceOfBatch', {
+                        address: payload.planet,
+                        ids: Object.keys(SHIP_INFO)
+                    })
+                ])
+            )
+            .catch((err: Error) => context.dispatch('setError', err));
+    },
+    PLANET_retrieveMinHold(context: ActionContext<Planets, RootState>, payload: { planet: string }) {
         const { Address, Planet } = context.getters;
         const ProxyPlanet = Planet(payload.planet);
         ProxyPlanet.methods
@@ -107,15 +145,26 @@ export const actions: ActionTree<Planets, RootState> = {
             .then((tokenId: number) =>
                 context.commit('SET_PLANET_TOKEN_ID', { planet: payload.planet, tokenId })
             )
+            .then(() => Promise.resolve())
             .catch((err: Error) => context.dispatch('setError', err));
     },
-    getPlanetSats(context: ActionContext<Planets, RootState>, payload: { planet: string; ids: number[] }) {
+    async PLANET_retrievePlanetSats(
+        context: ActionContext<Planets, RootState>,
+        payload: { planet: string; ids: number[] }
+    ) {
         const { Sat, Address } = context.getters;
         const accounts = new Array(payload.ids.length).fill(payload.planet);
         Sat.methods
             .balanceOfBatch(payload.ids, accounts)
             .call({ from: Address })
-            .then((balances: number[]) => context.commit('SET_PLANET_SATS_BALANCES', balances))
+            .then(async (balances: number[]) => await context.commit('SET_PLANET_SATS_BALANCES', balances))
             .catch((err: Error) => context.dispatch('setError', err));
+    },
+
+    PLANET_setTokenIdToProxy(
+        context: ActionContext<Planets, RootState>,
+        payload: { proxy: string; tokenId: number }
+    ) {
+        context.commit('SET_TOKEN_ID_TO_PROXY', { proxy: payload.proxy, tokenId: payload.tokenId });
     }
 };

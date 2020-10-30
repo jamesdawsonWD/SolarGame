@@ -1,9 +1,9 @@
 {
   "contractName": "BaseStorage",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/BaseStorage.sol\":\"BaseStorage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/BaseStorage.sol\":{\"keccak256\":\"0xb79ebf89e3faef5ec00ecd9135572bf0227f6759f6cd9003b891ed73a9edac2d\",\"urls\":[\"bzz-raw://f9a669d69b443f2ef5f066078e0e3dd032606211b8c483ec9a292f4d9bccf451\",\"dweb:/ipfs/Qmc5ipSzXPb1ajaHwRCHCAubxR629bvdzcWTzZUQGvViCE\"]},\"/C/Users/James/projects/tsuno-fe/contracts/lib/Types.sol\":{\"keccak256\":\"0x3e450bcea49fee8fe02261a806bd85597109610c79f0beeadee0fccfb01f4227\",\"urls\":[\"bzz-raw://e1fd9a91606167614f9e7ba0030bf9ca6122f729beb843f815eeffc72a2ac854\",\"dweb:/ipfs/QmbqW2uxfq6Xfin2fEaJh7FM761DSs4kKkB4HGzvq4BKP8\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212201945a82618d4682a763b4e101340412306faa865a5e588db401e5aa0730a70ed64736f6c634300060c0033",
-  "deployedBytecode": "0x6080604052600080fdfea26469706673582212201945a82618d4682a763b4e101340412306faa865a5e588db401e5aa0730a70ed64736f6c634300060c0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/BaseStorage.sol\":\"BaseStorage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/BaseStorage.sol\":{\"keccak256\":\"0xb79ebf89e3faef5ec00ecd9135572bf0227f6759f6cd9003b891ed73a9edac2d\",\"urls\":[\"bzz-raw://f9a669d69b443f2ef5f066078e0e3dd032606211b8c483ec9a292f4d9bccf451\",\"dweb:/ipfs/Qmc5ipSzXPb1ajaHwRCHCAubxR629bvdzcWTzZUQGvViCE\"]},\"/C/Users/James/projects/tsuno-fe/contracts/lib/Types.sol\":{\"keccak256\":\"0x9676bdd6c5bfc035713dd0558e22e57c17967a8c307da45dde8152d9a262c1f5\",\"urls\":[\"bzz-raw://1c60078690d0173b9737e087e4ba327a266735f7b73af7bc6c0c01980be19bf6\",\"dweb:/ipfs/QmTA7yFhjFFZtMzMf2gH6QhXMrZi6GpNxCSRgZA6W2yv2s\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220e1856c338352e73f747b61c62d6199c3111d6fe7570402bde3c3a16bd408d9d364736f6c634300060c0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220e1856c338352e73f747b61c62d6199c3111d6fe7570402bde3c3a16bd408d9d364736f6c634300060c0033",
   "immutableReferences": {},
   "sourceMap": "98:1092:0:-:0;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "98:1092:0:-:0;;;;;",
@@ -45,7 +45,7 @@
         "id": 4,
         "nodeType": "ImportDirective",
         "scope": 76,
-        "sourceUnit": 6664,
+        "sourceUnit": 5972,
         "src": "58:38:0",
         "symbolAliases": [
           {
@@ -283,7 +283,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Position_$5650_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Position_$5456_storage_$",
               "typeString": "mapping(address => struct Types.Position)"
             },
             "typeName": {
@@ -301,7 +301,7 @@
               "nodeType": "Mapping",
               "src": "371:34:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Position_$5650_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Position_$5456_storage_$",
                 "typeString": "mapping(address => struct Types.Position)"
               },
               "valueType": {
@@ -309,10 +309,10 @@
                 "id": 22,
                 "name": "Types.Position",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 5650,
+                "referencedDeclaration": 5456,
                 "src": "390:14:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Position_$5650_storage_ptr",
+                  "typeIdentifier": "t_struct$_Position_$5456_storage_ptr",
                   "typeString": "struct Types.Position"
                 }
               }
@@ -332,7 +332,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_SatStats_$5882_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_SatStats_$5660_storage_$",
               "typeString": "mapping(uint256 => struct Types.SatStats)"
             },
             "typeName": {
@@ -350,7 +350,7 @@
               "nodeType": "Mapping",
               "src": "436:34:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_SatStats_$5882_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_SatStats_$5660_storage_$",
                 "typeString": "mapping(uint256 => struct Types.SatStats)"
               },
               "valueType": {
@@ -358,10 +358,10 @@
                 "id": 26,
                 "name": "Types.SatStats",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 5882,
+                "referencedDeclaration": 5660,
                 "src": "455:14:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_SatStats_$5882_storage_ptr",
+                  "typeIdentifier": "t_struct$_SatStats_$5660_storage_ptr",
                   "typeString": "struct Types.SatStats"
                 }
               }
@@ -381,7 +381,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5814_$_$_$_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5620_$_$_$_$",
               "typeString": "mapping(uint256 => mapping(uint256 => mapping(uint256 => mapping(uint256 => enum Types.SystemType))))"
             },
             "typeName": {
@@ -399,7 +399,7 @@
               "nodeType": "Mapping",
               "src": "498:96:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5814_$_$_$_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5620_$_$_$_$",
                 "typeString": "mapping(uint256 => mapping(uint256 => mapping(uint256 => mapping(uint256 => enum Types.SystemType))))"
               },
               "valueType": {
@@ -417,7 +417,7 @@
                 "nodeType": "Mapping",
                 "src": "517:76:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5814_$_$_$",
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5620_$_$_$",
                   "typeString": "mapping(uint256 => mapping(uint256 => mapping(uint256 => enum Types.SystemType)))"
                 },
                 "valueType": {
@@ -435,7 +435,7 @@
                   "nodeType": "Mapping",
                   "src": "536:56:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5814_$_$",
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5620_$_$",
                     "typeString": "mapping(uint256 => mapping(uint256 => enum Types.SystemType))"
                   },
                   "valueType": {
@@ -453,7 +453,7 @@
                     "nodeType": "Mapping",
                     "src": "555:36:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_mapping$_t_uint256_$_t_enum$_SystemType_$5814_$",
+                      "typeIdentifier": "t_mapping$_t_uint256_$_t_enum$_SystemType_$5620_$",
                       "typeString": "mapping(uint256 => enum Types.SystemType)"
                     },
                     "valueType": {
@@ -461,10 +461,10 @@
                       "id": 33,
                       "name": "Types.SystemType",
                       "nodeType": "UserDefinedTypeName",
-                      "referencedDeclaration": 5814,
+                      "referencedDeclaration": 5620,
                       "src": "574:16:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_SystemType_$5814",
+                        "typeIdentifier": "t_enum$_SystemType_$5620",
                         "typeString": "enum Types.SystemType"
                       }
                     }
@@ -632,7 +632,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Position_$5650_storage",
+              "typeIdentifier": "t_struct$_Position_$5456_storage",
               "typeString": "struct Types.Position"
             },
             "typeName": {
@@ -640,10 +640,10 @@
               "id": 49,
               "name": "Types.Position",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5650,
+              "referencedDeclaration": 5456,
               "src": "787:14:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Position_$5650_storage_ptr",
+                "typeIdentifier": "t_struct$_Position_$5456_storage_ptr",
                 "typeString": "struct Types.Position"
               }
             },
@@ -662,7 +662,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Position_$5650_storage",
+              "typeIdentifier": "t_struct$_Position_$5456_storage",
               "typeString": "struct Types.Position"
             },
             "typeName": {
@@ -670,10 +670,10 @@
               "id": 51,
               "name": "Types.Position",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5650,
+              "referencedDeclaration": 5456,
               "src": "821:14:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Position_$5650_storage_ptr",
+                "typeIdentifier": "t_struct$_Position_$5456_storage_ptr",
                 "typeString": "struct Types.Position"
               }
             },
@@ -776,7 +776,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Range_$5892_storage",
+              "typeIdentifier": "t_struct$_Range_$5670_storage",
               "typeString": "struct Types.Range"
             },
             "typeName": {
@@ -784,10 +784,10 @@
               "id": 59,
               "name": "Types.Range",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5892,
+              "referencedDeclaration": 5670,
               "src": "921:11:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Range_$5892_storage_ptr",
+                "typeIdentifier": "t_struct$_Range_$5670_storage_ptr",
                 "typeString": "struct Types.Range"
               }
             },
@@ -806,7 +806,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Range_$5892_storage",
+              "typeIdentifier": "t_struct$_Range_$5670_storage",
               "typeString": "struct Types.Range"
             },
             "typeName": {
@@ -814,10 +814,10 @@
               "id": 61,
               "name": "Types.Range",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5892,
+              "referencedDeclaration": 5670,
               "src": "952:11:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Range_$5892_storage_ptr",
+                "typeIdentifier": "t_struct$_Range_$5670_storage_ptr",
                 "typeString": "struct Types.Range"
               }
             },
@@ -836,7 +836,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Range_$5892_storage",
+              "typeIdentifier": "t_struct$_Range_$5670_storage",
               "typeString": "struct Types.Range"
             },
             "typeName": {
@@ -844,10 +844,10 @@
               "id": 63,
               "name": "Types.Range",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5892,
+              "referencedDeclaration": 5670,
               "src": "986:11:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Range_$5892_storage_ptr",
+                "typeIdentifier": "t_struct$_Range_$5670_storage_ptr",
                 "typeString": "struct Types.Range"
               }
             },
@@ -866,7 +866,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Range_$5892_storage",
+              "typeIdentifier": "t_struct$_Range_$5670_storage",
               "typeString": "struct Types.Range"
             },
             "typeName": {
@@ -874,10 +874,10 @@
               "id": 65,
               "name": "Types.Range",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5892,
+              "referencedDeclaration": 5670,
               "src": "1018:11:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Range_$5892_storage_ptr",
+                "typeIdentifier": "t_struct$_Range_$5670_storage_ptr",
                 "typeString": "struct Types.Range"
               }
             },
@@ -896,7 +896,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_RangeUint8_$5887_storage",
+              "typeIdentifier": "t_struct$_RangeUint8_$5665_storage",
               "typeString": "struct Types.RangeUint8"
             },
             "typeName": {
@@ -904,10 +904,10 @@
               "id": 67,
               "name": "Types.RangeUint8",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5887,
+              "referencedDeclaration": 5665,
               "src": "1053:16:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_RangeUint8_$5887_storage_ptr",
+                "typeIdentifier": "t_struct$_RangeUint8_$5665_storage_ptr",
                 "typeString": "struct Types.RangeUint8"
               }
             },
@@ -926,7 +926,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_RangeUint8_$5887_storage",
+              "typeIdentifier": "t_struct$_RangeUint8_$5665_storage",
               "typeString": "struct Types.RangeUint8"
             },
             "typeName": {
@@ -934,10 +934,10 @@
               "id": 69,
               "name": "Types.RangeUint8",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5887,
+              "referencedDeclaration": 5665,
               "src": "1087:16:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_RangeUint8_$5887_storage_ptr",
+                "typeIdentifier": "t_struct$_RangeUint8_$5665_storage_ptr",
                 "typeString": "struct Types.RangeUint8"
               }
             },
@@ -956,7 +956,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_RangeUint8_$5887_storage",
+              "typeIdentifier": "t_struct$_RangeUint8_$5665_storage",
               "typeString": "struct Types.RangeUint8"
             },
             "typeName": {
@@ -964,10 +964,10 @@
               "id": 71,
               "name": "Types.RangeUint8",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5887,
+              "referencedDeclaration": 5665,
               "src": "1123:16:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_RangeUint8_$5887_storage_ptr",
+                "typeIdentifier": "t_struct$_RangeUint8_$5665_storage_ptr",
                 "typeString": "struct Types.RangeUint8"
               }
             },
@@ -986,7 +986,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_RangeUint8_$5887_storage",
+              "typeIdentifier": "t_struct$_RangeUint8_$5665_storage",
               "typeString": "struct Types.RangeUint8"
             },
             "typeName": {
@@ -994,10 +994,10 @@
               "id": 73,
               "name": "Types.RangeUint8",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5887,
+              "referencedDeclaration": 5665,
               "src": "1157:16:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_RangeUint8_$5887_storage_ptr",
+                "typeIdentifier": "t_struct$_RangeUint8_$5665_storage_ptr",
                 "typeString": "struct Types.RangeUint8"
               }
             },
@@ -1047,7 +1047,7 @@
         "id": 4,
         "nodeType": "ImportDirective",
         "scope": 76,
-        "sourceUnit": 6664,
+        "sourceUnit": 5972,
         "src": "58:38:0",
         "symbolAliases": [
           {
@@ -1285,7 +1285,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Position_$5650_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Position_$5456_storage_$",
               "typeString": "mapping(address => struct Types.Position)"
             },
             "typeName": {
@@ -1303,7 +1303,7 @@
               "nodeType": "Mapping",
               "src": "371:34:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Position_$5650_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Position_$5456_storage_$",
                 "typeString": "mapping(address => struct Types.Position)"
               },
               "valueType": {
@@ -1311,10 +1311,10 @@
                 "id": 22,
                 "name": "Types.Position",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 5650,
+                "referencedDeclaration": 5456,
                 "src": "390:14:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Position_$5650_storage_ptr",
+                  "typeIdentifier": "t_struct$_Position_$5456_storage_ptr",
                   "typeString": "struct Types.Position"
                 }
               }
@@ -1334,7 +1334,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_SatStats_$5882_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_SatStats_$5660_storage_$",
               "typeString": "mapping(uint256 => struct Types.SatStats)"
             },
             "typeName": {
@@ -1352,7 +1352,7 @@
               "nodeType": "Mapping",
               "src": "436:34:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_SatStats_$5882_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_SatStats_$5660_storage_$",
                 "typeString": "mapping(uint256 => struct Types.SatStats)"
               },
               "valueType": {
@@ -1360,10 +1360,10 @@
                 "id": 26,
                 "name": "Types.SatStats",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 5882,
+                "referencedDeclaration": 5660,
                 "src": "455:14:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_SatStats_$5882_storage_ptr",
+                  "typeIdentifier": "t_struct$_SatStats_$5660_storage_ptr",
                   "typeString": "struct Types.SatStats"
                 }
               }
@@ -1383,7 +1383,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5814_$_$_$_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5620_$_$_$_$",
               "typeString": "mapping(uint256 => mapping(uint256 => mapping(uint256 => mapping(uint256 => enum Types.SystemType))))"
             },
             "typeName": {
@@ -1401,7 +1401,7 @@
               "nodeType": "Mapping",
               "src": "498:96:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5814_$_$_$_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5620_$_$_$_$",
                 "typeString": "mapping(uint256 => mapping(uint256 => mapping(uint256 => mapping(uint256 => enum Types.SystemType))))"
               },
               "valueType": {
@@ -1419,7 +1419,7 @@
                 "nodeType": "Mapping",
                 "src": "517:76:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5814_$_$_$",
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5620_$_$_$",
                   "typeString": "mapping(uint256 => mapping(uint256 => mapping(uint256 => enum Types.SystemType)))"
                 },
                 "valueType": {
@@ -1437,7 +1437,7 @@
                   "nodeType": "Mapping",
                   "src": "536:56:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5814_$_$",
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_enum$_SystemType_$5620_$_$",
                     "typeString": "mapping(uint256 => mapping(uint256 => enum Types.SystemType))"
                   },
                   "valueType": {
@@ -1455,7 +1455,7 @@
                     "nodeType": "Mapping",
                     "src": "555:36:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_mapping$_t_uint256_$_t_enum$_SystemType_$5814_$",
+                      "typeIdentifier": "t_mapping$_t_uint256_$_t_enum$_SystemType_$5620_$",
                       "typeString": "mapping(uint256 => enum Types.SystemType)"
                     },
                     "valueType": {
@@ -1463,10 +1463,10 @@
                       "id": 33,
                       "name": "Types.SystemType",
                       "nodeType": "UserDefinedTypeName",
-                      "referencedDeclaration": 5814,
+                      "referencedDeclaration": 5620,
                       "src": "574:16:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_SystemType_$5814",
+                        "typeIdentifier": "t_enum$_SystemType_$5620",
                         "typeString": "enum Types.SystemType"
                       }
                     }
@@ -1634,7 +1634,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Position_$5650_storage",
+              "typeIdentifier": "t_struct$_Position_$5456_storage",
               "typeString": "struct Types.Position"
             },
             "typeName": {
@@ -1642,10 +1642,10 @@
               "id": 49,
               "name": "Types.Position",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5650,
+              "referencedDeclaration": 5456,
               "src": "787:14:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Position_$5650_storage_ptr",
+                "typeIdentifier": "t_struct$_Position_$5456_storage_ptr",
                 "typeString": "struct Types.Position"
               }
             },
@@ -1664,7 +1664,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Position_$5650_storage",
+              "typeIdentifier": "t_struct$_Position_$5456_storage",
               "typeString": "struct Types.Position"
             },
             "typeName": {
@@ -1672,10 +1672,10 @@
               "id": 51,
               "name": "Types.Position",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5650,
+              "referencedDeclaration": 5456,
               "src": "821:14:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Position_$5650_storage_ptr",
+                "typeIdentifier": "t_struct$_Position_$5456_storage_ptr",
                 "typeString": "struct Types.Position"
               }
             },
@@ -1778,7 +1778,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Range_$5892_storage",
+              "typeIdentifier": "t_struct$_Range_$5670_storage",
               "typeString": "struct Types.Range"
             },
             "typeName": {
@@ -1786,10 +1786,10 @@
               "id": 59,
               "name": "Types.Range",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5892,
+              "referencedDeclaration": 5670,
               "src": "921:11:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Range_$5892_storage_ptr",
+                "typeIdentifier": "t_struct$_Range_$5670_storage_ptr",
                 "typeString": "struct Types.Range"
               }
             },
@@ -1808,7 +1808,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Range_$5892_storage",
+              "typeIdentifier": "t_struct$_Range_$5670_storage",
               "typeString": "struct Types.Range"
             },
             "typeName": {
@@ -1816,10 +1816,10 @@
               "id": 61,
               "name": "Types.Range",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5892,
+              "referencedDeclaration": 5670,
               "src": "952:11:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Range_$5892_storage_ptr",
+                "typeIdentifier": "t_struct$_Range_$5670_storage_ptr",
                 "typeString": "struct Types.Range"
               }
             },
@@ -1838,7 +1838,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Range_$5892_storage",
+              "typeIdentifier": "t_struct$_Range_$5670_storage",
               "typeString": "struct Types.Range"
             },
             "typeName": {
@@ -1846,10 +1846,10 @@
               "id": 63,
               "name": "Types.Range",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5892,
+              "referencedDeclaration": 5670,
               "src": "986:11:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Range_$5892_storage_ptr",
+                "typeIdentifier": "t_struct$_Range_$5670_storage_ptr",
                 "typeString": "struct Types.Range"
               }
             },
@@ -1868,7 +1868,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Range_$5892_storage",
+              "typeIdentifier": "t_struct$_Range_$5670_storage",
               "typeString": "struct Types.Range"
             },
             "typeName": {
@@ -1876,10 +1876,10 @@
               "id": 65,
               "name": "Types.Range",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5892,
+              "referencedDeclaration": 5670,
               "src": "1018:11:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Range_$5892_storage_ptr",
+                "typeIdentifier": "t_struct$_Range_$5670_storage_ptr",
                 "typeString": "struct Types.Range"
               }
             },
@@ -1898,7 +1898,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_RangeUint8_$5887_storage",
+              "typeIdentifier": "t_struct$_RangeUint8_$5665_storage",
               "typeString": "struct Types.RangeUint8"
             },
             "typeName": {
@@ -1906,10 +1906,10 @@
               "id": 67,
               "name": "Types.RangeUint8",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5887,
+              "referencedDeclaration": 5665,
               "src": "1053:16:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_RangeUint8_$5887_storage_ptr",
+                "typeIdentifier": "t_struct$_RangeUint8_$5665_storage_ptr",
                 "typeString": "struct Types.RangeUint8"
               }
             },
@@ -1928,7 +1928,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_RangeUint8_$5887_storage",
+              "typeIdentifier": "t_struct$_RangeUint8_$5665_storage",
               "typeString": "struct Types.RangeUint8"
             },
             "typeName": {
@@ -1936,10 +1936,10 @@
               "id": 69,
               "name": "Types.RangeUint8",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5887,
+              "referencedDeclaration": 5665,
               "src": "1087:16:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_RangeUint8_$5887_storage_ptr",
+                "typeIdentifier": "t_struct$_RangeUint8_$5665_storage_ptr",
                 "typeString": "struct Types.RangeUint8"
               }
             },
@@ -1958,7 +1958,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_RangeUint8_$5887_storage",
+              "typeIdentifier": "t_struct$_RangeUint8_$5665_storage",
               "typeString": "struct Types.RangeUint8"
             },
             "typeName": {
@@ -1966,10 +1966,10 @@
               "id": 71,
               "name": "Types.RangeUint8",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5887,
+              "referencedDeclaration": 5665,
               "src": "1123:16:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_RangeUint8_$5887_storage_ptr",
+                "typeIdentifier": "t_struct$_RangeUint8_$5665_storage_ptr",
                 "typeString": "struct Types.RangeUint8"
               }
             },
@@ -1988,7 +1988,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_RangeUint8_$5887_storage",
+              "typeIdentifier": "t_struct$_RangeUint8_$5665_storage",
               "typeString": "struct Types.RangeUint8"
             },
             "typeName": {
@@ -1996,10 +1996,10 @@
               "id": 73,
               "name": "Types.RangeUint8",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5887,
+              "referencedDeclaration": 5665,
               "src": "1157:16:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_RangeUint8_$5887_storage_ptr",
+                "typeIdentifier": "t_struct$_RangeUint8_$5665_storage_ptr",
                 "typeString": "struct Types.RangeUint8"
               }
             },
@@ -2019,7 +2019,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-22T10:02:57.691Z",
+  "updatedAt": "2020-10-28T15:06:38.450Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -19,11 +19,12 @@
             </div>
         </div>
         <div class="undiscovered" v-else>
+            <Galaxy />
             <div class="info">
                 <div>
                     <h1>{{ UIM_getPlanetDiscoveredHeader }}</h1>
-                    <h2>{{ UIM_getPlanetDiscoveredMessage }}</h2>
                 </div>
+                <h2>{{ UIM_getPlanetDiscoveredMessage }}</h2>
             </div>
         </div>
     </div>
@@ -34,6 +35,8 @@ import { mapActions } from 'vuex';
 import { mapGetters } from 'vuex';
 import Button from '@/components/generics/Button.vue';
 import Planet1 from '@/assets/svg/planet1.svg';
+import Galaxy from '@/assets/svg/galaxy.svg';
+
 export default {
     name: 'PlanetView',
     computed: {
@@ -46,7 +49,8 @@ export default {
     },
     components: {
         Button,
-        Planet1
+        Planet1,
+        Galaxy
     },
     methods: {
         ...mapActions(['GO_move'])
@@ -64,7 +68,7 @@ export default {
     overflow-x: hidden;
 }
 .Planet {
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
 
     & > div {
@@ -91,7 +95,7 @@ export default {
         }
 
         .info {
-            height: 80%;
+            height: 100%;
             position: absolute;
             z-index: 1;
             display: flex;

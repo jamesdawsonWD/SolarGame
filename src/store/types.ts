@@ -75,15 +75,20 @@ export interface SolarOperations {
 }
 
 export interface PlanetInfo {
-    yield: number;
-    balance: number;
-    sats: { [key: number]: Sat };
-    dateLocked: Date;
-    tokenId: number;
-    minHold: number;
+    planetYield?: number;
+    balance?: number;
+    sats?: { [key: number]: Sat };
+    dateLocked?: Date;
+    tokenId?: number;
+    minHold?: number;
 }
 export interface Planets {
-    [key: string]: PlanetInfo;
+    tokenIdToProxy: {
+        [key: number]: string;
+    };
+    planets: {
+        [key: string]: PlanetInfo;
+    };
 }
 
 export interface FhrOperations {
@@ -92,7 +97,9 @@ export interface FhrOperations {
 }
 
 export interface SatOperations {
-    balances: number[];
+    balances: {
+        [key: string]: number[];
+    };
     treasuryApproved: boolean;
 }
 export interface Deposit {
@@ -115,6 +122,7 @@ export interface UserInterfaceManager {
 export interface Modal {
     show: boolean;
     content: string;
+    type: string;
     data?: {
         [key: string]: string | boolean | number;
     };

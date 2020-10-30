@@ -8,6 +8,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
 import Button from '@/components/generics/Button.vue';
 import Planet from '@/assets/svg/planet-bare.svg';
 
@@ -21,11 +22,14 @@ import Planet from '@/assets/svg/planet-bare.svg';
             deployed: false
         };
     },
+    computed: {
+        ...mapGetters(['PLANET_getTokenIdToProxy'])
+    },
     props: ['tokenId'],
     methods: {
-        ...mapActions(['GO_deployPlanet', 'closeModal']),
-        deploy(): void {
-            this.GO_deployPlanet({ tokenId: this.tokenId });
+        ...mapActions(['GO_deployPlanet', 'closeModal', 'UIM_openModal']),
+        async deploy(): void {
+            await this.GO_deployPlanet({ tokenId: this.tokenId });
         }
     }
 })
@@ -35,7 +39,7 @@ export default class AllowanceForm extends Vue {
 </script>
 <style scoped lang="scss">
 .deploy-planet-modal {
-    height: 50vh;
+    height: 100%;
     width: 60vw;
     display: flex;
     flex-direction: column;

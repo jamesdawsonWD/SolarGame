@@ -17,9 +17,9 @@ export default function() {
         });
 
         it('should deploy a planet', async () => {
-            await testFhrDiscovery(SYSTEM_TYPES.HighYieldSystem, Owner);
-            const planetToken = await tokenOfOwnerByIndex(Owner, 0, Owner);
-            await deployPlanet(planetToken, Owner);
+            await testFhrDiscovery(SYSTEM_TYPES.LowYieldSystem, UserA);
+            const planetToken = await tokenOfOwnerByIndex(UserA, 0, UserA);
+            await deployPlanet(planetToken, UserA);
         });
     });
 }

@@ -25,25 +25,9 @@ contract TestGameOperations is GameOperations {
 
     function testFhrDiscovery(Types.SystemType systemType) public {
         (uint256 low, uint256 high) = GS.getStarSystemYieldRange(systemType);
-        uint256 yield = randomrange(low, high);
         uint256 _id = GS.incrementTotalFhr();
-        emit TestUint(yield, _id);
+        GS.setTokenIdToYield(_id, randomrange(low, high));
         TS.mintFhr(msg.sender, _id);
-        emit TestAddress(address(pm), address(solar), address(fhr), address(sats));
-        address _address = pm.createPlanet(
-            _id,
-            abi.encodeWithSignature(
-                'initialize(address,address,address,address,uint256,uint256)',
-                address(pm),
-                address(solar),
-                address(fhr),
-                address(sats),
-                yield,
-                _id
-            )
-        );
-        GS.setTokenIdToProxyAddress(_id, _address);
-        GS.setProxyAddressToTokenId(_id, _address);
     }
 
     function testSatDiscovery(

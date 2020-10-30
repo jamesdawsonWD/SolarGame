@@ -19,20 +19,20 @@ const TestTreasury = artifacts.require('TestTreasury.sol');
 // Testing Contracts
 
 async function deployBaseProtocol(deployer, network, accounts) {
-    const Sat = isDevNetwork(network) ? TestShipsAndTechnology : ShipsAndTechnology;
-    const GameOperations = isDevNetwork(network) ? TestGameOperations : GameOperationsC;
-    const Treasury = isDevNetwork(network) ? TestTreasury : TreasuryC;
-
+    // const Sat = isDevNetwork(network) ? TestShipsAndTechnology : ShipsAndTechnology;
+    // const GameOperations = isDevNetwork(network) ? TestGameOperations : GameOperationsC;
+    // const Treasury = isDevNetwork(network) ? TestTreasury : TreasuryC;
+    const Sat = TestShipsAndTechnology;
+    const GameOperations = TestGameOperations;
+    const Treasury = TestTreasury;
+    g;
     await deployer.deploy(TypesLib);
     await deployer.deploy(Treasury);
     await deployer.deploy(Solar, Treasury.address);
     await deployer.deploy(Sat, Treasury.address);
     await deployer.deploy(FHR, Treasury.address);
     await deployer.deploy(Planet);
-    await Promise.all([
-        deployer.link(TypesLib, GameStorage),
-        deployer.link(TypesLib, GameOperations)
-    ]);
+    await Promise.all([deployer.link(TypesLib, GameStorage), deployer.link(TypesLib, GameOperations)]);
 
     await deployer.deploy(GameStorage);
     await deployer.deploy(GameOperations);

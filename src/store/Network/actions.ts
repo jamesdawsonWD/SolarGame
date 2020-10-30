@@ -46,6 +46,7 @@ export const actions: ActionTree<Network, RootState> = {
         const network = context.dispatch('getNetworkData');
         const address = context.dispatch('getAddress');
         await Promise.all([setupWeb3, network, address]);
+
         await context.dispatch('setupGameStorage');
         await context.dispatch('setupTreasury');
         await context.dispatch('setupGameOperations');
@@ -58,45 +59,45 @@ export const actions: ActionTree<Network, RootState> = {
     async setupGameOperations(context: ActionContext<Network, RootState>) {
         const { Web3, NetworkId } = context.getters;
         const networks: Networks = GameOperations.networks;
-        const master = new Web3.eth.Contract(GameOperations.abi, networks['5777'].address);
+        const master = new Web3.eth.Contract(GameOperations.abi, networks[NetworkId].address);
         context.commit('SET_GAMEOPERATIONS', master);
     },
     async setupGameStorage(context: ActionContext<Network, RootState>) {
         const { Web3, NetworkId } = context.getters;
         const networks: Networks = GameStorage.networks;
-        const storage = new Web3.eth.Contract(GameStorage.abi, networks['5777'].address);
+        const storage = new Web3.eth.Contract(GameStorage.abi, networks[NetworkId].address);
         console.log(storage);
         context.commit('SET_GAMESTORAGE', storage);
     },
     async setupTreasury(context: ActionContext<Network, RootState>) {
         const { Web3, NetworkId } = context.getters;
         const networks: Networks = Treasury.networks;
-        const treasury = new Web3.eth.Contract(Treasury.abi, networks['5777'].address);
+        const treasury = new Web3.eth.Contract(Treasury.abi, networks[NetworkId].address);
         context.commit('SET_TREASURY', treasury);
     },
 
     async setupSolar(context: ActionContext<Network, RootState>) {
-        const { Web3 } = context.getters;
+        const { Web3, NetworkId } = context.getters;
         const networks: Networks = Solar.networks;
-        const solar = new Web3.eth.Contract(Solar.abi, networks['5777'].address);
+        const solar = new Web3.eth.Contract(Solar.abi, networks[NetworkId].address);
         context.commit('SET_SOLAR_CONTRACT', solar);
     },
     async setupSat(context: ActionContext<Network, RootState>) {
-        const { Web3 } = context.getters;
+        const { Web3, NetworkId } = context.getters;
         const networks: Networks = Sat.networks;
-        const sat = new Web3.eth.Contract(Sat.abi, networks['5777'].address);
+        const sat = new Web3.eth.Contract(Sat.abi, networks[NetworkId].address);
         context.commit('SET_SAT_CONTRACT', sat);
     },
     async setupFhr(context: ActionContext<Network, RootState>) {
-        const { Web3 } = context.getters;
+        const { Web3, NetworkId } = context.getters;
         const networks: Networks = FHR.networks;
-        const fhr = new Web3.eth.Contract(FHR.abi, networks['5777'].address);
+        const fhr = new Web3.eth.Contract(FHR.abi, networks[NetworkId].address);
         context.commit('SET_FHR_CONTRACT', fhr);
     },
-    async setupPlanet(context: ActionContext<Network, RootState>, payload: string) {
-        const { Web3 } = context.getters;
+    async NETWORK_setupPlanet(context: ActionContext<Network, RootState>, payload: string) {
+        const { Web3, NetworkId } = context.getters;
         const planet = new Web3.eth.Contract(Planet.abi, payload);
-        context.commit('ADD_VISITED_PLANET', planet);
+        context.commit('ADD_VISITED_PLANET', { planet, address: payload });
     }
 };
 

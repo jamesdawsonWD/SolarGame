@@ -7,8 +7,6 @@ import {ITreasury} from './interfaces/ITreasury.sol';
 contract PlanetManager is Ownable {
     address public planetImplementation;
     ITreasury ts;
-    address private fhr;
-    address private solar;
     mapping(address => bool) operators;
     mapping(address => uint256) addressToTokenId;
     event ProxyCreated(address proxy);
@@ -38,11 +36,7 @@ contract PlanetManager is Ownable {
         _;
     }
 
-    function createPlanet(uint256 tokenId, bytes memory _data)
-        public
-        onlyOperator
-        returns (address)
-    {
+    function createPlanet(uint256 tokenId, bytes memory _data) public onlyOperator returns (address) {
         emit ProxyCreated(planetImplementation);
         address proxy = deployMinimal(planetImplementation, _data);
         addressToTokenId[proxy] = tokenId;
@@ -50,7 +44,6 @@ contract PlanetManager is Ownable {
     }
 
     function rewardPlanet(address _to, uint256 _amount) public onlyPlanet {
-        //TODO: more security on this
         ts.mintSolar(_to, _amount);
     }
 
@@ -60,10 +53,7 @@ contract PlanetManager is Ownable {
             let clone := mload(0x40)
             mstore(clone, 0x3d602d80600a3d3981f3363d3d373d3d3d363d73000000000000000000000000)
             mstore(add(clone, 0x14), targetBytes)
-            mstore(
-                add(clone, 0x28),
-                0x5af43d82803e903d91602b57fd5bf30000000000000000000000000000000000
-            )
+            mstore(add(clone, 0x28), 0x5af43d82803e903d91602b57fd5bf30000000000000000000000000000000000)
             proxy := create(0, clone, 0x37)
         }
 

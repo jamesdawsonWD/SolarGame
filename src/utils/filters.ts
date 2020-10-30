@@ -26,3 +26,10 @@ Vue.filter('removeHyphens', function (value: string) {
     }
     return value.replace(/-/g, ' ');
 });
+
+Vue.filter('secondsToDays', function (seconds: number) {
+    if (!seconds) {
+        return '';
+    }
+    return seconds / (24 * 3600);
+});

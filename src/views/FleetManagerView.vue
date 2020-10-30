@@ -7,9 +7,11 @@
             </div>
             <div class="sat-balance"></div>
             <div class="fhr-balance">
-                <h2>FHR Balance</h2>
+                <h2>FHR</h2>
                 <h1>{{ FHR_getBalance.length }}</h1>
             </div>
+        </div>
+        <div class="utility-bar">
             <Button
                 title="Mint Solar"
                 @clicked="TREASURY_testMintSolar({ to: Address, amount: 1000 })"
@@ -18,6 +20,11 @@
             <Button
                 title="Mint Sat"
                 @clicked="TREASURY_testSendSats({ ids, amounts })"
+                buttonStyle="primary"
+            ></Button>
+            <Button
+                title="Mint Fhr"
+                @clicked="GO_testFhrDiscovery({ systemType: 15 })"
                 buttonStyle="primary"
             ></Button>
         </div>
@@ -41,7 +48,12 @@
         </div>
         <h2 class="section-heading">Ships And Tech: (SAT)</h2>
         <div class="grid">
-            <article v-for="(item, index) in SAT_getBalances" :key="index" :class="{ deactive: item == 0 }">
+            <article
+                v-for="(item, index) in SAT_getBalances(Address)"
+                :key="index"
+                :class="{ deactive: item == 0 }"
+            >
+                <h2>Amount: {{ item }}</h2>
                 <Shuttle class="img" />
                 <h3>{{ ships[index].viewName }}</h3>
                 <p>Amount: {{ item }}</p>
@@ -91,6 +103,7 @@ export default {
             'SOLAR_retrieveBalance',
             'TREASURY_testMintSolar',
             'TREASURY_testSendSats',
+            'GO_testFhrDiscovery',
             'FHR_retrieveBalance',
             'GS_retrievetokenIdToYield',
             'UIM_openModal'
@@ -99,6 +112,7 @@ export default {
             console.log(id);
             this.UIM_openModal({
                 show: true,
+                type: 'deploy-planet',
                 content: 'This planet has not yet been deployed!',
                 data: {
                     tokenId: id
@@ -131,10 +145,12 @@ export default {
     width: 100vw;
 
     .utility-bar {
-        width: 60%;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
+        & > * {
+            margin-right: 40px;
+        }
     }
     .section-heading {
         margin-top: 45px;
@@ -182,7 +198,8 @@ export default {
                     color: var(--main-black) !important;
                 }
             }
-            & > h3 {
+            & > h3,
+            h2 {
                 color: var(--main-black) !important;
             }
             &:hover {

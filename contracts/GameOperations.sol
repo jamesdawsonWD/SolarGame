@@ -31,6 +31,7 @@ contract GameOperations is Initializable, Discovery {
     event LogMove(uint8 quadrant, uint8 district, uint8 sector, uint256 star);
     event LogStarSystemDiscovery(address indexed to, uint8 systemType);
     event LogBattle(bool result, uint256 attackersHealth, uint256 defendersHealth);
+    event LogPlanetProxyCreated(address proxy, uint256 tokenId);
     event Random(uint256 random);
     event LogRound(uint256 aDamage, uint256 dDamage, uint256 aHealth, uint256 dHealth);
     event BattleStarted(
@@ -242,6 +243,7 @@ contract GameOperations is Initializable, Discovery {
         );
         GS.setTokenIdToProxyAddress(tokenId, _address);
         GS.setProxyAddressToTokenId(tokenId, _address);
+        emit LogPlanetProxyCreated(_address, tokenId);
     }
 
     function explore(Types.Position memory star) internal {
@@ -277,21 +279,15 @@ contract GameOperations is Initializable, Discovery {
             uint256 _id = GS.incrementTotalFhr();
             GS.setTokenIdToYield(_id, randomrange(low, high));
             TS.mintFhr(msg.sender, _id);
-        } else if (systemType == Types.SystemType.ShipWreck) {
-            uint256 multiplier = rand.mod(2) == 0 ? 2 : 1;
-            Types.SatInfo memory ship = Discovery.singleAllNonAncientShips();
-            uint256[] memory ships = new uint256[](1);
-            uint256[] memory amounts = new uint256[](1);
-            ships[0] = ship.id;
-            amounts[0] = ship.amount.mul(multiplier);
-            TS.sendSats(msg.sender, ships, amounts);
-        } else if (systemType == Types.SystemType.AncientMiningSystem) {
-            Types.SatInfo memory ship = Discovery.singleAncientMiningShip();
-            uint256[] memory ships = new uint256[](1);
-            uint256[] memory amounts = new uint256[](1);
-            ships[0] = ship.id;
-            amounts[0] = ship.amount;
-            TS.sendSats(msg.sender, ships, amounts);
         }
+        //  else if (systemType == Types.SystemType.ShipWreck) {
+        //     uint256 multiplier = rand.mod(2) == 0 ? 2 : 1;
+        //     Types.SatInfo memory ship = Discovery.singleAllNonAncientShips();
+        //     uint256[] memory ships = new uint256[](1);
+        //     uint256[] memory amounts = new uint256[](1);
+        //     ships[0] = ship.id;
+        //     amounts[0] = ship.amount.mul(multiplier);
+        //     TS.sendSats(msg.sender, ships, amounts);
+        // }
     }
 }

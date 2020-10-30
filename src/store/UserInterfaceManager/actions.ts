@@ -2,6 +2,10 @@ import { StarPosition } from './../types';
 import { ActionTree, ActionContext } from 'vuex';
 import { RootState, UserInterfaceManager, Modal } from '../types';
 export const actions: ActionTree<UserInterfaceManager, RootState> = {
+    UIM_setModalType(context: ActionContext<UserInterfaceManager, RootState>, payload: string) {
+        context.commit('SET_MODAL_TYPE', payload);
+    },
+
     UIM_openModal(context: ActionContext<UserInterfaceManager, RootState>, payload: Modal) {
         context.commit('SET_MODAL_STATE', payload);
     },

@@ -13,5 +13,6 @@ export const mutations: MutationTree<UserInterfaceManager> = {
     SET_PLANET_DISCOVERED_MESSAGE: (state: UserInterfaceManager, msg: string) =>
         (state.planetDiscoveredMessage = msg),
     SET_PLANET_DISCOVERED_HEADER: (state: UserInterfaceManager, header: string) =>
-        (state.planetDiscoveredHeader = header)
+        (state.planetDiscoveredHeader = header),
+    SET_MODAL_TYPE: (state: UserInterfaceManager, payload: string) => (state.modal.type = payload)
 };
