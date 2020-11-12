@@ -58,14 +58,6 @@ export const actions: ActionTree<GameOperations, RootState> = {
                             message: 'You have been attacked by pirates!'
                         });
                         break;
-                    case 'Empty':
-                        console.log('It is empty here.');
-                        context.dispatch('UIM_setPlanetDiscoveredUi', {
-                            header: 'It is empty here.',
-                            message: 'Just like 99.9999999% of it.'
-                        });
-                        break;
-
                     case 'LowYieldSystem':
                         console.log('');
                         context.dispatch('UIM_setPlanetDiscoveredUi', {
@@ -103,8 +95,8 @@ export const actions: ActionTree<GameOperations, RootState> = {
                         break;
                     default:
                         context.dispatch('UIM_setPlanetDiscoveredUi', {
-                            header: 'This event is not ready yet!',
-                            message: 'Soon my young padawan, soon...'
+                            header: 'You discovered a new planet!',
+                            message: 'A highly resourcful Planet. This is going to very profitable.'
                         });
                         break;
                 }

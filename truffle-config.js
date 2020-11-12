@@ -20,7 +20,8 @@
 
 // Importing babel to be able to use ES6 imports
 require('@babel/standalone');
-require('babel-register')({
+require('@babel/register');
+({
     presets: [
         [
             'env',
@@ -33,8 +34,8 @@ require('babel-register')({
     ],
     retainLines: true
 });
-require('babel-eslint');
-require('babel-polyfill');
+require('@babel/eslint-parser');
+require('@babel/polyfill');
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const MNEMONIC = process.env.MNEMONIC;
 const INFURA_KEY = process.env.INFURA_KEY;

@@ -7,6 +7,7 @@
                 <router-link to="/fleetManager"><Fleet class="nav-icon"/></router-link>
             </div>
         </div>
+        <Background class="background" />
         <router-view />
         <Modal v-if="ShowModal" @close="UIM_closeModal" />
     </div>
@@ -16,26 +17,21 @@ import { mapActions } from 'vuex';
 import { mapGetters } from 'vuex';
 import Logo from '@/assets/svg/logo.svg';
 import Map from '@/assets/svg/map-nav.svg';
+import Background from '@/assets/svg/background.svg';
 import Fleet from '@/assets/svg/fleet-nav.svg';
 import Modal from '@/components/generics/Modal.vue';
 // import Button from '@/components/generics/Button.vue';
 export default {
     name: 'App',
     computed: {
-        ...mapGetters([
-            //     'Address',
-            //     'Balance',
-            //     'TsunoBalance',
-            'ShowModal'
-            //     'DateUnlocked',
-            //     'RecentError'
-        ])
+        ...mapGetters(['ShowModal'])
     },
     components: {
         // DepositForm,
         Modal,
         Logo,
         Map,
+        Background,
         Fleet
         // Button
     },
@@ -64,7 +60,14 @@ export default {
     text-align: center;
     color: #2c3e50;
     height: 100vh;
-    background: #020c3d;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: -1px;
+    width: 102vw;
+    z-index: -100;
 }
 
 #nav {
@@ -102,3 +105,6 @@ export default {
     }
 }
 </style>
+- cors 2.8.5 - express 4.17.1 - handlebars 4.7.6 - moment 2.29.1 - mongodb 2.2.36 - mongoose 4.13.21 -
+mongoose-paginate 5.0.3 - mongoose-timestamps 0.0.1 - mongoose-unique-validator 1.0.6 - nodemailer 6.4.15
+devDependencies: - dotenv 8.2.0 - nodemon 2.0.6 monogodb

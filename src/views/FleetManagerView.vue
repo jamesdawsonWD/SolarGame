@@ -2,16 +2,16 @@
     <div class="dashboard" v-if="UIM_IsLoading == false">
         <div class="utility-bar">
             <div class="solar-balance">
-                <h2>Solar</h2>
+                <Solar class="img" />
                 <h1>{{ SOLAR_getBalance }}</h1>
             </div>
             <div class="sat-balance"></div>
             <div class="fhr-balance">
-                <h2>FHR</h2>
+                <Planet class="img" />
                 <h1>{{ FHR_getBalance.length }}</h1>
             </div>
         </div>
-        <div class="utility-bar">
+        <div v-if="false" class="button-menu">
             <Button
                 title="Mint Solar"
                 @clicked="TREASURY_testMintSolar({ to: Address, amount: 1000 })"
@@ -28,7 +28,7 @@
                 buttonStyle="primary"
             ></Button>
         </div>
-        <h2 class="section-heading">Federal Harvesting Rights: (FHR)</h2>
+        <h2 class="section-heading">Planets: (PLNTS)</h2>
         <div class="grid planets" v-if="FHR_getBalance.length > 0">
             <article
                 v-for="(item, index) in FHR_getBalance"
@@ -72,11 +72,13 @@ import { mapGetters } from 'vuex';
 import Button from '@/components/generics/Button.vue';
 import Shuttle from '@/assets/svg/shuttle.svg';
 import Planet from '@/assets/svg/planet-bare.svg';
+import Solar from '@/assets/svg/solarcoin.svg';
 export default {
     name: 'FleetManagerView',
     components: {
         Button,
         Shuttle,
+        Solar,
         Planet
     },
     data(): void {
@@ -151,6 +153,20 @@ export default {
         & > * {
             margin-right: 40px;
         }
+
+        & .solar-balance .img {
+            height: 150px;
+        }
+        & .fhr-balance .img {
+            height: 150px;
+        }
+    }
+
+    .button-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 100px;
     }
     .section-heading {
         margin-top: 45px;

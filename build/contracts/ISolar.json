@@ -2525,7 +2525,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-28T15:06:38.552Z",
+  "updatedAt": "2020-11-02T11:25:47.533Z",
   "devdoc": {
     "author": "dYdX Interface for using ERC20 Tokens. We have to use a special interface to call ERC20 functions so that we don't automatically revert when calling non-compliant tokens that have no return value for transfer(), transferFrom(), or approve().",
     "kind": "dev",

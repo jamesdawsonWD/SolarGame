@@ -25,7 +25,6 @@ async function deployBaseProtocol(deployer, network, accounts) {
     const Sat = TestShipsAndTechnology;
     const GameOperations = TestGameOperations;
     const Treasury = TestTreasury;
-    g;
     await deployer.deploy(TypesLib);
     await deployer.deploy(Treasury);
     await deployer.deploy(Solar, Treasury.address);

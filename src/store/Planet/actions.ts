@@ -6,14 +6,15 @@ export const actions: ActionTree<Planets, RootState> = {
         context: ActionContext<Planets, RootState>,
         payload: { planet: string; amount: number }
     ) {
-        const { Address, Planet } = context.getters;
+        const { Address, Planet, Solar } = context.getters;
         const ProxyPlanet = Planet(payload.planet);
-        ProxyPlanet.methods
-            .depositSolar(payload.amount)
+
+        Solar.methods
+            .transfer(payload.planet, 1000)
             .send({ from: Address, gas: 4000000 })
             .then(() =>
                 context.commit('SET_STAKED', {
-                    staked: payload.amount,
+                    staked: 1000,
                     planet: payload.planet
                 })
             )

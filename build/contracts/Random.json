@@ -1896,7 +1896,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-28T15:06:38.527Z",
+  "updatedAt": "2020-11-02T11:25:47.513Z",
   "devdoc": {
     "author": "Big Beluga Library for transferring tokens and interacting with ExchangeWrappers by using the Wei struct",
     "kind": "dev",
