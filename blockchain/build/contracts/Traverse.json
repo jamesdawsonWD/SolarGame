@@ -1,0 +1,3925 @@
+{
+  "contractName": "Traverse",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "quadrant",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "district",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "sector",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "star",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogMove",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_gameStorage",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "quadrant",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "sector",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "district",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "star",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Types.Position",
+          "name": "to",
+          "type": "tuple"
+        }
+      ],
+      "name": "move",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"quadrant\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"district\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"sector\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"star\",\"type\":\"uint256\"}],\"name\":\"LogMove\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_gameStorage\",\"type\":\"address\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint8\",\"name\":\"quadrant\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"sector\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"district\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"star\",\"type\":\"uint256\"}],\"internalType\":\"struct Types.Position\",\"name\":\"to\",\"type\":\"tuple\"}],\"name\":\"move\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Big Beluga Primary public function for entering into the protocol\",\"kind\":\"dev\",\"methods\":{\"initialize(address)\":{\"params\":{\"_gameStorage\":\"- the address of the games eternal storage\"}},\"move((uint8,uint8,uint8,uint256))\":{\"params\":{\"to\":\"- the location the user wishes to move their fleet to.\"}}},\"title\":\"Operation\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"initialize(address)\":{\"notice\":\"Initialize - init function\"},\"move((uint8,uint8,uint8,uint256))\":{\"notice\":\"Move - Moves a Star fleet to a new position.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/Traverse.sol\":\"Traverse\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/BaseStorage.sol\":{\"keccak256\":\"0x2143b1f53408066ffe38673b4f73d704c93eb2c25f256917c2ed7e9d0430bacd\",\"urls\":[\"bzz-raw://a0d465ba6f3c2c6205db2cb713e29bebf9ebc7a5cef6844085e2ab0ed1e799ac\",\"dweb:/ipfs/QmZsif8jes1uGrHo24hEh4J81GV74Uz6pg6oztCsxzh2i7\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Constants.sol\":{\"keccak256\":\"0x21313dc89e9897fbe60d8bfcae2ae95f7b98b358a88ef48222ba8cf200437e97\",\"urls\":[\"bzz-raw://b09712de11198fa8761a1dd2ccbcf1ff43959ce2c96c596ed4dff008ff291955\",\"dweb:/ipfs/QmfUZPrDscUVhPRXRLwPNArrVUyozeft2zeYfS5khr5YHN\"]},\"/C/Users/James/projects/tsuno-fe/contracts/GameEvents.sol\":{\"keccak256\":\"0xe35640b41220cf3bc23f59138da53bab8ab8b33f37791f38ff74c8cfc00497ec\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dc04e1ecd6018e2e5f31bbdef4900fa88b469692e5ba26a2a97cdb8117c1dac2\",\"dweb:/ipfs/QmdDJf7ZMHNVNYZX1yAZXKdRcPe16gm7ixveoo7Ak1PkXm\"]},\"/C/Users/James/projects/tsuno-fe/contracts/GameStorage.sol\":{\"keccak256\":\"0x736870467a547ff104eff95eaedda594e39fb9f71dfb2767e99f3463c13113cc\",\"urls\":[\"bzz-raw://ec2fc4ddf717b2e079b0684ccefc8cb27c6b62ac76374f107eb0e4ddf7584de5\",\"dweb:/ipfs/QmTSexPpKNB274moiLf8QTpUG3wBbfc1xyhwnNpB4CzDpJ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Random.sol\":{\"keccak256\":\"0xf63f4fc867e896856de1f1b10e1284a42903881b4f936d19335d3d88caa15085\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ff94739759ae079be945fa5cad80fffbd0fad8ed741a0f651f88816483539d12\",\"dweb:/ipfs/QmWWWiYZTmqtR3vuYvUGsiRQdXmkmgRLXiUvxPLrkaGmom\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Traverse.sol\":{\"keccak256\":\"0xe43fc5336d1f9436f125e6d65482c22f36bbdb531a40c16250d8ced623efcd4b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://89afc23226972dc03753927e372e9b414e3da496c61f54c2f96af62fa46436e9\",\"dweb:/ipfs/QmV9VF81jgi9J1Fg87pQ5Us9RifCts7ombmiqt6axTkpQo\"]},\"/C/Users/James/projects/tsuno-fe/contracts/interfaces/IGameEvent.sol\":{\"keccak256\":\"0x2c869e640a9d2600f620b87d0678aba11e2966d61818568d8ea271f088c3cbaf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ce34186a12ee62b44a95956c0a988cb306d8689092090cda576c9cdfec5a6cf0\",\"dweb:/ipfs/QmaeYuRzmdSG1ffetUyjH7kinYXApX12wt7wGsMnbtFgNX\"]},\"/C/Users/James/projects/tsuno-fe/contracts/interfaces/ITreasury.sol\":{\"keccak256\":\"0xe467fc759597dff800179e32a15a3593a03fd26d7592532cc4ff10519490234a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f1e13c6ef8e65e58081500eb93bd185a75257a4e0070a1f5bd6ef7aae78eacfc\",\"dweb:/ipfs/QmSjv4WpoTiw7qG5piHY4a9MM9WxMSp3MtwGhcK2LFESnQ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/lib/Types.sol\":{\"keccak256\":\"0x9676bdd6c5bfc035713dd0558e22e57c17967a8c307da45dde8152d9a262c1f5\",\"urls\":[\"bzz-raw://1c60078690d0173b9737e087e4ba327a266735f7b73af7bc6c0c01980be19bf6\",\"dweb:/ipfs/QmTA7yFhjFFZtMzMf2gH6QhXMrZi6GpNxCSRgZA6W2yv2s\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0xdb26cbf4d028490f49831a7865c2fe1b28db44b535ca8d343785a3b768aae183\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://840b14ce0315c47d49ba328f1f9fa7654ded1c9e1559e6c5e777a7b2dc28bf0a\",\"dweb:/ipfs/QmTLLabn4wcfGro9LEmUXUN2nwKqZSotXMvjDCLXEnLtZP\"]},\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x4bd6402ca6b3419008c2b482aff54e66836e8cb4eba2680e42ac5884ae6424fc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8f9f711fb8d0d92aeea1c327e3845d13ca1fa8f142e47f8723cd5b3106fb29a3\",\"dweb:/ipfs/QmVQUReDW9f4zGqhizwHnyU8EntMs95tbASdqkGncnikba\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]},\"@openzeppelin/upgrades-core/contracts/Initializable.sol\":{\"keccak256\":\"0x7e710227a99f0d4ee7d7cfba6874192fb4ee80c270f5235c7966a6f3ab484b11\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://391395fae95454670cc03bf15b69469bebff8730ad326ed941e7c21cdfe3eff2\",\"dweb:/ipfs/QmPA9bYGsjqmG4bn8SsDLpQpd2sGW4HUfpMR6v66FGR6gA\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610a23806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80638e905cfd1461003b578063c4d66de814610050575b600080fd5b61004e61004936600461073b565b610063565b005b61004e61005e366004610703565b610457565b6100f281603360009054906101000a90046001600160a01b03166001600160a01b031663cf677f576040518163ffffffff1660e01b815260040160806040518083038186803b1580156100b557600080fd5b505afa1580156100c9573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906100ed919061079c565b61058f565b6101175760405162461bcd60e51b815260040161010e90610888565b60405180910390fd5b61011f6106dc565b603354604051633495a7e360e11b81526001600160a01b039091169063692b4fc69061014f903390600401610815565b60806040518083038186803b15801561016757600080fd5b505afa15801561017b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061019f919061079c565b90506101aa81610643565b1561023c57603360009054906101000a90046001600160a01b03166001600160a01b0316636d18c9706040518163ffffffff1660e01b815260040160806040518083038186803b1580156101fd57600080fd5b505afa158015610211573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610235919061079c565b905061029f565b603454604051636f6ff40560e01b81526001600160a01b0390911690636f6ff4059061026c903390600401610815565b600060405180830381600087803b15801561028657600080fd5b505af115801561029a573d6000803e3d6000fd5b505050505b6102a9828261067b565b156102c65760405162461bcd60e51b815260040161010e90610933565b60335460345460408051630a86ef0d60e21b815290516001600160a01b039384169363c774a94e933393911691632a1bbc34916004808201926020929091908290030181600087803b15801561031b57600080fd5b505af115801561032f573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061035391906107fd565b6040518363ffffffff1660e01b815260040161037092919061086f565b600060405180830381600087803b15801561038a57600080fd5b505af115801561039e573d6000803e3d6000fd5b505060335460405163bedc6d2760e01b81526001600160a01b03909116925063bedc6d2791506103d49033908690600401610829565b600060405180830381600087803b1580156103ee57600080fd5b505af1158015610402573d6000803e3d6000fd5b505050507f067ed149b8be43d30a47ed69bc882367f66239804079b28dd002d36fc3f46ed4826000015183604001518460200151856060015160405161044b949392919061097b565b60405180910390a15050565b600054610100900460ff168061047057506104706106d6565b8061047e575060005460ff16155b61049a5760405162461bcd60e51b815260040161010e906108e5565b600054610100900460ff161580156104c5576000805460ff1961ff0019909116610100171660011790555b603380546001600160a01b0319166001600160a01b03848116919091179182905560408051636ec6883d60e01b815290519290911691636ec6883d91600480820192602092909190829003018186803b15801561052157600080fd5b505afa158015610535573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610559919061071f565b603480546001600160a01b0319166001600160a01b0392909216919091179055801561058b576000805461ff00191690555b5050565b815160009060ff1615806105ab57508151835160ff9182169116115b156105b85750600061063d565b604083015160ff1615806105d95750816040015160ff16836040015160ff16115b156105e65750600061063d565b602083015160ff1615806106075750816020015160ff16836020015160ff16115b156106145750600061063d565b6060830151158061062c575081606001518360600151115b156106395750600061063d565b5060015b92915050565b805160009060ff16158061065c5750604082015160ff16155b8061066c5750602082015160ff16155b8061063d575050606001511590565b8051825160009160ff91821691161480156106a35750816040015160ff16836040015160ff16145b80156106bc5750816020015160ff16836020015160ff16145b80156106cf575081606001518360600151145b9392505050565b303b1590565b60408051608081018252600080825260208201819052918101829052606081019190915290565b600060208284031215610714578081fd5b81356106cf816109c6565b600060208284031215610730578081fd5b81516106cf816109c6565b60006080828403121561074c578081fd5b610756608061099f565b8235610761816109de565b81526020830135610771816109de565b60208201526040830135610784816109de565b60408201526060928301359281019290925250919050565b6000608082840312156107ad578081fd5b6107b7608061099f565b82516107c2816109de565b815260208301516107d2816109de565b602082015260408301516107e5816109de565b60408201526060928301519281019290925250919050565b60006020828403121561080e578081fd5b5051919050565b6001600160a01b0391909116815260200190565b6001600160a01b03929092168252805160ff9081166020808501919091528201518116604080850191909152820151166060808401919091520151608082015260a00190565b6001600160a01b03929092168252602082015260400190565b60208082526038908201527f506f736974696f6e206d7573742062652077697468696e20736574206c696d6960408201527f7473206f6620746865206b6e6f776e20756e6976657273650000000000000000606082015260800190565b6020808252602e908201527f436f6e747261637420696e7374616e63652068617320616c726561647920626560408201526d195b881a5b9a5d1a585b1a5e995960921b606082015260800190565b60208082526028908201527f596f752063616e6e6f74206d6f766520746f20796f75722063757272656e74206040820152673637b1b0ba34b7b760c11b606082015260800190565b60ff9485168152928416602084015292166040820152606081019190915260800190565b60405181810167ffffffffffffffff811182821017156109be57600080fd5b604052919050565b6001600160a01b03811681146109db57600080fd5b50565b60ff811681146109db57600080fdfea2646970667358221220355c1efd5c947982e52f740396c6cc4ecc286511c7cf21e305c653ee293d00d564736f6c634300060c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80638e905cfd1461003b578063c4d66de814610050575b600080fd5b61004e61004936600461073b565b610063565b005b61004e61005e366004610703565b610457565b6100f281603360009054906101000a90046001600160a01b03166001600160a01b031663cf677f576040518163ffffffff1660e01b815260040160806040518083038186803b1580156100b557600080fd5b505afa1580156100c9573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906100ed919061079c565b61058f565b6101175760405162461bcd60e51b815260040161010e90610888565b60405180910390fd5b61011f6106dc565b603354604051633495a7e360e11b81526001600160a01b039091169063692b4fc69061014f903390600401610815565b60806040518083038186803b15801561016757600080fd5b505afa15801561017b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061019f919061079c565b90506101aa81610643565b1561023c57603360009054906101000a90046001600160a01b03166001600160a01b0316636d18c9706040518163ffffffff1660e01b815260040160806040518083038186803b1580156101fd57600080fd5b505afa158015610211573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610235919061079c565b905061029f565b603454604051636f6ff40560e01b81526001600160a01b0390911690636f6ff4059061026c903390600401610815565b600060405180830381600087803b15801561028657600080fd5b505af115801561029a573d6000803e3d6000fd5b505050505b6102a9828261067b565b156102c65760405162461bcd60e51b815260040161010e90610933565b60335460345460408051630a86ef0d60e21b815290516001600160a01b039384169363c774a94e933393911691632a1bbc34916004808201926020929091908290030181600087803b15801561031b57600080fd5b505af115801561032f573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061035391906107fd565b6040518363ffffffff1660e01b815260040161037092919061086f565b600060405180830381600087803b15801561038a57600080fd5b505af115801561039e573d6000803e3d6000fd5b505060335460405163bedc6d2760e01b81526001600160a01b03909116925063bedc6d2791506103d49033908690600401610829565b600060405180830381600087803b1580156103ee57600080fd5b505af1158015610402573d6000803e3d6000fd5b505050507f067ed149b8be43d30a47ed69bc882367f66239804079b28dd002d36fc3f46ed4826000015183604001518460200151856060015160405161044b949392919061097b565b60405180910390a15050565b600054610100900460ff168061047057506104706106d6565b8061047e575060005460ff16155b61049a5760405162461bcd60e51b815260040161010e906108e5565b600054610100900460ff161580156104c5576000805460ff1961ff0019909116610100171660011790555b603380546001600160a01b0319166001600160a01b03848116919091179182905560408051636ec6883d60e01b815290519290911691636ec6883d91600480820192602092909190829003018186803b15801561052157600080fd5b505afa158015610535573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610559919061071f565b603480546001600160a01b0319166001600160a01b0392909216919091179055801561058b576000805461ff00191690555b5050565b815160009060ff1615806105ab57508151835160ff9182169116115b156105b85750600061063d565b604083015160ff1615806105d95750816040015160ff16836040015160ff16115b156105e65750600061063d565b602083015160ff1615806106075750816020015160ff16836020015160ff16115b156106145750600061063d565b6060830151158061062c575081606001518360600151115b156106395750600061063d565b5060015b92915050565b805160009060ff16158061065c5750604082015160ff16155b8061066c5750602082015160ff16155b8061063d575050606001511590565b8051825160009160ff91821691161480156106a35750816040015160ff16836040015160ff16145b80156106bc5750816020015160ff16836020015160ff16145b80156106cf575081606001518360600151145b9392505050565b303b1590565b60408051608081018252600080825260208201819052918101829052606081019190915290565b600060208284031215610714578081fd5b81356106cf816109c6565b600060208284031215610730578081fd5b81516106cf816109c6565b60006080828403121561074c578081fd5b610756608061099f565b8235610761816109de565b81526020830135610771816109de565b60208201526040830135610784816109de565b60408201526060928301359281019290925250919050565b6000608082840312156107ad578081fd5b6107b7608061099f565b82516107c2816109de565b815260208301516107d2816109de565b602082015260408301516107e5816109de565b60408201526060928301519281019290925250919050565b60006020828403121561080e578081fd5b5051919050565b6001600160a01b0391909116815260200190565b6001600160a01b03929092168252805160ff9081166020808501919091528201518116604080850191909152820151166060808401919091520151608082015260a00190565b6001600160a01b03929092168252602082015260400190565b60208082526038908201527f506f736974696f6e206d7573742062652077697468696e20736574206c696d6960408201527f7473206f6620746865206b6e6f776e20756e6976657273650000000000000000606082015260800190565b6020808252602e908201527f436f6e747261637420696e7374616e63652068617320616c726561647920626560408201526d195b881a5b9a5d1a585b1a5e995960921b606082015260800190565b60208082526028908201527f596f752063616e6e6f74206d6f766520746f20796f75722063757272656e74206040820152673637b1b0ba34b7b760c11b606082015260800190565b60ff9485168152928416602084015292166040820152606081019190915260800190565b60405181810167ffffffffffffffff811182821017156109be57600080fd5b604052919050565b6001600160a01b03811681146109db57600080fd5b50565b60ff811681146109db57600080fdfea2646970667358221220355c1efd5c947982e52f740396c6cc4ecc286511c7cf21e305c653ee293d00d564736f6c634300060c0033",
+  "immutableReferences": {},
+  "sourceMap": "422:1749:14:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "422:1749:14:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1057:1112;;;;;;:::i;:::-;;:::i;:::-;;747:160;;;;;;:::i;:::-;;:::i;1057:1112::-;1135:54;1166:2;1170;;;;;;;;;-1:-1:-1;;;;;1170:2:14;-1:-1:-1;;;;;1170:16:14;;:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1135:30;:54::i;:::-;1114:157;;;;-1:-1:-1;;;1114:157:14;;;;;;;:::i;:::-;;;;;;;;;1326:26;;:::i;:::-;1355:2;;:37;;-1:-1:-1;;;1355:37:14;;-1:-1:-1;;;;;1355:2:14;;;;:25;;:37;;1381:10;;1355:37;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1326:66;;1632:26;1653:4;1632:20;:26::i;:::-;1628:167;;;1681:2;;;;;;;;;-1:-1:-1;;;;;1681:2:14;-1:-1:-1;;;;;1681:19:14;;:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1674:28;;1628:167;;;1762:2;;:22;;-1:-1:-1;;;1762:22:14;;-1:-1:-1;;;;;1762:2:14;;;;:10;;:22;;1773:10;;1762:22;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1628:167;1814:31;1836:2;1840:4;1814:21;:31::i;:::-;1813:32;1805:85;;;;-1:-1:-1;;;1805:85:14;;;;;;;:::i;:::-;1987:2;;2028;;:13;;;-1:-1:-1;;;2028:13:14;;;;-1:-1:-1;;;;;1987:2:14;;;;:28;;2016:10;;2028:2;;;:11;;:13;;;;;;;;;;;;;;;1987:2;2028;:13;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1987:55;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;2053:2:14;;:41;;-1:-1:-1;;;2053:41:14;;-1:-1:-1;;;;;2053:2:14;;;;-1:-1:-1;2053:25:14;;-1:-1:-1;2053:41:14;;2079:10;;2091:2;;2053:41;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2109:53;2117:2;:11;;;2130:2;:11;;;2143:2;:9;;;2154:2;:7;;;2109:53;;;;;;;;;:::i;:::-;;;;;;;;1057:1112;;:::o;747:160::-;1057:12:52;;;;;;;;:31;;;1073:15;:13;:15::i;:::-;1057:47;;;-1:-1:-1;1093:11:52;;;;1092:12;1057:47;1049:106;;;;-1:-1:-1;;;1049:106:52;;;;;;;:::i;:::-;1162:19;1185:12;;;;;;1184:13;1203:80;;;;1231:12;:19;;-1:-1:-1;;;;1231:19:52;;;;;1258:18;1246:4;1258:18;;;1203:80;818:2:14::1;:30:::0;;-1:-1:-1;;;;;;818:30:14::1;-1:-1:-1::0;;;;;818:30:14;;::::1;::::0;;;::::1;::::0;;;;874:25:::1;::::0;;-1:-1:-1;;;874:25:14;;;;:2;;;::::1;::::0;:23:::1;::::0;:25:::1;::::0;;::::1;::::0;::::1;::::0;;;;;;;;;:2;:25;::::1;;::::0;::::1;;;;::::0;::::1;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;858:2;:42:::0;;-1:-1:-1;;;;;;858:42:14::1;-1:-1:-1::0;;;;;858:42:14;;;::::1;::::0;;;::::1;::::0;;1297:55:52;;;;1340:5;1325:20;;-1:-1:-1;;1325:20:52;;;1297:55;747:160:14;;:::o;714:431:23:-;833:10;;813:4;;833:15;;;;:51;;-1:-1:-1;865:19:23;;852:10;;:32;;;;;;;833:51;829:69;;;-1:-1:-1;893:5:23;886:12;;829:69;912:10;;;;:15;;;;:51;;;944:10;:19;;;931:32;;:1;:10;;;:32;;;912:51;908:69;;;-1:-1:-1;972:5:23;965:12;;908:69;991:8;;;;:13;;;;:45;;;1019:10;:17;;;1008:28;;:1;:8;;;:28;;;991:45;987:63;;;-1:-1:-1;1045:5:23;1038:12;;987:63;1064:6;;;;:11;;:39;;;1088:10;:15;;;1079:1;:6;;;:24;1064:39;1060:57;;;-1:-1:-1;1112:5:23;1105:12;;1060:57;-1:-1:-1;1134:4:23;714:431;;;;;:::o;549:159::-;634:10;;610:4;;634:15;;;;:34;;-1:-1:-1;653:10:23;;;;:15;;;634:34;:51;;;-1:-1:-1;672:8:23;;;;:13;;;634:51;:66;;;-1:-1:-1;;689:6:23;;;:11;;549:159::o;187:245::-;306:10;;292;;268:4;;292:24;;;;;;;:64;;;;;346:1;:10;;;332:24;;:1;:10;;;:24;;;292:64;:100;;;;;384:1;:8;;;372:20;;:1;:8;;;:20;;;292:100;:132;;;;;418:1;:6;;;408:1;:6;;;:16;292:132;284:141;187:245;-1:-1:-1;;;187:245:23:o;1442:498:52:-;1853:4;1897:17;1928:7;1442:498;:::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;2476:241::-;;2580:2;2568:9;2559:7;2555:23;2551:32;2548:2;;;-1:-1;;2586:12;2548:2;85:6;72:20;97:33;124:5;97:33;:::i;2724:263::-;;2839:2;2827:9;2818:7;2814:23;2810:32;2807:2;;;-1:-1;;2845:12;2807:2;226:6;220:13;238:33;265:5;238:33;:::i;2994:294::-;;3124:3;3112:9;3103:7;3099:23;3095:33;3092:2;;;-1:-1;;3131:12;3092:2;462:20;3124:3;462:20;:::i;:::-;2284:6;2271:20;2296:31;2321:5;2296:31;:::i;:::-;543:73;;679:2;731:22;;2271:20;2296:31;2271:20;2296:31;:::i;:::-;679:2;694:16;;687:73;825:2;877:22;;2271:20;2296:31;2271:20;2296:31;:::i;:::-;825:2;840:16;;833:73;967:2;1021:22;;;1995:20;982:16;;;975:75;;;;-1:-1;844:5;3086:202;-1:-1;3086:202::o;3295:316::-;;3436:3;3424:9;3415:7;3411:23;3407:33;3404:2;;;-1:-1;;3443:12;3404:2;1268:20;3436:3;1268:20;:::i;:::-;2421:6;2415:13;2433:31;2458:5;2433:31;:::i;:::-;1349:84;;1496:2;1559:22;;2415:13;2433:31;2415:13;2433:31;:::i;:::-;1496:2;1511:16;;1504:84;1653:2;1716:22;;2415:13;2433:31;2415:13;2433:31;:::i;:::-;1653:2;1668:16;;1661:84;1806:2;1871:22;;;2143:13;1821:16;;;1814:86;;;;-1:-1;1672:5;3398:213;-1:-1;3398:213::o;3618:263::-;;3733:2;3721:9;3712:7;3708:23;3704:32;3701:2;;;-1:-1;;3739:12;3701:2;-1:-1;2143:13;;3695:186;-1:-1;3695:186::o;6509:238::-;-1:-1;;;;;9974:54;;;;3967:58;;6644:2;6629:18;;6615:132::o;6754:454::-;-1:-1;;;;;9974:54;;;;3967:58;;5485:23;;10190:4;10179:16;;;7194:2;7179:18;;;6348:35;;;;5643:16;;5637:23;10179:16;;5710:14;;;;6348:35;;;;5797:16;;5791:23;10179:16;5864:14;;;;6348:35;;;;5947:16;5941:23;6018:14;;;6122:37;6969:3;6954:19;;6940:268::o;7215:349::-;-1:-1;;;;;9974:54;;;;3967:58;;7550:2;7535:18;;6122:37;7378:2;7363:18;;7349:215::o;7571:416::-;7771:2;7785:47;;;4262:2;7756:18;;;9746:19;4298:34;9786:14;;;4278:55;4367:26;4353:12;;;4346:48;4413:12;;;7742:245::o;7994:416::-;8194:2;8208:47;;;4664:2;8179:18;;;9746:19;4700:34;9786:14;;;4680:55;-1:-1;;;4755:12;;;4748:38;4805:12;;;8165:245::o;8417:416::-;8617:2;8631:47;;;5056:2;8602:18;;;9746:19;5092:34;9786:14;;;5072:55;-1:-1;;;5147:12;;;5140:32;5191:12;;;8588:245::o;8840:532::-;10190:4;10179:16;;;6348:35;;10179:16;;;9196:2;9181:18;;6348:35;10179:16;;9275:2;9260:18;;6348:35;9358:2;9343:18;;6122:37;;;;9039:3;9024:19;;9010:362::o;9379:256::-;9441:2;9435:9;9467:17;;;9542:18;9527:34;;9563:22;;;9524:62;9521:2;;;9599:1;;9589:12;9521:2;9441;9608:22;9419:216;;-1:-1;9419:216::o;10586:117::-;-1:-1;;;;;9974:54;;10645:35;;10635:2;;10694:1;;10684:12;10635:2;10629:74;:::o;10834:113::-;10190:4;10917:5;10179:16;10894:5;10891:33;10881:2;;10938:1;;10928:12",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {Initializable} from '@openzeppelin/upgrades-core/contracts/Initializable.sol';\nimport {Types} from './lib/Types.sol';\nimport {GameStorage} from './GameStorage.sol';\nimport {GameEvents} from './GameEvents.sol';\n\n/**\n * @title Operation\n * @author Big Beluga\n *\n * Primary public function for entering into the protocol\n */\ncontract Traverse is Initializable {\n    GameStorage GS;\n    GameEvents GE;\n\n    // ============ Events ============\n    event LogMove(uint8 quadrant, uint8 district, uint8 sector, uint256 star);\n\n    /**\n     *   Initialize - init function\n     *   @param _gameStorage - the address of the games eternal storage\n     */\n    function initialize(address _gameStorage) public initializer {\n        GS = GameStorage(_gameStorage);\n        GE = GameEvents(GS.getGameEventsAddress());\n    }\n\n    /**\n     *   Move - Moves a Star fleet to a new position.\n     *   @param to - the location the user wishes to move their fleet to.\n     */\n    function move(Types.Position memory to) public {\n        require(\n            Types.positionWithinBoundaries(to, GS.getBoundaries()),\n            'Position must be within set limits of the known universe'\n        );\n\n        // Get the fleets current position.\n        Types.Position memory from = GS.getMasterFleetPosition(msg.sender);\n\n        // If an addresses position is not on chain we have a new user.\n        // We shall set the users from position to be the Generic start position\n        // Events can not be triggered on a users first move into space\n        if (Types.positionNotSet(from)) {\n            from = GS.getStartPosition();\n        } else {\n            // Trigger Event\n            GE.trigger(msg.sender);\n        }\n\n        require(!Types.positionIsEqual(to, from), 'You cannot move to your current location');\n\n        // Create and store the next event in store for the user in a private mapping\n        GS.setUserAddressToGameEvent(msg.sender, GE.generate());\n\n        GS.setMasterFleetPosition(msg.sender, to);\n        emit LogMove(to.quadrant, to.district, to.sector, to.star);\n    }\n}\n",
+  "sourcePath": "C:/Users/James/projects/tsuno-fe/contracts/Traverse.sol",
+  "ast": {
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/Traverse.sol",
+    "exportedSymbols": {
+      "Traverse": [
+        4034
+      ]
+    },
+    "id": 4035,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3897,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:14"
+      },
+      {
+        "id": 3898,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:33:14"
+      },
+      {
+        "absolutePath": "@openzeppelin/upgrades-core/contracts/Initializable.sol",
+        "file": "@openzeppelin/upgrades-core/contracts/Initializable.sol",
+        "id": 3900,
+        "nodeType": "ImportDirective",
+        "scope": 4035,
+        "sourceUnit": 9970,
+        "src": "92:86:14",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3899,
+              "name": "Initializable",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "100:13:14",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/lib/Types.sol",
+        "file": "./lib/Types.sol",
+        "id": 3902,
+        "nodeType": "ImportDirective",
+        "scope": 4035,
+        "sourceUnit": 5218,
+        "src": "179:38:14",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3901,
+              "name": "Types",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "187:5:14",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/GameStorage.sol",
+        "file": "./GameStorage.sol",
+        "id": 3904,
+        "nodeType": "ImportDirective",
+        "scope": 4035,
+        "sourceUnit": 2317,
+        "src": "218:46:14",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3903,
+              "name": "GameStorage",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "226:11:14",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/GameEvents.sol",
+        "file": "./GameEvents.sol",
+        "id": 3906,
+        "nodeType": "ImportDirective",
+        "scope": 4035,
+        "sourceUnit": 1692,
+        "src": "265:44:14",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3905,
+              "name": "GameEvents",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "273:10:14",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3908,
+              "name": "Initializable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 9969,
+              "src": "443:13:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Initializable_$9969",
+                "typeString": "contract Initializable"
+              }
+            },
+            "id": 3909,
+            "nodeType": "InheritanceSpecifier",
+            "src": "443:13:14"
+          }
+        ],
+        "contractDependencies": [
+          9969
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 3907,
+          "nodeType": "StructuredDocumentation",
+          "src": "311:110:14",
+          "text": " @title Operation\n @author Big Beluga\n Primary public function for entering into the protocol"
+        },
+        "fullyImplemented": true,
+        "id": 4034,
+        "linearizedBaseContracts": [
+          4034,
+          9969
+        ],
+        "name": "Traverse",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3911,
+            "mutability": "mutable",
+            "name": "GS",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 4034,
+            "src": "463:14:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_GameStorage_$2316",
+              "typeString": "contract GameStorage"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3910,
+              "name": "GameStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2316,
+              "src": "463:11:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GameStorage_$2316",
+                "typeString": "contract GameStorage"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 3913,
+            "mutability": "mutable",
+            "name": "GE",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 4034,
+            "src": "483:13:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_GameEvents_$1691",
+              "typeString": "contract GameEvents"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3912,
+              "name": "GameEvents",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1691,
+              "src": "483:10:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GameEvents_$1691",
+                "typeString": "contract GameEvents"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 3923,
+            "name": "LogMove",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 3922,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3915,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "quadrant",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3923,
+                  "src": "557:14:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 3914,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "557:5:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3917,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "district",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3923,
+                  "src": "573:14:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 3916,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "573:5:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3919,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "sector",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3923,
+                  "src": "589:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 3918,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "589:5:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3921,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "star",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3923,
+                  "src": "603:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3920,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "603:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "556:60:14"
+            },
+            "src": "543:74:14"
+          },
+          {
+            "body": {
+              "id": 3945,
+              "nodeType": "Block",
+              "src": "808:99:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3935,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3931,
+                      "name": "GS",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3911,
+                      "src": "818:2:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_GameStorage_$2316",
+                        "typeString": "contract GameStorage"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 3933,
+                          "name": "_gameStorage",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3926,
+                          "src": "835:12:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 3932,
+                        "name": "GameStorage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2316,
+                        "src": "823:11:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_GameStorage_$2316_$",
+                          "typeString": "type(contract GameStorage)"
+                        }
+                      },
+                      "id": 3934,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "823:25:14",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_GameStorage_$2316",
+                        "typeString": "contract GameStorage"
+                      }
+                    },
+                    "src": "818:30:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_GameStorage_$2316",
+                      "typeString": "contract GameStorage"
+                    }
+                  },
+                  "id": 3936,
+                  "nodeType": "ExpressionStatement",
+                  "src": "818:30:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3943,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3937,
+                      "name": "GE",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3913,
+                      "src": "858:2:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_GameEvents_$1691",
+                        "typeString": "contract GameEvents"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 3939,
+                              "name": "GS",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3911,
+                              "src": "874:2:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_GameStorage_$2316",
+                                "typeString": "contract GameStorage"
+                              }
+                            },
+                            "id": 3940,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "getGameEventsAddress",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 1876,
+                            "src": "874:23:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                              "typeString": "function () view external returns (address)"
+                            }
+                          },
+                          "id": 3941,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "874:25:14",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 3938,
+                        "name": "GameEvents",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1691,
+                        "src": "863:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_GameEvents_$1691_$",
+                          "typeString": "type(contract GameEvents)"
+                        }
+                      },
+                      "id": 3942,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "863:37:14",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_GameEvents_$1691",
+                        "typeString": "contract GameEvents"
+                      }
+                    },
+                    "src": "858:42:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_GameEvents_$1691",
+                      "typeString": "contract GameEvents"
+                    }
+                  },
+                  "id": 3944,
+                  "nodeType": "ExpressionStatement",
+                  "src": "858:42:14"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3924,
+              "nodeType": "StructuredDocumentation",
+              "src": "623:119:14",
+              "text": "   Initialize - init function\n   @param _gameStorage - the address of the games eternal storage"
+            },
+            "functionSelector": "c4d66de8",
+            "id": 3946,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 3929,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 3928,
+                  "name": "initializer",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 9942,
+                  "src": "796:11:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "796:11:14"
+              }
+            ],
+            "name": "initialize",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3927,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3926,
+                  "mutability": "mutable",
+                  "name": "_gameStorage",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3946,
+                  "src": "767:20:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3925,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "767:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "766:22:14"
+            },
+            "returnParameters": {
+              "id": 3930,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "808:0:14"
+            },
+            "scope": 4034,
+            "src": "747:160:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4032,
+              "nodeType": "Block",
+              "src": "1104:1065:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 3955,
+                            "name": "to",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3949,
+                            "src": "1166:2:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                              "typeString": "struct Types.Position memory"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 3956,
+                                "name": "GS",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 3911,
+                                "src": "1170:2:14",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_GameStorage_$2316",
+                                  "typeString": "contract GameStorage"
+                                }
+                              },
+                              "id": 3957,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "getBoundaries",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 2010,
+                              "src": "1170:16:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$__$returns$_t_struct$_Position_$4702_memory_ptr_$",
+                                "typeString": "function () view external returns (struct Types.Position memory)"
+                              }
+                            },
+                            "id": 3958,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1170:18:14",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                              "typeString": "struct Types.Position memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                              "typeString": "struct Types.Position memory"
+                            },
+                            {
+                              "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                              "typeString": "struct Types.Position memory"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3953,
+                            "name": "Types",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5217,
+                            "src": "1135:5:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Types_$5217_$",
+                              "typeString": "type(library Types)"
+                            }
+                          },
+                          "id": 3954,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "positionWithinBoundaries",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 4844,
+                          "src": "1135:30:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Position_$4702_memory_ptr_$_t_struct$_Position_$4702_memory_ptr_$returns$_t_bool_$",
+                            "typeString": "function (struct Types.Position memory,struct Types.Position memory) returns (bool)"
+                          }
+                        },
+                        "id": 3959,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1135:54:14",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "506f736974696f6e206d7573742062652077697468696e20736574206c696d697473206f6620746865206b6e6f776e20756e697665727365",
+                        "id": 3960,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1203:58:14",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_165eb5672c24f5a2b7cc04985217dd4e2a72bcbbff26a408f6d26bd8db072aba",
+                          "typeString": "literal_string \"Position must be within set limits of the known universe\""
+                        },
+                        "value": "Position must be within set limits of the known universe"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_165eb5672c24f5a2b7cc04985217dd4e2a72bcbbff26a408f6d26bd8db072aba",
+                          "typeString": "literal_string \"Position must be within set limits of the known universe\""
+                        }
+                      ],
+                      "id": 3952,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "1114:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3961,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1114:157:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3962,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1114:157:14"
+                },
+                {
+                  "assignments": [
+                    3966
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 3966,
+                      "mutability": "mutable",
+                      "name": "from",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 4032,
+                      "src": "1326:26:14",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                        "typeString": "struct Types.Position"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 3965,
+                        "name": "Types.Position",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 4702,
+                        "src": "1326:14:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Position_$4702_storage_ptr",
+                          "typeString": "struct Types.Position"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 3972,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3969,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "1381:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 3970,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1381:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3967,
+                        "name": "GS",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3911,
+                        "src": "1355:2:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_GameStorage_$2316",
+                          "typeString": "contract GameStorage"
+                        }
+                      },
+                      "id": 3968,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getMasterFleetPosition",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2036,
+                      "src": "1355:25:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_struct$_Position_$4702_memory_ptr_$",
+                        "typeString": "function (address) view external returns (struct Types.Position memory)"
+                      }
+                    },
+                    "id": 3971,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1355:37:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                      "typeString": "struct Types.Position memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1326:66:14"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3975,
+                        "name": "from",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3966,
+                        "src": "1653:4:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                          "typeString": "struct Types.Position memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                          "typeString": "struct Types.Position memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3973,
+                        "name": "Types",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5217,
+                        "src": "1632:5:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Types_$5217_$",
+                          "typeString": "type(library Types)"
+                        }
+                      },
+                      "id": 3974,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "positionNotSet",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4780,
+                      "src": "1632:20:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Position_$4702_memory_ptr_$returns$_t_bool_$",
+                        "typeString": "function (struct Types.Position memory) returns (bool)"
+                      }
+                    },
+                    "id": 3976,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1632:26:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "id": 3991,
+                    "nodeType": "Block",
+                    "src": "1719:76:14",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 3987,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": -15,
+                                "src": "1773:3:14",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 3988,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "1773:10:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 3984,
+                              "name": "GE",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3913,
+                              "src": "1762:2:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_GameEvents_$1691",
+                                "typeString": "contract GameEvents"
+                              }
+                            },
+                            "id": 3986,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "trigger",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 1592,
+                            "src": "1762:10:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                              "typeString": "function (address) external"
+                            }
+                          },
+                          "id": 3989,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1762:22:14",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 3990,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1762:22:14"
+                      }
+                    ]
+                  },
+                  "id": 3992,
+                  "nodeType": "IfStatement",
+                  "src": "1628:167:14",
+                  "trueBody": {
+                    "id": 3983,
+                    "nodeType": "Block",
+                    "src": "1660:53:14",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3981,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 3977,
+                            "name": "from",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3966,
+                            "src": "1674:4:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                              "typeString": "struct Types.Position memory"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 3978,
+                                "name": "GS",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 3911,
+                                "src": "1681:2:14",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_GameStorage_$2316",
+                                  "typeString": "contract GameStorage"
+                                }
+                              },
+                              "id": 3979,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "getStartPosition",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 2002,
+                              "src": "1681:19:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$__$returns$_t_struct$_Position_$4702_memory_ptr_$",
+                                "typeString": "function () view external returns (struct Types.Position memory)"
+                              }
+                            },
+                            "id": 3980,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1681:21:14",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                              "typeString": "struct Types.Position memory"
+                            }
+                          },
+                          "src": "1674:28:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                            "typeString": "struct Types.Position memory"
+                          }
+                        },
+                        "id": 3982,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1674:28:14"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3999,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "1813:32:14",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 3996,
+                              "name": "to",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3949,
+                              "src": "1836:2:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                                "typeString": "struct Types.Position memory"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "id": 3997,
+                              "name": "from",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3966,
+                              "src": "1840:4:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                                "typeString": "struct Types.Position memory"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                                "typeString": "struct Types.Position memory"
+                              },
+                              {
+                                "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                                "typeString": "struct Types.Position memory"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 3994,
+                              "name": "Types",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 5217,
+                              "src": "1814:5:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_Types_$5217_$",
+                                "typeString": "type(library Types)"
+                              }
+                            },
+                            "id": 3995,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "positionIsEqual",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 4737,
+                            "src": "1814:21:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Position_$4702_memory_ptr_$_t_struct$_Position_$4702_memory_ptr_$returns$_t_bool_$",
+                              "typeString": "function (struct Types.Position memory,struct Types.Position memory) returns (bool)"
+                            }
+                          },
+                          "id": 3998,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1814:31:14",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "596f752063616e6e6f74206d6f766520746f20796f75722063757272656e74206c6f636174696f6e",
+                        "id": 4000,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1847:42:14",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_e8708ea6365b7ac9f927982026aa31a7b56f966cddd99fe941a9adf4e4e32199",
+                          "typeString": "literal_string \"You cannot move to your current location\""
+                        },
+                        "value": "You cannot move to your current location"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_e8708ea6365b7ac9f927982026aa31a7b56f966cddd99fe941a9adf4e4e32199",
+                          "typeString": "literal_string \"You cannot move to your current location\""
+                        }
+                      ],
+                      "id": 3993,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "1805:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 4001,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1805:85:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4002,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1805:85:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4006,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "2016:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 4007,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2016:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 4008,
+                            "name": "GE",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3913,
+                            "src": "2028:2:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_GameEvents_$1691",
+                              "typeString": "contract GameEvents"
+                            }
+                          },
+                          "id": 4009,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "generate",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1530,
+                          "src": "2028:11:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_uint256_$",
+                            "typeString": "function () external returns (uint256)"
+                          }
+                        },
+                        "id": 4010,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "2028:13:14",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4003,
+                        "name": "GS",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3911,
+                        "src": "1987:2:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_GameStorage_$2316",
+                          "typeString": "contract GameStorage"
+                        }
+                      },
+                      "id": 4005,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setUserAddressToGameEvent",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2070,
+                      "src": "1987:28:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256) external"
+                      }
+                    },
+                    "id": 4011,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1987:55:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4012,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1987:55:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4016,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "2079:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 4017,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2079:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4018,
+                        "name": "to",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3949,
+                        "src": "2091:2:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                          "typeString": "struct Types.Position memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                          "typeString": "struct Types.Position memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4013,
+                        "name": "GS",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3911,
+                        "src": "2053:2:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_GameStorage_$2316",
+                          "typeString": "contract GameStorage"
+                        }
+                      },
+                      "id": 4015,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setMasterFleetPosition",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2024,
+                      "src": "2053:25:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_struct$_Position_$4702_memory_ptr_$returns$__$",
+                        "typeString": "function (address,struct Types.Position memory) external"
+                      }
+                    },
+                    "id": 4019,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2053:41:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4020,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2053:41:14"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4022,
+                          "name": "to",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3949,
+                          "src": "2117:2:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                            "typeString": "struct Types.Position memory"
+                          }
+                        },
+                        "id": 4023,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "quadrant",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4695,
+                        "src": "2117:11:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4024,
+                          "name": "to",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3949,
+                          "src": "2130:2:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                            "typeString": "struct Types.Position memory"
+                          }
+                        },
+                        "id": 4025,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "district",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4699,
+                        "src": "2130:11:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4026,
+                          "name": "to",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3949,
+                          "src": "2143:2:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                            "typeString": "struct Types.Position memory"
+                          }
+                        },
+                        "id": 4027,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sector",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4697,
+                        "src": "2143:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4028,
+                          "name": "to",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3949,
+                          "src": "2154:2:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                            "typeString": "struct Types.Position memory"
+                          }
+                        },
+                        "id": 4029,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "star",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4701,
+                        "src": "2154:7:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 4021,
+                      "name": "LogMove",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3923,
+                      "src": "2109:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint8_$_t_uint8_$_t_uint8_$_t_uint256_$returns$__$",
+                        "typeString": "function (uint8,uint8,uint8,uint256)"
+                      }
+                    },
+                    "id": 4030,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2109:53:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4031,
+                  "nodeType": "EmitStatement",
+                  "src": "2104:58:14"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3947,
+              "nodeType": "StructuredDocumentation",
+              "src": "913:139:14",
+              "text": "   Move - Moves a Star fleet to a new position.\n   @param to - the location the user wishes to move their fleet to."
+            },
+            "functionSelector": "8e905cfd",
+            "id": 4033,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "move",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3950,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3949,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4033,
+                  "src": "1071:24:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                    "typeString": "struct Types.Position"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3948,
+                    "name": "Types.Position",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4702,
+                    "src": "1071:14:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Position_$4702_storage_ptr",
+                      "typeString": "struct Types.Position"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1070:26:14"
+            },
+            "returnParameters": {
+              "id": 3951,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1104:0:14"
+            },
+            "scope": 4034,
+            "src": "1057:1112:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 4035,
+        "src": "422:1749:14"
+      }
+    ],
+    "src": "33:2139:14"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/Traverse.sol",
+    "exportedSymbols": {
+      "Traverse": [
+        4034
+      ]
+    },
+    "id": 4035,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3897,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:14"
+      },
+      {
+        "id": 3898,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:33:14"
+      },
+      {
+        "absolutePath": "@openzeppelin/upgrades-core/contracts/Initializable.sol",
+        "file": "@openzeppelin/upgrades-core/contracts/Initializable.sol",
+        "id": 3900,
+        "nodeType": "ImportDirective",
+        "scope": 4035,
+        "sourceUnit": 9970,
+        "src": "92:86:14",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3899,
+              "name": "Initializable",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "100:13:14",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/lib/Types.sol",
+        "file": "./lib/Types.sol",
+        "id": 3902,
+        "nodeType": "ImportDirective",
+        "scope": 4035,
+        "sourceUnit": 5218,
+        "src": "179:38:14",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3901,
+              "name": "Types",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "187:5:14",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/GameStorage.sol",
+        "file": "./GameStorage.sol",
+        "id": 3904,
+        "nodeType": "ImportDirective",
+        "scope": 4035,
+        "sourceUnit": 2317,
+        "src": "218:46:14",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3903,
+              "name": "GameStorage",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "226:11:14",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/GameEvents.sol",
+        "file": "./GameEvents.sol",
+        "id": 3906,
+        "nodeType": "ImportDirective",
+        "scope": 4035,
+        "sourceUnit": 1692,
+        "src": "265:44:14",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 3905,
+              "name": "GameEvents",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "273:10:14",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3908,
+              "name": "Initializable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 9969,
+              "src": "443:13:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Initializable_$9969",
+                "typeString": "contract Initializable"
+              }
+            },
+            "id": 3909,
+            "nodeType": "InheritanceSpecifier",
+            "src": "443:13:14"
+          }
+        ],
+        "contractDependencies": [
+          9969
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 3907,
+          "nodeType": "StructuredDocumentation",
+          "src": "311:110:14",
+          "text": " @title Operation\n @author Big Beluga\n Primary public function for entering into the protocol"
+        },
+        "fullyImplemented": true,
+        "id": 4034,
+        "linearizedBaseContracts": [
+          4034,
+          9969
+        ],
+        "name": "Traverse",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3911,
+            "mutability": "mutable",
+            "name": "GS",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 4034,
+            "src": "463:14:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_GameStorage_$2316",
+              "typeString": "contract GameStorage"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3910,
+              "name": "GameStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2316,
+              "src": "463:11:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GameStorage_$2316",
+                "typeString": "contract GameStorage"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 3913,
+            "mutability": "mutable",
+            "name": "GE",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 4034,
+            "src": "483:13:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_GameEvents_$1691",
+              "typeString": "contract GameEvents"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3912,
+              "name": "GameEvents",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1691,
+              "src": "483:10:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GameEvents_$1691",
+                "typeString": "contract GameEvents"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 3923,
+            "name": "LogMove",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 3922,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3915,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "quadrant",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3923,
+                  "src": "557:14:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 3914,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "557:5:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3917,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "district",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3923,
+                  "src": "573:14:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 3916,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "573:5:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3919,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "sector",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3923,
+                  "src": "589:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 3918,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "589:5:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3921,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "star",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3923,
+                  "src": "603:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3920,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "603:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "556:60:14"
+            },
+            "src": "543:74:14"
+          },
+          {
+            "body": {
+              "id": 3945,
+              "nodeType": "Block",
+              "src": "808:99:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3935,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3931,
+                      "name": "GS",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3911,
+                      "src": "818:2:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_GameStorage_$2316",
+                        "typeString": "contract GameStorage"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 3933,
+                          "name": "_gameStorage",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3926,
+                          "src": "835:12:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 3932,
+                        "name": "GameStorage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2316,
+                        "src": "823:11:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_GameStorage_$2316_$",
+                          "typeString": "type(contract GameStorage)"
+                        }
+                      },
+                      "id": 3934,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "823:25:14",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_GameStorage_$2316",
+                        "typeString": "contract GameStorage"
+                      }
+                    },
+                    "src": "818:30:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_GameStorage_$2316",
+                      "typeString": "contract GameStorage"
+                    }
+                  },
+                  "id": 3936,
+                  "nodeType": "ExpressionStatement",
+                  "src": "818:30:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3943,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3937,
+                      "name": "GE",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3913,
+                      "src": "858:2:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_GameEvents_$1691",
+                        "typeString": "contract GameEvents"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 3939,
+                              "name": "GS",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3911,
+                              "src": "874:2:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_GameStorage_$2316",
+                                "typeString": "contract GameStorage"
+                              }
+                            },
+                            "id": 3940,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "getGameEventsAddress",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 1876,
+                            "src": "874:23:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                              "typeString": "function () view external returns (address)"
+                            }
+                          },
+                          "id": 3941,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "874:25:14",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 3938,
+                        "name": "GameEvents",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1691,
+                        "src": "863:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_GameEvents_$1691_$",
+                          "typeString": "type(contract GameEvents)"
+                        }
+                      },
+                      "id": 3942,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "863:37:14",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_GameEvents_$1691",
+                        "typeString": "contract GameEvents"
+                      }
+                    },
+                    "src": "858:42:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_GameEvents_$1691",
+                      "typeString": "contract GameEvents"
+                    }
+                  },
+                  "id": 3944,
+                  "nodeType": "ExpressionStatement",
+                  "src": "858:42:14"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3924,
+              "nodeType": "StructuredDocumentation",
+              "src": "623:119:14",
+              "text": "   Initialize - init function\n   @param _gameStorage - the address of the games eternal storage"
+            },
+            "functionSelector": "c4d66de8",
+            "id": 3946,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 3929,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 3928,
+                  "name": "initializer",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 9942,
+                  "src": "796:11:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "796:11:14"
+              }
+            ],
+            "name": "initialize",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3927,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3926,
+                  "mutability": "mutable",
+                  "name": "_gameStorage",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3946,
+                  "src": "767:20:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3925,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "767:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "766:22:14"
+            },
+            "returnParameters": {
+              "id": 3930,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "808:0:14"
+            },
+            "scope": 4034,
+            "src": "747:160:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4032,
+              "nodeType": "Block",
+              "src": "1104:1065:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 3955,
+                            "name": "to",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3949,
+                            "src": "1166:2:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                              "typeString": "struct Types.Position memory"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 3956,
+                                "name": "GS",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 3911,
+                                "src": "1170:2:14",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_GameStorage_$2316",
+                                  "typeString": "contract GameStorage"
+                                }
+                              },
+                              "id": 3957,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "getBoundaries",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 2010,
+                              "src": "1170:16:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$__$returns$_t_struct$_Position_$4702_memory_ptr_$",
+                                "typeString": "function () view external returns (struct Types.Position memory)"
+                              }
+                            },
+                            "id": 3958,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1170:18:14",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                              "typeString": "struct Types.Position memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                              "typeString": "struct Types.Position memory"
+                            },
+                            {
+                              "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                              "typeString": "struct Types.Position memory"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3953,
+                            "name": "Types",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5217,
+                            "src": "1135:5:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Types_$5217_$",
+                              "typeString": "type(library Types)"
+                            }
+                          },
+                          "id": 3954,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "positionWithinBoundaries",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 4844,
+                          "src": "1135:30:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Position_$4702_memory_ptr_$_t_struct$_Position_$4702_memory_ptr_$returns$_t_bool_$",
+                            "typeString": "function (struct Types.Position memory,struct Types.Position memory) returns (bool)"
+                          }
+                        },
+                        "id": 3959,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1135:54:14",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "506f736974696f6e206d7573742062652077697468696e20736574206c696d697473206f6620746865206b6e6f776e20756e697665727365",
+                        "id": 3960,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1203:58:14",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_165eb5672c24f5a2b7cc04985217dd4e2a72bcbbff26a408f6d26bd8db072aba",
+                          "typeString": "literal_string \"Position must be within set limits of the known universe\""
+                        },
+                        "value": "Position must be within set limits of the known universe"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_165eb5672c24f5a2b7cc04985217dd4e2a72bcbbff26a408f6d26bd8db072aba",
+                          "typeString": "literal_string \"Position must be within set limits of the known universe\""
+                        }
+                      ],
+                      "id": 3952,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "1114:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3961,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1114:157:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3962,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1114:157:14"
+                },
+                {
+                  "assignments": [
+                    3966
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 3966,
+                      "mutability": "mutable",
+                      "name": "from",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 4032,
+                      "src": "1326:26:14",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                        "typeString": "struct Types.Position"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 3965,
+                        "name": "Types.Position",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 4702,
+                        "src": "1326:14:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Position_$4702_storage_ptr",
+                          "typeString": "struct Types.Position"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 3972,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3969,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "1381:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 3970,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1381:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3967,
+                        "name": "GS",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3911,
+                        "src": "1355:2:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_GameStorage_$2316",
+                          "typeString": "contract GameStorage"
+                        }
+                      },
+                      "id": 3968,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getMasterFleetPosition",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2036,
+                      "src": "1355:25:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_struct$_Position_$4702_memory_ptr_$",
+                        "typeString": "function (address) view external returns (struct Types.Position memory)"
+                      }
+                    },
+                    "id": 3971,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1355:37:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                      "typeString": "struct Types.Position memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1326:66:14"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3975,
+                        "name": "from",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3966,
+                        "src": "1653:4:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                          "typeString": "struct Types.Position memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                          "typeString": "struct Types.Position memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3973,
+                        "name": "Types",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5217,
+                        "src": "1632:5:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Types_$5217_$",
+                          "typeString": "type(library Types)"
+                        }
+                      },
+                      "id": 3974,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "positionNotSet",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4780,
+                      "src": "1632:20:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Position_$4702_memory_ptr_$returns$_t_bool_$",
+                        "typeString": "function (struct Types.Position memory) returns (bool)"
+                      }
+                    },
+                    "id": 3976,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1632:26:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "id": 3991,
+                    "nodeType": "Block",
+                    "src": "1719:76:14",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 3987,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": -15,
+                                "src": "1773:3:14",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 3988,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "1773:10:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 3984,
+                              "name": "GE",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3913,
+                              "src": "1762:2:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_GameEvents_$1691",
+                                "typeString": "contract GameEvents"
+                              }
+                            },
+                            "id": 3986,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "trigger",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 1592,
+                            "src": "1762:10:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                              "typeString": "function (address) external"
+                            }
+                          },
+                          "id": 3989,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1762:22:14",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 3990,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1762:22:14"
+                      }
+                    ]
+                  },
+                  "id": 3992,
+                  "nodeType": "IfStatement",
+                  "src": "1628:167:14",
+                  "trueBody": {
+                    "id": 3983,
+                    "nodeType": "Block",
+                    "src": "1660:53:14",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3981,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 3977,
+                            "name": "from",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3966,
+                            "src": "1674:4:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                              "typeString": "struct Types.Position memory"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 3978,
+                                "name": "GS",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 3911,
+                                "src": "1681:2:14",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_GameStorage_$2316",
+                                  "typeString": "contract GameStorage"
+                                }
+                              },
+                              "id": 3979,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "getStartPosition",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 2002,
+                              "src": "1681:19:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$__$returns$_t_struct$_Position_$4702_memory_ptr_$",
+                                "typeString": "function () view external returns (struct Types.Position memory)"
+                              }
+                            },
+                            "id": 3980,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1681:21:14",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                              "typeString": "struct Types.Position memory"
+                            }
+                          },
+                          "src": "1674:28:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                            "typeString": "struct Types.Position memory"
+                          }
+                        },
+                        "id": 3982,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1674:28:14"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3999,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "1813:32:14",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 3996,
+                              "name": "to",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3949,
+                              "src": "1836:2:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                                "typeString": "struct Types.Position memory"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "id": 3997,
+                              "name": "from",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3966,
+                              "src": "1840:4:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                                "typeString": "struct Types.Position memory"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                                "typeString": "struct Types.Position memory"
+                              },
+                              {
+                                "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                                "typeString": "struct Types.Position memory"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 3994,
+                              "name": "Types",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 5217,
+                              "src": "1814:5:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_Types_$5217_$",
+                                "typeString": "type(library Types)"
+                              }
+                            },
+                            "id": 3995,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "positionIsEqual",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 4737,
+                            "src": "1814:21:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Position_$4702_memory_ptr_$_t_struct$_Position_$4702_memory_ptr_$returns$_t_bool_$",
+                              "typeString": "function (struct Types.Position memory,struct Types.Position memory) returns (bool)"
+                            }
+                          },
+                          "id": 3998,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1814:31:14",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "596f752063616e6e6f74206d6f766520746f20796f75722063757272656e74206c6f636174696f6e",
+                        "id": 4000,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1847:42:14",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_e8708ea6365b7ac9f927982026aa31a7b56f966cddd99fe941a9adf4e4e32199",
+                          "typeString": "literal_string \"You cannot move to your current location\""
+                        },
+                        "value": "You cannot move to your current location"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_e8708ea6365b7ac9f927982026aa31a7b56f966cddd99fe941a9adf4e4e32199",
+                          "typeString": "literal_string \"You cannot move to your current location\""
+                        }
+                      ],
+                      "id": 3993,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "1805:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 4001,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1805:85:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4002,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1805:85:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4006,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "2016:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 4007,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2016:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 4008,
+                            "name": "GE",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3913,
+                            "src": "2028:2:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_GameEvents_$1691",
+                              "typeString": "contract GameEvents"
+                            }
+                          },
+                          "id": 4009,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "generate",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1530,
+                          "src": "2028:11:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_uint256_$",
+                            "typeString": "function () external returns (uint256)"
+                          }
+                        },
+                        "id": 4010,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "2028:13:14",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4003,
+                        "name": "GS",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3911,
+                        "src": "1987:2:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_GameStorage_$2316",
+                          "typeString": "contract GameStorage"
+                        }
+                      },
+                      "id": 4005,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setUserAddressToGameEvent",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2070,
+                      "src": "1987:28:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256) external"
+                      }
+                    },
+                    "id": 4011,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1987:55:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4012,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1987:55:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4016,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "2079:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 4017,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2079:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4018,
+                        "name": "to",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3949,
+                        "src": "2091:2:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                          "typeString": "struct Types.Position memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                          "typeString": "struct Types.Position memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4013,
+                        "name": "GS",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3911,
+                        "src": "2053:2:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_GameStorage_$2316",
+                          "typeString": "contract GameStorage"
+                        }
+                      },
+                      "id": 4015,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setMasterFleetPosition",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2024,
+                      "src": "2053:25:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_struct$_Position_$4702_memory_ptr_$returns$__$",
+                        "typeString": "function (address,struct Types.Position memory) external"
+                      }
+                    },
+                    "id": 4019,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2053:41:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4020,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2053:41:14"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4022,
+                          "name": "to",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3949,
+                          "src": "2117:2:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                            "typeString": "struct Types.Position memory"
+                          }
+                        },
+                        "id": 4023,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "quadrant",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4695,
+                        "src": "2117:11:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4024,
+                          "name": "to",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3949,
+                          "src": "2130:2:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                            "typeString": "struct Types.Position memory"
+                          }
+                        },
+                        "id": 4025,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "district",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4699,
+                        "src": "2130:11:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4026,
+                          "name": "to",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3949,
+                          "src": "2143:2:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                            "typeString": "struct Types.Position memory"
+                          }
+                        },
+                        "id": 4027,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sector",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4697,
+                        "src": "2143:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4028,
+                          "name": "to",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3949,
+                          "src": "2154:2:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                            "typeString": "struct Types.Position memory"
+                          }
+                        },
+                        "id": 4029,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "star",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4701,
+                        "src": "2154:7:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 4021,
+                      "name": "LogMove",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3923,
+                      "src": "2109:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint8_$_t_uint8_$_t_uint8_$_t_uint256_$returns$__$",
+                        "typeString": "function (uint8,uint8,uint8,uint256)"
+                      }
+                    },
+                    "id": 4030,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2109:53:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4031,
+                  "nodeType": "EmitStatement",
+                  "src": "2104:58:14"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3947,
+              "nodeType": "StructuredDocumentation",
+              "src": "913:139:14",
+              "text": "   Move - Moves a Star fleet to a new position.\n   @param to - the location the user wishes to move their fleet to."
+            },
+            "functionSelector": "8e905cfd",
+            "id": 4033,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "move",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3950,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3949,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4033,
+                  "src": "1071:24:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Position_$4702_memory_ptr",
+                    "typeString": "struct Types.Position"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3948,
+                    "name": "Types.Position",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4702,
+                    "src": "1071:14:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Position_$4702_storage_ptr",
+                      "typeString": "struct Types.Position"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1070:26:14"
+            },
+            "returnParameters": {
+              "id": 3951,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1104:0:14"
+            },
+            "scope": 4034,
+            "src": "1057:1112:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 4035,
+        "src": "422:1749:14"
+      }
+    ],
+    "src": "33:2139:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0x067ed149b8be43d30a47ed69bc882367f66239804079b28dd002d36fc3f46ed4": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "quadrant",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "district",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "sector",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "star",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogMove",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xeC86C6C74E30708A73479A3ac2F4ef4b3fEF9A68",
+      "transactionHash": "0x813f2bdee390c4418042886532efe32a7fbdad60dce3f077121499556597aae9"
+    }
+  },
+  "schemaVersion": "3.2.5",
+  "updatedAt": "2020-11-15T18:28:43.942Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "author": "Big Beluga Primary public function for entering into the protocol",
+    "kind": "dev",
+    "methods": {
+      "initialize(address)": {
+        "params": {
+          "_gameStorage": "- the address of the games eternal storage"
+        }
+      },
+      "move((uint8,uint8,uint8,uint256))": {
+        "params": {
+          "to": "- the location the user wishes to move their fleet to."
+        }
+      }
+    },
+    "title": "Operation",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "initialize(address)": {
+        "notice": "Initialize - init function"
+      },
+      "move((uint8,uint8,uint8,uint256))": {
+        "notice": "Move - Moves a Star fleet to a new position."
+      }
+    },
+    "version": 1
+  }
+}

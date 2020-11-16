@@ -1,0 +1,1059 @@
+{
+  "contractName": "GameOperations",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "enum Types.SystemType",
+          "name": "systemType",
+          "type": "uint8"
+        }
+      ],
+      "name": "getRandomYield",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "rand",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_seed",
+          "type": "uint256"
+        }
+      ],
+      "name": "setSeed",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"enum Types.SystemType\",\"name\":\"systemType\",\"type\":\"uint8\"}],\"name\":\"getRandomYield\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"rand\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_seed\",\"type\":\"uint256\"}],\"name\":\"setSeed\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Big Beluga Primary public function for entering into the protocol\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Operation\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/GameOperations.sol\":\"GameOperations\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/BaseStorage.sol\":{\"keccak256\":\"0x2143b1f53408066ffe38673b4f73d704c93eb2c25f256917c2ed7e9d0430bacd\",\"urls\":[\"bzz-raw://a0d465ba6f3c2c6205db2cb713e29bebf9ebc7a5cef6844085e2ab0ed1e799ac\",\"dweb:/ipfs/QmZsif8jes1uGrHo24hEh4J81GV74Uz6pg6oztCsxzh2i7\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Constants.sol\":{\"keccak256\":\"0x21313dc89e9897fbe60d8bfcae2ae95f7b98b358a88ef48222ba8cf200437e97\",\"urls\":[\"bzz-raw://b09712de11198fa8761a1dd2ccbcf1ff43959ce2c96c596ed4dff008ff291955\",\"dweb:/ipfs/QmfUZPrDscUVhPRXRLwPNArrVUyozeft2zeYfS5khr5YHN\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Discovery.sol\":{\"keccak256\":\"0x475167f4c3d671b71eb46935cf0b6641f5a441a1509296d701fac66256b85167\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://304b1ffd9b4dc4fd717437350424ff895f970aec3c464d0e9f9f7efc29676cdc\",\"dweb:/ipfs/QmNnVhfySYzKPjnxwxsXAjBXdxbLpBPZSG8x2qXPRTbJaq\"]},\"/C/Users/James/projects/tsuno-fe/contracts/GameOperations.sol\":{\"keccak256\":\"0x202c4cab0357e8b460257fd7e8e35f58b60052eb71953ba0e7d5f0ba288d3b4b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b40bf7b3bf5517341675e7686c9531971a780d805c3c2e2658f98931de9342fc\",\"dweb:/ipfs/QmNtt8t4nt1LBrs2g3HR12J7FbSTmaJ386EWwYhtfpnBtd\"]},\"/C/Users/James/projects/tsuno-fe/contracts/GameStorage.sol\":{\"keccak256\":\"0x736870467a547ff104eff95eaedda594e39fb9f71dfb2767e99f3463c13113cc\",\"urls\":[\"bzz-raw://ec2fc4ddf717b2e079b0684ccefc8cb27c6b62ac76374f107eb0e4ddf7584de5\",\"dweb:/ipfs/QmTSexPpKNB274moiLf8QTpUG3wBbfc1xyhwnNpB4CzDpJ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Planet.sol\":{\"keccak256\":\"0x927ce1c9c8b1dfa98feb41eece66fe1b03639c906edae94dc846e9b0a5072927\",\"urls\":[\"bzz-raw://bd1df9e1691216ca7e111439f298b9e3160a4fb14002f7094d653d02d9781365\",\"dweb:/ipfs/QmZSxcwdQLSUcFLu37JiTaoa6gNSi7Vjs2FndCTskEbMfG\"]},\"/C/Users/James/projects/tsuno-fe/contracts/PlanetManager.sol\":{\"keccak256\":\"0xdc3d207157638f7b31ebf973f3571e8bb5495a066db4826d7d28630e09c2b17a\",\"urls\":[\"bzz-raw://462d5d77372833879bdc444f92f40f6a8fb26387a2df59c35e9b6aa86d941410\",\"dweb:/ipfs/QmRepdPRTTXXYS3N6wJ1ZESRuzsLuNAUdxN9MrLW5hxHY7\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Planets.sol\":{\"keccak256\":\"0xab87b51989e2735b481160d791c4010e977eab50090200cf520fd0de30050abf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c4c8f4112dba247ee28adf5bb9d4546b4ef3674e7628de5dc1cf9828d8349410\",\"dweb:/ipfs/QmaUeFaDq9ShAJrp4WBWbJE5o8kkfLcdbV7rbbGxUShVGt\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Random.sol\":{\"keccak256\":\"0xf63f4fc867e896856de1f1b10e1284a42903881b4f936d19335d3d88caa15085\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ff94739759ae079be945fa5cad80fffbd0fad8ed741a0f651f88816483539d12\",\"dweb:/ipfs/QmWWWiYZTmqtR3vuYvUGsiRQdXmkmgRLXiUvxPLrkaGmom\"]},\"/C/Users/James/projects/tsuno-fe/contracts/interfaces/IPlanets.sol\":{\"keccak256\":\"0x3bfe87029d99433993295fc0f26161dc2c2632f9cfe1f31e954b43fdb9913e06\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f7694d925cb27895cf2a72d7c68ee1fa1bad7f3a7ff46f52c2b5ed32828e5ae6\",\"dweb:/ipfs/QmR5wp3D7sKFK8qNCRVMQ3WrbMdNCdod2vVgDz8oPVYjGD\"]},\"/C/Users/James/projects/tsuno-fe/contracts/interfaces/ISat.sol\":{\"keccak256\":\"0x88eab46b93f7d4aa617ec9c10f5b3e2739f6bb5c07d04dba19d2c0c9e7448149\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5606bf6da8955468bded5a10239f09e71f47b5c0c0c73258d390ea70aae2c725\",\"dweb:/ipfs/QmVCRUMVebzNcnSBF2ZcM5xUNyv7vgwk1VKKq4fEVcGKrL\"]},\"/C/Users/James/projects/tsuno-fe/contracts/interfaces/ISolar.sol\":{\"keccak256\":\"0x5267954e42950e4204aab25741c7e2da482b5f70c82ec5f9b25df874152e1672\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0987fde8d1776dba448c43e54753fdd671b05c42ec0ab783606cb45485cebb3e\",\"dweb:/ipfs/QmckYygmSfb577JLKYUEmLEAwhH21ZngSomDGD48GtucGp\"]},\"/C/Users/James/projects/tsuno-fe/contracts/interfaces/ITreasury.sol\":{\"keccak256\":\"0xe467fc759597dff800179e32a15a3593a03fd26d7592532cc4ff10519490234a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f1e13c6ef8e65e58081500eb93bd185a75257a4e0070a1f5bd6ef7aae78eacfc\",\"dweb:/ipfs/QmSjv4WpoTiw7qG5piHY4a9MM9WxMSp3MtwGhcK2LFESnQ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/lib/Types.sol\":{\"keccak256\":\"0x9676bdd6c5bfc035713dd0558e22e57c17967a8c307da45dde8152d9a262c1f5\",\"urls\":[\"bzz-raw://1c60078690d0173b9737e087e4ba327a266735f7b73af7bc6c0c01980be19bf6\",\"dweb:/ipfs/QmTA7yFhjFFZtMzMf2gH6QhXMrZi6GpNxCSRgZA6W2yv2s\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0xdb26cbf4d028490f49831a7865c2fe1b28db44b535ca8d343785a3b768aae183\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://840b14ce0315c47d49ba328f1f9fa7654ded1c9e1559e6c5e777a7b2dc28bf0a\",\"dweb:/ipfs/QmTLLabn4wcfGro9LEmUXUN2nwKqZSotXMvjDCLXEnLtZP\"]},\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x4bd6402ca6b3419008c2b482aff54e66836e8cb4eba2680e42ac5884ae6424fc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8f9f711fb8d0d92aeea1c327e3845d13ca1fa8f142e47f8723cd5b3106fb29a3\",\"dweb:/ipfs/QmVQUReDW9f4zGqhizwHnyU8EntMs95tbASdqkGncnikba\"]},\"@openzeppelin/contracts/introspection/ERC165.sol\":{\"keccak256\":\"0xb046d18f9d09683ca1c0ed6d80c61da8a8a7d9b30bad70a17b898538683eff74\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4728713afa6ae36cc9e92c7107c796a313add3ec20f813be2cde76c814486b2a\",\"dweb:/ipfs/QmUJBTXvYaGDF5PVnd5pUvYerc9DRXvqANDzgCzAp3FkkA\"]},\"@openzeppelin/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0xfa152b6e88a1dc50780e8f1580426dc23ad2e1e2c2f086a088adf206a202f453\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5127b264994adab88fae419b1c493efc5acd07134c19ee5c0397e50018291ebf\",\"dweb:/ipfs/QmWwJZVhvdmvUCdimbb6R2Jiu59zjPqm6XTMchM6LaEHAp\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]},\"@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol\":{\"keccak256\":\"0xee8e03681af5ab7458e04154246dfb0c7918c442dc708bdc78f53ecfec55146a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6061a9c79c6fda63dd028eb690c5dc426ecf92df79cbbe82482fd309c614cf3c\",\"dweb:/ipfs/QmUCdPStmBzxxYiNf9gMBtbddVw93YsEUGs7L4wxX8QN35\"]},\"@openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol\":{\"keccak256\":\"0x4d9b42828f5a2ea16ea396377904448f1ef8ce17babf06d6259b3e4cf65d6c32\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bdba169baa86bd0277651759a6dee86574a8e277528de4df39970077baf97a16\",\"dweb:/ipfs/QmdzqcK7xPaYZqXqYLakD1bXe26zunWCbjyrvmoVpgTYeV\"]},\"@openzeppelin/contracts/token/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x31691ad0817f8cb338531b78d2ab2989027d9f27e6f8e62492b754fed9429b10\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ea5c8207b135b93afb8cce651a26b1606d0c6e967edc06091e261de7475dace5\",\"dweb:/ipfs/QmXWQHU45hJWmuCiWKjR3tsVh11LwkNEW6fs2Yhvd41Q7a\"]},\"@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol\":{\"keccak256\":\"0x0bc1d0b8fa3b262a6fb98b88dceab8b3348903b95dcc5909b9074fb19a3d2da5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a1a2d7b10e484742885d2042f66e8150bfc143a08756a269fb207c4c553b55aa\",\"dweb:/ipfs/Qmbhi8dodhRZS6mqL2T8WfMzmEwPzgSwpuGVHtKF5F6QDp\"]},\"@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0xfc398838759c3248bdca40f7bc060e789c8d715df22f9eee7494bcafe14fa1b8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ca2e28a5681be0558b2de6a24c107299925f8bd9e3244e9a70b033d6eab782c8\",\"dweb:/ipfs/QmX5kRT4Gwq4GQYfEdxVsE7PALpGfQEuQJhsfpCap9inKm\"]},\"@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xaf936da92f3a9a4f98b237323b5eb1d813fb86c4d07a184beba7027cf0509ba3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://aaa210e132e06975eb9f20060db6ba7dee78f6fce691a1c2489525584de521c0\",\"dweb:/ipfs/QmRwzi4nUW3UWBwhY5ik2xW3JZo9NMLN5UyGi1xPpMQYrh\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol\":{\"keccak256\":\"0x3636662804cd8f474536b2875a9038a4c3fb91879f1bbff48af5c3f140fcd2f0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9fab8521263fa581544000cb57335a3f2e6bcdfbb5579d3ceaa5acf741c67c4f\",\"dweb:/ipfs/QmZfXnMom7JSNtfyie5yGPN1SUC4SmHbz4ScVBH88URmA7\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol\":{\"keccak256\":\"0xe7f984cedc00a138dc27f263c73c32ba9a4b2fd23b6c34ac46f46c074b943538\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f4acda12f076fe7584921241ddbb5b460ca7cad6cb8a42252ac7f2a9f539127\",\"dweb:/ipfs/QmQmfhkEv9GrhdWe67QtXnU19AMuoEmy31QnHPkucdYLjZ\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0x321ee37ef4925020aa818a03ec7fe48e057561f65ab009a84f6c20c86026ade7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://01f9d74a17a56024984251b97e428e24c9d3abffbae5bd290f0ec263c82e9694\",\"dweb:/ipfs/QmRryCuuXu2ukrDmatB8TqdEhPLiK6NBRt41RiPUaX1qKy\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf5fa8cbdffa5ef8be49b246b5628facc30b71707e78a45d80d93b64eff3fe390\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://774e78a9ff32792cc95db4d2ceaf3a7965bb7f0bea5e6cb7cff182b450d44b37\",\"dweb:/ipfs/QmRRMC4uj7eAcLW7chynA3sNEYULMFazdLwQHKHQPyzAbA\"]},\"@openzeppelin/contracts/utils/EnumerableMap.sol\":{\"keccak256\":\"0x244e4b74b17716120cf28e58636f11c699b8c0c94628bd952a95cee038d7e32b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://198d566157120c526bd6b5086b32cae85a11389b8a538f533ba9f9447915da0e\",\"dweb:/ipfs/QmeE6d8KWERx7f1FVS5tMnitNJxBm2yWXRSEUBF7R6voLh\"]},\"@openzeppelin/contracts/utils/EnumerableSet.sol\":{\"keccak256\":\"0xb2a11b236f073662f5a196995863f51c11d006bf7c3de158b316dfa1506c4b79\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8651649cf0b9efa18c3b01c030276fa320d41adbdc286833417e7f36e357b2f3\",\"dweb:/ipfs/QmafhM2Nd1aP43QVB1eRRZaqRXQKswNfQcWi8U8xjrxCfN\"]},\"@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0x79484115dbfa737054f73e041009a02eeb434dd81be5d684bf4255ad3b5ab558\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://12c119699463450c2544f5b9d8709b5e9e9164c62948a79c3ec53423a051d969\",\"dweb:/ipfs/QmPJduzSAaekq447QeFqAp3E7dc8CnNk5ajofckJ4ahA7Q\"]},\"@openzeppelin/upgrades-core/contracts/Initializable.sol\":{\"keccak256\":\"0x7e710227a99f0d4ee7d7cfba6874192fb4ee80c270f5235c7966a6f3ab484b11\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://391395fae95454670cc03bf15b69469bebff8730ad326ed941e7c21cdfe3eff2\",\"dweb:/ipfs/QmPA9bYGsjqmG4bn8SsDLpQpd2sGW4HUfpMR6v66FGR6gA\"]},\"@openzeppelin/upgrades/contracts/Initializable.sol\":{\"keccak256\":\"0x9bfec92e36234ecc99b5d37230acb6cd1f99560233753162204104a4897e8721\",\"urls\":[\"bzz-raw://5cf7c208583d4d046d75bd99f5507412ab01cce9dd9f802ce9768a416d93ea2f\",\"dweb:/ipfs/QmcQS1BBMPpVEkXP3qzwSjxHNrqDek8YeR7xbVWDC9ApC7\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600160345534801561001557600080fd5b5060f5806100246000396000f3fe6080604052348015600f57600080fd5b506004361060315760003560e01c80626c2f3a146036578063c32a50f9146059575b600080fd5b604560413660046075565b606a565b6040516050919060b0565b60405180910390f35b606860643660046099565b6070565b005b50600090565b603355565b6000602082840312156085578081fd5b8135601581106092578182fd5b9392505050565b60006020828403121560a9578081fd5b5035919050565b61ffff9190911681526020019056fea2646970667358221220b8a12903a2ee6e17286a4837fe9236b112ec78827038ef621eac7275e5d5c9e964736f6c634300060c0033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060315760003560e01c80626c2f3a146036578063c32a50f9146059575b600080fd5b604560413660046075565b606a565b6040516050919060b0565b60405180910390f35b606860643660046099565b6070565b005b50600090565b603355565b6000602082840312156085578081fd5b8135601581106092578182fd5b9392505050565b60006020828403121560a9578081fd5b5035919050565b61ffff9190911681526020019056fea2646970667358221220b8a12903a2ee6e17286a4837fe9236b112ec78827038ef621eac7275e5d5c9e964736f6c634300060c0033",
+  "immutableReferences": {},
+  "sourceMap": "732:8428:5:-:0;;;305:1:11;289:17;;732:8428:5;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "732:8428:5:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3834:89:2;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;621:68:11;;;;;;:::i;:::-;;:::i;:::-;;3834:89:2;-1:-1:-1;3908:11:2;;3834:89::o;621:68:11:-;670:4;:12;621:68::o;309:271:-1:-;;428:2;416:9;407:7;403:23;399:32;396:2;;;-1:-1;;434:12;396:2;100:6;87:20;1431:2;1424:5;1421:13;1411:2;;-1:-1;;1438:12;1411:2;486:78;390:190;-1:-1;;;390:190::o;587:241::-;;691:2;679:9;670:7;666:23;662:32;659:2;;;-1:-1;;697:12;659:2;-1:-1;239:20;;653:175;-1:-1;653:175::o;952:218::-;1249:6;1238:18;;;;904:36;;1077:2;1062:18;;1048:122::o",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {GameStorage} from './GameStorage.sol';\nimport {SafeMath} from '@openzeppelin/contracts/math/SafeMath.sol';\nimport {Initializable} from '@openzeppelin/upgrades-core/contracts/Initializable.sol';\nimport {Types} from './lib/Types.sol';\nimport {Discovery} from './Discovery.sol';\nimport {ITreasury} from './interfaces/ITreasury.sol';\nimport {ISolar} from './interfaces/ISolar.sol';\nimport {ISat} from './interfaces/ISat.sol';\nimport {PlanetManager} from './PlanetManager.sol';\nimport {GameStorage} from './GameStorage.sol';\n\n/**\n * @title Operation\n * @author Big Beluga\n *\n * Primary public function for entering into the protocol\n */\ncontract GameOperations is Initializable, Discovery {\n    using SafeMath for uint256;\n    ISolar solar;\n    ISat sats;\n    PlanetManager pm;\n    // // ============ Constants ============\n    // event LogMove(uint8 quadrant, uint8 district, uint8 sector, uint256 star);\n    // event LogStarSystemDiscovery(address indexed to, uint8 systemType);\n    // event LogBattle(bool result, uint256 attackersHealth, uint256 defendersHealth);\n    // event LogPlanetProxyCreated(address proxy, uint256 tokenId);\n    // event Random(uint256 random);\n    // event LogRound(uint256 aDamage, uint256 dDamage, uint256 aHealth, uint256 dHealth);\n    // event BattleStarted(\n    //     address attacker,\n    //     uint256 attackerOffense,\n    //     uint256 attackerDefense,\n    //     address defender,\n    //     uint256 defenderOffense,\n    //     uint256 defenderDefense\n    // );\n\n    // struct AttackInfo {\n    //     Types.Position attackerPos;\n    //     uint256 a_offense;\n    //     uint256 a_defense;\n    //     uint256[] a_balances;\n    //     uint256[] a_ids;\n    //     Types.Position defenderPos;\n    //     uint256 d_offense;\n    //     uint256 d_defense;\n    //     uint256[] d_balances;\n    //     uint256[] d_ids;\n    //     uint256[] d_retreated;\n    // }\n\n    // GameStorage GS;\n    // ITreasury TS;\n\n    // function initialize(address _gameStorage) public initializer {\n    //     GS = GameStorage(_gameStorage);\n    //     TS = ITreasury(GS.getTreasuryAddress());\n    //     solar = ISolar(GS.getSolarAddress());\n    //     sats = ISat(GS.getSatAddress());\n    //     pm = PlanetManager(GS.getPlanetManagerAddress());\n    // }\n\n    // function move(Types.Position memory to) public {\n    //     require(\n    //         Types.positionWithinBoundaries(to, GS.getBoundaries()),\n    //         'Position must be within set limits of the known universe'\n    //     );\n    //     Types.Position memory from = GS.getMasterFleetPosition(msg.sender);\n\n    //     if (Types.positionNotSet(from)) {\n    //         from = GS.getStartPosition();\n    //     }\n\n    //     require(!Types.positionIsEqual(to, from), 'You cannot move to your current location');\n\n    //     GS.setMasterFleetPosition(msg.sender, to);\n    //     emit LogMove(to.quadrant, to.district, to.sector, to.star);\n\n    //     if (GS.getStarSystemType(to) == Types.SystemType.Undiscovered) {\n    //         explore(to);\n    //     }\n    // }\n\n    // function battle(\n    //     uint256 a_offense,\n    //     uint256 a_health,\n    //     uint256 d_offense,\n    //     uint256 d_health,\n    //     bool defenderGoesFirst,\n    //     uint8 turns\n    // ) internal returns (bool result) {\n    //     uint256 turnThreshold = 10;\n    //     uint256 attackerAttack = uint256(\n    //         a_offense.div(turnThreshold) != 0 ? a_offense.div(turnThreshold) : 1\n    //     );\n    //     uint256 defenderAttack = uint256(\n    //         d_offense.div(turnThreshold) != 0 ? d_offense.div(turnThreshold) : 1\n    //     );\n\n    //     uint256 nonce = attackerAttack * defenderAttack;\n    //     uint256 damageD;\n    //     uint256 damageA;\n    //     for (uint8 i = 0; i < turns; i++) {\n    //         if (defenderGoesFirst) {\n    //             damageD = randomrange(1, defenderAttack);\n    //             damageA = randomrange(1, attackerAttack);\n    //             emit LogRound(damageA, damageD, a_health, d_health);\n    //             a_health = a_health > damageD ? a_health.sub(damageD) : 0;\n    //             d_health = d_health > damageA ? d_health.sub(damageA) : 0;\n    //         } else {\n    //             damageD = randomrange(1, defenderAttack);\n    //             damageA = randomrange(1, attackerAttack);\n    //             d_health = d_health > damageA ? d_health.sub(damageA) : 0;\n    //             a_health = a_health > damageD ? a_health.sub(damageD) : 0;\n    //         }\n    //         if (a_health == 0 || d_health == 0) break;\n    //     }\n\n    //     // the result is true if the attacker wins and false if the defender wins\n    //     result = a_health > d_health;\n\n    //     emit LogBattle(result, a_health, d_health);\n    // }\n\n    // function calculateStats(address fleet)\n    //     internal\n    //     returns (\n    //         uint256 offense,\n    //         uint256 defense,\n    //         uint256[] memory balances,\n    //         uint256[] memory ids\n    //     )\n    // {\n    //     ids = new uint256[](GS.getTotalSats());\n    //     address[] memory accounts = new address[](ids.length);\n    //     for (uint256 i = 0; i < ids.length; i++) {\n    //         ids[i] = i;\n    //         accounts[i] = fleet;\n    //     }\n    //     balances = sats.balanceOfBatch(accounts, ids);\n    //     (uint256[] memory offenses, uint256[] memory defenses) = GS.batchGetSatInfo(ids);\n    //     for (uint256 i = 0; i < balances.length; i++) {\n    //         (uint256 o, uint256 d) = (offenses[i], defenses[i]);\n    //         offense += o.mul(balances[i]);\n    //         defense += d.mul(balances[i]);\n    //     }\n    // }\n\n    // function attack(address defender, uint8 turns) public {\n    //     require(defender != msg.sender, 'You cannot attack yourself');\n    //     require(defender != address(0) && msg.sender != address(0), 'Addresses must exist must exist');\n    //     AttackInfo memory info;\n\n    //     info.attackerPos = GS.getMasterFleetPosition(msg.sender);\n    //     info.defenderPos = GS.getMasterFleetPosition(defender);\n\n    //     require(\n    //         Types.positionIsEqual(info.attackerPos, info.defenderPos),\n    //         'You can only attack people at your current star location'\n    //     );\n\n    //     (info.a_offense, info.a_defense, info.a_balances, info.a_ids) = calculateStats(msg.sender);\n    //     (info.d_offense, info.d_defense, info.d_balances, info.d_ids) = calculateStats(defender);\n\n    //     emit BattleStarted(\n    //         msg.sender,\n    //         info.a_offense,\n    //         info.a_defense,\n    //         defender,\n    //         info.d_offense,\n    //         info.d_defense\n    //     );\n    //     bool result = battle(info.a_offense, info.a_defense, info.d_offense, info.d_defense, true, turns);\n\n    //     if (result) {\n    //         for (uint256 i = 0; i < info.a_balances.length; i++) {\n    //             info.a_balances[i] = info.a_balances[i] > 0 ? info.a_balances[i].mul(20).div(100) : 0; // 20% of attackers fleet is lost in a successful attack\n    //         }\n    //         TS.recieveSats(msg.sender, info.a_ids, info.a_balances);\n\n    //         info.d_retreated = new uint256[](info.d_balances.length);\n    //         for (uint256 i = 0; i < info.d_balances.length; i++) {\n    //             // 70% of defenders fleet is lost in a successful attack\n    //             uint256 losses = info.d_balances[i].mul(70).div(100);\n    //             info.d_balances[i] = info.d_balances[i] > 0 ? losses : 0;\n    //             info.d_retreated[i] = info.d_balances[i] > losses ? info.d_balances[i].sub(losses) : 0;\n    //         }\n\n    //         uint256 _tokenId = GS.getProxyAddressToTokenId(defender);\n    //         if (_tokenId > 0) {\n    //             // the remaining fleet managed to escape back to command\n    //             // while destroying the mining equipment\n    //             address owner = fhr.ownerOf(_tokenId);\n    //             TS.sendSats(owner, info.d_ids, info.d_retreated);\n    //             TS.transferFhr(owner, msg.sender, _tokenId);\n    //         }\n    //         TS.recieveSats(defender, info.d_ids, info.d_balances);\n    //     } else {\n    //         for (uint256 i = 0; i < info.a_balances.length; i++) {\n    //             info.a_balances[i] = info.a_balances[i] > 0 ? info.a_balances[i].mul(90).div(100) : 0; // 20% of attackers fleet is lost in a successful attack\n    //         }\n    //         TS.recieveSats(msg.sender, info.a_ids, info.a_balances);\n\n    //         info.d_retreated = new uint256[](info.d_balances.length);\n    //         for (uint256 i = 0; i < info.d_balances.length; i++) {\n    //             // 70% of defenders fleet is lost in a successful attack\n    //             uint256 losses = info.d_balances[i].mul(10).div(100);\n    //             info.d_balances[i] = info.d_balances[i] > 0 ? losses : 0;\n    //             info.d_retreated[i] = info.d_balances[i] > losses ? info.d_balances[i].sub(losses) : 0;\n    //         }\n\n    //         TS.recieveSats(defender, info.d_ids, info.d_balances);\n    //     }\n    // }\n}\n",
+  "sourcePath": "C:\\Users\\James\\projects\\tsuno-fe\\contracts\\GameOperations.sol",
+  "ast": {
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/GameOperations.sol",
+    "exportedSymbols": {
+      "GameOperations": [
+        1729
+      ]
+    },
+    "id": 1730,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1693,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:5"
+      },
+      {
+        "id": 1694,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:33:5"
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/GameStorage.sol",
+        "file": "./GameStorage.sol",
+        "id": 1696,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 2317,
+        "src": "92:46:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1695,
+              "name": "GameStorage",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "100:11:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
+        "file": "@openzeppelin/contracts/math/SafeMath.sol",
+        "id": 1698,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 5752,
+        "src": "139:67:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1697,
+              "name": "SafeMath",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "147:8:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/upgrades-core/contracts/Initializable.sol",
+        "file": "@openzeppelin/upgrades-core/contracts/Initializable.sol",
+        "id": 1700,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 9972,
+        "src": "207:86:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1699,
+              "name": "Initializable",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "215:13:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/lib/Types.sol",
+        "file": "./lib/Types.sol",
+        "id": 1702,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 5220,
+        "src": "294:38:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1701,
+              "name": "Types",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "302:5:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/Discovery.sol",
+        "file": "./Discovery.sol",
+        "id": 1704,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 1032,
+        "src": "333:42:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1703,
+              "name": "Discovery",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "341:9:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/interfaces/ITreasury.sol",
+        "file": "./interfaces/ITreasury.sol",
+        "id": 1706,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 4694,
+        "src": "376:53:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1705,
+              "name": "ITreasury",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "384:9:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/interfaces/ISolar.sol",
+        "file": "./interfaces/ISolar.sol",
+        "id": 1708,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 4543,
+        "src": "430:47:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1707,
+              "name": "ISolar",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "438:6:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/interfaces/ISat.sol",
+        "file": "./interfaces/ISat.sol",
+        "id": 1710,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 4451,
+        "src": "478:43:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1709,
+              "name": "ISat",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "486:4:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/PlanetManager.sol",
+        "file": "./PlanetManager.sol",
+        "id": 1712,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 2891,
+        "src": "522:50:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1711,
+              "name": "PlanetManager",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "530:13:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/GameStorage.sol",
+        "file": "./GameStorage.sol",
+        "id": 1714,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 2317,
+        "src": "573:46:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1713,
+              "name": "GameStorage",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "581:11:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1716,
+              "name": "Initializable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 9971,
+              "src": "759:13:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Initializable_$9971",
+                "typeString": "contract Initializable"
+              }
+            },
+            "id": 1717,
+            "nodeType": "InheritanceSpecifier",
+            "src": "759:13:5"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1718,
+              "name": "Discovery",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1031,
+              "src": "774:9:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Discovery_$1031",
+                "typeString": "contract Discovery"
+              }
+            },
+            "id": 1719,
+            "nodeType": "InheritanceSpecifier",
+            "src": "774:9:5"
+          }
+        ],
+        "contractDependencies": [
+          1031,
+          3038,
+          9971
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 1715,
+          "nodeType": "StructuredDocumentation",
+          "src": "621:110:5",
+          "text": " @title Operation\n @author Big Beluga\n Primary public function for entering into the protocol"
+        },
+        "fullyImplemented": true,
+        "id": 1729,
+        "linearizedBaseContracts": [
+          1729,
+          1031,
+          3038,
+          9971
+        ],
+        "name": "GameOperations",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 1722,
+            "libraryName": {
+              "contractScope": null,
+              "id": 1720,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5751,
+              "src": "796:8:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$5751",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "790:27:5",
+            "typeName": {
+              "id": 1721,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "809:7:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 1724,
+            "mutability": "mutable",
+            "name": "solar",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1729,
+            "src": "822:12:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ISolar_$4542",
+              "typeString": "contract ISolar"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 1723,
+              "name": "ISolar",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4542,
+              "src": "822:6:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ISolar_$4542",
+                "typeString": "contract ISolar"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1726,
+            "mutability": "mutable",
+            "name": "sats",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1729,
+            "src": "840:9:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ISat_$4450",
+              "typeString": "contract ISat"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 1725,
+              "name": "ISat",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4450,
+              "src": "840:4:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ISat_$4450",
+                "typeString": "contract ISat"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1728,
+            "mutability": "mutable",
+            "name": "pm",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1729,
+            "src": "855:16:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_PlanetManager_$2890",
+              "typeString": "contract PlanetManager"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 1727,
+              "name": "PlanetManager",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2890,
+              "src": "855:13:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PlanetManager_$2890",
+                "typeString": "contract PlanetManager"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1730,
+        "src": "732:8428:5"
+      }
+    ],
+    "src": "33:9128:5"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/GameOperations.sol",
+    "exportedSymbols": {
+      "GameOperations": [
+        1729
+      ]
+    },
+    "id": 1730,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1693,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:5"
+      },
+      {
+        "id": 1694,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:33:5"
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/GameStorage.sol",
+        "file": "./GameStorage.sol",
+        "id": 1696,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 2317,
+        "src": "92:46:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1695,
+              "name": "GameStorage",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "100:11:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
+        "file": "@openzeppelin/contracts/math/SafeMath.sol",
+        "id": 1698,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 5752,
+        "src": "139:67:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1697,
+              "name": "SafeMath",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "147:8:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/upgrades-core/contracts/Initializable.sol",
+        "file": "@openzeppelin/upgrades-core/contracts/Initializable.sol",
+        "id": 1700,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 9972,
+        "src": "207:86:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1699,
+              "name": "Initializable",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "215:13:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/lib/Types.sol",
+        "file": "./lib/Types.sol",
+        "id": 1702,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 5220,
+        "src": "294:38:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1701,
+              "name": "Types",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "302:5:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/Discovery.sol",
+        "file": "./Discovery.sol",
+        "id": 1704,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 1032,
+        "src": "333:42:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1703,
+              "name": "Discovery",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "341:9:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/interfaces/ITreasury.sol",
+        "file": "./interfaces/ITreasury.sol",
+        "id": 1706,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 4694,
+        "src": "376:53:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1705,
+              "name": "ITreasury",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "384:9:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/interfaces/ISolar.sol",
+        "file": "./interfaces/ISolar.sol",
+        "id": 1708,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 4543,
+        "src": "430:47:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1707,
+              "name": "ISolar",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "438:6:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/interfaces/ISat.sol",
+        "file": "./interfaces/ISat.sol",
+        "id": 1710,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 4451,
+        "src": "478:43:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1709,
+              "name": "ISat",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "486:4:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/PlanetManager.sol",
+        "file": "./PlanetManager.sol",
+        "id": 1712,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 2891,
+        "src": "522:50:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1711,
+              "name": "PlanetManager",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "530:13:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/GameStorage.sol",
+        "file": "./GameStorage.sol",
+        "id": 1714,
+        "nodeType": "ImportDirective",
+        "scope": 1730,
+        "sourceUnit": 2317,
+        "src": "573:46:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1713,
+              "name": "GameStorage",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "581:11:5",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1716,
+              "name": "Initializable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 9971,
+              "src": "759:13:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Initializable_$9971",
+                "typeString": "contract Initializable"
+              }
+            },
+            "id": 1717,
+            "nodeType": "InheritanceSpecifier",
+            "src": "759:13:5"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1718,
+              "name": "Discovery",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1031,
+              "src": "774:9:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Discovery_$1031",
+                "typeString": "contract Discovery"
+              }
+            },
+            "id": 1719,
+            "nodeType": "InheritanceSpecifier",
+            "src": "774:9:5"
+          }
+        ],
+        "contractDependencies": [
+          1031,
+          3038,
+          9971
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 1715,
+          "nodeType": "StructuredDocumentation",
+          "src": "621:110:5",
+          "text": " @title Operation\n @author Big Beluga\n Primary public function for entering into the protocol"
+        },
+        "fullyImplemented": true,
+        "id": 1729,
+        "linearizedBaseContracts": [
+          1729,
+          1031,
+          3038,
+          9971
+        ],
+        "name": "GameOperations",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 1722,
+            "libraryName": {
+              "contractScope": null,
+              "id": 1720,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5751,
+              "src": "796:8:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$5751",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "790:27:5",
+            "typeName": {
+              "id": 1721,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "809:7:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 1724,
+            "mutability": "mutable",
+            "name": "solar",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1729,
+            "src": "822:12:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ISolar_$4542",
+              "typeString": "contract ISolar"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 1723,
+              "name": "ISolar",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4542,
+              "src": "822:6:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ISolar_$4542",
+                "typeString": "contract ISolar"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1726,
+            "mutability": "mutable",
+            "name": "sats",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1729,
+            "src": "840:9:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ISat_$4450",
+              "typeString": "contract ISat"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 1725,
+              "name": "ISat",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4450,
+              "src": "840:4:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ISat_$4450",
+                "typeString": "contract ISat"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1728,
+            "mutability": "mutable",
+            "name": "pm",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1729,
+            "src": "855:16:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_PlanetManager_$2890",
+              "typeString": "contract PlanetManager"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 1727,
+              "name": "PlanetManager",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2890,
+              "src": "855:13:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PlanetManager_$2890",
+                "typeString": "contract PlanetManager"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1730,
+        "src": "732:8428:5"
+      }
+    ],
+    "src": "33:9128:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.5",
+  "updatedAt": "2020-11-15T18:28:43.884Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "author": "Big Beluga Primary public function for entering into the protocol",
+    "kind": "dev",
+    "methods": {},
+    "title": "Operation",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

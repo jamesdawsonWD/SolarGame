@@ -1,0 +1,951 @@
+{
+  "contractName": "GE_DiscoverPlanet",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "eventId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "Logged",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_eventId",
+          "type": "uint256"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "start",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"eventId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"Logged\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_eventId\",\"type\":\"uint256\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"start\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/gameEvents/GE_DiscoverPlanet.sol\":\"GE_DiscoverPlanet\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/gameEvents/GE_DiscoverPlanet.sol\":{\"keccak256\":\"0x325a9b7d7f8e0481838365b96db9a4f214e0ff6154408343277f019c95258520\",\"urls\":[\"bzz-raw://e0326c6aa8d5b948cfdf6608df06fbbc1a39f134f39578fb721f1e84885c97d9\",\"dweb:/ipfs/QmWqXEBQYbcEWzpL8VVmwF8SfdRXPXhNrn86kjvhocBwrJ\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060f58061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c8063dd0b281e146037578063fe4b84df14605c575b600080fd5b605a60048036036020811015604b57600080fd5b50356001600160a01b03166076565b005b605a60048036036020811015607057600080fd5b503560ba565b60005460408051918252516001600160a01b038316917ff99af082aa0ce619ecb674f5e3ac2ae8265e4c857dc861dc739949306d932295919081900360200190a250565b60005556fea26469706673582212200d018e51b447b5ab5b30ad3a32e2c7f3e7a54fcbedec11bc09aacb6400e2b3be64736f6c634300060c0033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c8063dd0b281e146037578063fe4b84df14605c575b600080fd5b605a60048036036020811015604b57600080fd5b50356001600160a01b03166076565b005b605a60048036036020811015607057600080fd5b503560ba565b60005460408051918252516001600160a01b038316917ff99af082aa0ce619ecb674f5e3ac2ae8265e4c857dc861dc739949306d932295919081900360200190a250565b60005556fea26469706673582212200d018e51b447b5ab5b30ad3a32e2c7f3e7a54fcbedec11bc09aacb6400e2b3be64736f6c634300060c0033",
+  "immutableReferences": {},
+  "sourceMap": "25:313:16:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "25:313:16:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;223:79;;;;;;;;;;;;;;;;-1:-1:-1;223:79:16;-1:-1:-1;;;;;223:79:16;;:::i;:::-;;137:80;;;;;;;;;;;;;;;;-1:-1:-1;137:80:16;;:::i;223:79::-;281:7;;274:21;;;;;;;-1:-1:-1;;;;;274:21:16;;;;;;;;;;;;;223:79;:::o;137:80::-;192:7;:18;137:80::o",
+  "source": "pragma solidity 0.6.12;\n\ncontract GE_DiscoverPlanet {\n    event Logged(uint256 eventId, address indexed user);\n    uint256 eventId;\n\n    function initialize(uint256 _eventId) public {\n        eventId = _eventId;\n    }\n\n    function start(address user) public {\n        emit Logged(eventId, user);\n    }\n\n    function reward() private {}\n}\n",
+  "sourcePath": "C:/Users/James/projects/tsuno-fe/contracts/gameEvents/GE_DiscoverPlanet.sol",
+  "ast": {
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/gameEvents/GE_DiscoverPlanet.sol",
+    "exportedSymbols": {
+      "GE_DiscoverPlanet": [
+        4390
+      ]
+    },
+    "id": 4391,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4356,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:16"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4390,
+        "linearizedBaseContracts": [
+          4390
+        ],
+        "name": "GE_DiscoverPlanet",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4362,
+            "name": "Logged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4361,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4358,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "eventId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4362,
+                  "src": "71:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4357,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "71:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4360,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4362,
+                  "src": "88:20:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4359,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "88:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "70:39:16"
+            },
+            "src": "58:52:16"
+          },
+          {
+            "constant": false,
+            "id": 4364,
+            "mutability": "mutable",
+            "name": "eventId",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 4390,
+            "src": "115:15:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 4363,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "115:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 4373,
+              "nodeType": "Block",
+              "src": "182:35:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 4371,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 4369,
+                      "name": "eventId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4364,
+                      "src": "192:7:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 4370,
+                      "name": "_eventId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4366,
+                      "src": "202:8:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "192:18:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 4372,
+                  "nodeType": "ExpressionStatement",
+                  "src": "192:18:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "fe4b84df",
+            "id": 4374,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialize",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4367,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4366,
+                  "mutability": "mutable",
+                  "name": "_eventId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4374,
+                  "src": "157:16:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4365,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "157:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "156:18:16"
+            },
+            "returnParameters": {
+              "id": 4368,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "182:0:16"
+            },
+            "scope": 4390,
+            "src": "137:80:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4384,
+              "nodeType": "Block",
+              "src": "259:43:16",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4380,
+                        "name": "eventId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4364,
+                        "src": "281:7:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4381,
+                        "name": "user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4376,
+                        "src": "290:4:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 4379,
+                      "name": "Logged",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4362,
+                      "src": "274:6:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,address)"
+                      }
+                    },
+                    "id": 4382,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "274:21:16",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4383,
+                  "nodeType": "EmitStatement",
+                  "src": "269:26:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "dd0b281e",
+            "id": 4385,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "start",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4377,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4376,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4385,
+                  "src": "238:12:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4375,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "238:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "237:14:16"
+            },
+            "returnParameters": {
+              "id": 4378,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "259:0:16"
+            },
+            "scope": 4390,
+            "src": "223:79:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4388,
+              "nodeType": "Block",
+              "src": "334:2:16",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 4389,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reward",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4386,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "323:2:16"
+            },
+            "returnParameters": {
+              "id": 4387,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "334:0:16"
+            },
+            "scope": 4390,
+            "src": "308:28:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "private"
+          }
+        ],
+        "scope": 4391,
+        "src": "25:313:16"
+      }
+    ],
+    "src": "0:339:16"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/gameEvents/GE_DiscoverPlanet.sol",
+    "exportedSymbols": {
+      "GE_DiscoverPlanet": [
+        4390
+      ]
+    },
+    "id": 4391,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4356,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:16"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4390,
+        "linearizedBaseContracts": [
+          4390
+        ],
+        "name": "GE_DiscoverPlanet",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4362,
+            "name": "Logged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4361,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4358,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "eventId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4362,
+                  "src": "71:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4357,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "71:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4360,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4362,
+                  "src": "88:20:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4359,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "88:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "70:39:16"
+            },
+            "src": "58:52:16"
+          },
+          {
+            "constant": false,
+            "id": 4364,
+            "mutability": "mutable",
+            "name": "eventId",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 4390,
+            "src": "115:15:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 4363,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "115:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 4373,
+              "nodeType": "Block",
+              "src": "182:35:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 4371,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 4369,
+                      "name": "eventId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4364,
+                      "src": "192:7:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 4370,
+                      "name": "_eventId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4366,
+                      "src": "202:8:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "192:18:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 4372,
+                  "nodeType": "ExpressionStatement",
+                  "src": "192:18:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "fe4b84df",
+            "id": 4374,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialize",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4367,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4366,
+                  "mutability": "mutable",
+                  "name": "_eventId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4374,
+                  "src": "157:16:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4365,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "157:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "156:18:16"
+            },
+            "returnParameters": {
+              "id": 4368,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "182:0:16"
+            },
+            "scope": 4390,
+            "src": "137:80:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4384,
+              "nodeType": "Block",
+              "src": "259:43:16",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4380,
+                        "name": "eventId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4364,
+                        "src": "281:7:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4381,
+                        "name": "user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4376,
+                        "src": "290:4:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 4379,
+                      "name": "Logged",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4362,
+                      "src": "274:6:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,address)"
+                      }
+                    },
+                    "id": 4382,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "274:21:16",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4383,
+                  "nodeType": "EmitStatement",
+                  "src": "269:26:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "dd0b281e",
+            "id": 4385,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "start",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4377,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4376,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4385,
+                  "src": "238:12:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4375,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "238:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "237:14:16"
+            },
+            "returnParameters": {
+              "id": 4378,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "259:0:16"
+            },
+            "scope": 4390,
+            "src": "223:79:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4388,
+              "nodeType": "Block",
+              "src": "334:2:16",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 4389,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reward",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4386,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "323:2:16"
+            },
+            "returnParameters": {
+              "id": 4387,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "334:0:16"
+            },
+            "scope": 4390,
+            "src": "308:28:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "private"
+          }
+        ],
+        "scope": 4391,
+        "src": "25:313:16"
+      }
+    ],
+    "src": "0:339:16"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0xf99af082aa0ce619ecb674f5e3ac2ae8265e4c857dc861dc739949306d932295": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "eventId",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            }
+          ],
+          "name": "Logged",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x3148fcae3B0F5AbB94ad5CBD3e3D2EB0628C3118",
+      "transactionHash": "0x62247be7db605dcb47827d6613240217fede030d32e7364f5a36a8d6a7af38a4"
+    }
+  },
+  "schemaVersion": "3.2.5",
+  "updatedAt": "2020-11-15T18:28:43.940Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

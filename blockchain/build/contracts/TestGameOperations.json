@@ -1,0 +1,570 @@
+{
+  "contractName": "TestGameOperations",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "enum Types.SystemType",
+          "name": "systemType",
+          "type": "uint8"
+        }
+      ],
+      "name": "getRandomYield",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "rand",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_seed",
+          "type": "uint256"
+        }
+      ],
+      "name": "setSeed",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"enum Types.SystemType\",\"name\":\"systemType\",\"type\":\"uint8\"}],\"name\":\"getRandomYield\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"rand\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_seed\",\"type\":\"uint256\"}],\"name\":\"setSeed\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/James/projects/tsuno-fe/contracts/testing/TestGameOperations.sol\":\"TestGameOperations\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/James/projects/tsuno-fe/contracts/BaseStorage.sol\":{\"keccak256\":\"0x2143b1f53408066ffe38673b4f73d704c93eb2c25f256917c2ed7e9d0430bacd\",\"urls\":[\"bzz-raw://a0d465ba6f3c2c6205db2cb713e29bebf9ebc7a5cef6844085e2ab0ed1e799ac\",\"dweb:/ipfs/QmZsif8jes1uGrHo24hEh4J81GV74Uz6pg6oztCsxzh2i7\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Constants.sol\":{\"keccak256\":\"0x21313dc89e9897fbe60d8bfcae2ae95f7b98b358a88ef48222ba8cf200437e97\",\"urls\":[\"bzz-raw://b09712de11198fa8761a1dd2ccbcf1ff43959ce2c96c596ed4dff008ff291955\",\"dweb:/ipfs/QmfUZPrDscUVhPRXRLwPNArrVUyozeft2zeYfS5khr5YHN\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Discovery.sol\":{\"keccak256\":\"0x475167f4c3d671b71eb46935cf0b6641f5a441a1509296d701fac66256b85167\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://304b1ffd9b4dc4fd717437350424ff895f970aec3c464d0e9f9f7efc29676cdc\",\"dweb:/ipfs/QmNnVhfySYzKPjnxwxsXAjBXdxbLpBPZSG8x2qXPRTbJaq\"]},\"/C/Users/James/projects/tsuno-fe/contracts/GameOperations.sol\":{\"keccak256\":\"0x202c4cab0357e8b460257fd7e8e35f58b60052eb71953ba0e7d5f0ba288d3b4b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b40bf7b3bf5517341675e7686c9531971a780d805c3c2e2658f98931de9342fc\",\"dweb:/ipfs/QmNtt8t4nt1LBrs2g3HR12J7FbSTmaJ386EWwYhtfpnBtd\"]},\"/C/Users/James/projects/tsuno-fe/contracts/GameStorage.sol\":{\"keccak256\":\"0x736870467a547ff104eff95eaedda594e39fb9f71dfb2767e99f3463c13113cc\",\"urls\":[\"bzz-raw://ec2fc4ddf717b2e079b0684ccefc8cb27c6b62ac76374f107eb0e4ddf7584de5\",\"dweb:/ipfs/QmTSexPpKNB274moiLf8QTpUG3wBbfc1xyhwnNpB4CzDpJ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Planet.sol\":{\"keccak256\":\"0x927ce1c9c8b1dfa98feb41eece66fe1b03639c906edae94dc846e9b0a5072927\",\"urls\":[\"bzz-raw://bd1df9e1691216ca7e111439f298b9e3160a4fb14002f7094d653d02d9781365\",\"dweb:/ipfs/QmZSxcwdQLSUcFLu37JiTaoa6gNSi7Vjs2FndCTskEbMfG\"]},\"/C/Users/James/projects/tsuno-fe/contracts/PlanetManager.sol\":{\"keccak256\":\"0xe00edb6a70181bf197c80592bbaec16d6c9593f0cfc5a66973d1ec21c3deb622\",\"urls\":[\"bzz-raw://cf6c9f96af2e33f034597b8c37152dc70a5699882cd5083e3916671795cef688\",\"dweb:/ipfs/QmcSW64RZ5E3nWzriQLDaj3pLwfjkyqYJcc72CguY2SF8s\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Planets.sol\":{\"keccak256\":\"0xab87b51989e2735b481160d791c4010e977eab50090200cf520fd0de30050abf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c4c8f4112dba247ee28adf5bb9d4546b4ef3674e7628de5dc1cf9828d8349410\",\"dweb:/ipfs/QmaUeFaDq9ShAJrp4WBWbJE5o8kkfLcdbV7rbbGxUShVGt\"]},\"/C/Users/James/projects/tsuno-fe/contracts/Random.sol\":{\"keccak256\":\"0xf63f4fc867e896856de1f1b10e1284a42903881b4f936d19335d3d88caa15085\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ff94739759ae079be945fa5cad80fffbd0fad8ed741a0f651f88816483539d12\",\"dweb:/ipfs/QmWWWiYZTmqtR3vuYvUGsiRQdXmkmgRLXiUvxPLrkaGmom\"]},\"/C/Users/James/projects/tsuno-fe/contracts/interfaces/IPlanets.sol\":{\"keccak256\":\"0x3bfe87029d99433993295fc0f26161dc2c2632f9cfe1f31e954b43fdb9913e06\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f7694d925cb27895cf2a72d7c68ee1fa1bad7f3a7ff46f52c2b5ed32828e5ae6\",\"dweb:/ipfs/QmR5wp3D7sKFK8qNCRVMQ3WrbMdNCdod2vVgDz8oPVYjGD\"]},\"/C/Users/James/projects/tsuno-fe/contracts/interfaces/ISat.sol\":{\"keccak256\":\"0x88eab46b93f7d4aa617ec9c10f5b3e2739f6bb5c07d04dba19d2c0c9e7448149\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5606bf6da8955468bded5a10239f09e71f47b5c0c0c73258d390ea70aae2c725\",\"dweb:/ipfs/QmVCRUMVebzNcnSBF2ZcM5xUNyv7vgwk1VKKq4fEVcGKrL\"]},\"/C/Users/James/projects/tsuno-fe/contracts/interfaces/ISolar.sol\":{\"keccak256\":\"0x5267954e42950e4204aab25741c7e2da482b5f70c82ec5f9b25df874152e1672\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0987fde8d1776dba448c43e54753fdd671b05c42ec0ab783606cb45485cebb3e\",\"dweb:/ipfs/QmckYygmSfb577JLKYUEmLEAwhH21ZngSomDGD48GtucGp\"]},\"/C/Users/James/projects/tsuno-fe/contracts/interfaces/ITreasury.sol\":{\"keccak256\":\"0xe467fc759597dff800179e32a15a3593a03fd26d7592532cc4ff10519490234a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f1e13c6ef8e65e58081500eb93bd185a75257a4e0070a1f5bd6ef7aae78eacfc\",\"dweb:/ipfs/QmSjv4WpoTiw7qG5piHY4a9MM9WxMSp3MtwGhcK2LFESnQ\"]},\"/C/Users/James/projects/tsuno-fe/contracts/lib/Types.sol\":{\"keccak256\":\"0x9676bdd6c5bfc035713dd0558e22e57c17967a8c307da45dde8152d9a262c1f5\",\"urls\":[\"bzz-raw://1c60078690d0173b9737e087e4ba327a266735f7b73af7bc6c0c01980be19bf6\",\"dweb:/ipfs/QmTA7yFhjFFZtMzMf2gH6QhXMrZi6GpNxCSRgZA6W2yv2s\"]},\"/C/Users/James/projects/tsuno-fe/contracts/testing/TestGameOperations.sol\":{\"keccak256\":\"0xee5fb259b4050a4440a81a0275dede87669ec8a589dba95f0d80c8921b199b07\",\"urls\":[\"bzz-raw://923b951a8ad93f766826dd290159394fae600634f1eeaf20e46b902a34903636\",\"dweb:/ipfs/QmegNKHcufZmnkkc55VVUKwaXcvhiLHN2y2G2YmDNcCDGG\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0xdb26cbf4d028490f49831a7865c2fe1b28db44b535ca8d343785a3b768aae183\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://840b14ce0315c47d49ba328f1f9fa7654ded1c9e1559e6c5e777a7b2dc28bf0a\",\"dweb:/ipfs/QmTLLabn4wcfGro9LEmUXUN2nwKqZSotXMvjDCLXEnLtZP\"]},\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x4bd6402ca6b3419008c2b482aff54e66836e8cb4eba2680e42ac5884ae6424fc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8f9f711fb8d0d92aeea1c327e3845d13ca1fa8f142e47f8723cd5b3106fb29a3\",\"dweb:/ipfs/QmVQUReDW9f4zGqhizwHnyU8EntMs95tbASdqkGncnikba\"]},\"@openzeppelin/contracts/introspection/ERC165.sol\":{\"keccak256\":\"0xb046d18f9d09683ca1c0ed6d80c61da8a8a7d9b30bad70a17b898538683eff74\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4728713afa6ae36cc9e92c7107c796a313add3ec20f813be2cde76c814486b2a\",\"dweb:/ipfs/QmUJBTXvYaGDF5PVnd5pUvYerc9DRXvqANDzgCzAp3FkkA\"]},\"@openzeppelin/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0xfa152b6e88a1dc50780e8f1580426dc23ad2e1e2c2f086a088adf206a202f453\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5127b264994adab88fae419b1c493efc5acd07134c19ee5c0397e50018291ebf\",\"dweb:/ipfs/QmWwJZVhvdmvUCdimbb6R2Jiu59zjPqm6XTMchM6LaEHAp\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]},\"@openzeppelin/contracts/token/ERC1155/ERC1155Holder.sol\":{\"keccak256\":\"0xee8e03681af5ab7458e04154246dfb0c7918c442dc708bdc78f53ecfec55146a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6061a9c79c6fda63dd028eb690c5dc426ecf92df79cbbe82482fd309c614cf3c\",\"dweb:/ipfs/QmUCdPStmBzxxYiNf9gMBtbddVw93YsEUGs7L4wxX8QN35\"]},\"@openzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol\":{\"keccak256\":\"0x4d9b42828f5a2ea16ea396377904448f1ef8ce17babf06d6259b3e4cf65d6c32\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bdba169baa86bd0277651759a6dee86574a8e277528de4df39970077baf97a16\",\"dweb:/ipfs/QmdzqcK7xPaYZqXqYLakD1bXe26zunWCbjyrvmoVpgTYeV\"]},\"@openzeppelin/contracts/token/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x31691ad0817f8cb338531b78d2ab2989027d9f27e6f8e62492b754fed9429b10\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ea5c8207b135b93afb8cce651a26b1606d0c6e967edc06091e261de7475dace5\",\"dweb:/ipfs/QmXWQHU45hJWmuCiWKjR3tsVh11LwkNEW6fs2Yhvd41Q7a\"]},\"@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol\":{\"keccak256\":\"0x0bc1d0b8fa3b262a6fb98b88dceab8b3348903b95dcc5909b9074fb19a3d2da5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a1a2d7b10e484742885d2042f66e8150bfc143a08756a269fb207c4c553b55aa\",\"dweb:/ipfs/Qmbhi8dodhRZS6mqL2T8WfMzmEwPzgSwpuGVHtKF5F6QDp\"]},\"@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0xfc398838759c3248bdca40f7bc060e789c8d715df22f9eee7494bcafe14fa1b8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ca2e28a5681be0558b2de6a24c107299925f8bd9e3244e9a70b033d6eab782c8\",\"dweb:/ipfs/QmX5kRT4Gwq4GQYfEdxVsE7PALpGfQEuQJhsfpCap9inKm\"]},\"@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xaf936da92f3a9a4f98b237323b5eb1d813fb86c4d07a184beba7027cf0509ba3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://aaa210e132e06975eb9f20060db6ba7dee78f6fce691a1c2489525584de521c0\",\"dweb:/ipfs/QmRwzi4nUW3UWBwhY5ik2xW3JZo9NMLN5UyGi1xPpMQYrh\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol\":{\"keccak256\":\"0x3636662804cd8f474536b2875a9038a4c3fb91879f1bbff48af5c3f140fcd2f0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9fab8521263fa581544000cb57335a3f2e6bcdfbb5579d3ceaa5acf741c67c4f\",\"dweb:/ipfs/QmZfXnMom7JSNtfyie5yGPN1SUC4SmHbz4ScVBH88URmA7\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol\":{\"keccak256\":\"0xe7f984cedc00a138dc27f263c73c32ba9a4b2fd23b6c34ac46f46c074b943538\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f4acda12f076fe7584921241ddbb5b460ca7cad6cb8a42252ac7f2a9f539127\",\"dweb:/ipfs/QmQmfhkEv9GrhdWe67QtXnU19AMuoEmy31QnHPkucdYLjZ\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0x321ee37ef4925020aa818a03ec7fe48e057561f65ab009a84f6c20c86026ade7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://01f9d74a17a56024984251b97e428e24c9d3abffbae5bd290f0ec263c82e9694\",\"dweb:/ipfs/QmRryCuuXu2ukrDmatB8TqdEhPLiK6NBRt41RiPUaX1qKy\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf5fa8cbdffa5ef8be49b246b5628facc30b71707e78a45d80d93b64eff3fe390\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://774e78a9ff32792cc95db4d2ceaf3a7965bb7f0bea5e6cb7cff182b450d44b37\",\"dweb:/ipfs/QmRRMC4uj7eAcLW7chynA3sNEYULMFazdLwQHKHQPyzAbA\"]},\"@openzeppelin/contracts/utils/EnumerableMap.sol\":{\"keccak256\":\"0x244e4b74b17716120cf28e58636f11c699b8c0c94628bd952a95cee038d7e32b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://198d566157120c526bd6b5086b32cae85a11389b8a538f533ba9f9447915da0e\",\"dweb:/ipfs/QmeE6d8KWERx7f1FVS5tMnitNJxBm2yWXRSEUBF7R6voLh\"]},\"@openzeppelin/contracts/utils/EnumerableSet.sol\":{\"keccak256\":\"0xb2a11b236f073662f5a196995863f51c11d006bf7c3de158b316dfa1506c4b79\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8651649cf0b9efa18c3b01c030276fa320d41adbdc286833417e7f36e357b2f3\",\"dweb:/ipfs/QmafhM2Nd1aP43QVB1eRRZaqRXQKswNfQcWi8U8xjrxCfN\"]},\"@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0x79484115dbfa737054f73e041009a02eeb434dd81be5d684bf4255ad3b5ab558\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://12c119699463450c2544f5b9d8709b5e9e9164c62948a79c3ec53423a051d969\",\"dweb:/ipfs/QmPJduzSAaekq447QeFqAp3E7dc8CnNk5ajofckJ4ahA7Q\"]},\"@openzeppelin/upgrades-core/contracts/Initializable.sol\":{\"keccak256\":\"0x7e710227a99f0d4ee7d7cfba6874192fb4ee80c270f5235c7966a6f3ab484b11\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://391395fae95454670cc03bf15b69469bebff8730ad326ed941e7c21cdfe3eff2\",\"dweb:/ipfs/QmPA9bYGsjqmG4bn8SsDLpQpd2sGW4HUfpMR6v66FGR6gA\"]},\"@openzeppelin/upgrades/contracts/Initializable.sol\":{\"keccak256\":\"0x9bfec92e36234ecc99b5d37230acb6cd1f99560233753162204104a4897e8721\",\"urls\":[\"bzz-raw://5cf7c208583d4d046d75bd99f5507412ab01cce9dd9f802ce9768a416d93ea2f\",\"dweb:/ipfs/QmcQS1BBMPpVEkXP3qzwSjxHNrqDek8YeR7xbVWDC9ApC7\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600160345534801561001557600080fd5b5060f5806100246000396000f3fe6080604052348015600f57600080fd5b506004361060315760003560e01c80626c2f3a146036578063c32a50f9146059575b600080fd5b604560413660046075565b606a565b6040516050919060b0565b60405180910390f35b606860643660046099565b6070565b005b50600090565b603355565b6000602082840312156085578081fd5b8135601581106092578182fd5b9392505050565b60006020828403121560a9578081fd5b5035919050565b61ffff9190911681526020019056fea2646970667358221220cc1fb207fc0ff974e03931c7e11cb015e6d6ddad8a751805b3bc8d566338a0a964736f6c634300060c0033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060315760003560e01c80626c2f3a146036578063c32a50f9146059575b600080fd5b604560413660046075565b606a565b6040516050919060b0565b60405180910390f35b606860643660046099565b6070565b005b50600090565b603355565b6000602082840312156085578081fd5b8135601581106092578182fd5b9392505050565b60006020828403121560a9578081fd5b5035919050565b61ffff9190911681526020019056fea2646970667358221220cc1fb207fc0ff974e03931c7e11cb015e6d6ddad8a751805b3bc8d566338a0a964736f6c634300060c0033",
+  "immutableReferences": {},
+  "sourceMap": "185:1554:24:-:0;;;305:1:11;289:17;;185:1554:24;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "185:1554:24:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3834:89:2;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;621:68:11;;;;;;:::i;:::-;;:::i;:::-;;3834:89:2;-1:-1:-1;3908:11:2;;3834:89::o;621:68:11:-;670:4;:12;621:68::o;309:271:-1:-;;428:2;416:9;407:7;403:23;399:32;396:2;;;-1:-1;;434:12;396:2;100:6;87:20;1431:2;1424:5;1421:13;1411:2;;-1:-1;;1438:12;1411:2;486:78;390:190;-1:-1;;;390:190::o;587:241::-;;691:2;679:9;670:7;666:23;662:32;659:2;;;-1:-1;;697:12;659:2;-1:-1;239:20;;653:175;-1:-1;653:175::o;952:218::-;1249:6;1238:18;;;;904:36;;1077:2;1062:18;;1048:122::o",
+  "source": "pragma solidity 0.6.12;\npragma experimental ABIEncoderV2;\n\nimport {GameOperations} from '../GameOperations.sol';\nimport {Types} from '../lib/Types.sol';\n\n/* solium-disable-next-line */\ncontract TestGameOperations is GameOperations {\n    // // create test functions\n    // event TestAddress(address a, address b, address c, address d);\n    // event TestUint(uint256 a, uint256 b);\n    // function testAiFleetAttack(Types.SystemType starSystem) public {\n    //     (uint256 a_offense, uint256 a_defense) = GS.getAiFleetInfo(starSystem);\n    //     (\n    //         uint256 d_offense,\n    //         uint256 d_defense,\n    //         uint256[] memory d_balances,\n    //         uint256[] memory d_ids\n    //     ) = calculateStats(msg.sender);\n    //     emit BattleStarted(msg.sender, a_offense, a_defense, address(this), d_offense, d_defense);\n    //     bool result = battle(a_offense, a_defense, d_offense, d_defense, true, 10);\n    // }\n    // function testFhrDiscovery(Types.SystemType systemType) public {\n    //     (uint256 low, uint256 high) = GS.getStarSystemYieldRange(systemType);\n    //     uint256 _id = GS.incrementTotalFhr();\n    //     GS.setTokenIdToYield(_id, randomrange(low, high));\n    //     TS.mintFhr(msg.sender, _id);\n    // }\n    // function testSatDiscovery(\n    //     uint256 rand,\n    //     uint256[] memory ships,\n    //     uint256[] memory amounts\n    // ) public {\n    //     TS.sendSats(msg.sender, ships, amounts);\n    //     // updateMasterFleet(msg.sender, ships, amounts);\n    // }\n    // function testUpdateMasterFleet(\n    //     address master,\n    //     uint256[] memory ids,\n    //     uint256[] memory amounts\n    // ) public {\n    //     // updateMasterFleet(master, ids, amounts);\n    // }\n}\n",
+  "sourcePath": "C:/Users/James/projects/tsuno-fe/contracts/testing/TestGameOperations.sol",
+  "ast": {
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/testing/TestGameOperations.sol",
+    "exportedSymbols": {
+      "TestGameOperations": [
+        5227
+      ]
+    },
+    "id": 5228,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5219,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:24"
+      },
+      {
+        "id": 5220,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "24:33:24"
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/GameOperations.sol",
+        "file": "../GameOperations.sol",
+        "id": 5222,
+        "nodeType": "ImportDirective",
+        "scope": 5228,
+        "sourceUnit": 1730,
+        "src": "59:53:24",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 5221,
+              "name": "GameOperations",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "67:14:24",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/lib/Types.sol",
+        "file": "../lib/Types.sol",
+        "id": 5224,
+        "nodeType": "ImportDirective",
+        "scope": 5228,
+        "sourceUnit": 5218,
+        "src": "113:39:24",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 5223,
+              "name": "Types",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "121:5:24",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5225,
+              "name": "GameOperations",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1729,
+              "src": "216:14:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GameOperations_$1729",
+                "typeString": "contract GameOperations"
+              }
+            },
+            "id": 5226,
+            "nodeType": "InheritanceSpecifier",
+            "src": "216:14:24"
+          }
+        ],
+        "contractDependencies": [
+          1031,
+          1729,
+          3036,
+          9969
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5227,
+        "linearizedBaseContracts": [
+          5227,
+          1729,
+          1031,
+          3036,
+          9969
+        ],
+        "name": "TestGameOperations",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 5228,
+        "src": "185:1554:24"
+      }
+    ],
+    "src": "0:1740:24"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/testing/TestGameOperations.sol",
+    "exportedSymbols": {
+      "TestGameOperations": [
+        5227
+      ]
+    },
+    "id": 5228,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5219,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:24"
+      },
+      {
+        "id": 5220,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "24:33:24"
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/GameOperations.sol",
+        "file": "../GameOperations.sol",
+        "id": 5222,
+        "nodeType": "ImportDirective",
+        "scope": 5228,
+        "sourceUnit": 1730,
+        "src": "59:53:24",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 5221,
+              "name": "GameOperations",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "67:14:24",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/James/projects/tsuno-fe/contracts/lib/Types.sol",
+        "file": "../lib/Types.sol",
+        "id": 5224,
+        "nodeType": "ImportDirective",
+        "scope": 5228,
+        "sourceUnit": 5218,
+        "src": "113:39:24",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 5223,
+              "name": "Types",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "121:5:24",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5225,
+              "name": "GameOperations",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1729,
+              "src": "216:14:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GameOperations_$1729",
+                "typeString": "contract GameOperations"
+              }
+            },
+            "id": 5226,
+            "nodeType": "InheritanceSpecifier",
+            "src": "216:14:24"
+          }
+        ],
+        "contractDependencies": [
+          1031,
+          1729,
+          3036,
+          9969
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5227,
+        "linearizedBaseContracts": [
+          5227,
+          1729,
+          1031,
+          3036,
+          9969
+        ],
+        "name": "TestGameOperations",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 5228,
+        "src": "185:1554:24"
+      }
+    ],
+    "src": "0:1740:24"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0x39c31677b1650d5b983fb38bf1ee25e9ca25658b8bdfb9263e59651183b48368": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "attacker",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "attackerOffense",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "attackerDefense",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "defender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "defenderOffense",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "defenderDefense",
+              "type": "uint256"
+            }
+          ],
+          "name": "BattleStarted",
+          "type": "event"
+        },
+        "0xa09af1f69f0376e675eb9a774ff51b588670dda43c3dd6805069596312e3bca5": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "result",
+              "type": "bool"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "attackersHealth",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "defendersHealth",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogBattle",
+          "type": "event"
+        },
+        "0x067ed149b8be43d30a47ed69bc882367f66239804079b28dd002d36fc3f46ed4": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "quadrant",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "district",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "sector",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "star",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogMove",
+          "type": "event"
+        },
+        "0xdb89c7408779c905195fcba466a0677b3c6cf1d715f798cea48a9aab5163e142": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "proxy",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogPlanetProxyCreated",
+          "type": "event"
+        },
+        "0x3ab8d16fa0445f4581f0e35996348d2507338000fb353856d56f5db15618e394": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "aDamage",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "dDamage",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "aHealth",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "dHealth",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogRound",
+          "type": "event"
+        },
+        "0x119eeac2475e395d798da3c40d9f901a3131b79a826c604a60d078764e8ce408": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "systemType",
+              "type": "uint8"
+            }
+          ],
+          "name": "LogStarSystemDiscovery",
+          "type": "event"
+        },
+        "0xbcf69e7223438137d9099bb71b1772c3eb2a5a8840750b247913cd6fd4d249d5": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "random",
+              "type": "uint256"
+            }
+          ],
+          "name": "Random",
+          "type": "event"
+        },
+        "0x881c3ecc41e1e3d937a18bd3f1fc3af87a52f725119402eb778cd5592c861efc": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "a",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "b",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "c",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "d",
+              "type": "address"
+            }
+          ],
+          "name": "TestAddress",
+          "type": "event"
+        },
+        "0x4a365bf35c0ae660ba79119f99f0fd297f42d3621f9f584e393f23ca68df210e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "a",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "b",
+              "type": "uint256"
+            }
+          ],
+          "name": "TestUint",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x312957828267793C20C7b913a8a9Aa1d75e87a0d",
+      "transactionHash": "0xe5315957424c0d053072021c9278c66b5ea0e1a7ac319849de81a8bc15442a9a"
+    }
+  },
+  "schemaVersion": "3.2.5",
+  "updatedAt": "2020-11-15T18:28:43.935Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
